@@ -1,0 +1,107 @@
+/*
+ * @desc this scss organises the files according to the ITCSS (Inverted Triangle CSS)
+ * Architecture see README.md in this directory
+ * @author Neil Symester neil.symester@towergate.co.uk
+*/
+/* @group settings */
+/**
+  * @desc settings include global variables
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+/* @group tools */
+/**
+  * @desc tools include mixins
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+/* @group generic */
+/**
+  * @desc resets the browser using Normalisers or resets
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+/* @group elements */
+/**
+  * @desc basic tag styles (HTML elements)
+  *       e.g.: sub and sup should be the same everywhere
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+body {
+  background-color: #fff; }
+
+/* @group objects */
+/**
+  * @desc layout and positioning styles, 
+          includes layout and positioning styles,
+          contains business logic
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+/* @group components */
+/**
+  * @desc UI components, building blocks that we use on the page, self contained
+  *       e.g.: lists, media box,
+          contains business logic
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+.rating > span {
+  display: inline-block;
+  position: relative;
+  color: gold;
+  font-size: 3rem;
+  width: auto;
+  height: auto;
+  line-height: 2.5rem; }
+
+.rating__value {
+  margin-left: 10px;
+  line-height: 2.7rem;
+  color: #152935;
+  font-family: Helvetica;
+  font-size: 2.25rem;
+  font-weight: bold; }
+
+.rating__reviews {
+  color: #152935 !important;
+  font-family: Helvetica;
+  font-size: 24px;
+  line-height: 29px; }
+
+.btn-primary-alt {
+  height: 80px;
+  color: white;
+  font-family: "Open Sans";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: center; }
+
+/* @group overrides */
+/**
+  * @desc override existing selectors, though try and generalise so as to extract
+  *       the specific override and add it to either components or objects or somewhere,
+  *       includes quick fixes, hot fixes
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+.navbar-bright .navbar-nav .nav-link {
+  color: white; }
+
+.btn-cta {
+  color: white;
+  background-color: #f4791d;
+  border-color: #f4791d; }
+
+input[type=text].form-control {
+  height: 80px;
+  background-color: rgba(61, 112, 178, 0.1);
+  color: #5a6872;
+  font-family: "Open Sans";
+  font-size: 28px;
+  line-height: 36px; }
+
+label.form-control-label {
+  height: 36px;
+  color: #152935;
+  font-family: "Open Sans";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px; }
+
+/*# sourceMappingURL=maps/styles.css.map */

@@ -1,0 +1,42 @@
+/**
+  * @desc UI components, building blocks that we use on the page, self contained
+  *       e.g.: lists, media box,
+          contains business logic
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  color:gold;
+  font-size:3rem;
+  width:auto;
+  height:auto;
+  line-height:2.5rem;
+}
+
+.rating__value{
+  margin-left:10px;
+  line-height:2.7rem;
+  color: rgba(21,41,53,1);
+  font-family: Helvetica;
+  font-size:2.25rem;
+  font-weight: bold;
+}
+
+.rating__reviews{
+  color: rgba(21,41,53,1) !important;
+  font-family: Helvetica;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.btn-primary-alt {
+	height: 80px;
+	color: rgba(255,255,255,1);
+	font-family: "Open Sans";
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 36px;
+	text-align: center;
+}

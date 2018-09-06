@@ -1,0 +1,35 @@
+/**
+  * @desc override existing selectors, though try and generalise so as to extract
+  *       the specific override and add it to either components or objects or somewhere,
+  *       includes quick fixes, hot fixes
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+
+.navbar-bright .navbar-nav .nav-link {
+  color: rgba(255,255,255,1);
+}
+
+.btn-cta {
+  color: rgba(255,255,255,1);
+  background-color: rgba(244,121,29,1);
+  border-color: rgba(244,121,29,1);
+}
+
+input[type=text].form-control {
+  height: 80px;
+  background-color: rgba(61,112,178,0.1);
+  color: rgba(90,104,114,1);
+	font-family: "Open Sans";
+	font-size: 28px;
+	line-height: 36px;
+}
+
+label.form-control-label {
+	height: 36px;
+	color: rgba(21,41,53,1);
+	font-family: "Open Sans";
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 36px;
+}
+
