@@ -3,41 +3,14 @@
 
   <!-- Bootstrap -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font-awesome -->
-  <link href="/css/all.min.css" rel="stylesheet">
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
 {% block ie8supporthtml %}
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
-<nav class="navbar bg-primary navbar-bright navbar-expand">
-  <div class="container-fluid">
-
-    <!-- Brand -->
-    <a href="#" class="navbar-brand">
-      <img src="/images/logo.png" style="width:100px;" alt="Healthy Pets logo">
-    <span class="d-none">Healthy Pets</span></a>
-
-    <!-- Telephone number -->
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="tel:01730268592">01730 268592</a>
-    </div>
-  </div><!-- container -->
-</nav>
-
-<nav class="navbar bg-primary navbar-bright navbar-expand" style="opacity: 0.8;">
-  <div class="container-fluid" style="height: 27px;">
-    <div class="navbar-nav">
-      <a href="#" class="nav-item nav-link">Claims</a>
-      <a href="#" class="nav-item nav-link">Contact Us</a>
-    </div><!-- navbar-nav -->
-
-    <div class="navbar-nav">
-      <button href="#" class="btn btn-lg btn-cta rounded-0" role="button" style="right:-16px;position: relative; text-transform: uppercase;font-size:1rem">Get a quote</button>
-    </div><!-- navbar-nav -->
-  </div><!-- container -->
-</nav>
+{% block menu %}
+{% include './partials/menu.njk' %} {% endblock %}
 
 <div class="container">
   <section class="mt-4 mb-3">
@@ -62,37 +35,14 @@
         </div><!-- form-group -->
       </fieldset><!-- fieldset -->
 
-      <button class="btn btn-primary btn-block rounded-0 btn-primary-alt" type="submit">Find quote</button>
+      <button class="btn btn-primary btn-primary-alt btn-block rounded-0" type="submit">Find quote</button>
     </form>
   </section>
 
-  <section class="mt-5">
-    <h3 class="d-none">Info</h3>
+  {% block customerservice %}
+  {% include './partials/customer-service.njk' %} {% endblock %}
 
-    <section class="card mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white" style="border-left: 11.11px solid rgba(90,167,0,1) !important;">
-        <h3>20% off for all new customers</h3>
-        <p>Get the best deal online</p>
-        <p>This will automatcally get added</p>
-    </section>
-
-    <section class="card mb-5 border-0">
-      <div class="rating">
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <p style="display:inline" class="rating__value">4.7/5</p>
-      </div>
-      <p>Independent service rating based on 1311 verified reviews</p>
-      <hr class="mt-0 bg-dark">
-      <div class="clearfix">
-        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:150px">
-        <a href="" class="rating__reviews float-right">Read all reviews</a>
-      </div>
-    </section>
-  </section>
-</div>
+</div><!-- container -->
 
 {% block corejavascript %}
 {% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}

@@ -71,7 +71,8 @@ body {
   font-size: 28px;
   font-weight: 600;
   line-height: 36px;
-  text-align: center; }
+  text-align: center;
+  background-color: #3d70b2; }
 
 /* @group overrides */
 /**
@@ -103,5 +104,11 @@ label.form-control-label {
   font-size: 28px;
   font-weight: 600;
   line-height: 36px; }
+
+.bg-header {
+  background-color: #1c81b6; }
+
+.bg-sub-header {
+  background-color: #3794c1; }
 
 /*# sourceMappingURL=maps/styles.css.map */
