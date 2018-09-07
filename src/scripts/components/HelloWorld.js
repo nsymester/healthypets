@@ -1,9 +1,9 @@
 // module "HelloWorld.js"
 
-function Hello(){
-  return 'Hello';
+function Hello () {
+	return 'Hello';
 }
 
-const World = "World";
+const World = 'World';
 
-export {Hello, World};
+export { Hello, World };

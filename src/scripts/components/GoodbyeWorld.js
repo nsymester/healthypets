@@ -1,9 +1,9 @@
 // module "GoodbyeWorld.js"
 
-function Goodbye(){
-  return 'Goodbye';
+function Goodbye () {
+	return 'Goodbye';
 }
 
-const World = "World";
+const World = 'World';
 
-export {Goodbye, World};
+export { Goodbye, World };
