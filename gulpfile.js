@@ -58,7 +58,6 @@ var onError = function (err) {
 /**
  * @desc browserSync, start the server
  */ gulp.task('browserSync', function () {
-
   // check for operating system
   // - for WINDOWS 10 use "Chrome"
   // - for MAC OS X use 'Google Chrome'
@@ -128,46 +127,46 @@ gulp.task('css', function () {
  * @desc bundles js into multiple files
  */
 gulp.task('browserify', function () {
-    var files = [
-        './src/scripts/index.js',
-        './src/scripts/application.js'
-    ];
+  var files = [
+    './src/scripts/index.js',
+    './src/scripts/application.js'
+  ];
 
-    // start fresh
-    $.del.sync([`${files}`]);
+  // start fresh
+  $.del.sync([`${files}`]);
 
-    // map them to our stream function
-    var tasks = files.map(function (entry) {
-        console.log(entry);
-        return $.browserify({
-                entries: [entry], // Entry point
-                debug: true // Output source maps
-            })
-            .transform($.babelify, {
-                presets: ['env']
-            })
-            .bundle().on('error', function (err) {
-                // print the error (can replace with gulp-util)
-                console.log(err.message);
-                // end this stream
-                this.emit('end');
-            })
-            .pipe($.source(entry)) // gives streaming vinyl file object
-            // rename them to have "bundle as postfix"
-            .pipe($.rename({
-                dirname: '', // don't include full path
-                extname: '.bundle.js' // Output file
-            }))
-            .pipe($.buffer()) // <----- convert from streaming to buffered vinyl file object
-            .pipe($.uglify()) // uglify
-            .pipe(gulp.dest('build/js')) // Output path
-            .pipe(reload({
-                stream: true,
-                once: true
-            }));
-    });
-    // create a merged stream
-    return $.es.merge.apply(null, tasks);
+  // map them to our stream function
+  var tasks = files.map(function (entry) {
+    console.log(entry);
+    return $.browserify({
+      entries: [entry], // Entry point
+      debug: true // Output source maps
+    })
+      .transform($.babelify, {
+        presets: ['env']
+      })
+      .bundle().on('error', function (err) {
+        // print the error (can replace with gulp-util)
+        console.log(err.message);
+        // end this stream
+        this.emit('end');
+      })
+      .pipe($.source(entry)) // gives streaming vinyl file object
+      // rename them to have "bundle as postfix"
+      .pipe($.rename({
+        dirname: '', // don't include full path
+        extname: '.bundle.js' // Output file
+      }))
+      .pipe($.buffer()) // <----- convert from streaming to buffered vinyl file object
+      .pipe($.uglify()) // uglify
+      .pipe(gulp.dest('build/js')) // Output path
+      .pipe(reload({
+        stream: true,
+        once: true
+      }));
+  });
+  // create a merged stream
+  return $.es.merge.apply(null, tasks);
 });
 
 /**
@@ -249,7 +248,7 @@ gulp.task('watch', ['watchify'], function () {
   gulp.watch(folder.src + '+(pages|templates)/**/*.njk', ['nunjucks'])
 
   // css changes
-  gulp.watch(folder.src + 'stylesheets/sass/**/*', ['css'])
+  gulp.watch(folder.src + 'stylesheets/sass/*', ['css'])
 })
 
 /**

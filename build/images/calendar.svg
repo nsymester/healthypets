@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="36px" viewBox="0 0 32 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>4D3EC366-5B0B-4647-87F8-F9319690B8A3</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01_CollectInfo_1_Default" transform="translate(-72.000000, -732.000000)" fill="#3D70B2">
+            <g id="Component/Date-Picker/Single-Day/Enabled" transform="translate(40.000000, 574.000000)">
+                <g id="Single-day---enabled">
+                    <g id="Date-picker" transform="translate(0.000000, 136.000000)">
+                        <g id="UI-Icon/Icon/calendar/$brand-01" transform="translate(32.000000, 22.000000)">
+                            <g id="calendar">
+                                <g>
+                                    <path d="M0,4 L0,10.4 L0,36 L32,36 L32,10.4 L32,4 L0,4 L0,4 Z M4,32 L4,12 L28,12 L28,32 L4,32 Z" id="Shape"></path>
+                                    <path d="M4.11956965,8.5197555 L4.11956965,0.608676222 L8.11956965,0.608676222 L8.11956965,8.5197555 L4.11956965,8.5197555 Z M24.1195697,8.5197555 L24.1195697,0.608676222 L28.1195697,0.608676222 L28.1195697,8.5197555 L24.1195697,8.5197555 Z" id="Combined-Shape" fill-rule="nonzero"></path>
+                                    <polygon id="1" points="20.08 26.8688404 20.08 25.1568404 17.488 25.1568404 17.488 15.7008404 15.296 15.7008404 11.92 17.5888404 12.72 19.1248404 15.424 17.6048404 15.424 25.1568404 12.528 25.1568404 12.528 26.8688404"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

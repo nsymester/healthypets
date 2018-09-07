@@ -57,7 +57,52 @@
 
 <div class="container">
   <section class="mt-4 mb-3">
-    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: 'Open Sans'; font-size: 42px;line-height: 57px;">Hello World</h2>
+
+    <ul class="progressbar clearfix">
+      <li class="complete"><span>Pet details</span></li>
+      <li class="active"><span>Your details<span></li>
+      <li><span>Your quote</span></li>
+    </ul>
+
+    <h2 class="mt-3">Enter your pet's details</h2>
+    <form action="">
+      <fieldset class="form-group mt-3">
+        <legend></legend>
+
+        <div class="form-group">
+          <label class="form-control-label" for="pets-name">What's your pet's name?</label>
+          <input class="form-control rounded-0" type="text" id="pets-name">
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label" for="dob">What's your pet's birthday?</label>
+          <small style="display:block">If you don't know the exact daye of birth, enter the vet's estimate</small>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend input-group-prepend--date mt-3">
+              <div class="input-group-text"><img src="/images/calendar.svg" alt=""></div>
+            </div>
+            <input class="form-control rounded-0 mt-3" type="date" id="dob" placeholder="dd/mm/yyyy">
+          </div>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label" for="">Is your pet a dog or a cat?</label>
+          <div style="display:flex; justify-content:space-between;">
+            <div class="form-check form-check-inline form-check-radio">
+              <input class="form-check-input" type="radio" name="pet-type" id="pet-type-dog" value="Dog">
+              <label class="form-check-label radio-box" for="pet-type-dog"><span>Dog</span></label>
+            </div><!-- form-check -->
+
+            <div class="form-check form-check-inline form-check-radio">
+              <input type="radio" class="form-check-input" name="pet-type" id="pet-type-cat" value="Cat">
+              <label class="form-check-label radio-box" for="pet-type-cat"><span>Cat</span></label>
+            </div><!-- form-check -->
+          </div>
+        </div>
+      </fieldset><!-- fieldset -->
+
+      <button class="btn btn-primary btn-primary-alt btn-block rounded-0" type="submit">Find quote</button>
+    </form>
   </section>
 
   

@@ -1,0 +1,51 @@
+{% block header %}
+{% include './partials/header.njk' %} {% endblock %}
+
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom -->
+  <link href="/css/styles.css" rel="stylesheet">
+
+{% block ie8supporthtml %}
+{% include './partials/ie8-support-html.njk' %} {% endblock %}
+
+{% block menu %}
+{% include './partials/menu.njk' %} {% endblock %}
+
+<div class="container">
+  <section class="mt-4 mb-3">
+    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: 'Open Sans'; font-size: 42px;line-height: 57px;">Retrieve a quote</h2>
+    <form action="">
+      <fieldset class="form-group mt-3">
+        <legend></legend>
+
+        <div class="form-group">
+          <label class="form-control-label" for="pets-name">Your pet's name</label>
+          <input class="form-control rounded-0" type="text" id="pets-name">
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label" for="surname">Your surname</label>
+          <input class="form-control rounded-0" type="text" id="surname">
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label" for="postcode">Your postcode</label>
+          <input class="form-control rounded-0" type="text" id="postcode">
+        </div><!-- form-group -->
+      </fieldset><!-- fieldset -->
+
+      <button class="btn btn-primary btn-primary-alt btn-block rounded-0" type="submit">Find quote</button>
+    </form>
+  </section>
+
+  {% block customerservice %}
+  {% include './partials/customer-service.njk' %} {% endblock %}
+
+</div><!-- container -->
+
+{% block corejavascript %}
+{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+
+{% block footer %}
+{% include './partials/footer.njk' %} {% endblock %}

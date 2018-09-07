@@ -22,6 +22,7 @@
   font-family: Helvetica;
   font-size:2.25rem;
   font-weight: bold;
+  display:inline;
 }
 
 .rating__reviews{
@@ -40,4 +41,173 @@
 	line-height: 36px;
   text-align: center;
   background-color: rgba(61,112,178,1);
+}
+
+// @group progressbar
+
+.progressbar {
+  margin-left:0;
+  padding-left:0;
+  display:flex;
+  justify-content: space-evenly;
+
+
+  li {
+    list-style-type:none;
+    position: relative;
+    text-align: center;
+    flex: 1 0 35%;
+
+    &:first-child {
+      //padding-left:0;
+    }
+
+    span {
+      color: rgba(61,112,178,1);
+      font-family: "Open Sans";
+      font-size: 23.66px;
+      font-weight: 600;
+      line-height: 30px;
+      opacity: 0.5;
+      color: rgba(90,104,114,1);
+    }
+
+    // bullet points
+    &:before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(90,104,114,1);
+      display:block;
+      text-align: center;
+      margin: 0 auto;
+      border-radius: 50%;
+      line-height: 25px;
+      color: rgba(61,112,178,1);
+      background-color: #fff; // set to white to hide the line
+    }
+
+    // line between bullet points
+    &:after {
+      content:'';
+      position: absolute;
+      width:100%; // line width
+      height:3.38px; // line height
+      background-color: rgba(140,155,165,1);
+      top: 15px; // center line
+      left: -50%; //move the line behind the bullet
+      z-index: -1; // move the line behind the bullet point
+    }
+
+    &:first-child:after {
+      content:none;
+    }
+
+    // active step
+    &.active{
+      span {
+        color: rgba(61,112,178,1);
+        opacity: 1;
+      }
+      &:before {
+        content: '\02b24';
+        border: 2px solid rgba(61,112,178,1);
+      }
+    }
+
+    &.complete {
+      span {
+        color: rgba(61,112,178,1);
+        opacity: 1;
+      }
+      &:before {
+        content: '\02713';
+        border: 2px solid rgba(61,112,178,1);
+      }
+    }
+  }
+}
+
+.card--deal{
+  border-left: 11.11px solid rgba(90,167,0,1) !important;
+}
+
+
+// section header
+
+section h2 {
+  font-weight:normal;
+  color: rgba(0,59,92,1);
+  font-family: 'Open Sans';
+  font-size: 42px;
+  line-height: 57px;
+}
+
+input[type=radio].form-check-input {
+  display: none;
+  &:checked {
+    + .radio-box {
+      background-color:blue;
+
+      span {
+        color:#fff;
+      }
+    }
+  }
+}
+
+.form-check-radio{
+  max-width: 294px;
+  width:100%;
+  height: 108px;
+}
+
+.radio-box {
+  height:100%;
+  width:100%;
+  border: 3.02px solid rgba(61,112,178,1);
+  background-color: rgb(255, 255, 255);
+  transition: all 250ms ease;
+  will-change: transition;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  font-family: "Open Sans";
+  font-weight: 500;
+  &:active{
+    transform: translateY(10px);
+  }
+
+  // style the radio buutton label
+  span {
+    position: absolute;
+    transform: translate(0, 30px);
+    left: 0;
+    right: 0;
+    //transition: all 300ms ease;
+    font-size: 1.5em;
+    user-select: none;
+    //color: rgba(61,112,178,1);
+    display:inline-block;
+
+    &:before {
+      position: absolute;
+      left:0;
+      top:0;
+      //content: url(/images/dog.png);
+      content:" ";
+      background-image:url(/images/dog.png);
+      background-repeat:no-repeat;
+      //font-size: 1.2em;
+      //font-family: FontAwesome;
+      display: inline;
+      //transform: translateY(-80px);
+      //transition: all 300ms ease-in-out;
+      //font-weight: normal;
+      color: black;
+      background-size: 50% 50%;
+
+    }
+  }
 }
