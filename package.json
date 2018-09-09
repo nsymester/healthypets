@@ -11,6 +11,7 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.24.7",
     "browserify": "^16.2.2",
+    "cross-env": "^5.2.0",
     "del": "^3.0.0",
     "eslint": "^5.5.0",
     "eslint-config-standard": "^12.0.0",
@@ -52,9 +53,9 @@
     "lodash": "^4.17.10"
   },
   "scripts": {
-    "test": "gulp bootlint && eslint --cache --fix ./src/scripts && stylelint --cache --syntax scss --fix ./src/stylesheets/**/*.scss",
-    "start": "NODE_ENV=development&& gulp",
-    "build": "NODE_ENV=production&& gulp build"
+    "test": "gulp bootlint && eslint --cache --fix ./src/scripts && stylelint --cache --syntax scss --fix ./src/stylesheets/**/*.scss && wait",
+    "start": "cross-env NODE_ENV=development gulp",
+    "build": "cross-env NODE_ENV=production gulp build"
   },
   "repository": {
     "type": "git",
