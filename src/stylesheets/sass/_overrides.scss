@@ -5,34 +5,46 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 
-.navbar-bright .navbar-nav .nav-link {
-  color: rgba(255,255,255,1);
+a {
+  text-decoration: underline;
 }
 
+.navbar-bright .navbar-nav .nav-link {
+  color: rgba(255,255,255,1);
+  text-decoration:none;
+}
+
+input.form-control, select.form-control {
+  background-color: rgba(61,112,178,0.1);
+  color: rgba(90,104,114,1);
+  font-family: "Open Sans";
+  font-size: 20px;
+  line-height: calc(36px - 50%);
+  border:0;
+}
 
 input[type=text].form-control {
   height: calc(80px - 50%);
-  background-color: rgba(61,112,178,0.1);
-  color: rgba(90,104,114,1);
-	font-family: "Open Sans";
-	font-size: 28px;
-	line-height: calc(36px - 50%);
-  border:0;
 }
 
 input[type=date].form-control {
-  height: 50px;
-  background-color: rgba(61,112,178,0.1);
-  color: rgba(90,104,114,1);
-	font-family: "Open Sans";
-	//font-size: 20px;
+  height: 45px;
+  font-size: 13px;
   font-weight: 300;
-  border:0;
-  //width: auto;
- // flex: 0 1 auto;
-  //max-width: 250px;
+}
 
-  height: 50px;
+input[type=number].form-control {
+  height: 44px;
+}
+
+input[type=radio] + label {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+select.form-control {
+  font-size:0.9rem;
+  height:50px;
 }
 
 .form-control--short {
@@ -65,11 +77,20 @@ label.form-control-label {
 	height: calc(36px - 50%);
 	color: rgba(21,41,53,1);
 	font-family: "Open Sans";
-	font-size: 18px;
-	font-weight: 300;
+	font-size: 15px;
+	font-weight: 600;
 	line-height: calc(36px - 50%);
 }
 
 .img__calendar{
   height:20px;
+}
+
+.form-check-input--alt {
+  bottom: -10px; 
+  left: 20px;
+}
+
+.form-check--alt {
+  padding-left: 0;
 }

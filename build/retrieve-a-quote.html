@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <title>Bootstrap 4 Starter</title> 
 
   <!-- Bootstrap -->
@@ -118,7 +119,47 @@
   <script src="/js/popper.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/index.bundle.js"></script>
-  <script src="/js/application.bundle.js"></script> 
+  <script src="/js/application.bundle.js"></script>
+
+<script type="text/javascript">
+
+
+$('#pet-type-dog').click(function(){
+	$('#catInfo').collapse('hide'); 
+	$('#dogInfo').collapse('show');  
+});
+
+$('#pet-type-cat').click(function(){
+	$('#dogInfo').collapse('hide');  
+	$('#catInfo').collapse('show'); 
+});
+
+$('#pre-existing-condition-yes').click(function(){
+  $('#pet-condition').collapse('show');  
+});
+$('#pre-existing-condition-no').click(function(){
+  $('#pet-condition').collapse('hide');  
+});
+
+// conditions
+
+$("#conditionSelect").change(function() {
+  let select = $("#conditionSelect option:selected").val();
+  // create a pill
+  // append pill to condition list
+  $( '.conditions' ).append( `<div class="pill--condition">${select} <span class="close">x</span></div>` );
+
+  checkForConditions();
+});
+
+function checkForConditions() {
+  $('.pill--condition .close').on('click', function(evt){
+    evt.preventDefault();
+    evt.currentTarget.parentNode.remove();
+  })
+}
+
+</script> 
 
 
 </body>

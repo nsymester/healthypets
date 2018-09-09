@@ -1,0 +1,58 @@
+{% block header %}
+{% include './partials/header.njk' %} {% endblock %}
+
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom -->
+  <link href="/css/styles.css" rel="stylesheet">
+
+{% block ie8supporthtml %}
+{% include './partials/ie8-support-html.njk' %} {% endblock %}
+
+{% block menu %}
+{% include './partials/menu.njk' %} {% endblock %}
+
+<div class="container">
+  <section class="mt-4 mb-3">
+
+    <ul class="progressbar clearfix">
+      <li class="complete"><span>Pet details</span></li>
+      <li class="active"><span>Your details<span></li>
+      <li><span>Your quote</span></li>
+    </ul>
+
+    <section class="card card--pet-details mb-3 rounded-0 shadow bg-white">
+      <h5>Bobby, German Shepherd, 3 yrs</h5>
+      <div class="card-action">
+        <a href="">Edit Bobby's Info</a>
+        <a href="">Delete</a>
+      </div>
+    </section>
+
+    <section class="card card--pet-details mb-3 rounded-0 shadow bg-white">
+      <h5>Poppy, Russian Blue, 6 yrs</h5>
+      <div class="card-action">
+        <a href="">Edit Poppy's Info</a>
+        <a href="">Delete</a>
+      </div>
+    </section>
+
+    <form action="">
+
+      <button class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-5" type="submit">Next</button>
+
+      <button class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" type="submit">+ Add another pet</button>
+
+    </form>
+  </section>
+
+  {% block customerservice %}
+  {% include './partials/customer-service.njk' %} {% endblock %}
+
+</div><!-- container -->
+
+{% block corejavascript %}
+{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+
+{% block footer %}
+{% include './partials/footer.njk' %} {% endblock %}

@@ -120,17 +120,54 @@
 }
 
 .card--deal{
-  border-left: 11.11px solid rgba(90,167,0,1) !important;
+  border-left: 5.15px solid rgba(90,167,0,1) !important;
 }
 
+.card--notification {
+  width:97%;
+  border-left: 5px solid rgba(90,170,250,1) !important;
+}
 
+.card-body--notification {
+  color: rgba(90,104,114,1);
+  font-family: "Open Sans";
+  font-size: 13px;
+  line-height: 20px;
+
+  ul li {
+    font-family: inherit;
+    font-weight:100;
+  }
+}
+
+.card--pet-details {
+  padding: 2rem;
+  h5 {
+    color: rgba(90,104,114,1);
+    font-weight: 100;
+    font-size: 1.15rem;
+    word-spacing:3px;
+  }
+
+  a {
+    font-size: 0.7rem;
+    color: rgba(61,112,178,1);
+    font-weight: 600;
+  }
+}
+
+.card-action {
+  display:flex; 
+  flex-flow:row nowrap; 
+  justify-content:space-between;
+}
 // @group section header
 
 section h2 {
   font-weight: 300;
   color: rgba(0,59,92,1);
-  //font-family: 'Open Sans';
-  font-size: calc(32px - 50%);
+  font-family: 'Open Sans';
+  font-size: calc(30px - 50%);
   line-height: calc(57px - 50%);
 }
 
@@ -146,11 +183,12 @@ section h2 {
 
 // @group radio buttons
 
-input[type=radio].form-check-input {
+input[type=radio].form-check-input--box {
   display: none;
   &:checked {
     + .radio-box {
-      background-color:blue;
+      background-color: rgba(85,150,230,1);
+      border-color: rgba(85,150,230,1);
 
       span {
         color:#fff;
@@ -162,13 +200,17 @@ input[type=radio].form-check-input {
 .form-check-radio--icon{
   max-width: 294px;
   width:100%;
-  height: 60px; //108px;
+  height: 55px; //108px;
 }
 
 .form-check-radio {
   max-width: 294px;
   width:100%;
   height: 42px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .radio-box {
@@ -195,13 +237,13 @@ input[type=radio].form-check-input {
     left: 0%;
     right: 0%;
     //transition: all 300ms ease;
-    font-size: 1em;
+    font-size: 0.85em;
     user-select: none;
     //color: rgba(61,112,178,1);
     display:inline-block;
     bottom: 32px;
     line-height: 36px;
-    font-weight: 300;
+    font-weight: 600;
 
     &:before {
       position: absolute;
@@ -229,7 +271,7 @@ input[type=radio].form-check-input {
 
   span {
     right: -20%;
-    bottom: 40px;
+    bottom: 38px;
   }
 }
 
@@ -249,6 +291,16 @@ input[type=radio].form-check-input {
   background-image:url(/images/cat-inverse.png);
 }
 
+.dog-weight {
+  top:32px;
+  left: 21px;
+  position: relative;
+}
+
+#small-dog + .radio-dog-size span:before {
+  background-image:url(/images/small-dog.png);
+}
+
 // @group buttons
 
 .btn-cta {
@@ -257,19 +309,61 @@ input[type=radio].form-check-input {
   border-color: rgba(244,121,29,1);
 }
 
-.btn-primary-alt {
+.btn-primary--alt {
   height: calc(80px - 50%);
   color: rgba(255,255,255,1);
   font-family: "Open Sans";
-  font-size: calc(28px - 50%);
-  font-weight: 600;
-  line-height: calc(36px - 50%);
+  font-size: calc(24px - 50%);
+  font-weight: 200;
+  line-height: calc(38px - 50%);
   text-align: center;
   background-color: rgba(61,112,178,1);
+}
+
+.btn-outline-primary--alt {
+  height: calc(80px - 50%);
+  color: rgba(61,112,178,1);
+  font-family: "Open Sans";
+  font-size: calc(24px - 50%);
+  font-weight: 600;
+  line-height: calc(32px - 50%);
+  text-align: center;
+  border: 2px solid rgba(61,112,178,1);
+
+  &:hover {
+    color: rgba(255,255,255,1);
+    background-color: rgba(61,112,178,1);
+    border-color: rgba(61,112,178,1);
+  }
 }
 
 .form__help {
   display:block;
   color: rgba(61,112,178,1);
   font-weight:100;
+  font-size: 0.85rem;
+}
+
+.form-check-flex {
+  display:flex; 
+  justify-content:space-between;
+}
+
+.btn-block {
+  widt:97%;
+}
+
+.pill--condition{
+  background-color: rgba(61,112,178,1);
+  color: rgba(255,255,255,1);
+  border-radius: 10px;
+  padding: 5px 10px;
+  display:inline-block;
+
+  .close {
+    cursor: pointer;
+    color:#fff;
+    text-decoration:none;
+    padding-left:5px;
+  }
 }
