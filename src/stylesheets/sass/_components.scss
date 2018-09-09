@@ -5,22 +5,24 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 
+// @group Feefo rating
+
 .rating > span {
   display: inline-block;
   position: relative;
   color:gold;
-  font-size:3rem;
+  font-size:calc(3rem - 50%);
   width:auto;
   height:auto;
-  line-height:2.5rem;
+  line-height:calc(2.5rem - 50%);
 }
 
 .rating__value{
   margin-left:10px;
-  line-height:2.7rem;
+  line-height: calc(2.7rem - 50%);
   color: rgba(21,41,53,1);
   font-family: Helvetica;
-  font-size:2.25rem;
+  font-size:calc(2.25rem - 50%);
   font-weight: bold;
   display:inline;
 }
@@ -28,19 +30,8 @@
 .rating__reviews{
   color: rgba(21,41,53,1) !important;
   font-family: Helvetica;
-  font-size: 24px;
-  line-height: 29px;
-}
-
-.btn-primary-alt {
-	height: 80px;
-	color: rgba(255,255,255,1);
-	font-family: "Open Sans";
-	font-size: 28px;
-	font-weight: 600;
-	line-height: 36px;
-  text-align: center;
-  background-color: rgba(61,112,178,1);
+  font-size: calc(24px - 50%);
+  line-height: calc(29px - 50%);
 }
 
 // @group progressbar
@@ -65,9 +56,9 @@
     span {
       color: rgba(61,112,178,1);
       font-family: "Open Sans";
-      font-size: 23.66px;
-      font-weight: 600;
-      line-height: 30px;
+      font-size: calc(23.66px - 50%);
+      font-weight: 300;
+      line-height: calc(30px - 50%);
       opacity: 0.5;
       color: rgba(90,104,114,1);
     }
@@ -82,7 +73,7 @@
       text-align: center;
       margin: 0 auto;
       border-radius: 50%;
-      line-height: 25px;
+      line-height: 23px;
       color: rgba(61,112,178,1);
       background-color: #fff; // set to white to hide the line
     }
@@ -133,15 +124,27 @@
 }
 
 
-// section header
+// @group section header
 
 section h2 {
-  font-weight:normal;
+  font-weight: 300;
   color: rgba(0,59,92,1);
-  font-family: 'Open Sans';
-  font-size: 42px;
-  line-height: 57px;
+  //font-family: 'Open Sans';
+  font-size: calc(32px - 50%);
+  line-height: calc(57px - 50%);
 }
+
+// @group header colours 
+
+.bg-header{
+  background-color: rgba(28,129,182,1) !important;
+}
+
+.bg-sub-header{
+  background-color: rgba(55,148,193,1) !important;
+}
+
+// @group radio buttons
 
 input[type=radio].form-check-input {
   display: none;
@@ -156,16 +159,22 @@ input[type=radio].form-check-input {
   }
 }
 
-.form-check-radio{
+.form-check-radio--icon{
   max-width: 294px;
   width:100%;
-  height: 108px;
+  height: 60px; //108px;
+}
+
+.form-check-radio {
+  max-width: 294px;
+  width:100%;
+  height: 42px;
 }
 
 .radio-box {
   height:100%;
   width:100%;
-  border: 3.02px solid rgba(61,112,178,1);
+  border: 2px solid rgba(61,112,178,1);
   background-color: rgb(255, 255, 255);
   transition: all 250ms ease;
   will-change: transition;
@@ -174,7 +183,7 @@ input[type=radio].form-check-input {
   cursor: pointer;
   position: relative;
   font-family: "Open Sans";
-  font-weight: 500;
+  color: rgba(61,112,178,1);
   &:active{
     transform: translateY(10px);
   }
@@ -183,21 +192,23 @@ input[type=radio].form-check-input {
   span {
     position: absolute;
     transform: translate(0, 30px);
-    left: 0;
-    right: 0;
+    left: 0%;
+    right: 0%;
     //transition: all 300ms ease;
-    font-size: 1.5em;
+    font-size: 1em;
     user-select: none;
     //color: rgba(61,112,178,1);
     display:inline-block;
+    bottom: 32px;
+    line-height: 36px;
+    font-weight: 300;
 
     &:before {
       position: absolute;
-      left:0;
-      top:0;
+      left: 30px;
+      top: 3px;
       //content: url(/images/dog.png);
       content:" ";
-      background-image:url(/images/dog.png);
       background-repeat:no-repeat;
       //font-size: 1.2em;
       //font-family: FontAwesome;
@@ -205,9 +216,60 @@ input[type=radio].form-check-input {
       //transform: translateY(-80px);
       //transition: all 300ms ease-in-out;
       //font-weight: normal;
-      color: black;
-      background-size: 50% 50%;
-
+      color: rgba(61,112,178,1);
+      background-size: 60% 60%;
+      width: 60px;
+      height: 50px;
     }
   }
+}
+
+.radio-box--icon {
+  @extend .radio-box;
+
+  span {
+    right: -20%;
+    bottom: 40px;
+  }
+}
+
+#pet-type-dog + .radio-box span:before {
+  background-image:url(/images/dog.png);
+}
+
+#pet-type-dog:checked + .radio-box span:before {
+  background-image:url(/images/dog-inverse.png);
+}
+
+#pet-type-cat + .radio-box span:before {
+  background-image:url(/images/cat.png);
+}
+
+#pet-type-cat:checked + .radio-box span:before {
+  background-image:url(/images/cat-inverse.png);
+}
+
+// @group buttons
+
+.btn-cta {
+  color: rgba(255,255,255,1);
+  background-color: rgba(244,121,29,1);
+  border-color: rgba(244,121,29,1);
+}
+
+.btn-primary-alt {
+  height: calc(80px - 50%);
+  color: rgba(255,255,255,1);
+  font-family: "Open Sans";
+  font-size: calc(28px - 50%);
+  font-weight: 600;
+  line-height: calc(36px - 50%);
+  text-align: center;
+  background-color: rgba(61,112,178,1);
+}
+
+.form__help {
+  display:block;
+  color: rgba(61,112,178,1);
+  font-weight:100;
 }

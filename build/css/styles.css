@@ -25,7 +25,8 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 body {
-  background-color: #fff; }
+  background-color: #fff;
+  font-size: 16px; }
 
 /* @group objects */
 /**
@@ -45,35 +46,25 @@ body {
   display: inline-block;
   position: relative;
   color: gold;
-  font-size: 3rem;
+  font-size: calc(3rem - 50%);
   width: auto;
   height: auto;
-  line-height: 2.5rem; }
+  line-height: calc(2.5rem - 50%); }
 
 .rating__value {
   margin-left: 10px;
-  line-height: 2.7rem;
+  line-height: calc(2.7rem - 50%);
   color: #152935;
   font-family: Helvetica;
-  font-size: 2.25rem;
+  font-size: calc(2.25rem - 50%);
   font-weight: bold;
   display: inline; }
 
 .rating__reviews {
   color: #152935 !important;
   font-family: Helvetica;
-  font-size: 24px;
-  line-height: 29px; }
-
-.btn-primary-alt {
-  height: 80px;
-  color: white;
-  font-family: "Open Sans";
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 36px;
-  text-align: center;
-  background-color: #3d70b2; }
+  font-size: calc(24px - 50%);
+  line-height: calc(29px - 50%); }
 
 .progressbar {
   margin-left: 0;
@@ -94,9 +85,9 @@ body {
     .progressbar li span {
       color: #3d70b2;
       font-family: "Open Sans";
-      font-size: 23.66px;
-      font-weight: 600;
-      line-height: 30px;
+      font-size: calc(23.66px - 50%);
+      font-weight: 300;
+      line-height: calc(30px - 50%);
       opacity: 0.5;
       color: #5a6872; }
     .progressbar li:before {
@@ -108,7 +99,7 @@ body {
       text-align: center;
       margin: 0 auto;
       border-radius: 50%;
-      line-height: 25px;
+      line-height: 23px;
       color: #3d70b2;
       background-color: #fff; }
     .progressbar li:after {
@@ -139,28 +130,38 @@ body {
   border-left: 11.11px solid #5aa700 !important; }
 
 section h2 {
-  font-weight: normal;
+  font-weight: 300;
   color: #003b5c;
-  font-family: 'Open Sans';
-  font-size: 42px;
-  line-height: 57px; }
+  font-size: calc(32px - 50%);
+  line-height: calc(57px - 50%); }
+
+.bg-header {
+  background-color: #1c81b6 !important; }
+
+.bg-sub-header {
+  background-color: #3794c1 !important; }
 
 input[type=radio].form-check-input {
   display: none; }
-  input[type=radio].form-check-input:checked + .radio-box {
+  input[type=radio].form-check-input:checked + .radio-box, input[type=radio].form-check-input:checked + .radio-box--icon {
     background-color: blue; }
-    input[type=radio].form-check-input:checked + .radio-box span {
+    input[type=radio].form-check-input:checked + .radio-box span, input[type=radio].form-check-input:checked + .radio-box--icon span {
       color: #fff; }
+
+.form-check-radio--icon {
+  max-width: 294px;
+  width: 100%;
+  height: 60px; }
 
 .form-check-radio {
   max-width: 294px;
   width: 100%;
-  height: 108px; }
+  height: 42px; }
 
-.radio-box {
+.radio-box, .radio-box--icon {
   height: 100%;
   width: 100%;
-  border: 3.02px solid #3d70b2;
+  border: 2px solid #3d70b2;
   background-color: white;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
@@ -170,32 +171,72 @@ input[type=radio].form-check-input {
   cursor: pointer;
   position: relative;
   font-family: "Open Sans";
-  font-weight: 500; }
-  .radio-box:active {
+  color: #3d70b2; }
+  .radio-box:active, .radio-box--icon:active {
     -webkit-transform: translateY(10px);
             transform: translateY(10px); }
-  .radio-box span {
+  .radio-box span, .radio-box--icon span {
     position: absolute;
     -webkit-transform: translate(0, 30px);
             transform: translate(0, 30px);
-    left: 0;
-    right: 0;
-    font-size: 1.5em;
+    left: 0%;
+    right: 0%;
+    font-size: 1em;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    display: inline-block; }
-    .radio-box span:before {
+    display: inline-block;
+    bottom: 32px;
+    line-height: 36px;
+    font-weight: 300; }
+    .radio-box span:before, .radio-box--icon span:before {
       position: absolute;
-      left: 0;
-      top: 0;
+      left: 30px;
+      top: 3px;
       content: " ";
-      background-image: url(/images/dog.png);
       background-repeat: no-repeat;
       display: inline;
-      color: black;
-      background-size: 50% 50%; }
+      color: #3d70b2;
+      background-size: 60% 60%;
+      width: 60px;
+      height: 50px; }
+
+.radio-box--icon span {
+  right: -20%;
+  bottom: 40px; }
+
+#pet-type-dog + .radio-box span:before, #pet-type-dog + .radio-box--icon span:before {
+  background-image: url(/images/dog.png); }
+
+#pet-type-dog:checked + .radio-box span:before, #pet-type-dog:checked + .radio-box--icon span:before {
+  background-image: url(/images/dog-inverse.png); }
+
+#pet-type-cat + .radio-box span:before, #pet-type-cat + .radio-box--icon span:before {
+  background-image: url(/images/cat.png); }
+
+#pet-type-cat:checked + .radio-box span:before, #pet-type-cat:checked + .radio-box--icon span:before {
+  background-image: url(/images/cat-inverse.png); }
+
+.btn-cta {
+  color: white;
+  background-color: #f4791d;
+  border-color: #f4791d; }
+
+.btn-primary-alt {
+  height: calc(80px - 50%);
+  color: white;
+  font-family: "Open Sans";
+  font-size: calc(28px - 50%);
+  font-weight: 600;
+  line-height: calc(36px - 50%);
+  text-align: center;
+  background-color: #3d70b2; }
+
+.form__help {
+  display: block;
+  color: #3d70b2;
+  font-weight: 100; }
 
 /* @group overrides */
 /**
@@ -207,50 +248,54 @@ input[type=radio].form-check-input {
 .navbar-bright .navbar-nav .nav-link {
   color: white; }
 
-.btn-cta {
-  color: white;
-  background-color: #f4791d;
-  border-color: #f4791d; }
-
 input[type=text].form-control {
-  height: 80px;
+  height: calc(80px - 50%);
   background-color: rgba(61, 112, 178, 0.1);
   color: #5a6872;
   font-family: "Open Sans";
   font-size: 28px;
-  line-height: 36px; }
+  line-height: calc(36px - 50%);
+  border: 0; }
 
 input[type=date].form-control {
-  height: 80px;
+  height: 50px;
   background-color: rgba(61, 112, 178, 0.1);
   color: #5a6872;
   font-family: "Open Sans";
-  font-size: 28px;
-  line-height: 36px;
-  width: auto;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-  border-left: 0; }
+  font-weight: 300;
+  border: 0;
+  height: 50px; }
+
+.form-control--short {
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 1 40% !important;
+          flex: 0 1 40% !important; }
 
 .input-group-prepend--date {
-  margin-right: 0; }
+  margin-right: 0;
+  border: 0; }
   .input-group-prepend--date .input-group-text {
     background-color: rgba(61, 112, 178, 0.1);
-    border-right: 0; }
+    border: 0;
+    height: 50px; }
+
+.input-group-prepend--currency {
+  margin-right: 0;
+  border: 0; }
+  .input-group-prepend--currency .input-group-text {
+    background-color: rgba(61, 112, 178, 0.1);
+    border: 0;
+    height: 44px; }
 
 label.form-control-label {
-  height: 36px;
+  height: calc(36px - 50%);
   color: #152935;
   font-family: "Open Sans";
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 36px; }
+  font-size: 18px;
+  font-weight: 300;
+  line-height: calc(36px - 50%); }
 
-.bg-header {
-  background-color: #1c81b6 !important; }
-
-.bg-sub-header {
-  background-color: #3794c1 !important; }
+.img__calendar {
+  height: 20px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

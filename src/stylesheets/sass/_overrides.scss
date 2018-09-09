@@ -9,56 +9,67 @@
   color: rgba(255,255,255,1);
 }
 
-.btn-cta {
-  color: rgba(255,255,255,1);
-  background-color: rgba(244,121,29,1);
-  border-color: rgba(244,121,29,1);
-}
 
 input[type=text].form-control {
-  height: 80px;
+  height: calc(80px - 50%);
   background-color: rgba(61,112,178,0.1);
   color: rgba(90,104,114,1);
 	font-family: "Open Sans";
 	font-size: 28px;
-	line-height: 36px;
+	line-height: calc(36px - 50%);
+  border:0;
 }
 
 input[type=date].form-control {
-  height: 80px;
+  height: 50px;
   background-color: rgba(61,112,178,0.1);
   color: rgba(90,104,114,1);
 	font-family: "Open Sans";
-	font-size: 28px;
-  line-height: 36px;
-  width: auto;
-  flex: 0 1 auto;
-  border-left:0;
+	//font-size: 20px;
+  font-weight: 300;
+  border:0;
+  //width: auto;
+ // flex: 0 1 auto;
+  //max-width: 250px;
 
+  height: 50px;
+}
+
+.form-control--short {
+  flex: 0 1 40% !important;
 }
 
 .input-group-prepend--date{
   margin-right: 0;
+  border: 0;
 
   .input-group-text {
     background-color: rgba(61, 112, 178, 0.1);
-    border-right: 0;
+    border: 0;
+    height:50px;
+  }
+}
+
+.input-group-prepend--currency {
+  margin-right: 0;
+  border: 0;
+
+  .input-group-text {
+    background-color: rgba(61, 112, 178, 0.1);
+    border: 0;
+    height:44px;
   }
 }
 
 label.form-control-label {
-	height: 36px;
+	height: calc(36px - 50%);
 	color: rgba(21,41,53,1);
 	font-family: "Open Sans";
-	font-size: 28px;
-	font-weight: 600;
-	line-height: 36px;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: calc(36px - 50%);
 }
 
-.bg-header{
-  background-color: rgba(28,129,182,1) !important;
-}
-
-.bg-sub-header{
-  background-color: rgba(55,148,193,1) !important;
+.img__calendar{
+  height:20px;
 }

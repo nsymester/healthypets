@@ -64,9 +64,9 @@
       <li><span>Your quote</span></li>
     </ul>
 
-    <h2 class="mt-3">Enter your pet's details</h2>
+    <h2 class="mt-0 mb-0">Enter your pet's details</h2>
     <form action="">
-      <fieldset class="form-group mt-3">
+      <fieldset class="form-group mt-0">
         <legend></legend>
 
         <div class="form-group">
@@ -75,30 +75,72 @@
         </div><!-- form-group -->
 
         <div class="form-group">
-          <label class="form-control-label" for="dob">What's your pet's birthday?</label>
-          <small style="display:block">If you don't know the exact daye of birth, enter the vet's estimate</small>
+          <label class="form-control-label mt-2 mb-0" for="dob">What's your pet's birthday?</label>
+          <small class="form__help">If you don't know the exact date of birth, enter the vet's estimate</small>
           <div class="input-group mb-2">
-            <div class="input-group-prepend input-group-prepend--date mt-3">
-              <div class="input-group-text"><img src="/images/calendar.svg" alt=""></div>
+            <div class="input-group-prepend input-group-prepend--date mt-2">
+              <div class="input-group-text"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-3" type="date" id="dob" placeholder="dd/mm/yyyy">
+            <input class="form-control rounded-0 mt-2 form-control--short" type="date" id="dob" placeholder="dd/mm/yyyy" size="25">
           </div>
         </div><!-- form-group -->
 
         <div class="form-group">
-          <label class="form-control-label" for="">Is your pet a dog or a cat?</label>
+          <label class="form-control-label mt-1" for="">Is your pet a dog or a cat?</label>
+          <div style="display:flex; justify-content:space-between;">
+            <div class="form-check form-check-inline form-check-radio--icon">
+              <input class="form-check-input" type="radio" name="pet-type" id="pet-type-dog" value="Dog">
+              <label class="form-check-label radio-box--icon" for="pet-type-dog"><span>Dog</span></label>
+            </div><!-- form-check -->
+
+            <div class="form-check form-check-inline form-check-radio--icon">
+              <input type="radio" class="form-check-input" name="pet-type" id="pet-type-cat" value="Cat">
+              <label class="form-check-label radio-box--icon" for="pet-type-cat"><span>Cat</span></label>
+            </div><!-- form-check -->
+          </div>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label mt-1" for="">What's your pets sex?</label>
           <div style="display:flex; justify-content:space-between;">
             <div class="form-check form-check-inline form-check-radio">
-              <input class="form-check-input" type="radio" name="pet-type" id="pet-type-dog" value="Dog">
-              <label class="form-check-label radio-box" for="pet-type-dog"><span>Dog</span></label>
+              <input class="form-check-input" type="radio" name="gender" id="gender-male" value="Male">
+              <label class="form-check-label radio-box" for="gender-male"><span>Male</span></label>
             </div><!-- form-check -->
 
             <div class="form-check form-check-inline form-check-radio">
-              <input type="radio" class="form-check-input" name="pet-type" id="pet-type-cat" value="Cat">
-              <label class="form-check-label radio-box" for="pet-type-cat"><span>Cat</span></label>
+              <input type="radio" class="form-check-input" name="gender" id="gender-female" value="Female">
+              <label class="form-check-label radio-box" for="gender-female"><span>Female</span></label>
             </div><!-- form-check -->
           </div>
-        </div>
+        </div><!-- form-group -->    
+
+        <div class="form-group">
+          <label class="form-control-label mt-2" for="">Is your pet neutered?</label>
+          <small class="form__help mb-1">Once insured, if this changes just let us know.</small>
+          <div style="display:flex; justify-content:space-between;">
+            <div class="form-check form-check-inline form-check-radio">
+              <input class="form-check-input" type="radio" name="neutered" id="gender-male" value="neutered">
+              <label class="form-check-label radio-box" for="neutered-no"><span>Neutered</span></label>
+            </div><!-- form-check -->
+
+            <div class="form-check form-check-inline form-check-radio">
+              <input type="radio" class="form-check-input" name="neutered" id="gender-female" value="not-neutered">
+              <label class="form-check-label radio-box" for="neutered-no"><span>Not neutered</span></label>
+            </div><!-- form-check -->
+          </div>
+        </div><!-- form-group --> 
+
+        <div class="form-group">
+          <label class="form-control-label mt-2" for="donation">How much did you pay or donate for your Pet?</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend input-group-prepend--currency">
+              <span class="input-group-text">£</span>
+            </div>
+            <input class="form-control rounded-0 form-control--short" type="text" id="donation">
+          </div><!-- input-group -->
+        </div><!-- form-group --> 
+
       </fieldset><!-- fieldset -->
 
       <button class="btn btn-primary btn-primary-alt btn-block rounded-0" type="submit">Find quote</button>
@@ -110,7 +152,7 @@
     <h3 class="d-none">Customer Service</h3>
 
     <section class="card card--deal mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
-        <h3>20% off for all new customers</h3>
+        <h5 class="mb-0">20% off for all new customers</h5>
         <p>Get the best deal online</p>
         <p>This will automatcally get added</p>
     </section>
@@ -127,7 +169,7 @@
       <p>Independent service rating based on 1311 verified reviews</p>
       <hr class="mt-0 bg-dark">
       <div class="clearfix">
-        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:150px">
+        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
         <a href="" class="rating__reviews float-right">Read all reviews</a>
       </div>
     </section>
