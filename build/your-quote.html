@@ -38,7 +38,7 @@
 
     <!-- Telephone number -->
     <div class="navbar-nav">
-      <a class="nav-item nav-link" style="font-size: 1.5rem;" href="tel:01730268592">01730 268592</a>
+      <a class="nav-item nav-link" style="font-size: 1.5rem; padding-right:0;" href="tel:01730268592">01730 268592</a>
     </div>
   </div><!-- container -->
 </nav>
@@ -51,7 +51,7 @@
     </div><!-- navbar-nav -->
 
     <div class="navbar-nav">
-      <button href="#" class="btn btn-lg btn-cta rounded-0" role="button" style="right:-16px;position: relative; text-transform: uppercase;font-size:1rem;height: 62px;">Get a quote</button>
+      <a href="/pet-details.html" class="btn btn-lg btn-cta rounded-0" role="button">Get a quote</a>
     </div><!-- navbar-nav -->
   </div><!-- container -->
 </nav> 
@@ -72,61 +72,127 @@
       <fieldset class="form-group mt-0 mb-0">
         <legend></legend>
 
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between mb-3">
             <div class="card card--cover card--cover-lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-              <h6 class="cover__header">Lifetime Cover</h6>
-              <p class="cover__price">from £29.11 / month</p>
+              <a id="lifecover-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between" data-toggle="collapse" aria-expand="false" aria-controls="lifecover">
+                <h6 class="card__cover-header">Lifetime Cover</h6>
+                <p class="cover__price">from £29.11 / month</p>
+              </a>
             </div><!-- card-->
 
             <div class="card card--cover card--cover-maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-              <h6 class="cover__header">Lifetime Cover</h6>
-              <p class="cover__price">from £29.11 / month</p>
+              <a id="maximum-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="maximumcover"">
+                <h6 class="card__cover-header">Maximun Benefit Cover</h6>
+                <p class="cover__price">from £29.11 / month</p>
+              </a>
             </div><!-- card-->
 
             <div class="card card--cover card--cover-accident rounded-0 shadow mb-3 pt-2 bg-white">
-              <h6 class="cover__header">Lifetime Cover</h6>
-              <p class="cover__price">from £29.11 / month</p>
+              <a id="accident-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="accidentcover"">
+                <h6 class="card__cover-header">Accident Only Cover</h6>
+                <p class="cover__price">from £29.11 / month</p>
+              </a>
             </div><!-- card-->
           </div><!-- d-flex -->
 
+          <div class="collapse mt-4 mb-4" id="lifecover">
+            <div class="cover--lifetime pt-2">
+              <small class="cover__help">Our most comprehensive cover</small>
+              <h2 class="h1 cover__header mt-1">Lifetime Cover</h2>
+              <small class="cover__help--alt">from <span>£29.11/month</span></small>
+
+              <p class="mt-3">All new  conditions will be covered upto a limit. When the limit is reached, the policy no longer covers you until it is renewed. </p>
+              <p>When the policy is renewed, the limit is reinstated and you can claim for the same condition plus any additional new conditions. </p>
+              <p class="font-weight-bold">Best for pets likely to develop ongoing conditions like diabetes or arthiritus.</p>
+
+              <div class="d-flex justify-content-between" style="">
+                <ul class="benefits__included">
+                  <li>Accidents</li>
+                  <li>Illness</li>
+                  <li>Cover for ongoing conditions for the pet’s lifetime</li>
+                </ul>
+
+                <ul class="benefits__excluded">
+                  <li>Pre-existing conditions</li>
+                </ul>
+              </div>
+
+              <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+                <div class="input-group mb-2 flex-nowrap justify-content-between">
+                  <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£2000</span> or <span class="cover__price-range">£4250</span></p>
+                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Choose level</button>
+                </div>
+              </div>
+            </div><!-- cover--life -->
+          </div><!-- collapse -->
+
+          <div class="collapse mt-4 mb-4" id="maximumcover">
+            <div class="cover--maximum pt-3">
+              <small class="cover__help">Our most comprehensive cover</small>
+              <h2 class="h1 cover__header mt-1">Maximum Benefit</h2>
+              <small class="cover__help--alt">from <span>£29.11/month</span></small>
+
+              <p class="mt-3">Every new condition will be covered upto a limit. When the limit is reached, it will be considered a ‘pre-existing’ condition and you will no longer be covered for it. </p>
+              <p>When the policy renews, you won’t be covered for any pre-existing conditions.</p>
+              <p class="font-weight-bold">Best for covering accidents and illnesses that require one-off or short term treatment.</p>
+
+              <div class="d-flex justify-content-between" style="">
+                <ul class="benefits__included">
+                  <li>Accidents</li>
+                  <li>Illness</li>
+                  <li>Cover for ongoing conditions up to a financial limit</li>
+                </ul>
+
+                <ul class="benefits__excluded">
+                  <li>Pre-existing conditions</li>
+                </ul>
+              </div>
+
+              <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+                <div class="input-group mb-2 flex-nowrap justify-content-between">
+                  <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£2000</span>, <span class="cover__price-range">£4250</span> or  <span class="cover__price-range">£7500</span></p>
+                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Choose level</button>
+                </div>
+              </div>
+            </div>
+          </div><!-- collapse -->
+
+          <div class="collapse mt-4 mb-4" id="accidentcover">
+            <div class="cover--accident pt-3">
+              <small class="cover__help">Our most comprehensive cover</small>
+              <h2 class="h1 cover__header mt-1">Accident Only</h2>
+              <small class="cover__help--alt">from <span>£29.11/month</span></small>
+
+              <p class="mt-3">Cover for vet fees, only as a result of a sudden or unexpected injury. </p>
+              <p>Claim for upto 12 months from the start of the first treamtment</p>
+              <p>Claim for an unlimited number of injuries and be covered up to the maximum amount for every injury.</p>
+              <p class="font-weight-bold">Best for older pets that are not eligable for more comprehensive cover.</p>
+
+              <div class="d-flex justify-content-between" style="">
+                <ul class="benefits__included">
+                  <li>Accidents</li>
+                  <li>Cover for ongoing conditions for 12 months</li>
+                </ul>
+
+                <ul class="benefits__excluded">
+                  <li>Illness</li>
+                  <li>Pre-existing conditions</li>
+                </ul>
+              </div>
+
+              <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+                <div class="input-group mb-2 flex-nowrap justify-content-between">
+                  <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£1000</span></p>
+                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Choose level</button>
+                </div>
+              </div>
+            </div>
+          </div><!-- collapse -->
+
       </fieldset><!-- fieldset -->
-
-      <button class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" type="submit">+ Add another pet</button>
-
-      <button class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" type="submit">Cancel pet</button>
-
-      <a class="btn btn-outline-primary btn-primary--alt btn-block rounded-0 mt-4" href="/pet-details-complete.html" style="text-decoration:none;">Next</a>
 
     </form>
   </section>
-
-  
-    <section class="mt-5">
-    <h3 class="d-none">Customer Service</h3>
-
-    <section class="card card--deal mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
-        <h5 class="mb-0">20% off for all new customers</h5>
-        <p>Get the best deal online</p>
-        <p>This will automatcally get added</p>
-    </section>
-
-    <section class="card mb-5 border-0">
-      <div class="rating">
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <p class="rating__value">4.7/5</p>
-      </div>
-      <p>Independent service rating based on 1311 verified reviews</p>
-      <hr class="mt-0 bg-dark">
-      <div class="clearfix">
-        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
-        <a href="" class="rating__reviews float-right">Read all reviews</a>
-      </div>
-    </section>
-  </section> 
 
 </div><!-- container -->
 
@@ -142,20 +208,20 @@
 
 
 $('#pet-type-dog').click(function(){
-	$('#catInfo').collapse('hide'); 
-	$('#dogInfo').collapse('show');  
+	$('#catInfo').collapse('hide');
+	$('#dogInfo').collapse('show');
 });
 
 $('#pet-type-cat').click(function(){
-	$('#dogInfo').collapse('hide');  
-	$('#catInfo').collapse('show'); 
+	$('#dogInfo').collapse('hide');
+	$('#catInfo').collapse('show');
 });
 
 $('#pre-existing-condition-yes').click(function(){
-  $('#pet-condition').collapse('show');  
+  $('#pet-condition').collapse('show');
 });
 $('#pre-existing-condition-no').click(function(){
-  $('#pet-condition').collapse('hide');  
+  $('#pet-condition').collapse('hide');
 });
 
 // conditions
@@ -178,15 +244,42 @@ function checkForConditions() {
 
 $('#postcode-search').click(function(evt){
   evt.preventDefault();
-  $('#postcode-result').collapse('toggle');  
+  $('#postcode-result').collapse('toggle');
+  $('#manualaddress').collapse('show');
+  $('#address').collapse('hide');
 });
 
 $('.postcodes a').on('click', function(evt){
   evt.preventDefault();
   $('#address').collapse('show');
-  $('#postcode-result').collapse('hide'); 
-  $('#manualaddress').collapse('hide'); 
+  $('#postcode-result').collapse('hide');
+  $('#manualaddress').collapse('hide');
 })
+
+$('.enter-address').on('click', function(evt){
+  evt.preventDefault();
+  $('#address').collapse('show');
+  $('#postcode-result').collapse('hide');
+  $('#manualaddress').collapse('hide');
+})
+
+$('#lifecover-link').click(function(){
+  $('#lifecover').collapse('show');
+  $('#maximumcover').collapse('hide');
+  $('#accidentcover').collapse('hide');
+});
+
+$('#maximum-link').click(function(){
+  $('#lifecover').collapse('hide');
+  $('#maximumcover').collapse('show');
+  $('#accidentcover').collapse('hide');
+});
+
+$('#accident-link').click(function(){
+  $('#lifecover').collapse('hide');
+  $('#maximumcover').collapse('hide');
+  $('#accidentcover').collapse('show');
+});
 
 </script> 
 

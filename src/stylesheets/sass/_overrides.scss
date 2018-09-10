@@ -91,10 +91,16 @@ label.form-control-label {
 }
 
 .form-check-input--alt {
-  bottom: -10px; 
+  bottom: -10px;
   left: 20px;
 }
 
 .form-check--alt {
   padding-left: 0;
+}
+
+.form-group--alt {
+  margin-right:-15px;
+  margin-left:-15px;
+  padding-bottom:0!important;
 }

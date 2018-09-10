@@ -38,7 +38,7 @@
 
     <!-- Telephone number -->
     <div class="navbar-nav">
-      <a class="nav-item nav-link" style="font-size: 1.5rem;" href="tel:01730268592">01730 268592</a>
+      <a class="nav-item nav-link" style="font-size: 1.5rem; padding-right:0;" href="tel:01730268592">01730 268592</a>
     </div>
   </div><!-- container -->
 </nav>
@@ -51,7 +51,7 @@
     </div><!-- navbar-nav -->
 
     <div class="navbar-nav">
-      <button href="#" class="btn btn-lg btn-cta rounded-0" role="button" style="right:-16px;position: relative; text-transform: uppercase;font-size:1rem;height: 62px;">Get a quote</button>
+      <a href="/pet-details.html" class="btn btn-lg btn-cta rounded-0" role="button">Get a quote</a>
     </div><!-- navbar-nav -->
   </div><!-- container -->
 </nav> 
@@ -74,7 +74,7 @@
                 <div class="form-group">
           <label class="form-control-label" for="pets-name">What's your pet's name?</label>
           <input class="form-control rounded-0" type="text" id="pets-name">
-        </div><!-- form-group -->  
+        </div><!-- form-group --> 
 
         
                 <div class="form-group">
@@ -86,7 +86,7 @@
             </div>
             <input class="form-control rounded-0 mt-2 form-control--short" type="date" id="dob" placeholder="dd/mm/yyyy" size="25">
           </div>
-        </div><!-- form-group -->  
+        </div><!-- form-group --> 
 
         
                 <div class="form-group">
@@ -236,7 +236,7 @@
               <label class="form-check-label radio-box" for="gender-female"><span>Female</span></label>
             </div><!-- form-check -->
           </div>
-        </div><!-- form-group -->       
+        </div><!-- form-group -->     
 
         
                 <div class="form-group">
@@ -253,7 +253,7 @@
               <label class="form-check-label radio-box" for="neutered-yes"><span>Not neutered</span></label>
             </div><!-- form-check -->
           </div>
-        </div><!-- form-group -->   
+        </div><!-- form-group -->  
 
         
                 <div class="form-group">
@@ -264,7 +264,7 @@
             </div>
             <input class="form-control rounded-0 form-control--short" type="number" id="donation">
           </div><!-- input-group -->
-        </div><!-- form-group -->   
+        </div><!-- form-group -->  
 
         
                 <div class="form-group">
@@ -348,20 +348,20 @@
 
 
 $('#pet-type-dog').click(function(){
-	$('#catInfo').collapse('hide'); 
-	$('#dogInfo').collapse('show');  
+	$('#catInfo').collapse('hide');
+	$('#dogInfo').collapse('show');
 });
 
 $('#pet-type-cat').click(function(){
-	$('#dogInfo').collapse('hide');  
-	$('#catInfo').collapse('show'); 
+	$('#dogInfo').collapse('hide');
+	$('#catInfo').collapse('show');
 });
 
 $('#pre-existing-condition-yes').click(function(){
-  $('#pet-condition').collapse('show');  
+  $('#pet-condition').collapse('show');
 });
 $('#pre-existing-condition-no').click(function(){
-  $('#pet-condition').collapse('hide');  
+  $('#pet-condition').collapse('hide');
 });
 
 // conditions
@@ -384,15 +384,42 @@ function checkForConditions() {
 
 $('#postcode-search').click(function(evt){
   evt.preventDefault();
-  $('#postcode-result').collapse('toggle');  
+  $('#postcode-result').collapse('toggle');
+  $('#manualaddress').collapse('show');
+  $('#address').collapse('hide');
 });
 
 $('.postcodes a').on('click', function(evt){
   evt.preventDefault();
   $('#address').collapse('show');
-  $('#postcode-result').collapse('hide'); 
-  $('#manualaddress').collapse('hide'); 
+  $('#postcode-result').collapse('hide');
+  $('#manualaddress').collapse('hide');
 })
+
+$('.enter-address').on('click', function(evt){
+  evt.preventDefault();
+  $('#address').collapse('show');
+  $('#postcode-result').collapse('hide');
+  $('#manualaddress').collapse('hide');
+})
+
+$('#lifecover-link').click(function(){
+  $('#lifecover').collapse('show');
+  $('#maximumcover').collapse('hide');
+  $('#accidentcover').collapse('hide');
+});
+
+$('#maximum-link').click(function(){
+  $('#lifecover').collapse('hide');
+  $('#maximumcover').collapse('show');
+  $('#accidentcover').collapse('hide');
+});
+
+$('#accident-link').click(function(){
+  $('#lifecover').collapse('hide');
+  $('#maximumcover').collapse('hide');
+  $('#accidentcover').collapse('show');
+});
 
 </script> 
 

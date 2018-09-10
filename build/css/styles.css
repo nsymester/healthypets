@@ -100,7 +100,7 @@ body {
       text-align: center;
       margin: 0 auto;
       border-radius: 50%;
-      line-height: 23px;
+      line-height: 24px;
       color: #3d70b2;
       background-color: #fff; }
     .progressbar li:after {
@@ -114,18 +114,28 @@ body {
       z-index: -1; }
     .progressbar li:first-child:after {
       content: none; }
-    .progressbar li.active span {
+    .progressbar li.active span, .progressbar li.complete span {
       color: #3d70b2;
       opacity: 1; }
+    .progressbar li.active:before, .progressbar li.complete:before {
+      border: 2px solid #3d70b2; }
     .progressbar li.active:before {
-      content: '\02b24';
-      border: 2px solid #3d70b2; }
-    .progressbar li.complete span {
-      color: #3d70b2;
-      opacity: 1; }
-    .progressbar li.complete:before {
-      content: '\02713';
-      border: 2px solid #3d70b2; }
+      content: '\02b24'; }
+    .progressbar li.complete {
+      position: relative; }
+      .progressbar li.complete:after {
+        content: '';
+        background-color: white;
+        position: absolute;
+        left: 47%;
+        top: 10px;
+        width: 5px;
+        height: 10px;
+        border: solid #3d70b2;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        z-index: 2; }
 
 .card--deal {
   border-left: 5.15px solid #5aa700 !important; }
@@ -273,7 +283,14 @@ input[type=radio].form-check-input--box {
 .btn-cta {
   color: white;
   background-color: #f4791d;
-  border-color: #f4791d; }
+  border-color: #f4791d;
+  right: -16px;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1rem;
+  height: 62px;
+  line-height: 3rem;
+  text-decoration: none; }
 
 .btn-primary--alt {
   height: calc(80px - 50%);
@@ -314,7 +331,7 @@ input[type=radio].form-check-input--box {
           justify-content: space-between; }
 
 .btn-block {
-  widt: 100%; }
+  width: 100%; }
 
 .pill--condition {
   background-color: #3d70b2;
@@ -326,7 +343,10 @@ input[type=radio].form-check-input--box {
     cursor: pointer;
     color: #fff;
     text-decoration: none;
-    padding-left: 5px; }
+    padding-left: 5px;
+    opacity: 1;
+    font-size: 1rem;
+    padding-top: 3px; }
 
 .postcodes a {
   display: block;
@@ -337,24 +357,90 @@ input[type=radio].form-check-input--box {
 .card--cover {
   width: 100%; }
 
-.card--cover-lifetime {
+.card--cover-lifetime, .cover--lifetime {
   border-top: 4px solid #f5a623; }
 
-.card--cover-maximum {
+.card--cover-maximum, .cover--maximum {
   border-top: 4px solid #7ed321; }
 
-.card--cover-accident {
+.card--cover-accident, .cover--accident {
   border-top: 4px solid #d0021b; }
 
 .cover__price {
   font-size: 0.6rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
+  .cover__price:after {
+    content: '\276f';
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: relative;
+    left: 5px;
+    display: inline-block;
+    top: -1px;
+    font-weight: bold; }
 
-.cover__header {
+.card__cover-header {
   font-size: 0.7rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
+
+.cover__header {
+  line-height: 1rem;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #5a6872; }
+
+.cover__help, .cover__help--alt {
+  color: #152935;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 36px; }
+  .cover__help span, .cover__help--alt span {
+    font-weight: 600; }
+
+.cover__help--alt {
+  color: #5a6872; }
+
+.cover__price-range {
+  font-weight: 600; }
+
+.benefits__included {
+  list-style-type: none;
+  padding-left: 1.25rem;
+  width: 49%; }
+  .benefits__included li {
+    position: relative; }
+    .benefits__included li:before {
+      content: '';
+      background-color: white;
+      position: absolute;
+      left: -17px;
+      top: 7px;
+      width: 5px;
+      height: 10px;
+      border: solid #3d70b2;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg); }
+
+.benefits__excluded {
+  list-style-type: none; }
+  .benefits__excluded li {
+    position: relative; }
+    .benefits__excluded li:before {
+      content: '\2716';
+      color: #3d70b2;
+      background-color: white;
+      position: absolute;
+      left: -20px;
+      top: 0; }
+
+.cover__cost-range {
+  width: 49%; }
+
+.bg-light-grayish-blue {
+  background-color: #f0f3f6; }
 
 /* @group overrides */
 /**
@@ -440,5 +526,10 @@ label.form-control-label {
 
 .form-check--alt {
   padding-left: 0; }
+
+.form-group--alt {
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-bottom: 0 !important; }
 
 /*# sourceMappingURL=maps/styles.css.map */

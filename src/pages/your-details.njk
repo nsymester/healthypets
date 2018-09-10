@@ -16,9 +16,9 @@
   <section class="mt-4 mb-3">
 
     <ul class="progressbar clearfix">
-      <li ><span>Pet details</span><span class="checkmark"></span></li>
+      <li class="complete"><span>Pet details</span></li>
       <li class="active"><span>Your details<span></li>
-      <li><span>Your quote</span><span class="checkmark"></span></li>
+      <li><span>Your quote</span></li>
     </ul>
 
     <h2 class="mt-0 mb-0">Enter your details</h2>
@@ -67,7 +67,7 @@
 
           <div class="collapse mt-4 mb-4" id="postcode-result">
             <label class="form-control-label" for="">Select your address</label>
-  
+
             <hr style="border: 1px solid rgba(61,112,178,1)">
 
             <div class="postcodes">
@@ -104,12 +104,12 @@
 
           </div><!-- collapse -->
 
-        </div><!-- form-group --> 
-        
+        </div><!-- form-group -->
+
         <div class="collapse show mt-4 mb-4" id="manualaddress">
           <div class="form-group">
-            <a href="">Enter address manually</a>
-          </div><!-- form-group --> 
+            <a href="" class="enter-address" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
+          </div><!-- form-group -->
         </div><!-- collapse -->
 
         <div class="form-group">
@@ -124,7 +124,7 @@
 
       </fieldset><!-- fieldset -->
 
-      <button class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" type="submit">Calculate quote</button>
+      <a href="/your-quote.html" style="text-decoration:none;" class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" type="submit">Calculate quote</a>
     </form>
   </section>
 
