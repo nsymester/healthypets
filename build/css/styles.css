@@ -312,7 +312,7 @@ input[type=radio].form-check-input--box {
           justify-content: space-between; }
 
 .btn-block {
-  widt: 97%; }
+  widt: 100%; }
 
 .pill--condition {
   background-color: #3d70b2;
@@ -325,6 +325,12 @@ input[type=radio].form-check-input--box {
     color: #fff;
     text-decoration: none;
     padding-left: 5px; }
+
+.postcodes a {
+  display: block;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dfe3e6;
+  cursor: pointer; }
 
 /* @group overrides */
 /**
@@ -371,6 +377,11 @@ select.form-control {
   -webkit-box-flex: 0 !important;
       -ms-flex: 0 1 40% !important;
           flex: 0 1 40% !important; }
+
+.form-control--alt {
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 1 45% !important;
+          flex: 0 1 45% !important; }
 
 .input-group-prepend--date {
   margin-right: 0;

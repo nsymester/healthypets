@@ -83,7 +83,7 @@
 
     <form action="">
 
-      <button class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-5" type="submit">Next</button>
+      <a class="btn btn-outline-primary btn-primary--alt btn-block rounded-0 mt-4" href="/your-details.html" style="text-decoration:none;">Next</a>
 
       <button class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" type="submit">+ Add another pet</button>
 
@@ -165,6 +165,18 @@ function checkForConditions() {
     evt.currentTarget.parentNode.remove();
   })
 }
+
+$('#postcode-search').click(function(evt){
+  evt.preventDefault();
+  $('#postcode-result').collapse('toggle');  
+});
+
+$('.postcodes a').on('click', function(evt){
+  evt.preventDefault();
+  $('#address').collapse('show');
+  $('#postcode-result').collapse('hide'); 
+  $('#manualaddress').collapse('hide'); 
+})
 
 </script> 
 

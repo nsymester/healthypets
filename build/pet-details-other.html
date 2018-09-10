@@ -393,6 +393,18 @@ function checkForConditions() {
   })
 }
 
+$('#postcode-search').click(function(evt){
+  evt.preventDefault();
+  $('#postcode-result').collapse('toggle');  
+});
+
+$('.postcodes a').on('click', function(evt){
+  evt.preventDefault();
+  $('#address').collapse('show');
+  $('#postcode-result').collapse('hide'); 
+  $('#manualaddress').collapse('hide'); 
+})
+
 </script> 
 
 

@@ -350,7 +350,7 @@ input[type=radio].form-check-input--box {
 }
 
 .btn-block {
-  widt:97%;
+  widt:100%;
 }
 
 .pill--condition{
@@ -366,4 +366,11 @@ input[type=radio].form-check-input--box {
     text-decoration:none;
     padding-left:5px;
   }
+}
+
+.postcodes a {
+  display:block;
+  padding-bottom:5px;
+  border-bottom: 1px solid rgba(223,227,230,1);
+  cursor: pointer;
 }
