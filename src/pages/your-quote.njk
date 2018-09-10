@@ -16,44 +16,34 @@
   <section class="mt-4 mb-3">
 
     <ul class="progressbar clearfix">
-      <li class="active"><span>Pet details</span></li>
-      <li class=""><span>Your details<span></li>
-      <li><span>Your quote</span></li>
+      <li class="complete"><span>Pet details</span></li>
+      <li class="complete"><span>Your details<span></li>
+      <li class="active"><span>Your quote</span></li>
     </ul>
 
-    <section class="card card--pet-details mb-3 rounded-0 shadow bg-white">
-      <h5>Bobby, German Shepherd, 3 yrs</h5>
-      <div class="card-action">
-        <a href="">Edit Bobby's Info</a>
-        <a href="">Delete</a>
-      </div>
-    </section>
 
-    <h2 class="mt-0 mb-0">Enter your pet's details</h2>
+    <h2 class="mt-0 mb-0">Your quote for Bobby</h2>
+    <small class="form__help mb-1">Select from Lifetime, Maximum Benefit and Accident only cover</small>
     <form action="">
       <fieldset class="form-group mt-0 mb-0">
         <legend></legend>
 
-        {% block name %}
-        {% include './partials/name.njk' %} {% endblock %} 
+          <div class="d-flex justify-content-between">
+            <div class="card card--cover card--cover-lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+              <h6 class="cover__header">Lifetime Cover</h6>
+              <p class="cover__price">from £29.11 / month</p>
+            </div><!-- card-->
 
-        {% block dob %}
-        {% include './partials/dob.njk' %} {% endblock %} 
+            <div class="card card--cover card--cover-maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+              <h6 class="cover__header">Lifetime Cover</h6>
+              <p class="cover__price">from £29.11 / month</p>
+            </div><!-- card-->
 
-        {% block pettype %}
-        {% include './partials/pet-type.njk' %} {% endblock %}
-
-        {% block sex %}
-        {% include './partials/sex.njk' %} {% endblock %}   
-
-        {% block neutered %}
-        {% include './partials/neutered.njk' %} {% endblock %} 
-
-        {% block donation %}
-        {% include './partials/donation.njk' %} {% endblock %} 
-
-        {% block preexisitngcondition %}
-        {% include './partials/pre-existing-condition.njk' %} {% endblock %}
+            <div class="card card--cover card--cover-accident rounded-0 shadow mb-3 pt-2 bg-white">
+              <h6 class="cover__header">Lifetime Cover</h6>
+              <p class="cover__price">from £29.11 / month</p>
+            </div><!-- card-->
+          </div><!-- d-flex -->
 
       </fieldset><!-- fieldset -->
 

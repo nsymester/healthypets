@@ -60,32 +60,42 @@
   <section class="mt-4 mb-3">
 
     <ul class="progressbar clearfix">
-      <li class="active"><span>Pet details</span></li>
-      <li class=""><span>Your details<span></li>
-      <li><span>Your quote</span></li>
+      <li class="complete"><span>Pet details</span></li>
+      <li class="complete"><span>Your details<span></li>
+      <li class="active"><span>Your quote</span></li>
     </ul>
 
-    <section class="card card--pet-details mb-3 rounded-0 shadow bg-white">
-      <h5>Bobby, German Shepherd, 3 yrs</h5>
-      <div class="card-action">
-        <a href="">Edit Bobby's Info</a>
-        <a href="">Delete</a>
-      </div>
-    </section>
 
-    <section class="card card--pet-details mb-3 rounded-0 shadow bg-white">
-      <h5>Poppy, Russian Blue, 6 yrs</h5>
-      <div class="card-action">
-        <a href="">Edit Poppy's Info</a>
-        <a href="">Delete</a>
-      </div>
-    </section>
-
+    <h2 class="mt-0 mb-0">Your quote for Bobby</h2>
+    <small class="form__help mb-1">Select from Lifetime, Maximum Benefit and Accident only cover</small>
     <form action="">
+      <fieldset class="form-group mt-0 mb-0">
+        <legend></legend>
 
-      <a class="btn btn-outline-primary btn-primary--alt btn-block rounded-0 mt-4" href="/your-details.html" style="text-decoration:none;">Next</a>
+          <div class="d-flex justify-content-between">
+            <div class="card card--cover card--cover-lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+              <h6 class="cover__header">Lifetime Cover</h6>
+              <p class="cover__price">from £29.11 / month</p>
+            </div><!-- card-->
+
+            <div class="card card--cover card--cover-maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+              <h6 class="cover__header">Lifetime Cover</h6>
+              <p class="cover__price">from £29.11 / month</p>
+            </div><!-- card-->
+
+            <div class="card card--cover card--cover-accident rounded-0 shadow mb-3 pt-2 bg-white">
+              <h6 class="cover__header">Lifetime Cover</h6>
+              <p class="cover__price">from £29.11 / month</p>
+            </div><!-- card-->
+          </div><!-- d-flex -->
+
+      </fieldset><!-- fieldset -->
 
       <button class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" type="submit">+ Add another pet</button>
+
+      <button class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" type="submit">Cancel pet</button>
+
+      <a class="btn btn-outline-primary btn-primary--alt btn-block rounded-0 mt-4" href="/pet-details-complete.html" style="text-decoration:none;">Next</a>
 
     </form>
   </section>
