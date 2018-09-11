@@ -103,8 +103,10 @@ gulp.task('css', function () {
     sass.comments = false
   }
 
+  // .on('error', $.util.log))
+
   return gulp.src([`${folder.src}/stylesheets/sass/*.scss`])
-    .pipe($.plumber({
+  .pipe($.plumber({
       errorHandler: onError
     }))
     .pipe($.if(devBuild, $.sourcemaps.init()))
@@ -113,7 +115,12 @@ gulp.task('css', function () {
       sourceComments: false,
       imagePath: 'images/',
       errLogToConsole: true
-    }).on('error', $.util.log))
+    })
+    .on('error', function (err) {
+      console.log(err.toString());
+
+      this.emit('end');
+    }))
     .pipe($.postcss(postCssOpts))
     .pipe($.if(devBuild, $.sourcemaps.write('maps', {
       includeContent: false

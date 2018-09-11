@@ -19,8 +19,13 @@ input.form-control, select.form-control {
   color: rgba(90,104,114,1);
   font-family: "Open Sans";
   font-size: 20px;
-  line-height: calc(36px - 50%);
+  line-height: 29.5px;
   border:0;
+
+  &:focus {
+    background-color: rgba(61, 112, 178, 0.1);
+    border-color: rgba(61, 112, 178, 0.1);
+  }
 }
 
 input[type=text].form-control {

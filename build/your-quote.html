@@ -120,9 +120,124 @@
               <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
                 <div class="input-group mb-2 flex-nowrap justify-content-between">
                   <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£2000</span> or <span class="cover__price-range">£4250</span></p>
-                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Choose level</button>
+                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0 btn--cover-level" style="width: 45%;" data-toggle="collapse" data-target="#choose-lifetime-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
                 </div>
               </div>
+
+              <div class="collapse" id="choose-lifetime-level">
+                
+                
+
+        <h3>Select your level of cover</h3>
+
+        <ul class="nav nav-pills justify-content-around mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">£2000 Cover</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">£4250 Cover</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="cover__level border">
+
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£2000</span></p>
+                  <p><span class="font-weight-bold">£4,250</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+              <div class="cover__item rounded-0 text-center">
+                <div class="cover__body">
+                  <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
+                </div>
+                <div class="cover__info">i</div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary--alt btn-block rounded-0">Select £2000 Lifetime Cover</button>
+          </div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="cover__level">
+              <p>Vetinary fees up to £4250</p>
+
+              <p>£4,250 per policy year, subject to a maximum of £1,000 per condition per year</p>
+
+              <p>Excess of £99</p>
+
+              <p>Death from Illness up to £500</p>
+
+              <p>Death from Accident up to £500</p>
+
+              <p>Advertising and reward up to £500</p>
+
+              <p>Theft or straying up to £500</p>
+
+              <p>Boarding kennel fees up to £500</p>
+
+              <p>Holiday cancellation up to £500</p>
+
+              <p>Overseas travel up to 30 days</p>
+
+              <p>£29.11/month £349.36/year</p>
+            </div>
+            <button class="btn btn-primary--alt btn-block rounded-0">Select £4250 Lifetime Cover</button>
+          </div>
+        </div>
+ 
+              </div>
+
             </div><!-- cover--life -->
           </div><!-- collapse -->
 
@@ -198,7 +313,8 @@
 
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="/js/jquery.slim.min.js"></script>
+  
+  <script src="/js/jquery-3.3.1.min.js"></script>
   <script src="/js/popper.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/index.bundle.js"></script>
@@ -242,6 +358,8 @@ function checkForConditions() {
   })
 }
 
+// postcodes
+
 $('#postcode-search').click(function(evt){
   evt.preventDefault();
   $('#postcode-result').collapse('toggle');
@@ -263,6 +381,8 @@ $('.enter-address').on('click', function(evt){
   $('#manualaddress').collapse('hide');
 })
 
+// cover types
+
 $('#lifecover-link').click(function(){
   $('#lifecover').collapse('show');
   $('#maximumcover').collapse('hide');
@@ -280,6 +400,129 @@ $('#accident-link').click(function(){
   $('#maximumcover').collapse('hide');
   $('#accidentcover').collapse('show');
 });
+
+// stop web page from scrolling to top when link is clicked that triggers JavaScript
+$('.btn--cover-level').click(function (e) {
+  e.preventDefault();
+  // target id
+  let targetId = $(this).data('target');
+  let targetHeight =  $(targetId).height();
+  let documentHeight = $(document).height();
+  $('html, body').animate({ scrollTop: documentHeight }, targetHeight);
+
+  if(this.innerHTML === 'Choose level') {
+    this.innerHTML = 'Hide levels';
+    $(this).addClass('btn-outline-primary');
+    $(this).addClass('btn-outline-primary--alt');
+    $(this).removeClass('btn-primary');
+    $(this).removeClass('btn-primary--alt');
+  } else {
+    this.innerHTML = 'Choose level';
+  }
+
+  console.log('$(this).innerHTML: ',$(this).innerHTML);
+})
+
+var selectAlt, i, j, selElement, selectedItem, optionList, optionItem;
+
+// @group cache DOM
+
+/* look for any elements with the class "select--alt": */
+selectAlt = document.getElementsByClassName("select--alt");
+
+// @group bind Events
+
+for (i = 0; i < selectAlt.length; i++) {
+  selElement = selectAlt[i].getElementsByTagName("select")[0];
+
+  /* for each element, create a new DIV that will act as the selected item: */
+  selectedItem = document.createElement("DIV");
+  selectedItem.setAttribute("class", "select-selected");
+  selectedItem.innerHTML = selElement.options[selElement.selectedIndex].innerHTML;
+
+  selectAlt[i].appendChild(selectedItem);
+
+  /* for each element, create a new DIV that will contain the option list: */
+  optionList = document.createElement("DIV");
+  optionList.setAttribute("class", "select-items select-hide");
+
+  for (j = 1; j < selElement.length; j++) {
+
+    /* for each option in the original select element,
+    create a new DIV that will act as an option item: */
+    optionItem = document.createElement("DIV");
+    optionItem.innerHTML = selElement.options[j].innerHTML;
+    optionItem.addEventListener("click", syncOptionSelected);
+
+    optionList.appendChild(optionItem);
+  }
+
+  selectAlt[i].appendChild(optionList);
+
+  selectedItem.addEventListener("click", closeOtherOptions);
+}
+
+// @group methods
+
+function syncOptionSelected(e) {
+    /* when an item is clicked, update the original select box,
+    and the selected item: */
+    var y, i, k, originalSelect, h;
+    originalSelect = this.parentNode.parentNode.getElementsByTagName("select")[0];
+
+    // store the selected item
+    h = this.parentNode.previousSibling;
+    for (i = 0; i < originalSelect.length; i++) {
+      if (originalSelect.options[i].innerHTML == this.innerHTML) {
+        originalSelect.selectedIndex = i;
+        h.innerHTML = this.innerHTML;
+        y = this.parentNode.getElementsByClassName("same-as-selected");
+        for (k = 0; k < y.length; k++) {
+          y[k].removeAttribute("class");
+        }
+        this.setAttribute("class", "same-as-selected");
+        break;
+      }
+    }
+    h.click();
+    if(originalSelect.getAttribute('id') === 'conditionSelect') {
+      $( '.conditions' ).append( `<div class="pill--condition">${h.innerHTML} <span class="close">x</span></div>` );
+      checkForConditions();
+    }
+}
+
+function closeOtherOptions(e) {
+    /* when the select box is clicked, close any other select boxes,
+    and open/close the current select box: */
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+}
+
+function closeAllSelect(elmnt) {
+  /* a function that will close all select boxes in the document,
+  except the current select box: */
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+
+/* if the user clicks anywhere outside the select box,
+then close all select boxes: */
+document.addEventListener("click", closeAllSelect);
 
 </script> 
 

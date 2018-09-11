@@ -76,9 +76,15 @@
               <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
                 <div class="input-group mb-2 flex-nowrap justify-content-between">
                   <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£2000</span> or <span class="cover__price-range">£4250</span></p>
-                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Choose level</button>
+                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0 btn--cover-level" style="width: 45%;" data-toggle="collapse" data-target="#choose-lifetime-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
                 </div>
               </div>
+
+              <div class="collapse" id="choose-lifetime-level">
+                {% block levelofcover %}
+                {% include './partials/level-of-cover.njk' %} {% endblock %}
+              </div>
+
             </div><!-- cover--life -->
           </div><!-- collapse -->
 
