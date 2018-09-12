@@ -7,31 +7,34 @@
 
 // @group Feefo rating
 
-.rating > span {
-  display: inline-block;
-  position: relative;
-  color:gold;
-  font-size:calc(3rem - 50%);
-  width:auto;
-  height:auto;
-  line-height:calc(2.5rem - 50%);
-}
+.rating {
 
-.rating__value{
-  margin-left:10px;
-  line-height: calc(2.7rem - 50%);
-  color: rgba(21,41,53,1);
-  font-family: Helvetica;
-  font-size:28px;
-  font-weight: bold;
-  display:inline;
-}
+  > span {
+    display: inline-block;
+    position: relative;
+    color:gold;
+    font-size:calc(3rem - 50%);
+    width:auto;
+    height:auto;
+    line-height:calc(2.5rem - 50%);
+  }
 
-.rating__reviews{
-  color: rgba(21,41,53,1) !important;
-  font-family: Helvetica;
-  font-size: 16px;
-  line-height: calc(29px - 50%);
+  &__value{
+    margin-left:10px;
+    line-height: calc(2.7rem - 50%);
+    color: rgba(21,41,53,1);
+    font-family: Helvetica;
+    font-size:28px;
+    font-weight: bold;
+    display:inline;
+  }
+
+  &__link{
+    color: rgba(21,41,53,1) !important;
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: calc(29px - 50%);
+  }
 }
 
 // @group progressbar
@@ -129,6 +132,8 @@
   }
 }
 
+// @group cards
+
 .card--deal{
   border-left: 5.15px solid rgba(90,167,0,1) !important;
 }
@@ -170,16 +175,6 @@
   display:flex;
   flex-flow:row nowrap;
   justify-content:space-between;
-}
-
-// @group section header
-
-section h2 {
-  font-weight: 300;
-  color: rgba(0,59,92,1);
-  font-family: 'Open Sans';
-  font-size: 22px;
-  line-height: calc(57px - 50%);
 }
 
 // @group header colours
@@ -418,8 +413,16 @@ input[type=radio].form-check-input--box {
   line-height: 16px;
 }
 
+// @group cover types
+
 .card--cover {
   width: 100%;
+}
+
+.card__cover-header{
+  font-size: 0.7rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .card--cover-lifetime, .cover--lifetime {
@@ -438,25 +441,22 @@ input[type=radio].form-check-input--box {
   font-size: 0.6rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  position: relative;
 
   &:after {
     content: '\276f'; //005E
     -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    position: relative;
-    left: 5px;
+    position: absolute;
+    right: 15px;
     display: inline-block;
-    top: -1px;
-    font-weight:bold;
+    top: -2px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: rgba(140,155,165,1);
   }
 }
 
-.card__cover-header{
-  font-size: 0.7rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
 
 .cover__header {
   line-height: 1rem;
@@ -533,14 +533,24 @@ input[type=radio].form-check-input--box {
   width:49%;
 }
 
-.cover__level {
-	box-sizing: border-box;
-	background-color: rgba(255,255,255,1);
+// @group cover-level
+
+.cover-level__h6 {
+  color: rgba(90,104,114,1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 42px;
+  text-align: center;
+}
+
+.cover-level {
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,1);
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   border-radius: 0;
 }
 
-.cover__item {
+.cover-level__item {
   //padding: 10px 20px;
   border-bottom: 2px solid rgba(223,227,230,1);
   position:relative;
@@ -550,7 +560,7 @@ input[type=radio].form-check-input--box {
   }
 }
 
-.cover__info {
+.cover-level__info {
   position: absolute;
   top: 25px;
   right: 20px;
@@ -563,9 +573,11 @@ input[type=radio].form-check-input--box {
   font-weight: bold;
   /* height: 24px; */
   padding: 0px 8px;
+  cursor: pointer;
+  color: #fff !important;
 }
 
-.cover__body{
+.cover-level__body{
   padding: 10px 80px;
 }
 
@@ -629,3 +641,18 @@ input[type=radio].form-check-input--box {
 
 }
 
+
+.nav-underlines .nav-link.active, 
+.nav-underlines .show>.nav-link {
+    padding-bottom:10px;
+    color: rgba(61,112,178,1);
+    border-bottom: 2px solid rgba(61,112,178,1);
+}
+
+.nav-underlines .nav-link {
+    text-decoration: none;
+    color: rgba(21,41,53,1);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 38px;
+}

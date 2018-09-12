@@ -21,7 +21,6 @@
       <li class="active"><span>Your quote</span></li>
     </ul>
 
-
     <h2 class="mt-0 mb-0">Your quote for Bobby</h2>
     <small class="form__help mb-1">Select from Lifetime, Maximum Benefit and Accident only cover</small>
     <form action="">
@@ -51,7 +50,7 @@
             </div><!-- card-->
           </div><!-- d-flex -->
 
-          <div class="collapse mt-4 mb-4" id="lifecover">
+          <div class="collapse show mt-4 mb-4" id="lifecover">
             <div class="cover--lifetime pt-2">
               <small class="cover__help">Our most comprehensive cover</small>
               <h2 class="h1 cover__header mt-1">Lifetime Cover</h2>
@@ -80,7 +79,7 @@
                 </div>
               </div>
 
-              <div class="collapse" id="choose-lifetime-level">
+              <div class="collapse show" id="choose-lifetime-level">
                 {% block levelofcover %}
                 {% include './partials/level-of-cover.njk' %} {% endblock %}
               </div>
