@@ -123,7 +123,11 @@
 
       </fieldset><!-- fieldset -->
 
-      <a href="/your-quote.html" style="text-decoration:none;" class="btn btn-outline-primary btn-primary--alt btn-block rounded-0 mt-4">Calculate quote</a>
+      {% block nextButton %}
+      {% import './macros/next-button.njk' as nextButton %}
+      {{ nextButton.nextStep('Calculate quote', 'your-quote') }}
+      {% endblock %}
+
     </form>
   </section>
 

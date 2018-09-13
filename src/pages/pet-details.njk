@@ -50,7 +50,11 @@
 
       <a class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" href="/pet-details-other.html" style="text-decoration:none;">+ Add another pet</a>
 
-      <button class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" type="submit">Next</button>
+      {% block nextButton %}
+      {% import './macros/next-button.njk' as nextButton %}
+      {{ nextButton.nextStep('Next', 'pet-details-other') }}
+      {% endblock %}
+
     </form>
   </section>
 
