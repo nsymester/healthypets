@@ -109,7 +109,7 @@
           </div><!-- d-flex -->
 
           <div class="collapse show mt-4 mb-4" id="lifecover">
-            <div class="cover--lifetime pt-2">
+            <div class="cover--lifetime cover-level__pane pt-2">
               <small class="cover__help">Our most comprehensive cover</small>
               <h2 class="h1 cover__header mt-1">Lifetime Cover</h2>
               <small class="cover__help--alt">from <span>£29.11/month</span></small>
@@ -137,7 +137,7 @@
                 </div>
               </div>
 
-              <div class="collapse show" id="choose-lifetime-level">
+              <div class="collapse" id="choose-lifetime-level">
                 
                 
         <section>
@@ -160,7 +160,7 @@
                     <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£2000</span></p>
                     <p><span class="font-weight-bold">£4,250</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
                   </div>
-                  <a class="cover-level__info">i</a>
+                  <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
                 </div>
 
                 <div class="cover-level__item rounded-0 text-center">
@@ -249,14 +249,39 @@
             </div>
           </div>
         </section>
- 
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Lifetime £4250</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
+              </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
+              </div>
+            </div>
+          </div>
+        </div> 
               </div>
 
-            </div><!-- cover--life -->
+            </div><!-- cover--lifetime -->
           </div><!-- collapse -->
 
           <div class="collapse mt-4 mb-4" id="maximumcover">
-            <div class="cover--maximum pt-3">
+            <div class="cover--maximum cover-level__pane pt-3">
               <small class="cover__help">Our most comprehensive cover</small>
               <h2 class="h1 cover__header mt-1">Maximum Benefit</h2>
               <small class="cover__help--alt">from <span>£29.11/month</span></small>
@@ -287,7 +312,7 @@
           </div><!-- collapse -->
 
           <div class="collapse mt-4 mb-4" id="accidentcover">
-            <div class="cover--accident pt-3">
+            <div class="cover--accident cover-level__pane pt-3">
               <small class="cover__help">Our most comprehensive cover</small>
               <h2 class="h1 cover__header mt-1">Accident Only</h2>
               <small class="cover__help--alt">from <span>£29.11/month</span></small>
@@ -426,12 +451,12 @@ $('.btn--cover-level').click(function (e) {
 
   if (this.innerHTML === 'Choose level') {
     this.innerHTML = 'Hide levels';
-    $(this).addClass('btn-outline-primary');
-    $(this).addClass('btn-outline-primary--alt');
     $(this).removeClass('btn-primary');
-    $(this).removeClass('btn-primary--alt');
+    $(this).addClass('btn__outline');
   } else {
     this.innerHTML = 'Choose level';
+    $(this).removeClass('btn__outline');
+    $(this).addClass('btn-primary');
   }
 
   console.log('$(this).innerHTML: ', $(this).innerHTML);

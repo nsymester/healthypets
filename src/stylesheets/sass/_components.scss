@@ -355,8 +355,15 @@ input[type=radio].form-check-input--box {
   &:hover {
     color: rgba(255,255,255,1);
     background-color: rgba(61,112,178,1);
-    border-color: rgba(61,112,178,1);
   }
+}
+
+.btn__outline {
+  background-color: #fff;
+  border-color: #3d70b2;
+  color: rgba(61,112,178,1);
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .btn-outline-primary--alt:not(:disabled):not(.disabled).active,
@@ -552,6 +559,11 @@ input[type=radio].form-check-input--box {
   border-radius: 0;
 }
 
+.cover-level__pane {
+	background-color: rgba(255,255,255,1);
+	box-shadow: 0 24px 48px 0 rgba(0,0,0,0.1);
+}
+
 .cover-level__item {
   //padding: 10px 20px;
   border-bottom: 2px solid rgba(223,227,230,1);
@@ -568,15 +580,14 @@ input[type=radio].form-check-input--box {
   right: 20px;
   background-color: #3d70b2;
   border-radius: 50%;
-  /* width: 20px; */
   font-family: sans;
   color: white;
   font-size: 14px;
   font-weight: bold;
-  /* height: 24px; */
   padding: 0px 8px;
   cursor: pointer;
   color: #fff !important;
+  border:0
 }
 
 .cover-level__body{

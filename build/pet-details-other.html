@@ -475,12 +475,12 @@ $('.btn--cover-level').click(function (e) {
 
   if (this.innerHTML === 'Choose level') {
     this.innerHTML = 'Hide levels';
-    $(this).addClass('btn-outline-primary');
-    $(this).addClass('btn-outline-primary--alt');
     $(this).removeClass('btn-primary');
-    $(this).removeClass('btn-primary--alt');
+    $(this).addClass('btn__outline');
   } else {
     this.innerHTML = 'Choose level';
+    $(this).removeClass('btn__outline');
+    $(this).addClass('btn-primary');
   }
 
   console.log('$(this).innerHTML: ', $(this).innerHTML);

@@ -112,3 +112,26 @@ label.form-control-label {
   margin-left:-15px;
   padding-bottom:0!important;
 }
+
+.modal-header--alt {
+  border-bottom:0;
+  padding-top:0;
+}
+
+.modal-title--alt {
+  font-size: 1.7rem;
+}
+
+.modal-body {
+  p {
+    color: rgba(21,41,53,1);
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+  }
+  small {
+    font-size:1rem;
+    position:relative;
+    top:-4px;
+  }
+}

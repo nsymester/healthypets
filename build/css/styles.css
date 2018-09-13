@@ -321,8 +321,14 @@ input[type=radio].form-check-input--box {
   border: 2px solid #3d70b2; }
   .btn-outline-primary--alt:hover {
     color: white;
-    background-color: #3d70b2;
-    border-color: #3d70b2; }
+    background-color: #3d70b2; }
+
+.btn__outline {
+  background-color: #fff;
+  border-color: #3d70b2;
+  color: #3d70b2;
+  font-size: 15px;
+  font-weight: 600; }
 
 .btn-outline-primary--alt:not(:disabled):not(.disabled).active,
 .btn-outline-primary--alt:not(:disabled):not(.disabled):active,
@@ -478,6 +484,11 @@ input[type=radio].form-check-input--box {
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0; }
 
+.cover-level__pane {
+  background-color: white;
+  -webkit-box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.1); }
+
 .cover-level__item {
   border-bottom: 2px solid #dfe3e6;
   position: relative; }
@@ -490,15 +501,14 @@ input[type=radio].form-check-input--box {
   right: 20px;
   background-color: #3d70b2;
   border-radius: 50%;
-  /* width: 20px; */
   font-family: sans;
   color: white;
   font-size: 14px;
   font-weight: bold;
-  /* height: 24px; */
   padding: 0px 8px;
   cursor: pointer;
-  color: #fff !important; }
+  color: #fff !important;
+  border: 0; }
 
 .cover-level__body {
   padding: 10px 80px; }
@@ -656,5 +666,23 @@ label.form-control-label {
   margin-right: -15px;
   margin-left: -15px;
   padding-bottom: 0 !important; }
+
+.modal-header--alt {
+  border-bottom: 0;
+  padding-top: 0; }
+
+.modal-title--alt {
+  font-size: 1.7rem; }
+
+.modal-body p {
+  color: #152935;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5rem; }
+
+.modal-body small {
+  font-size: 1rem;
+  position: relative;
+  top: -4px; }
 
 /*# sourceMappingURL=maps/styles.css.map */
