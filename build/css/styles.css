@@ -41,11 +41,45 @@ section h2 {
 
 /* @group objects */
 /**
-  * @desc layout and positioning styles, 
+  * @desc layout and positioning styles,
           includes layout and positioning styles,
           contains business logic
   * @author Neil Symester neil.symester@towergate.co.uk
   */
+/* @group components */
+/**
+  * @desc UI components, building blocks that we use on the page, self contained
+  *       e.g.: lists, media box,
+          contains business logic
+          - buttons
+          - site-nav
+
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+.rating > span {
+  display: inline-block;
+  position: relative;
+  color: gold;
+  font-size: calc(3rem - 50%);
+  width: auto;
+  height: auto;
+  line-height: calc(2.5rem - 50%); }
+
+.rating__value {
+  margin-left: 10px;
+  line-height: calc(2.7rem - 50%);
+  color: #152935;
+  font-family: Helvetica;
+  font-size: 28px;
+  font-weight: bold;
+  display: inline; }
+
+.rating__link {
+  color: #152935 !important;
+  font-family: Helvetica;
+  font-size: 16px;
+  line-height: calc(29px - 50%); }
+
 .progressbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,40 +133,6 @@ section h2 {
       content: '\f00c';
       background-color: white;
       color: solid #3d70b2; }
-
-/* @group components */
-/**
-  * @desc UI components, building blocks that we use on the page, self contained
-  *       e.g.: lists, media box,
-          contains business logic
-          - buttons
-          - site-nav
-
-  * @author Neil Symester neil.symester@towergate.co.uk
-  */
-.rating > span {
-  display: inline-block;
-  position: relative;
-  color: gold;
-  font-size: calc(3rem - 50%);
-  width: auto;
-  height: auto;
-  line-height: calc(2.5rem - 50%); }
-
-.rating__value {
-  margin-left: 10px;
-  line-height: calc(2.7rem - 50%);
-  color: #152935;
-  font-family: Helvetica;
-  font-size: 28px;
-  font-weight: bold;
-  display: inline; }
-
-.rating__link {
-  color: #152935 !important;
-  font-family: Helvetica;
-  font-size: 16px;
-  line-height: calc(29px - 50%); }
 
 .card--deal {
   border-left: 5.15px solid #5aa700 !important; }

@@ -15,11 +15,10 @@
 <div class="container">
   <section class="mt-4 mb-3">
 
-    <ul class="progressbar clearfix">
-      <li class="complete"><span>Pet details</span></li>
-      <li class="active"><span>Your details<span></li>
-      <li><span>Your quote</span></li>
-    </ul>
+    {% block progressBar %}
+    {% import './macros/progress-bar.njk' as progressBar %}
+    {{ progressBar.activeStep('your-details') }}
+    {% endblock %}
 
     <h2 class="mt-0 mb-0">Enter your details</h2>
     <form action="">

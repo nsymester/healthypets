@@ -15,11 +15,10 @@
 <div class="container">
   <section class="mt-4 mb-3">
 
-    <ul class="progressbar clearfix">
-      <li class="active"><span>Pet details</span></li>
-      <li class=""><span>Your details<span></li>
-      <li><span>Your quote</span></li>
-    </ul>
+    {% block progressBar %}
+    {% import './macros/progress-bar.njk' as progressBar %}
+    {{ progressBar.activeStep('pet-details') }}
+    {% endblock %}
 
     <section class="card card--pet-details mb-3 rounded-0 shadow bg-white">
       <h5>Bobby, German Shepherd, 3 yrs</h5>
@@ -35,22 +34,22 @@
         <legend></legend>
 
         {% block name %}
-        {% include './partials/name.njk' %} {% endblock %} 
+        {% include './partials/name.njk' %} {% endblock %}
 
         {% block dob %}
-        {% include './partials/dob.njk' %} {% endblock %} 
+        {% include './partials/dob.njk' %} {% endblock %}
 
         {% block pettype %}
         {% include './partials/pet-type.njk' %} {% endblock %}
 
         {% block sex %}
-        {% include './partials/sex.njk' %} {% endblock %}   
+        {% include './partials/sex.njk' %} {% endblock %}
 
         {% block neutered %}
-        {% include './partials/neutered.njk' %} {% endblock %} 
+        {% include './partials/neutered.njk' %} {% endblock %}
 
         {% block donation %}
-        {% include './partials/donation.njk' %} {% endblock %} 
+        {% include './partials/donation.njk' %} {% endblock %}
 
         {% block preexisitngcondition %}
         {% include './partials/pre-existing-condition.njk' %} {% endblock %}

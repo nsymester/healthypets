@@ -1,21 +1,27 @@
-{% macro active(activeStep='pet-details') %}
-<nav>
-  <a href="#" class="{%if activeStep == 'pet-details' %} active {% endif %}">Home</a>
-  <!-- Repeat for about and contact -->
-</nav>
+{% macro activeStep(activeStep='pet-details') %}
 
-<ul class="progressbar">
-  <li class="progressbar__step {%if activeStep == 'pet-details' %} progressbar__step--active {% endif %} progressbar__step--done">
-    Create your profile
-  </li>
-  <li class="progressbar__step progressbar__step--active">
-    Preview
-  </li>
-  <li class="progressbar__step">
-    Checkout
-  </li>
+{% if activeStep == 'pet-details' %}
+  {% set petDetails = 'progressbar__step--active' %}
+  {% set yourDetails = '' %}
+  {% set yourQuote = '' %}
+{% elif activeStep == 'your-details' %}
+  {% set petDetails = 'progressbar__step--done' %}
+  {% set yourDetails = 'progressbar__step--active' %}
+  {% set yourQuote = '' %}
+{% elif activeStep == 'your-quote' %}
+  {% set petDetails = 'progressbar__step--done' %}
+  {% set yourDetails = 'progressbar__step--done' %}
+  {% set yourQuote = 'progressbar__step--active' %}
+{% else %}
+  {% set petDetails = 'progressbar__step--done' %}
+  {% set yourDetails = 'progressbar__step--done' %}
+  {% set yourQuote = 'progressbar__step--done' %}
+{% endif %}
+
+<ul class="progressbar clearfix">
+  <li class="progressbar__step {{ petDetails }}">Pet details</li>
+  <li class="progressbar__step {{ yourDetails }}">Your details</li>
+  <li class="progressbar__step {{ yourQuote }}">Your quote</li>
 </ul>
 
-
-<!-- https://zellwk.com/blog/nunjucks-with-gulp/ -->
 {% endmacro %}
