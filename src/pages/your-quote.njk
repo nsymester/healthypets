@@ -79,8 +79,12 @@
               </div>
 
               <div class="collapse" id="choose-lifetime-level">
-                {% block levelofcover %}
-                {% include './partials/level-of-cover.njk' %} {% endblock %}
+
+                {% block levelOfCover %}
+                {% import './macros/level-of-cover.njk' as coverLevel %}
+                {{ coverLevel.type( [ { '1':'£2000', '2':'£4250' } ] ) }}
+                {% endblock %}
+
               </div>
 
             </div><!-- cover--lifetime -->

@@ -4,7 +4,46 @@
           contains business logic
           - buttons
           - site-nav
-
+  *       - 404
+  *       - about
+  *       - archive
+  *       - avatars
+  *       - blog-post
+  *       - buttons
+  *       - callout
+  *       - clients
+  *       - comments
+  *       - contact
+  *       - cta
+  *       - faq
+  *       - features
+  *       - footer
+  *       - forms
+  *       - header
+  *       - headings
+  *       - hero
+  *       - jobs
+  *       - legal-nav
+  *       - main-cta
+  *       - main-nav
+  *       - newsletter
+  *       - page-title
+  *       - pagination
+  *       - post-teaser
+  *       - process
+  *       - quote-banner
+  *       - offices
+  *       - sec-nav
+  *       - services
+  *       - share-buttons
+  *       - social-media
+  *       - team
+  *       - testimonials
+  *       - topbar
+  *       - reasons
+  *       - wordpress
+  *       - work-list
+  *       - work-detail
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 
@@ -338,7 +377,7 @@ input[type=radio].form-check-input--box {
   line-height: calc(38px - 50%);
   text-align: center;
   background-color: rgba(61,112,178,1);
-  border-color: rgba(61,112,178,1);
+  border: 2px solid rgba(61,112,178,1);
 }
 
 .btn-outline-primary--alt {
@@ -359,7 +398,7 @@ input[type=radio].form-check-input--box {
 }
 
 .btn__outline {
-  background-color: #fff;
+  background-color: rgba(255,255,255,0);
   border-color: #3d70b2;
   color: rgba(61,112,178,1);
   font-size: 15px;
@@ -501,21 +540,15 @@ input[type=radio].form-check-input--box {
 
   li {
     position:relative;
+    font-family: 'FontAwesome';
 
     &:before {
-      content: '';
+      content: '\f00c';
+      color:  rgba(61,112,178,1);
       background-color: rgba(255, 255, 255, 1);
       position:absolute;
-      left: -17px;
-      top: 7px;
-      width: 5px;
-      height: 10px;
-      border: solid rgba(61,112,178,1);
-      border-width: 0 2px 2px 0;
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-      // z-index:2;
+      left: -20px;
+      top: 0;
     }
   }
 }
@@ -523,12 +556,12 @@ input[type=radio].form-check-input--box {
 .benefits__excluded{
   list-style-type:none;
 
-
   li {
     position:relative;
+    font-family: 'FontAwesome';
 
     &:before {
-      content: '\2716';
+      content: '\f00d';
       color:  rgba(61,112,178,1);
       background-color: rgba(255, 255, 255, 1);
       position:absolute;
@@ -562,6 +595,8 @@ input[type=radio].form-check-input--box {
 .cover-level__pane {
 	background-color: rgba(255,255,255,1);
 	box-shadow: 0 24px 48px 0 rgba(0,0,0,0.1);
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .cover-level__item {

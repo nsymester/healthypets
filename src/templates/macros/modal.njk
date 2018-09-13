@@ -1,0 +1,27 @@
+{% macro modal(data) %}
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Lifetime £4250</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
+              </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endmacro %}

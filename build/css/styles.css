@@ -5,18 +5,26 @@
 */
 /* @group settings */
 /**
-  * @desc settings include global variables
+  * @desc settings include 
+  *   - global variables
+  *   - colours 
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 /* @group tools */
 /**
-  * @desc tools include mixins
+  * @desc tools include
+  *       - mixins
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 /* @group generic */
 /**
   * @desc resets the browser using Normalisers or resets
   *       e.g. - box-sizing
+  *            - normalize-scss/normalize.scss
+  *            - generic.reset
+  *            - generic.box-sizing
+  *            - generic.shared
+  * 
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 /* @group elements */
@@ -24,7 +32,13 @@
   * @desc basic tag styles (HTML elements)
   *       e.g.: sub and sup should be the same everywhere
   *       - headings
+  *       - hr
+  *       - forms
   *       - links
+  *       - lists
+  *       - page
+  *       - quotes
+  *       - tables
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 body {
@@ -44,6 +58,13 @@ section h2 {
   * @desc layout and positioning styles,
           includes layout and positioning styles,
           contains business logic
+  *       - animations
+  *       - drawer
+  *       - list-bare
+  *       - media
+  *       - layout
+  *       - overlays
+          
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 /* @group components */
@@ -53,7 +74,46 @@ section h2 {
           contains business logic
           - buttons
           - site-nav
-
+  *       - 404
+  *       - about
+  *       - archive
+  *       - avatars
+  *       - blog-post
+  *       - buttons
+  *       - callout
+  *       - clients
+  *       - comments
+  *       - contact
+  *       - cta
+  *       - faq
+  *       - features
+  *       - footer
+  *       - forms
+  *       - header
+  *       - headings
+  *       - hero
+  *       - jobs
+  *       - legal-nav
+  *       - main-cta
+  *       - main-nav
+  *       - newsletter
+  *       - page-title
+  *       - pagination
+  *       - post-teaser
+  *       - process
+  *       - quote-banner
+  *       - offices
+  *       - sec-nav
+  *       - services
+  *       - share-buttons
+  *       - social-media
+  *       - team
+  *       - testimonials
+  *       - topbar
+  *       - reasons
+  *       - wordpress
+  *       - work-list
+  *       - work-detail
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 .rating > span {
@@ -308,7 +368,7 @@ input[type=radio].form-check-input--box {
   line-height: calc(38px - 50%);
   text-align: center;
   background-color: #3d70b2;
-  border-color: #3d70b2; }
+  border: 2px solid #3d70b2; }
 
 .btn-outline-primary--alt {
   height: calc(80px - 50%);
@@ -324,7 +384,7 @@ input[type=radio].form-check-input--box {
     background-color: #3d70b2; }
 
 .btn__outline {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0);
   border-color: #3d70b2;
   color: #3d70b2;
   font-size: 15px;
@@ -440,26 +500,23 @@ input[type=radio].form-check-input--box {
   padding-left: 1.25rem;
   width: 49%; }
   .benefits__included li {
-    position: relative; }
+    position: relative;
+    font-family: 'FontAwesome'; }
     .benefits__included li:before {
-      content: '';
+      content: '\f00c';
+      color: #3d70b2;
       background-color: white;
       position: absolute;
-      left: -17px;
-      top: 7px;
-      width: 5px;
-      height: 10px;
-      border: solid #3d70b2;
-      border-width: 0 2px 2px 0;
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg); }
+      left: -20px;
+      top: 0; }
 
 .benefits__excluded {
   list-style-type: none; }
   .benefits__excluded li {
-    position: relative; }
+    position: relative;
+    font-family: 'FontAwesome'; }
     .benefits__excluded li:before {
-      content: '\2716';
+      content: '\f00d';
       color: #3d70b2;
       background-color: white;
       position: absolute;
@@ -487,7 +544,9 @@ input[type=radio].form-check-input--box {
 .cover-level__pane {
   background-color: white;
   -webkit-box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.1); }
+          box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.1);
+  padding-left: 15px;
+  padding-right: 15px; }
 
 .cover-level__item {
   border-bottom: 2px solid #dfe3e6;
