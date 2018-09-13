@@ -4,3 +4,70 @@
           contains business logic
   * @author Neil Symester neil.symester@towergate.co.uk
   */
+ 
+.progressbar {
+  display: flex;
+  font-family: "Arial";
+  padding-left: 0;
+  list-style: none;
+
+  &__step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+
+    // bullet points
+    &:before {
+      content: '';
+      display: flex;
+      font-family: "FontAwesome";
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: .75rem;
+      background: #fff; // set to white to hide the line
+      color: rgba(61,112,178,1);
+      border: 2px solid rgba(90,104,114,1);
+      border-radius: 50%;
+    }
+
+    // line between bullet points
+    &:after {
+      width: 100%; // line width
+      height:3.38px; // line height
+      content: '';
+      position: absolute;
+      background-color: rgba(140,155,165,1);
+      top: 14px; // center line
+      left: -50%; // move the line behind the bullet
+      z-index: -1; // move the line behind the bullet point
+    }
+
+    &:first-child:after {
+      content: none;
+    }
+
+    // active step
+    &--active {
+      &:before {
+        content: '\f111';
+        border: 2px solid rgba(61,112,178,1);
+        color: rgba(61,112,178,1);
+      }
+
+      &:after {
+        //background: green;
+      }
+    }
+    &--done {
+      &:before {
+        content: '\f00c';
+        background-color: rgba(255, 255, 255, 1);
+        color: solid rgba(61,112,178,1);;
+      }
+    }
+  }
+}

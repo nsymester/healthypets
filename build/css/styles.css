@@ -16,12 +16,15 @@
 /* @group generic */
 /**
   * @desc resets the browser using Normalisers or resets
+  *       e.g. - box-sizing
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 /* @group elements */
 /**
   * @desc basic tag styles (HTML elements)
   *       e.g.: sub and sup should be the same everywhere
+  *       - headings
+  *       - links
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 body {
@@ -43,11 +46,68 @@ section h2 {
           contains business logic
   * @author Neil Symester neil.symester@towergate.co.uk
   */
+.progressbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Arial";
+  padding-left: 0;
+  list-style: none; }
+  .progressbar__step {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    text-align: center;
+    position: relative; }
+    .progressbar__step:before {
+      content: '';
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-family: "FontAwesome";
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: .75rem;
+      background: #fff;
+      color: #3d70b2;
+      border: 2px solid #5a6872;
+      border-radius: 50%; }
+    .progressbar__step:after {
+      width: 100%;
+      height: 3.38px;
+      content: '';
+      position: absolute;
+      background-color: #8c9ba5;
+      top: 14px;
+      left: -50%;
+      z-index: -1; }
+    .progressbar__step:first-child:after {
+      content: none; }
+    .progressbar__step--active:before {
+      content: '\f111';
+      border: 2px solid #3d70b2;
+      color: #3d70b2; }
+    .progressbar__step--done:before {
+      content: '\f00c';
+      background-color: white;
+      color: solid #3d70b2; }
+
 /* @group components */
 /**
   * @desc UI components, building blocks that we use on the page, self contained
   *       e.g.: lists, media box,
           contains business logic
+          - buttons
+          - site-nav
+
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 .rating > span {
@@ -73,76 +133,6 @@ section h2 {
   font-family: Helvetica;
   font-size: 16px;
   line-height: calc(29px - 50%); }
-
-.progressbar {
-  margin-left: 0;
-  padding-left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly; }
-  .progressbar li {
-    list-style-type: none;
-    position: relative;
-    text-align: center;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 35%;
-            flex: 1 0 35%; }
-    .progressbar li span {
-      color: #3d70b2;
-      font-family: "Open Sans";
-      font-size: 15.66px;
-      font-weight: 300;
-      line-height: calc(30px - 50%);
-      opacity: 0.5;
-      color: #5a6872; }
-    .progressbar li:before {
-      content: '';
-      width: 30px;
-      height: 30px;
-      border: 2px solid #5a6872;
-      display: block;
-      text-align: center;
-      margin: 0 auto;
-      border-radius: 50%;
-      line-height: 24px;
-      color: #3d70b2;
-      background-color: #fff; }
-    .progressbar li:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3.38px;
-      background-color: #8c9ba5;
-      top: 15px;
-      left: -50%;
-      z-index: -1; }
-    .progressbar li:first-child:after {
-      content: none; }
-    .progressbar li.active span, .progressbar li.complete span {
-      color: #3d70b2;
-      opacity: 1; }
-    .progressbar li.active:before, .progressbar li.complete:before {
-      border: 2px solid #3d70b2; }
-    .progressbar li.active:before {
-      content: '\02b24'; }
-    .progressbar li.complete {
-      position: relative; }
-      .progressbar li.complete:after {
-        content: '';
-        background-color: white;
-        position: absolute;
-        left: 47%;
-        top: 10px;
-        width: 5px;
-        height: 10px;
-        border: solid #3d70b2;
-        border-width: 0 2px 2px 0;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        z-index: 2; }
 
 .card--deal {
   border-left: 5.15px solid #5aa700 !important; }
@@ -559,6 +549,9 @@ input[type=radio].form-check-input--box {
   * @desc override existing selectors, though try and generalise so as to extract
   *       the specific override and add it to either components or objects or somewhere,
   *       includes quick fixes, hot fixes
+  *       - clearfix
+  *       - utilities
+  *       - ie8
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 a {

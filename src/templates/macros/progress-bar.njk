@@ -1,0 +1,21 @@
+{% macro active(activeStep='pet-details') %}
+<nav>
+  <a href="#" class="{%if activeStep == 'pet-details' %} active {% endif %}">Home</a>
+  <!-- Repeat for about and contact -->
+</nav>
+
+<ul class="progressbar">
+  <li class="progressbar__step {%if activeStep == 'pet-details' %} progressbar__step--active {% endif %} progressbar__step--done">
+    Create your profile
+  </li>
+  <li class="progressbar__step progressbar__step--active">
+    Preview
+  </li>
+  <li class="progressbar__step">
+    Checkout
+  </li>
+</ul>
+
+
+<!-- https://zellwk.com/blog/nunjucks-with-gulp/ -->
+{% endmacro %}

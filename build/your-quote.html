@@ -9,6 +9,7 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Healthy Pets</title> 
 
   <!-- Bootstrap -->
@@ -59,10 +60,22 @@
 <div class="container">
   <section class="mt-4 mb-3">
 
-    <ul class="progressbar clearfix">
+    <ul class="progressbar-2 clearfix">
       <li class="complete"><span>Pet details</span></li>
       <li class="complete"><span>Your details<span></li>
-      <li class="active"><span>Your quote</span></li>
+      <li class=""><i class="fa-li fa fa-square"></i><span>Your quote</span></li>
+    </ul>
+
+    <ul class="progressbar">
+      <li class="progressbar__step progressbar__step--done fa-building-o">
+        Create your profile
+      </li>
+      <li class="progressbar__step progressbar__step--active fa-file-text-o">
+        Preview
+      </li>
+      <li class="progressbar__step">
+        Checkout
+      </li>
     </ul>
 
     <h2 class="mt-0 mb-0">Your quote for Bobby</h2>
