@@ -1,0 +1,19 @@
+{% macro activeStep(activeStep='summary') %}
+
+{% if activeStep == 'summary' %}
+  {% set summaryDetails = 'progressbar__step--active' %}
+  {% set paymentDetails = '' %}
+{% elif activeStep == 'payment' %}
+  {% set summaryDetails = 'progressbar__step--done' %}
+  {% set paymentDetails = 'progressbar__step--active' %}
+{% else %}
+  {% set summaryDetails = 'progressbar__step--done' %}
+  {% set paymentDetails = 'progressbar__step--done' %}
+{% endif %}
+
+<ul class="progressbar clearfix">
+  <li class="progressbar__step {{ summaryDetails }}"><span>Summary</span></li>
+  <li class="progressbar__step {{ paymentDetails }}"><span>Payment</span></li>
+</ul>
+
+{% endmacro %}
