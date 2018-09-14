@@ -73,15 +73,20 @@
     <div class="cost-group">
       <h5 class="total__header">Total including <br>20% discount</h5>
       <div class="totals">
-        <p class="cost">£37.78</p>
+        <p class="total-item">£37.78</p>
         <small class="period">per month</small>
-        <p>OR</p>
-        <p class="cost">£466.12</p>
+        <p class="mb-2 font-weight-bold">OR</p>
+        <p class="total-item">£466.12</p>
         <small class="period">per year</small>
       </div>
     </div>
 
   </section>
+
+  {% block nextButton %}
+  {% import './macros/next-button.njk' as nextButton %}
+  {{ nextButton.nextStep('Go to secure checkout', 'policy-details') }}
+  {% endblock %}
 
   {% block customerservice %}
   {% include './partials/customer-service.njk' %} {% endblock %}

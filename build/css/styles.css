@@ -729,6 +729,11 @@ input[type=radio].form-check-input--box {
     margin-top: 0px; }
     .cost-group .period:nth-child(2) {
       margin-bottom: 10px; }
+  .cost-group .total-item {
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 1.3rem; }
 
 /* @group overrides */
 /**
