@@ -1,5 +1,7 @@
-{% block header %}
-{% include './partials/header.njk' %} {% endblock %}
+{% block headerContent %}
+{% import './macros/header.njk' as header %}
+{{ header.title('Your Details') }}
+{% endblock %}
 
   <!-- Bootstrap -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">

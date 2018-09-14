@@ -15,8 +15,12 @@
 {% elif link == 'calculate-quote' %}
   {% set link = 'your-quote.html' %}
 
+{% elif link == 'policy-summary' %}
+  {% set link = 'policy-summary.html' %}
+
 {% else %}
   {% set link = 'your-quote.html' %}
+
 {% endif %}
 
 <a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/{{ link }}" style="text-decoration:none;">{{ linkName }}</a>

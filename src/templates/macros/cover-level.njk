@@ -65,17 +65,20 @@
                 </div>
               </div>
 
-              <button class="btn btn-primary--alt btn-block rounded-0">Select {{ data.price }} {{ data.cover }} Cover</button>
-            
-<!--               {% block modalContent %}
+              {% block nextButton %}
+              {% import './next-button.njk' as nextButton %}
+              {{ nextButton.nextStep('Select ' + data.price + ' ' + data.cover + ' ' + 'Cover', 'policy-summary') }}
+              {% endblock %}
+
+              {% block modalContent %}
               {% import './modal.njk' as modal %}
-              {{ modal.info( 
-                { 
-                  'price': data.price, 
+              {{ modal.info(
+                {
+                  'price': data.price,
                   'cover': data.cover
-                } 
-                ) 
+                }
+                )
               }}
-              {% endblock %} -->
+              {% endblock %}
 
 {% endmacro %}
