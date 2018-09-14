@@ -88,8 +88,16 @@
   {{ nextButton.nextStep('Go to secure checkout', 'policy-details') }}
   {% endblock %}
 
+  {% block customersecurity %}
+  {% include './partials/thwate.njk' %} {% endblock %}  
+
   {% block customerservice %}
-  {% include './partials/customer-service.njk' %} {% endblock %}
+  {% import './macros/customer-service.njk' as customerService %} 
+  {{ customerService.provision({
+    'discount': false,
+    'feefo': true
+  })}}
+  {% endblock %}
 
 </div><!-- container -->
 

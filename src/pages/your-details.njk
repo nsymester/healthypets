@@ -134,7 +134,12 @@
   </section>
 
   {% block customerservice %}
-  {% include './partials/customer-service.njk' %} {% endblock %}
+  {% import './macros/customer-service.njk' as customerService %} 
+  {{ customerService.provision({
+    'discount': true,
+    'feefo': true
+  })}}
+  {% endblock %}
 
 </div><!-- container -->
 

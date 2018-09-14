@@ -162,8 +162,13 @@
 
 </div><!-- container -->
 
-{% block corejavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+  {% block customerservice %}
+  {% import './macros/customer-service.njk' as customerService %} 
+  {{ customerService.provision({
+    'discount': true,
+    'feefo': true
+  })}}
+  {% endblock %}
 
 {% block footer %}
 {% include './partials/footer.njk' %} {% endblock %}
