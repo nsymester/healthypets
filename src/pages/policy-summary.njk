@@ -16,9 +16,73 @@
 
 <div class="container">
   <section class="mt-4 mb-3">
-    <h2 class="mt-0 mb-0">Your policy summary</h2>
+    <h2 class="mt-0 mb-4">Your policy summary</h2>
+
+    {% block chosenPolicyContent1 %}
+    {% import './macros/chosen-policy.njk' as chosenPolicy %}
+    {{ chosenPolicy.data( {
+          'name': 'Booby',
+          'breed': 'German Shpherd',
+          'age':'3 yrs',
+          'cover': 'lifetime',
+          'cost':'£2000',
+          'brdColour':'lifetime-brd-color'
+        }
+      )
+    }}
+
+    {% import './macros/chosen-policy.njk' as chosenPolicy %}
+    {{ chosenPolicy.data( {
+          'name': 'Poppy',
+          'breed': 'Rusian Blue',
+          'age':'6 yrs',
+          'cover': 'maximum',
+          'cost':'£4250',
+          'brdColour':'maximum-brd-color'
+        }
+      )
+    }}
+
+    {% import './macros/chosen-policy.njk' as chosenPolicy %}
+    {{ chosenPolicy.data( {
+          'name': 'Booby',
+          'breed': 'German Shpherd',
+          'age':'3 yrs',
+          'cover': 'accident',
+          'cost':'£4250',
+          'brdColour':'accident-brd-color'
+        }
+      )
+    }}
+    {% endblock %}
 
   </section>
+
+  <section>
+    <div class="cost-group">
+      <p class="period__header">Total monthly cost</p>
+      <p class="cost">£58.22</p>
+    </div>
+    <div class="cost-group">
+      <p class="period__header">20% new customer discount</p>
+      <p class="cost">-£11.64</p>
+    </div>
+
+    <hr class="mb-4">
+
+    <div class="cost-group">
+      <h5 class="total__header">Total including <br>20% discount</h5>
+      <div class="totals">
+        <p class="cost">£37.78</p>
+        <small class="period">per month</small>
+        <p>OR</p>
+        <p class="cost">£466.12</p>
+        <small class="period">per year</small>
+      </div>
+    </div>
+
+  </section>
+
   {% block customerservice %}
   {% include './partials/customer-service.njk' %} {% endblock %}
 

@@ -24,9 +24,12 @@
   *            - generic.reset
   *            - generic.box-sizing
   *            - generic.shared
-  * 
+  *
   * @author Neil Symester neil.symester@towergate.co.uk
   */
+.fas {
+  font-family: 'Fontawesome'; }
+
 /* @group elements */
 /**
   * @desc basic tag styles (HTML elements)
@@ -629,6 +632,103 @@ input[type=radio].form-check-input--box {
   font-size: 1rem;
   font-weight: 600;
   line-height: 38px; }
+
+.policy-summary .summary__complete {
+  text-align: right;
+  padding: 0;
+  margin: 0; }
+  .policy-summary .summary__complete span {
+    border: 1px solid #4173b4;
+    border-radius: 50%;
+    color: #4173b4;
+    background-color: white;
+    font-size: 0.5rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    display: inline-block;
+    text-align: center; }
+    .policy-summary .summary__complete span i {
+      position: relative;
+      left: -1px;
+      top: 0px; }
+
+.policy-summary .card:first-child {
+  padding-top: 0;
+  padding-bottom: 15px; }
+
+.policy-summary .card:last-child {
+  background-color: #f0f3f6;
+  padding: 10px 10px 20px 2rem;
+  border-bottom: 0; }
+  .policy-summary .card:last-child h5 {
+    color: #5a6872;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin-bottom: 0; }
+  .policy-summary .card:last-child .summary__price {
+    color: #5a6872;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-align: right;
+    margin-bottom: 0; }
+  .policy-summary .card:last-child a {
+    font-size: 0.7rem;
+    color: #3d70b2;
+    font-weight: 600; }
+  .policy-summary .card:last-child small {
+    font-size: 0.8rem; }
+
+.policy-summary .card-pricing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.lifetime-brd-color {
+  border-bottom: 4px solid #f5a623; }
+
+.maximum-brd-color {
+  border-bottom: 4px solid #7ed321; }
+
+.accident-brd-color {
+  border-bottom: 4px solid #d0021b; }
+
+.total__header {
+  font-weight: 600; }
+
+.period__header {
+  font-size: 1.25rem; }
+
+.cost-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .cost-group p, .cost-group small {
+    text-align: right; }
+  .cost-group .cost {
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 0; }
+  .cost-group .period {
+    font-weight: 300;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0px;
+    text-align: right;
+    margin-top: 0px; }
+    .cost-group .period:nth-child(2) {
+      margin-bottom: 10px; }
 
 /* @group overrides */
 /**
