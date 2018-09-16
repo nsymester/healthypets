@@ -871,9 +871,9 @@ input[type=radio].form-check-input--box {
   line-height: 1.5; }
 
 .padlock {
-  position: absolute;
-  top: 0px;
-  right: 80px;
+  position: relative;
+  top: -37px;
+  right: -7px;
   width: 20px; }
 
 /* @group overrides */
