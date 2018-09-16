@@ -1,16 +1,16 @@
 {% macro nextStep(linkName='Next', link='') %}
 
-{% if link == 'your-details' %}
-  {% set link = 'your-details.html' %}
+{% if link == 'pet-details' %}
+  {% set link = 'pet-details.html' %}
 
-{% elif link == 'your-quote' %}
-  {% set link = 'your-quote.html' %}
+{% elif link == 'pet-details-other' %}
+  {% set link = 'pet-details-other.html' %}
 
 {% elif link == 'pet-details-complete' %}
   {% set link = 'pet-details-complete.html' %}
 
-{% elif link == 'pet-details-other' %}
-  {% set link = 'pet-details-other.html' %}
+{% elif link == 'your-details' %}
+  {% set link = 'your-details.html' %}
 
 {% elif link == 'calculate-quote' %}
   {% set link = 'your-quote.html' %}
@@ -21,11 +21,14 @@
 {% elif link == 'policy-details' %}
   {% set link = 'policy-details.html' %}
 
-{% elif link == 'policy-details-monthly' %}
-  {% set link = 'policy-details-monthly.html' %}
+{% elif link == 'payment-default' %}
+  {% set link = 'payment-default.html' %}
+
+{% elif link == 'payment-complete' %}
+  {% set link = 'payment-complete.html' %}
 
 {% else %}
-  {% set link = 'your-quote.html' %}
+  {% set link = 'index.html' %}
 
 {% endif %}
 

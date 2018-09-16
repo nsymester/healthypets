@@ -59,6 +59,10 @@ select.form-control {
   flex: 0 1 40% !important;
 }
 
+.form-control--ccv {
+  width:20%;
+}
+
 .form-control--alt {
   flex: 0 1 45% !important;
 }
@@ -91,7 +95,7 @@ label.form-control-label {
 	font-family: "Open Sans";
 	font-size: 15px;
 	font-weight: 600;
-	line-height: calc(36px - 50%);
+	line-height: 1.5rem;
 }
 
 .img__calendar{
@@ -112,6 +116,15 @@ label.form-control-label {
   margin-left:-15px;
   padding-bottom:0!important;
 }
+
+.form-group--sortcode {
+  justify-content: flex-start;
+  input {
+    width: 15%;
+    margin-right:10px;
+  }
+}
+
 
 .modal-header--alt {
   border-bottom:0;
@@ -134,4 +147,8 @@ label.form-control-label {
     position:relative;
     top:-4px;
   }
+}
+
+.w-70 {
+  width: 70% !important;
 }

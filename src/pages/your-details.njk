@@ -12,7 +12,9 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% include './partials/menu.njk' %} {% endblock %}
+{% import './macros/menu.njk' as menu %} 
+{{ menu.data('your details') }}
+{% endblock %}
 
 <div class="container">
   <section class="mt-4 mb-3">

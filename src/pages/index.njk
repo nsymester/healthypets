@@ -11,11 +11,26 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% include './partials/menu.njk' %} {% endblock %}
+{% import './macros/menu.njk' as menu %} 
+{{ menu.data('home') }}
+{% endblock %}
 
 <div class="container">
   <section class="mt-4 mb-3">
-    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: 'Open Sans'; font-size: 42px;line-height: 57px;">Hello World</h2>
+    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: 'Open Sans'; font-size: 42px;line-height: 57px;">Flat Mobile Templates</h2>
+    
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action" href="/retrieve-a-quote.html">Retrieve a quote</a>
+      <a class="list-group-item list-group-item-action" href="/pet-details.html">Pet Details</a>
+      <a class="list-group-item list-group-item-action" href="/pet-details-other.html">pet-details other</a>
+      <a class="list-group-item list-group-item-action" href="/pet-details-complete.html">pet-details complete</a>
+      <a class="list-group-item list-group-item-action" href="/your-details.html">your details</a>
+      <a class="list-group-item list-group-item-action" href="/your-quote.html">your quote</a>
+      <a class="list-group-item list-group-item-action" href="/policy-summary.html">policy summary</a>
+      <a class="list-group-item list-group-item-action" href="/policy-details.html">policy details</a>
+      <a class="list-group-item list-group-item-action" href="/payment-default.html">payment default</a>
+      <a class="list-group-item list-group-item-action" href="/payment-complete.html">payment complete</a>
+    </div>
   </section>
 
   {% block customerservice %}

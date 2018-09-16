@@ -12,7 +12,9 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% include './partials/menu.njk' %} {% endblock %}
+{% import './macros/menu.njk' as menu %} 
+{{ menu.data('retrieve a quote') }}
+{% endblock %}
 
 <div class="container">
   <section class="mt-4 mb-3">
@@ -37,7 +39,11 @@
         </div><!-- form-group -->
       </fieldset><!-- fieldset -->
 
-      <button class="btn btn-primary btn-primary-alt btn-block rounded-0" type="submit">Find quote</button>
+      {% block nextButton %}
+      {% import './macros/next-button.njk' as nextButton %}
+      {{ nextButton.nextStep('Next', 'pet-details') }}
+      {% endblock %}
+
     </form>
   </section>
 

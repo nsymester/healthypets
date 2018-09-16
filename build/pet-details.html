@@ -34,6 +34,8 @@
 <body role="document"> 
 
 
+ 
+
 <nav class="navbar bg-header navbar-bright navbar-expand">
   <div class="container-fluid" style="height:67px;">
 
@@ -57,10 +59,13 @@
     </div><!-- navbar-nav -->
 
     <div class="navbar-nav">
-      <a href="/pet-details.html" class="btn btn-lg btn-cta rounded-0" role="button">Get a quote</a>
+      
     </div><!-- navbar-nav -->
   </div><!-- container -->
-</nav> 
+</nav>
+
+
+
 
 <div class="container">
   <section class="mt-4 mb-3">
@@ -113,12 +118,12 @@
           <div class="form-check-flex">
             <div class="form-check form-check-inline form-check-radio--icon">
               <input class="form-check-input form-check-input--box" type="radio" name="pet-type" id="pet-type-dog" value="Dog" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dogInfo">
-              <label class="form-check-label radio-box--icon" for="pet-type-dog"><span>Dog</span></label>
+              <label class="form-check-label radio-box radio-box--icon" for="pet-type-dog"><span>Dog</span></label>
             </div><!-- form-check -->
 
             <div class="form-check form-check-inline form-check-radio--icon">
               <input class="form-check-input form-check-input--box" type="radio" name="pet-type" id="pet-type-cat" value="Cat" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="catInfo">
-              <label class="form-check-label radio-box--icon" for="pet-type-cat"><span>Cat</span></label>
+              <label class="form-check-label radio-box radio-box--icon" for="pet-type-cat"><span>Cat</span></label>
             </div><!-- form-check -->
           </div>
 
@@ -247,12 +252,12 @@
           <div class="form-check-flex">
             <div class="form-check form-check-inline form-check-radio">
               <input class="form-check-input form-check-input--box" type="radio" name="gender" id="gender-male" value="Male">
-              <label class="form-check-label radio-box" for="gender-male"><span>Male</span></label>
+              <label class="form-check-label radio-box radio-box--alt1" for="gender-male"><span>Male</span></label>
             </div><!-- form-check -->
 
             <div class="form-check form-check-inline form-check-radio">
               <input class="form-check-input form-check-input--box" type="radio" name="gender" id="gender-female" value="Female">
-              <label class="form-check-label radio-box" for="gender-female"><span>Female</span></label>
+              <label class="form-check-label radio-box radio-box--alt1" for="gender-female"><span>Female</span></label>
             </div><!-- form-check -->
           </div>
         </div><!-- form-group -->     
@@ -264,12 +269,12 @@
           <div class="form-check-flex">
             <div class="form-check form-check-inline form-check-radio">
               <input class="form-check-input form-check-input--box" type="radio" name="neutered" id="neutered-no" value="neutered">
-              <label class="form-check-label radio-box" for="neutered-no"><span>Neutered</span></label>
+              <label class="form-check-label radio-box radio-box--alt1" for="neutered-no"><span>Neutered</span></label>
             </div><!-- form-check -->
 
             <div class="form-check form-check-inline form-check-radio">
               <input class="form-check-input form-check-input--box" type="radio" name="neutered" id="neutered-yes" value="not-neutered">
-              <label class="form-check-label radio-box" for="neutered-yes"><span>Not neutered</span></label>
+              <label class="form-check-label radio-box radio-box--alt1" for="neutered-yes"><span>Not neutered</span></label>
             </div><!-- form-check -->
           </div>
         </div><!-- form-group -->  
@@ -291,13 +296,13 @@
           <small class="form__help mb-1">In the event of a claim, any sign or symptom that started before the policy start date would be excluded.</small>
           <div class="form-check-flex">
             <div class="form-check form-check-inline form-check-radio">
-              <input class="form-check-input form-check-input--box" type="radio" name="pre-existing-condition" id="pre-existing-condition-yes"" value="neutered" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pet-condition">
-              <label class="form-check-label radio-box" for="pre-existing-condition-yes""><span>Yes</span></label>
+              <input class="form-check-input form-check-input--box" type="radio" name="pre-existing-condition" id="pre-existing-condition-yes" value="neutered" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pet-condition">
+              <label class="form-check-label radio-box radio-box--alt1" for="pre-existing-condition-yes"><span>Yes</span></label>
             </div><!-- form-check -->
 
             <div class="form-check form-check-inline form-check-radio">
               <input class="form-check-input form-check-input--box" type="radio" name="pre-existing-condition" id="pre-existing-condition-no" value="not-neutered">
-              <label class="form-check-label radio-box" for="pre-existing-condition-no"><span>No</span></label>
+              <label class="form-check-label radio-box radio-box--alt1" for="pre-existing-condition-no"><span>No</span></label>
             </div><!-- form-check -->
           </div><!-- form-check-flex -->
 
@@ -489,9 +494,66 @@ $('.btn--cover-level').click(function (e) {
 
 });
 
+$('#regular-pay-monthly').click(function () {
+  $('#directDebitDetails').collapse('show');
+  $('#paymentType').collapse('hide');
+});
+$('#regular-pay-annually').click(function () {
+  $('#paymentType').collapse('show');
+  $('#directDebitDetails').collapse('hide');
+});
+
+$('#payment-type-debit').click(function () {
+  $('#directDebitDetails').collapse('show');
+  $('#creditCardDetails').collapse('hide');
+});
+$('#payment-type-credit').click(function () {
+  $('#creditCardDetails').collapse('show');
+  $('#directDebitDetails').collapse('hide');
+});
+
+
 $('.cover__info').click(function (e){
 
 });
+
+var count = 1
+
+function isNumberKey(event) {
+    var keyCode = window.event ? event.keyCode : event.which;
+
+    if (event.keyCode === 8 // backspace
+        || event.keyCode === 46 // delete
+        || event.keyCode === 13 // enter key
+        || event.keyCode === 9 // tab
+        || event.keyCode === 116 // F5 (refresh)
+        || event.keyCode === 112 // F1
+        || event.keyCode === 113 //F2
+        || event.keyCode === 114 //F3
+        || event.keyCode === 115 //F4
+        || event.keyCode === 117 //F6
+        || event.keyCode === 118 //F7
+        || event.keyCode === 119 //F8
+        || event.keyCode === 120 //F9
+        || event.keyCode === 121 //F10
+        || event.keyCode === 122 //F11
+        || event.keyCode === 123 //F12
+    ) {
+        return true;
+    }
+    else if ( event.keyCode < 48 || event.keyCode > 57) {
+        if (count < 6) {
+            count++; //adds one to count
+        }
+        else {
+            console.log("Please Only Enter Numerical Values");
+            count = 1;
+        }
+        return false;
+    }
+    else return true;
+}
+
 
 var selectAlt, i, j, selElement, selectedItem, optionList, optionItem;
 

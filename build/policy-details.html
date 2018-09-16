@@ -34,6 +34,8 @@
 <body role="document"> 
 
 
+ 
+
 <nav class="navbar bg-header navbar-bright navbar-expand">
   <div class="container-fluid" style="height:67px;">
 
@@ -57,17 +59,21 @@
     </div><!-- navbar-nav -->
 
     <div class="navbar-nav">
-      <a href="/pet-details.html" class="btn btn-lg btn-cta rounded-0" role="button">Get a quote</a>
+      
     </div><!-- navbar-nav -->
   </div><!-- container -->
-</nav> 
+</nav>
+
+
+
 
 <div class="container">
-  <section class="mt-4 mb-3">
-    <div class="policy__header">
-      <h2 class="mt-0 mb-4">Policy summary</h2>
-      <p>£37.78<small>/month</small></p>
+  <section class="mt- mb-3">
+    <div class="policy-summary__header d-flex justify-content-between mb-0">
+      <h2 class="mt-0">Policy summary</h2>
+      <h2>£37.78<small>/month</small></h2>
     </div>
+    <hr class="mt-0 mb-4">
 
     
     
@@ -80,52 +86,133 @@
 
 <ul class="progressbar clearfix">
   <li class="progressbar__step progressbar__step--active"><span>Summary</span></li>
-  <li class="progressbar__step "><span>Payment</span></li>
+  <li class="progressbar__step "><span>Payment</span>  </li>
 </ul>
 
 
     
 
-    <p>Your details <a href="">edit details</a></p>
+    <p class="font-weight-bold mt-5">Your details <a href="">edit details</a></p>
 
-    <p>Name: Mrs User User</p>
-    <p>Birthday: 02/06/1985</p>
-    <p>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England</p>
-    <p>Phone number: 07912345678</p>
-    <p>Email: user@user.com</p>
+    <div class="customer-details">
+      <p style="line-height:1.5rem;">Name: Mrs User User
+      <br>Birthday: 02/06/1985
+      <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
+      <br>Phone number: 07912345678
+      <br>Email: user@user.com</p>
+    </div>
 
-Policy start date
+    <form action="">
+      <fieldset class="mt-0 mb-0">
+        <legend></legend>
 
-<small class="form__help">You can pick a date up 30 days in the future.</small>
+        <label class="form-control-label mt-2" for="postcode">Policy start date</label>
+        <small class="form__help">You can pick a date up 30 days in the future.</small>
 
-Immediately
+        <div class="d-flex mb-2 flex-nowrap justify-content-between">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend input-group-prepend--date mt-2">
+              <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
+            </div>
+            <input class="form-control rounded-0 mt-2 form-control--short w-70" type="date" id="startdate" placeholder="dd/mm/yyyy" size="25">
+          </div>
 
-How would you like your policy documents delivered to you?
+          <div class="form-group form-check mt-3 w-70">
+            <label class="form-check-label custom-checkbox" for="immediatelyCheck">Immediately
+              <input type="checkbox" class="form-check-input" id="immediatelyCheck">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div><!-- d-flex -->
 
-A hard copy by post
-A digital copy by email
-Both
+        <label class="form-control-label mt-2" for="postcode">How would you like your policy documents delivered to you?</label>
 
-Please carefully read and agree to the following statements:
+        <div class="form-group">
+          <div class="form-check pl-0">
+            
+            <label class="form-check-label custom-radio" for="documentsDelivered1">
+              A hard copy by post
+              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered1" value="option1" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="form-check pl-0">
+            
+            <label class="form-check-label custom-radio" for="documentsDelivered2">
+              A digital copy by email
+              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered2" value="option2">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="form-check pl-0">
+            <label class="form-check-label custom-radio" for="documentsDelivered3">
+              Both
+              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered3" value="option3">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div><!-- form-group -->
 
-	• 	I confirm that the responses I have provided are accurate and I understand that providing inaccurate responses may affect the premium I pay and any claims settlement. If incorrect responses have been provided Healthy Pets may reduce or not make the claim payment and/or cancel the policy.
-	• 	I understand that if after reading the policy I wish to cancel, I may do so by notifying Healthy Pets within 14 days, starting from the day I receive the policy documentation, without any charge providing I have not made a claim.
-	• 	I am a resident of the United Kingdom
-	• 	I am the owner and keeper and the pet is kept in the United Kingdom
-	• 	I have never had any pet policy covering this pet declared void or cancelled
-	• 	I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which my pet had before the policy cover start date.
-	• 	I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which arises within the first 10 days of the first period of insurance of this policy.
-	• 	Vaccinable illness or conditions if vaccinations are not kept up to date.
+        <label class="form-control-label mt-2" for="">Please carefully read and agree to the following statements:</label>
 
-I have read and agreed to the above statements
+        <div class="form-group">
+          <ul style="padding-left: 1.5rem;">
+            <li>I confirm that the responses I have provided are accurate and I understand that providing inaccurate responses may affect the premium I pay and any claims settlement. If incorrect responses have been provided Healthy Pets may reduce or not make the claim payment and/or cancel the policy.</li>
+            <li>I understand that if after reading the policy I wish to cancel, I may do so by notifying Healthy Pets within 14 days, starting from the day I receive the policy documentation, without any charge providing I have not made a claim.</li>
+            <li>I am a resident of the United Kingdom</li>
+            <li>I am the owner and keeper and the pet is kept in the United Kingdom</li>
+            <li>I have never had any pet policy covering this pet declared void or cancelled</li>
+            <li>I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which my pet had before the policy cover start date.</li>
+            <li>I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which arises within the first 10 days of the first period of insurance of this policy.</li>
+            <li>Vaccinable illness or conditions if vaccinations are not kept up to date.</li>
+          </ul>
 
-Healthy Pets is part of the Ardonagh Group. If you would like to receive the latest offers on selected financial and related products and services from Healthy Pets and the Ardonagh Group, please choose how you would like us to contact you:
+          <div class="form-check " style="padding-left:0;">
+            
+            <label class="form-check-label custom-checkbox" for="policyAgreement">I have read and agreed to the above statements
+              <input type="checkbox" class="form-check-input" id="policyAgreement">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
 
-Mail
-Phone
-Text
-Email
 
+        <label class="form-control-label mt-2" for="">Healthy Pets is part of the Ardonagh Group. If you would like to receive the latest offers on selected financial and related products and services from Healthy Pets and the Ardonagh Group, please choose how you would like us to contact you:</label>
+          
+        <div class="form-group">
+          
+          <div class="form-check pl-0 mb-2">
+            <label class="form-check-label custom-checkbox" for="contactMail">Mail
+              <input type="checkbox" class="form-check-input" id="contactMail">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="form-check pl-0 mb-2">            
+            <label class="form-check-label custom-checkbox" for="contactPhone">Phone
+              <input type="checkbox" class="form-check-input" id="contactPhone">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="form-check pl-0 mb-2">            
+            <label class="form-check-label custom-checkbox" for="contactText">Text
+              <input type="checkbox" class="form-check-input" id="contactText">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="form-check pl-0 mb-2">
+            <label class="form-check-label custom-checkbox" for="contactEmail">Email
+              <input type="checkbox" class="form-check-input" id="contactEmail">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+        </div><!-- form-group -->
+
+      </fieldset>
+    </form>
   </section>
 
   
@@ -137,45 +224,8 @@ Email
 
 
 
-<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/policy-details-monthly.html" style="text-decoration:none;">Next</a>
+<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/payment-default.html" style="text-decoration:none;">Next</a>
 
-
-  
-
-  
-   
-  
-  <section class="mt-5">
-    <h3 class="d-none">Customer Service</h3>
-
-    
-    <section class="card card--deal mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
-        <h5 class="mb-0">20% off for all new customers</h5>
-        <p>Get the best deal online</p>
-        <p>This will automatcally get added</p>
-    </section>
-    
-
-    
-    <section class="card mb-5 border-0">
-      <div class="rating">
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <p class="rating__value">4.7/5</p>
-      </div>
-      <p>Independent service rating based on 1311 verified reviews</p>
-      <hr class="mt-0 bg-dark">
-      <div class="clearfix">
-        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
-        <a href="" class="rating__link float-right">Read all reviews</a>
-      </div>
-    </section>
-    
-
-  </section>
 
   
 
@@ -292,9 +342,66 @@ $('.btn--cover-level').click(function (e) {
 
 });
 
+$('#regular-pay-monthly').click(function () {
+  $('#directDebitDetails').collapse('show');
+  $('#paymentType').collapse('hide');
+});
+$('#regular-pay-annually').click(function () {
+  $('#paymentType').collapse('show');
+  $('#directDebitDetails').collapse('hide');
+});
+
+$('#payment-type-debit').click(function () {
+  $('#directDebitDetails').collapse('show');
+  $('#creditCardDetails').collapse('hide');
+});
+$('#payment-type-credit').click(function () {
+  $('#creditCardDetails').collapse('show');
+  $('#directDebitDetails').collapse('hide');
+});
+
+
 $('.cover__info').click(function (e){
 
 });
+
+var count = 1
+
+function isNumberKey(event) {
+    var keyCode = window.event ? event.keyCode : event.which;
+
+    if (event.keyCode === 8 // backspace
+        || event.keyCode === 46 // delete
+        || event.keyCode === 13 // enter key
+        || event.keyCode === 9 // tab
+        || event.keyCode === 116 // F5 (refresh)
+        || event.keyCode === 112 // F1
+        || event.keyCode === 113 //F2
+        || event.keyCode === 114 //F3
+        || event.keyCode === 115 //F4
+        || event.keyCode === 117 //F6
+        || event.keyCode === 118 //F7
+        || event.keyCode === 119 //F8
+        || event.keyCode === 120 //F9
+        || event.keyCode === 121 //F10
+        || event.keyCode === 122 //F11
+        || event.keyCode === 123 //F12
+    ) {
+        return true;
+    }
+    else if ( event.keyCode < 48 || event.keyCode > 57) {
+        if (count < 6) {
+            count++; //adds one to count
+        }
+        else {
+            console.log("Please Only Enter Numerical Values");
+            count = 1;
+        }
+        return false;
+    }
+    else return true;
+}
+
 
 var selectAlt, i, j, selElement, selectedItem, optionList, optionItem;
 

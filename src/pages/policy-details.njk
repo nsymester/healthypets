@@ -12,73 +12,149 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% include './partials/menu.njk' %} {% endblock %}
+{% import './macros/menu.njk' as menu %} 
+{{ menu.data('policy details') }}
+{% endblock %}
 
 <div class="container">
-  <section class="mt-4 mb-3">
-    <div class="policy__header">
-      <h2 class="mt-0 mb-4">Policy summary</h2>
-      <p>£37.78<small>/month</small></p>
+  <section class="mt- mb-3">
+    <div class="policy-summary__header d-flex justify-content-between mb-0">
+      <h2 class="mt-0">Policy summary</h2>
+      <h2>£37.78<small>/month</small></h2>
     </div>
+    <hr class="mt-0 mb-4">
 
     {% block progressBar %}
     {% import './macros/progress-bar-summary.njk' as progressBar %}
     {{ progressBar.activeStep('summary') }}
     {% endblock %}
 
-    <p>Your details <a href="">edit details</a></p>
+    <p class="font-weight-bold mt-5">Your details <a href="">edit details</a></p>
 
-    <p>Name: Mrs User User</p>
-    <p>Birthday: 02/06/1985</p>
-    <p>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England</p>
-    <p>Phone number: 07912345678</p>
-    <p>Email: user@user.com</p>
+    <div class="customer-details">
+      <p style="line-height:1.5rem;">Name: Mrs User User
+      <br>Birthday: 02/06/1985
+      <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
+      <br>Phone number: 07912345678
+      <br>Email: user@user.com</p>
+    </div>
 
-Policy start date
+    <form action="">
+      <fieldset class="mt-0 mb-0">
+        <legend></legend>
 
-<small class="form__help">You can pick a date up 30 days in the future.</small>
+        <label class="form-control-label mt-2" for="postcode">Policy start date</label>
+        <small class="form__help">You can pick a date up 30 days in the future.</small>
 
-Immediately
+        <div class="d-flex mb-2 flex-nowrap justify-content-between">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend input-group-prepend--date mt-2">
+              <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
+            </div>
+            <input class="form-control rounded-0 mt-2 form-control--short w-70" type="date" id="startdate" placeholder="dd/mm/yyyy" size="25">
+          </div>
 
-How would you like your policy documents delivered to you?
+          <div class="form-group form-check mt-3 w-70">
+            <label class="form-check-label custom-checkbox" for="immediatelyCheck">Immediately
+              <input type="checkbox" class="form-check-input" id="immediatelyCheck">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div><!-- d-flex -->
 
-A hard copy by post
-A digital copy by email
-Both
+        <label class="form-control-label mt-2" for="postcode">How would you like your policy documents delivered to you?</label>
 
-Please carefully read and agree to the following statements:
+        <div class="form-group">
+          <div class="form-check pl-0">
+            
+            <label class="form-check-label custom-radio" for="documentsDelivered1">
+              A hard copy by post
+              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered1" value="option1" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="form-check pl-0">
+            
+            <label class="form-check-label custom-radio" for="documentsDelivered2">
+              A digital copy by email
+              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered2" value="option2">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="form-check pl-0">
+            <label class="form-check-label custom-radio" for="documentsDelivered3">
+              Both
+              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered3" value="option3">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div><!-- form-group -->
 
-	• 	I confirm that the responses I have provided are accurate and I understand that providing inaccurate responses may affect the premium I pay and any claims settlement. If incorrect responses have been provided Healthy Pets may reduce or not make the claim payment and/or cancel the policy.
-	• 	I understand that if after reading the policy I wish to cancel, I may do so by notifying Healthy Pets within 14 days, starting from the day I receive the policy documentation, without any charge providing I have not made a claim.
-	• 	I am a resident of the United Kingdom
-	• 	I am the owner and keeper and the pet is kept in the United Kingdom
-	• 	I have never had any pet policy covering this pet declared void or cancelled
-	• 	I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which my pet had before the policy cover start date.
-	• 	I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which arises within the first 10 days of the first period of insurance of this policy.
-	• 	Vaccinable illness or conditions if vaccinations are not kept up to date.
+        <label class="form-control-label mt-2" for="">Please carefully read and agree to the following statements:</label>
 
-I have read and agreed to the above statements
+        <div class="form-group">
+          <ul style="padding-left: 1.5rem;">
+            <li>I confirm that the responses I have provided are accurate and I understand that providing inaccurate responses may affect the premium I pay and any claims settlement. If incorrect responses have been provided Healthy Pets may reduce or not make the claim payment and/or cancel the policy.</li>
+            <li>I understand that if after reading the policy I wish to cancel, I may do so by notifying Healthy Pets within 14 days, starting from the day I receive the policy documentation, without any charge providing I have not made a claim.</li>
+            <li>I am a resident of the United Kingdom</li>
+            <li>I am the owner and keeper and the pet is kept in the United Kingdom</li>
+            <li>I have never had any pet policy covering this pet declared void or cancelled</li>
+            <li>I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which my pet had before the policy cover start date.</li>
+            <li>I accept that this policy will not cover anything that is caused by, relates to, or results from an illness, disease or injury which arises within the first 10 days of the first period of insurance of this policy.</li>
+            <li>Vaccinable illness or conditions if vaccinations are not kept up to date.</li>
+          </ul>
 
-Healthy Pets is part of the Ardonagh Group. If you would like to receive the latest offers on selected financial and related products and services from Healthy Pets and the Ardonagh Group, please choose how you would like us to contact you:
+          <div class="form-check " style="padding-left:0;">
+            
+            <label class="form-check-label custom-checkbox" for="policyAgreement">I have read and agreed to the above statements
+              <input type="checkbox" class="form-check-input" id="policyAgreement">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
 
-Mail
-Phone
-Text
-Email
 
+        <label class="form-control-label mt-2" for="">Healthy Pets is part of the Ardonagh Group. If you would like to receive the latest offers on selected financial and related products and services from Healthy Pets and the Ardonagh Group, please choose how you would like us to contact you:</label>
+          
+        <div class="form-group">
+          
+          <div class="form-check pl-0 mb-2">
+            <label class="form-check-label custom-checkbox" for="contactMail">Mail
+              <input type="checkbox" class="form-check-input" id="contactMail">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="form-check pl-0 mb-2">            
+            <label class="form-check-label custom-checkbox" for="contactPhone">Phone
+              <input type="checkbox" class="form-check-input" id="contactPhone">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="form-check pl-0 mb-2">            
+            <label class="form-check-label custom-checkbox" for="contactText">Text
+              <input type="checkbox" class="form-check-input" id="contactText">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="form-check pl-0 mb-2">
+            <label class="form-check-label custom-checkbox" for="contactEmail">Email
+              <input type="checkbox" class="form-check-input" id="contactEmail">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+        </div><!-- form-group -->
+
+      </fieldset>
+    </form>
   </section>
 
   {% block nextButton %}
   {% import './macros/next-button.njk' as nextButton %}
-  {{ nextButton.nextStep('Next', 'policy-details-monthly') }}
-  {% endblock %}
-
-  {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %} 
-  {{ customerService.provision({
-    'discount': true,
-    'feefo': true
-  })}}
+  {{ nextButton.nextStep('Next', 'payment-default') }}
   {% endblock %}
 
 </div><!-- container -->

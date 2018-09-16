@@ -34,6 +34,8 @@
 <body role="document"> 
 
 
+ 
+
 <nav class="navbar bg-header navbar-bright navbar-expand">
   <div class="container-fluid" style="height:67px;">
 
@@ -57,10 +59,13 @@
     </div><!-- navbar-nav -->
 
     <div class="navbar-nav">
-      <a href="/pet-details.html" class="btn btn-lg btn-cta rounded-0" role="button">Get a quote</a>
+      
     </div><!-- navbar-nav -->
   </div><!-- container -->
-</nav> 
+</nav>
+
+
+
 
 <div class="container">
   <section class="mt-4 mb-3">
@@ -271,9 +276,66 @@ $('.btn--cover-level').click(function (e) {
 
 });
 
+$('#regular-pay-monthly').click(function () {
+  $('#directDebitDetails').collapse('show');
+  $('#paymentType').collapse('hide');
+});
+$('#regular-pay-annually').click(function () {
+  $('#paymentType').collapse('show');
+  $('#directDebitDetails').collapse('hide');
+});
+
+$('#payment-type-debit').click(function () {
+  $('#directDebitDetails').collapse('show');
+  $('#creditCardDetails').collapse('hide');
+});
+$('#payment-type-credit').click(function () {
+  $('#creditCardDetails').collapse('show');
+  $('#directDebitDetails').collapse('hide');
+});
+
+
 $('.cover__info').click(function (e){
 
 });
+
+var count = 1
+
+function isNumberKey(event) {
+    var keyCode = window.event ? event.keyCode : event.which;
+
+    if (event.keyCode === 8 // backspace
+        || event.keyCode === 46 // delete
+        || event.keyCode === 13 // enter key
+        || event.keyCode === 9 // tab
+        || event.keyCode === 116 // F5 (refresh)
+        || event.keyCode === 112 // F1
+        || event.keyCode === 113 //F2
+        || event.keyCode === 114 //F3
+        || event.keyCode === 115 //F4
+        || event.keyCode === 117 //F6
+        || event.keyCode === 118 //F7
+        || event.keyCode === 119 //F8
+        || event.keyCode === 120 //F9
+        || event.keyCode === 121 //F10
+        || event.keyCode === 122 //F11
+        || event.keyCode === 123 //F12
+    ) {
+        return true;
+    }
+    else if ( event.keyCode < 48 || event.keyCode > 57) {
+        if (count < 6) {
+            count++; //adds one to count
+        }
+        else {
+            console.log("Please Only Enter Numerical Values");
+            count = 1;
+        }
+        return false;
+    }
+    else return true;
+}
+
 
 var selectAlt, i, j, selElement, selectedItem, optionList, optionItem;
 

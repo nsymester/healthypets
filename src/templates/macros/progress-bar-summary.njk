@@ -1,4 +1,4 @@
-{% macro activeStep(activeStep='summary') %}
+{% macro activeStep(activeStep='summary', padlock=false) %}
 
 {% if activeStep == 'summary' %}
   {% set summaryDetails = 'progressbar__step--active' %}
@@ -13,7 +13,7 @@
 
 <ul class="progressbar clearfix">
   <li class="progressbar__step {{ summaryDetails }}"><span>Summary</span></li>
-  <li class="progressbar__step {{ paymentDetails }}"><span>Payment</span></li>
+  <li class="progressbar__step {{ paymentDetails }}"><span>Payment</span> {% if padlock == true %} <img src="/images/padlock.png" alt="" class="img-fluid padlock"> {% endif %} </li>
 </ul>
 
 {% endmacro %}

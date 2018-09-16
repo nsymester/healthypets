@@ -12,7 +12,9 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% include './partials/menu.njk' %} {% endblock %}
+{% import './macros/menu.njk' as menu %} 
+{{ menu.data('your quote') }}
+{% endblock %}
 
 <div class="container">
   <section class="mt-4 mb-3">
@@ -51,7 +53,7 @@
             </div><!-- card-->
           </div><!-- d-flex -->
 
-          <div class="collapse show mt-4 mb-4" id="lifecover">
+          <div class="collapse mt-4 mb-4" id="lifecover">
             <div class="cover--lifetime cover-level__pane pt-2">
               <small class="cover__help">Our most comprehensive cover</small>
               <h2 class="h1 cover__header mt-1">Lifetime Cover</h2>
@@ -162,13 +164,16 @@
 
 </div><!-- container -->
 
-  {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %} 
-  {{ customerService.provision({
-    'discount': true,
-    'feefo': true
-  })}}
-  {% endblock %}
+{% block customerservice %}
+{% import './macros/customer-service.njk' as customerService %} 
+{{ customerService.provision({
+  'discount': true,
+  'feefo': true
+})}}
+{% endblock %}
+
+{% block corejavascript %}
+{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
 
 {% block footer %}
 {% include './partials/footer.njk' %} {% endblock %}

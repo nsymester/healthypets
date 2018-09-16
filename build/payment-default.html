@@ -12,7 +12,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title> Retrieve A Quote Summary |    Healthy Pets</title>
+  <title> Policy Summary |    Healthy Pets</title>
 
   
 
@@ -68,44 +68,179 @@
 
 
 <div class="container">
-  <section class="mt-4 mb-3">
-    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: 'Open Sans'; font-size: 42px;line-height: 57px;">Retrieve a quote</h2>
+  <section class="mt- mb-1">
+    <div class="policy-summary__header d-flex justify-content-between mb-0">
+      <h2 class="mt-0">Policy summary</h2>
+      <h2>£37.78<small>/month</small></h2>
+    </div>
+    <hr class="mt-0 mb-4">
+
+    
+    
+    
+
+
+  
+  
+
+
+<ul class="progressbar clearfix">
+  <li class="progressbar__step progressbar__step--done"><span>Summary</span></li>
+  <li class="progressbar__step progressbar__step--active"><span>Payment</span>  <img src="/images/padlock.png" alt="" class="img-fluid padlock">  </li>
+</ul>
+
+
+    
+
     <form action="">
-      <fieldset class="form-group mt-3">
+      <fieldset class="mt-0 mb-0">
         <legend></legend>
 
         <div class="form-group">
-          <label class="form-control-label" for="pets-name">Your pet's name</label>
-          <input class="form-control rounded-0" type="text" id="pets-name">
-        </div><!-- form-group -->
+          <label class="form-control-label mt-2" for="">How regularly do you want to pay?</label>
+          <div class="form-check-flex">
+            <div class="form-check form-check-inline form-check-radio">
+              <input class="form-check-input form-check-input--box" type="radio" name="regular-pay" id="regular-pay-monthly" value="monthly" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="directDebitDetails">
+              <label class="form-check-label radio-box radio-box--alt2" for="regular-pay-monthly"><span>Monthly</span><span>£37.79</span></label>
+            </div><!-- form-check -->
 
-        <div class="form-group">
-          <label class="form-control-label" for="surname">Your surname</label>
-          <input class="form-control rounded-0" type="text" id="surname">
-        </div><!-- form-group -->
+            <div class="form-check form-check-inline form-check-radio">
+              <input class="form-check-input form-check-input--box" type="radio" name="regular-pay" id="regular-pay-annually" value="annually" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="paymentType">
+              <label class="form-check-label radio-box radio-box--alt2" for="regular-pay-annually"><span>Annually</span><span>£466.12</span></label>
+            </div><!-- form-check -->
+          </div>
+        </div><!-- form-group -->    
 
-        <div class="form-group">
-          <label class="form-control-label" for="postcode">Your postcode</label>
-          <input class="form-control rounded-0" type="text" id="postcode">
-        </div><!-- form-group -->
-      </fieldset><!-- fieldset -->
+        <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
 
-      
-      
-      
+        <div class="collapse" id="paymentType">
+          <div class="form-group">
+            <label class="form-control-label mt-2" for="">How would you like to pay?</label>
+            <div class="form-check-flex">
+
+              <div class="form-check form-check-inline form-check-radio">
+                <input class="form-check-input form-check-input--box" type="radio" name="payment-type" id="payment-type-debit" value="debit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
+
+                <label class="form-check-label radio-box radio-box--alt1" for="payment-type-debit"><span>Direct Debit</span></label>
+              </div><!-- form-check -->
+
+              <div class="form-check form-check-inline form-check-radio">
+                <input class="form-check-input form-check-input--box" type="radio" name="payment-type" id="payment-type-credit" value="credit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
+
+                <label class="form-check-label radio-box radio-box--alt1" for="payment-type-credit"><span>Credit/Debit Card</span></label>
+              </div><!-- form-check -->
+            </div>
+          </div><!-- form-group -->    
+  
+          <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
+
+          <div class="collapse mt-4 mb-4" id="creditCardDetails">
+
+            <div class="form-group mb-4">
+              <label class="form-control-label" for="cardName">Name on Card</label>
+              <input class="form-control rounded-0" type="text" id="cardName">
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="form-control-label" for="cardNumber1">Card Number</label>
+              <div class="form-group--sortcode d-flex">
+                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber1" onkeypress="return isNumberKey(event)" >
+                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber2" onkeypress="return isNumberKey(event)" >
+                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber3" onkeypress="return isNumberKey(event)" >
+                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber4" onkeypress="return isNumberKey(event)" >
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="form-control-label mt-2 mb-0" for="expiryDate">Expiry date</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend input-group-prepend--date mt-2">
+                  <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
+                </div>
+                <input class="form-control rounded-0 mt-2 form-control--short" type="date" id="expiryDate" placeholder="dd/mm/yyyy" size="25">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="form-control-label" for="ccv">CCV</label>
+              <input class="form-control rounded-0 form-control--ccv" type="text" maxlength="3" id="ccv" onkeypress="return isNumberKey(event)">
+            </div><!-- form-group -->
+
+            <p class="h6 mt-4 font-weight-bold">Billing address</p>
+            <p> 1 Street Name, Town, Postcode</p>
+            <p><a href="">Edit address</a>
+          </div><!-- collapse -->
+          
+        </div><!-- collapse -->
+
+
+        <div class="collapse mt-4 mb-4" id="directDebitDetails">
+
+          <p class="h5 mb-4">Your direct debit will come out on the <strong>5th of the month</strong></p>
+          <div class="form-group mb-4">
+            <label class="form-control-label" for="accName">Account holder's name</label>
+            <input class="form-control rounded-0" type="text" id="accName">
+          </div><!-- form-group -->
+
+          <div class="form-group">
+            <label class="form-control-label" for="sortCode1">Sort code</label>
+            <div class="form-group--sortcode d-flex">
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sortCode1" onkeypress="return isNumberKey(event)" >
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sortCode2" onkeypress="return isNumberKey(event)" >
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sortCode3" onkeypress="return isNumberKey(event)" >
+            </div>
+          </div><!-- form-group -->
+
+          <div class="form-group">
+            <label class="form-control-label" for="accNumber">Account number</label>
+            <input class="form-control rounded-0" type="number" id="accNumber">
+          </div><!-- form-group -->
+
+          <div class="card p-4">
+            <div class="d-flex justify-content-around mb-3">
+              <small>The Direct Debit Guarantee</small>
+              <img src="/images/direct-debit.png" class="img-fluid" alt="Direct Bebit logo" style="width: 25%;height: 25%;">
+            </div>
+            <ul class="ml-0" style="padding-left: 1.5rem; font-size:0.9rem; font-weight:100;">
+              <li>This Guarantee is offered by all Banks and Building Societies that accept instructions to pay Direct Debits. </li>
+              <li>If there are any changes to the amount, date or frequency of your Direct Debit, Healthy Pets will notify you 10 working days in advance of your  </li>
+             </ul>
+          </div>
+
+        </div><!-- collapse -->
+
+
+        <div class="cost-group mt-5">
+          <h5 class="total__header">Total including <br>20% discount</h5>
+          <div class="totals">
+            <p class="total-item">£37.78</p>
+            <small class="period">per month</small>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </section>
+
+  
+  
+  
 
 
   
 
 
 
-<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/pet-details.html" style="text-decoration:none;">Next</a>
+<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/payment-complete.html" style="text-decoration:none;">Confirm &amp; Pay</a>
 
 
-      
+  
 
-    </form>
-  </section>
+  
+  <section class="mt-3">
+    <h3 class="d-none">Customer Security</h3>
+    <img class="img-fluid" src="/images/thwate.png" alt="thwate payment security logo">
+</section>   
 
   
    
@@ -113,12 +248,6 @@
   <section class="mt-5">
     <h3 class="d-none">Customer Service</h3>
 
-    
-    <section class="card card--deal mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
-        <h5 class="mb-0">20% off for all new customers</h5>
-        <p>Get the best deal online</p>
-        <p>This will automatcally get added</p>
-    </section>
     
 
     
