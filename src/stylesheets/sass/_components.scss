@@ -886,6 +886,7 @@ input[type=radio].form-check-input--box {
     width: 22px;
     border: 2px solid rgba(140,155,165,1);
     background-color: $white;
+    color: blue;
   }
 }
 
@@ -914,7 +915,7 @@ input[type=radio].form-check-input--box {
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.custom-checkbox .checkmark:after {
   content:'\f00c';
   font-size: 1rem;
   font-family: 'Fontawesome';

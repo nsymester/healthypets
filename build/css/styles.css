@@ -778,7 +778,8 @@ input[type=radio].form-check-input--box {
   height: 22px;
   width: 22px;
   border: 2px solid #8c9ba5;
-  background-color: white; }
+  background-color: white;
+  color: blue; }
 
 /* On mouse-over, add a grey background color */
 .custom-checkbox:hover input ~ .checkmark {
@@ -798,7 +799,7 @@ input[type=radio].form-check-input--box {
   top: -3px; }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.custom-checkbox .checkmark:after {
   content: '\f00c';
   font-size: 1rem;
   font-family: 'Fontawesome';
@@ -970,6 +971,10 @@ label.form-control-label {
 
 .form-check--alt {
   padding-left: 0; }
+  .form-check--alt:first-child label.custom-radio {
+    padding-left: 0; }
+    .form-check--alt:first-child label.custom-radio .checkmark--size {
+      left: -7px; }
 
 .form-group--alt {
   margin-right: -15px;

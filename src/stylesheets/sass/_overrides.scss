@@ -109,6 +109,14 @@ label.form-control-label {
 
 .form-check--alt {
   padding-left: 0;
+
+  &:first-child label.custom-radio {
+    padding-left:0;
+
+    .checkmark--size{
+      left:-7px;
+    }
+  }
 }
 
 .form-group--alt {
