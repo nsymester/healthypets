@@ -49,7 +49,7 @@
 
 // @group Feefo rating
 
-.rating {
+.feefo-rating {
 
   > span {
     display: inline-block;
@@ -94,7 +94,7 @@
     position: relative;
 
     span {
-      color: #3d70b2;
+      color: $primary-colour;
       font-family: "Open Sans";
       font-size: 15.66px;
       font-weight: 300;
@@ -116,7 +116,7 @@
       margin-right: auto;
       margin-bottom: .4rem;
       background: #fff; // set to white to hide the line
-      color: rgba(61,112,178,1);
+      color: $primary-colour;
       border: 2px solid rgba(90,104,114,1);
       border-radius: 50%;
     }
@@ -141,24 +141,20 @@
     &--active {
 
       span {
-        color: #3d70b2;
+        color: $primary-colour;
         opacity: 1;
         font-weight: 600;
       }
 
       &:before {
         content: '\f111';
-        border: 2px solid rgba(61,112,178,1);
-        color: rgba(61,112,178,1);
-      }
-
-      &:after {
-        //background: green;
+        border: 2px solid $primary-colour;
+        color: $primary-colour;
       }
     }
     &--done {
       span {
-        color: #3d70b2;
+        color: $primary-colour;
         opacity: 1;
         font-weight: 600;
       }
@@ -166,56 +162,60 @@
       &:before {
         content: '\f00c';
         background-color: rgba(255, 255, 255, 1);
-        color: solid rgba(61,112,178,1);;
+        color: solid $primary-colour;;
       }
     }
   }
 }
 
+// @group business-offer
 
-// @group cards
-
-.card--deal{
+.business-offer {
   border-left: 5.15px solid rgba(90,167,0,1) !important;
 }
 
-.card--notification {
+// @group pet-information
+
+.pet-information {
   width:97%;
   border-left: 5px solid rgba(90,170,250,1) !important;
-}
 
-.card-body--notification {
-  color: rgba(90,104,114,1);
-  font-family: "Open Sans";
-  font-size: 13px;
-  line-height: 20px;
+  &__body {
+    color: rgba(90,104,114,1);
+    font-family: "Open Sans";
+    font-size: 13px;
+    line-height: 20px;
+  }
 
-  ul li {
+  &__item {
     font-family: inherit;
     font-weight:100;
   }
 }
 
-.card--pet-details {
+// @group pet-summary
+
+.pet-summary {
   padding: 2rem;
-  h5 {
+
+  &__header {
     color: rgba(90,104,114,1);
     font-weight: 100;
     font-size: 1.15rem;
     word-spacing:3px;
   }
 
-  a {
+  &__items {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+  }
+
+  &__link {
     font-size: 0.7rem;
-    color: rgba(61,112,178,1);
+    color: $primary-colour;
     font-weight: 600;
   }
-}
-
-.card-action {
-  display:flex;
-  flex-flow:row nowrap;
-  justify-content:space-between;
 }
 
 // @group header colours
@@ -267,7 +267,7 @@ input[type=radio].form-check-input--box {
 .radio-box {
   height:100%;
   width:100%;
-  border: 2px solid rgba(61,112,178,1);
+  border: 2px solid $primary-colour;
   background-color: rgb(255, 255, 255);
   transition: all 250ms ease;
   will-change: transition;
@@ -276,7 +276,7 @@ input[type=radio].form-check-input--box {
   cursor: pointer;
   position: relative;
   font-family: "Open Sans";
-  color: rgba(61,112,178,1);
+  color: $primary-colour;
   &:active{
     transform: translateY(10px);
   }
@@ -292,7 +292,7 @@ input[type=radio].form-check-input--box {
     //transition: all 300ms ease;
     font-size: 0.85em;
     user-select: none;
-    //color: rgba(61,112,178,1);
+    //color: $primary-colour;
     display:inline-block;
     bottom: 32px;
     line-height: 36px;
@@ -311,7 +311,7 @@ input[type=radio].form-check-input--box {
       //transform: translateY(-80px);
       //transition: all 300ms ease-in-out;
       //font-weight: normal;
-      color: rgba(61,112,178,1);
+      color: $primary-colour;
       background-size: 60% 60%;
       width: 60px;
       height: 50px;
@@ -373,9 +373,9 @@ input[type=radio].form-check-input--box {
 // @group buttons
 
 .btn-cta {
-  color: rgba(255,255,255,1);
-  background-color: rgba(244,121,29,1);
-  border-color: rgba(244,121,29,1);
+  color: $white;
+  background-color: $cta-colour;
+  border-color: $cta-colour;
   right: -16px;
   position: relative;
   text-transform: uppercase;
@@ -387,38 +387,38 @@ input[type=radio].form-check-input--box {
 
 .btn-primary--alt {
   height: calc(80px - 50%);
-  color: rgba(255,255,255,1);
+  color: $white;
   font-family: "Open Sans";
   //font-size: calc(24px - 50%);
   font-size: inherit;
   font-weight: 200;
   line-height: calc(38px - 50%);
   text-align: center;
-  background-color: rgba(61,112,178,1);
-  border: 2px solid rgba(61,112,178,1);
+  background-color: $primary-colour;
+  border: 2px solid $primary-colour;
 }
 
 .btn-outline-primary--alt {
   height: calc(80px - 50%);
-  color: rgba(61,112,178,1);
+  color: $primary-colour;
   font-family: "Open Sans";
   //font-size: calc(24px - 50%);
   font-size: 15px;
   font-weight: 600;
   line-height: calc(32px - 50%);
   text-align: center;
-  border: 2px solid rgba(61,112,178,1);
+  border: 2px solid $primary-colour;
 
   &:hover {
-    color: rgba(255,255,255,1);
-    background-color: rgba(61,112,178,1);
+    color: $white;
+    background-color: $primary-colour;
   }
 }
 
-.btn__outline {
+.btn--outline {
   background-color: rgba(255,255,255,0);
-  border-color: #3d70b2;
-  color: rgba(61,112,178,1);
+  border-color: $primary-colour;
+  color: $primary-colour;
   font-size: 15px;
   font-weight: 600;
 }
@@ -426,14 +426,14 @@ input[type=radio].form-check-input--box {
 .btn-outline-primary--alt:not(:disabled):not(.disabled).active,
 .btn-outline-primary--alt:not(:disabled):not(.disabled):active,
 .show>.btn-outline-primary--alt.dropdown-toggle {
-  color: rgba(61,112,178,1);
+  color: $primary-colour;
   background-color: transparent;
-  border-color: rgba(61,112,178,1);
+  border-color: $primary-colour;
 }
 
 .form__help {
   display:block;
-  color: rgba(61,112,178,1);
+  color: $primary-colour;
   font-weight:100;
   font-size: 0.85rem;
 }
@@ -448,8 +448,8 @@ input[type=radio].form-check-input--box {
 }
 
 .pill--condition{
-  background-color: rgba(61,112,178,1);
-  color: rgba(255,255,255,1);
+  background-color: $primary-colour;
+  color: $white;
   border-radius: 20px;
   padding: 2px 10px;
   display: inline-block;
@@ -474,7 +474,7 @@ input[type=radio].form-check-input--box {
 }
 
 .enter-address {
-  color: rgba(61,112,178,1);
+  color: $primary-colour;
   font-size: 16px;
   line-height: 16px;
 }
@@ -562,7 +562,7 @@ input[type=radio].form-check-input--box {
 
     &:before {
       content: '\f00c';
-      color:  rgba(61,112,178,1);
+      color:  $primary-colour;
       background-color: rgba(255, 255, 255, 1);
       position:absolute;
       left: -20px;
@@ -580,7 +580,7 @@ input[type=radio].form-check-input--box {
 
     &:before {
       content: '\f00d';
-      color:  rgba(61,112,178,1);
+      color:  $primary-colour;
       background-color: rgba(255, 255, 255, 1);
       position:absolute;
       left: -20px;
@@ -605,13 +605,13 @@ input[type=radio].form-check-input--box {
 
 .cover-level {
   box-sizing: border-box;
-  background-color: rgba(255,255,255,1);
+  background-color: $white;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   border-radius: 0;
 }
 
 .cover-level__pane {
-	background-color: rgba(255,255,255,1);
+	background-color: $white;
 	box-shadow: 0 24px 48px 0 rgba(0,0,0,0.1);
   padding-left: 15px;
   padding-right: 15px;
@@ -631,7 +631,7 @@ input[type=radio].form-check-input--box {
   position: absolute;
   top: 25px;
   right: 20px;
-  background-color: #3d70b2;
+  background-color: $primary-colour;
   border-radius: 50%;
   font-family: sans;
   color: white;
@@ -673,11 +673,11 @@ input[type=radio].form-check-input--box {
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-color: rgba(61,112,178,1) transparent transparent transparent;
+    border-color: $primary-colour transparent transparent transparent;
   }
   /*point the arrow upwards when the select box is open (active):*/
   .select-selected.select-arrow-active:after {
-    border-color: transparent transparent rgba(61,112,178,1) transparent;
+    border-color: transparent transparent $primary-colour transparent;
     top: 12px;
   }
   /*style the items (options), including the selected item:*/
@@ -711,8 +711,8 @@ input[type=radio].form-check-input--box {
 .nav-underlines .nav-link.active,
 .nav-underlines .show>.nav-link {
     padding-bottom:10px;
-    color: rgba(61,112,178,1);
-    border-bottom: 2px solid rgba(61,112,178,1);
+    color: $primary-colour;
+    border-bottom: 2px solid $primary-colour;
 }
 
 .nav-underlines .nav-link {
@@ -781,7 +781,7 @@ input[type=radio].form-check-input--box {
 
     a {
       font-size: 0.7rem;
-      color: #3d70b2;
+      color: $primary-colour;
       font-weight: 600;
     }
 
@@ -883,7 +883,7 @@ input[type=radio].form-check-input--box {
   height: 22px;
   width: 22px;
   border: 2px solid rgba(140,155,165,1);
-  background-color: rgba(255,255,255,1);
+  background-color: $white;
 }
 
 /* On mouse-over, add a grey background color */
@@ -948,7 +948,7 @@ input[type=radio].form-check-input--box {
     width: 22px;
     border-radius: 50%;
     border: 2px solid rgba(140,155,165,1);
-    background-color: rgba(255,255,255,1);
+    background-color: $white;
 
 }
 
@@ -997,7 +997,7 @@ input[type=radio].form-check-input--box {
 }
 
 .padlock{
-  position: relative; 
+  position: relative;
   top: -37px;
   right: -7px;
   width: 20px;

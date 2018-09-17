@@ -5,9 +5,9 @@
 */
 /* @group settings */
 /**
-  * @desc settings include 
+  * @desc settings include
   *   - global variables
-  *   - colours 
+  *   - colours
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 /* @group tools */
@@ -123,7 +123,7 @@ a {
   *       - work-detail
   * @author Neil Symester neil.symester@towergate.co.uk
   */
-.rating > span {
+.feefo-rating > span {
   display: inline-block;
   position: relative;
   color: gold;
@@ -132,7 +132,7 @@ a {
   height: auto;
   line-height: calc(2.5rem - 50%); }
 
-.rating__value {
+.feefo-rating__value {
   margin-left: 10px;
   line-height: calc(2.7rem - 50%);
   color: #152935;
@@ -141,7 +141,7 @@ a {
   font-weight: bold;
   display: inline; }
 
-.rating__link {
+.feefo-rating__link {
   color: #152935 !important;
   font-family: Helvetica;
   font-size: 16px;
@@ -218,45 +218,43 @@ a {
       background-color: white;
       color: solid #3d70b2; }
 
-.card--deal {
+.business-offer {
   border-left: 5.15px solid #5aa700 !important; }
 
-.card--notification {
+.pet-information {
   width: 97%;
   border-left: 5px solid #5aaafa !important; }
-
-.card-body--notification {
-  color: #5a6872;
-  font-family: "Open Sans";
-  font-size: 13px;
-  line-height: 20px; }
-  .card-body--notification ul li {
+  .pet-information__body {
+    color: #5a6872;
+    font-family: "Open Sans";
+    font-size: 13px;
+    line-height: 20px; }
+  .pet-information__item {
     font-family: inherit;
     font-weight: 100; }
 
-.card--pet-details {
+.pet-summary {
   padding: 2rem; }
-  .card--pet-details h5 {
+  .pet-summary__header {
     color: #5a6872;
     font-weight: 100;
     font-size: 1.15rem;
     word-spacing: 3px; }
-  .card--pet-details a {
+  .pet-summary__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .pet-summary__link {
     font-size: 0.7rem;
     color: #3d70b2;
     font-weight: 600; }
-
-.card-action {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
 
 .bg-header {
   background-color: #1c81b6 !important; }
@@ -404,7 +402,7 @@ input[type=radio].form-check-input--box {
     color: white;
     background-color: #3d70b2; }
 
-.btn__outline {
+.btn--outline {
   background-color: rgba(255, 255, 255, 0);
   border-color: #3d70b2;
   color: #3d70b2;
