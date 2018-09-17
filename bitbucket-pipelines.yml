@@ -3,8 +3,8 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-# image: node:6.9.4
-image: samueldebruyn/debian-git
+image: node:6.9.4
+# image: samueldebruyn/debian-git
 
 pipelines:
   default:
@@ -20,5 +20,5 @@ pipelines:
         # trigger: manual  # uncomment to make manual deployment
         script:
           - echo "Deploying to staging environment"
-          - npm install git-ftp
+          - npm install --save-dev git-ftp
           - git ftp push --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://healthypets.siteofdreams.co.uk/-
