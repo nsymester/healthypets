@@ -12,7 +12,7 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% import './macros/menu.njk' as menu %} 
+{% import './macros/menu.njk' as menu %}
 {{ menu.data('pet details') }}
 {% endblock %}
 
@@ -24,11 +24,11 @@
     {{ progressBar.activeStep('pet-details') }}
     {% endblock %}
 
-    <section class="card card--pet-details mb-3 rounded-0 shadow bg-white">
-      <h5>Bobby, German Shepherd, 3 yrs</h5>
-      <div class="card-action">
-        <a href="">Edit Bobby's Info</a>
-        <a href="">Delete</a>
+    <section class="card pet-summary mb-3 rounded-0 shadow bg-white">
+      <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
+      <div class="pet-summary__items">
+        <a class="pet-summary__link" href="">Edit Bobby's Info</a>
+        <a class="pet-summary__link" href="">Delete</a>
       </div>
     </section>
 
@@ -73,7 +73,7 @@
   </section>
 
   {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %} 
+  {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': true,
     'feefo': true

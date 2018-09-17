@@ -113,9 +113,9 @@
   
 
     <section class="policy-summary mb-2 ">
-      <div class="card card--pet-details  mb-0 rounded-0 bg-white lifetime-brd-color">
+      <div class="card pet-summary mb-0 rounded-0 bg-white lifetime-brd-color">
         <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
-        <h5>Booby, German Shpherd, 3 yrs</h5>
+        <h5 class="pet-summary__header">Booby, German Shpherd, 3 yrs</h5>
         
       </div>
       <div class="card mt-0 rounded-0" style="">
@@ -137,9 +137,9 @@
   
 
     <section class="policy-summary mb-2 ">
-      <div class="card card--pet-details  mb-0 rounded-0 bg-white maximum-brd-color">
+      <div class="card pet-summary mb-0 rounded-0 bg-white maximum-brd-color">
         <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
-        <h5>Poppy, Rusian Blue, 6 yrs</h5>
+        <h5 class="pet-summary__header">Poppy, Rusian Blue, 6 yrs</h5>
         
       </div>
       <div class="card mt-0 rounded-0" style="">
@@ -269,10 +269,10 @@ $('.btn--cover-level').click(function (e) {
   if (this.innerHTML === 'Choose level') {
     this.innerHTML = 'Hide levels';
     $(this).removeClass('btn-primary');
-    $(this).addClass('btn__outline');
+    $(this).addClass('btn--outline');
   } else {
     this.innerHTML = 'Choose level';
-    $(this).removeClass('btn__outline');
+    $(this).removeClass('btn--outline');
     $(this).addClass('btn-primary');
   }
 

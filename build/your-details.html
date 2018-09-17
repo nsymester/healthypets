@@ -216,7 +216,7 @@
     <h3 class="d-none">Customer Service</h3>
 
     
-    <section class="card card--deal mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
+    <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
         <h5 class="mb-0">20% off for all new customers</h5>
         <p>Get the best deal online</p>
         <p>This will automatcally get added</p>
@@ -225,19 +225,19 @@
 
     
     <section class="card mb-5 border-0">
-      <div class="rating">
+      <div class="feefo-rating">
         <span>&#9733;</span>
         <span>&#9733;</span>
         <span>&#9733;</span>
         <span>&#9733;</span>
         <span>&#9733;</span>
-        <p class="rating__value">4.7/5</p>
+        <p class="feefo-rating__value">4.7/5</p>
       </div>
       <p>Independent service rating based on 1311 verified reviews</p>
       <hr class="mt-0 bg-dark">
       <div class="clearfix">
         <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
-        <a href="" class="rating__link float-right">Read all reviews</a>
+        <a href="" class="feefo-rating__link float-right">Read all reviews</a>
       </div>
     </section>
     
@@ -350,10 +350,10 @@ $('.btn--cover-level').click(function (e) {
   if (this.innerHTML === 'Choose level') {
     this.innerHTML = 'Hide levels';
     $(this).removeClass('btn-primary');
-    $(this).addClass('btn__outline');
+    $(this).addClass('btn--outline');
   } else {
     this.innerHTML = 'Choose level';
-    $(this).removeClass('btn__outline');
+    $(this).removeClass('btn--outline');
     $(this).addClass('btn-primary');
   }
 
