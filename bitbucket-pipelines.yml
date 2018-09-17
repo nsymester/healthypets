@@ -21,4 +21,4 @@ pipelines:
         script:
           - echo "Deploying to staging environment"
           - npm install --save-dev git-ftp
-          - git ftp push --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://healthypets.siteofdreams.co.uk/-
+          - git ftp push --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://healthypets.siteofdreams.co.uk/
