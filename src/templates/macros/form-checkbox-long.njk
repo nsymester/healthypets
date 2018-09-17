@@ -1,0 +1,11 @@
+{% macro field(data) %}
+
+  <div class="form-check mb-2" style="padding-left:0;">
+    
+    <label class="form-check-label custom-checkbox" for="{{ data.id }}">{{ data.label }}
+      <input type="checkbox" class="form-check-input" id="{{ data.id }}">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+
+{% endmacro %}

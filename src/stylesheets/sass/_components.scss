@@ -876,14 +876,17 @@ input[type=radio].form-check-input--box {
 }
 
 /* Create a custom checkbox */
-.custom-checkbox .checkmark {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  height: 22px;
-  width: 22px;
-  border: 2px solid rgba(140,155,165,1);
-  background-color: $white;
+.custom-checkbox {
+
+  .checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    border: 2px solid rgba(140,155,165,1);
+    background-color: $white;
+  }
 }
 
 /* On mouse-over, add a grey background color */
@@ -922,25 +925,17 @@ input[type=radio].form-check-input--box {
 
 /* The container */
 .custom-radio {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    user-select: none;
-    font-weight: 100;
-}
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  user-select: none;
+  font-weight: 100;
 
-/* Hide the browser's default radio button */
-.custom-radio input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom radio button */
-.custom-radio .checkmark {
+  /* Create a custom radio button */
+  .checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -949,7 +944,20 @@ input[type=radio].form-check-input--box {
     border-radius: 50%;
     border: 2px solid rgba(140,155,165,1);
     background-color: $white;
+  }
 
+  .checkmark--size {
+    top: unset;
+    bottom: -23px;
+    left: 25px;
+  }
+}
+
+/* Hide the browser's default radio button */
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
 /* On mouse-over, add a grey background color */

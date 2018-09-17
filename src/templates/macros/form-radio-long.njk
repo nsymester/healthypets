@@ -1,0 +1,12 @@
+{% macro field (data) %}
+
+  <div class="form-check pl-0">
+    
+    <label class="form-check-label custom-radio" for="{{ data.id }}">
+      {{ data.label }}
+      <input class="form-check-input" type="radio" name="{{ data.name }}" id="{{ data.id }}" value="{{ data.value }}">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+
+{% endmacro %}

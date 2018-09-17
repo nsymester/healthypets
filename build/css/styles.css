@@ -816,24 +816,27 @@ input[type=radio].form-check-input--box {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-weight: 100; }
+  font-weight: 100;
+  /* Create a custom radio button */ }
+  .custom-radio .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    border: 2px solid #8c9ba5;
+    background-color: white; }
+  .custom-radio .checkmark--size {
+    top: unset;
+    bottom: -23px;
+    left: 25px; }
 
 /* Hide the browser's default radio button */
 .custom-radio input {
   position: absolute;
   opacity: 0;
   cursor: pointer; }
-
-/* Create a custom radio button */
-.custom-radio .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 22px;
-  width: 22px;
-  border-radius: 50%;
-  border: 2px solid #8c9ba5;
-  background-color: white; }
 
 /* On mouse-over, add a grey background color */
 .custom-radio:hover input ~ .checkmark {

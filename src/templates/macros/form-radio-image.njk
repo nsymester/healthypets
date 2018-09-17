@@ -1,0 +1,16 @@
+{% macro field(data) %}
+
+  <div class="form-check form-check--alt">
+    <label class="form-check-label custom-radio" for="{{ data.id }}">
+      <input class="form-check-input form-check-input--alt" type="radio" name="{{ data.name }}" id="{{ data.id }}" value="{{ data.value }}">
+      <img src="{{ data.image }}" style="width: {{ data.width }};">
+      <span class="checkmark checkmark--size"></span>
+
+      <div class="dog-weight">
+        <div>{{ data.size }}</div><small class="form__help mb-1">{{ data.weight }}</small>
+      </div><!-- dog-weight -->
+    </label>
+
+  </div><!-- form-check -->
+
+{% endmacro %}

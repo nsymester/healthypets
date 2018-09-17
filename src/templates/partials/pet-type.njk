@@ -25,29 +25,37 @@
               </div>
             </div><!-- card-->
 
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label mb-2" for="defaultCheck1">I understand and agree to these terms</label>
-            </div><!-- form-check -->
+            {% block formcheckbox %}
+            {% import '../macros/form-checkbox-long.njk' as formCheckboxLong %}
+            {{ formCheckboxLong.field({
+                'id':'termsAgreement',
+                'label': 'I understand and agree to these terms'
+              }) 
+            }}
+            {% endblock %}
 
-            <label class="form-control-label" for="">What type of dog do you have?</label>
+            <label class="form-control-label mt-3" for="">What type of dog do you have?</label>
 
-              <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="dog-type" id="dog-type1" value="option1" data-toggle="collapse" href="#collapse-dog" role="button" aria-expanded="false" aria-controls="collapse-dog">
-                <label class="form-check-label" for="dog-type1">Crossbreed</label>
-                <small class="form__help mb-1">Parents are different breeds</small>
+              <div class="form-check mb-0 pl-0">
+                <label class="form-check-label custom-radio" for="dog-type1">Crossbreed
+                  <input class="form-check-input" type="radio" name="dog-type" id="dog-type1" value="option1" data-toggle="collapse" href="#collapse-dog" role="button" aria-expanded="false" aria-controls="collapse-dog">
+                  <span class="checkmark"></span>
+                  <small class="form__help mb-1">Parents are different breeds</small>
+                </label>
               </div><!-- form-check -->
 
-              <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="dog-type" id="dog-type2" value="option2">
-                <label class="form-check-label" for="dog-type2">Mongrel</label>
-                <small class="form__help mb-1">Parents are three breeds or more</small>
+              <div class="form-check mb-3 pl-0">
+                <label class="form-check-label custom-radio" for="dog-type2">Mongrel
+                  <input class="form-check-input" type="radio" name="dog-type" id="dog-type2" value="option2">
+                  <span class="checkmark"></span>
+                  <small class="form__help mb-1">Parents are three breeds or more</small>
+                </label>
               </div><!-- form-check -->
 
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="dog-type" id="dog-type3" value="option3">
-                <label class="form-check-label" for="dog-type3" style="width: 97%;">
-
+              <div class="form-check mb-2 pl-0">
+                <label class="form-check-label custom-radio" for="dog-type3" style="width: 97%;">
+                  <input class="form-check-input" type="radio" name="dog-type" id="dog-type3" value="option3">
+                  <span class="checkmark"></span>
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>Find your dog's breed</option>
                     <option>German</option>
@@ -63,35 +71,44 @@
                   <h6>Pet size</h6>
 
                   <div class="form-check-flex mt-1">
-                    <div class="form-check form-check--alt">
-                      <input class="form-check-input form-check-input--alt" type="radio" name="dog-size" id="small-dog" value="Small dog">
-                      <label class="form-check-label" for="small-dog">
-                        <img src="/images/small-dog.png" style="width: 80px;">
-                        <div class="dog-weight">
-                          <div>Small</div><small class="form__help mb-1">0-10kg</small>
-                        </div>
-                      </label>
 
-                    </div><!-- form-check -->
+                    {% block formdogsizeContent %}
+                    {% import '../macros/form-radio-image.njk' as formdogsize %}
+                    {{ formdogsize.field({
+                        'id':'small-dog',
+                        'image': '/images/small-dog.png',
+                        'name' : 'dog-size',
+                        'value': 'Small dog',
+                        'size': 'Small',
+                        'weight': '0-10kg',
+                        'width': '80px'
+                      }) 
+                    }}
 
-                    <div class="form-check form-check--alt">
-                      <input class="form-check-input form-check-input--alt" type="radio" name="dog-size" id="medium-dog" value="Medium dog">
-                      <label class="form-check-label" for="medium-dog">
-                        <img src="/images/medium-dog.png" style="width: 80px;">
-                        <div class="dog-weight">
-                          <div>Medium</div><small class="form__help mb-1">10-20kg</small>
-                        </div>
-                      </label>
-                    </div><!-- form-check -->
+                    {{ formdogsize.field({
+                        'id':'medium-dog',
+                        'image': '/images/medium-dog.png',
+                        'name' : 'dog-size',
+                        'value': 'Medium dog',
+                        'size': 'Medium',
+                        'weight': '10-20kg',
+                        'width': '80px'
+                      }) 
+                    }}
 
-                    <div class="form-check form-check--alt">
-                      <input class="form-check-input form-check-input--alt" type="radio" name="dog-size" id="large-dog" value="Large dog">
-                      <label class="form-check-label" for="large-dog">
-                        <img src="/images/large-dog.png" style="width: 88px;">
-                        <div class="dog-weight">
-                          <div>Large</div><small class="form__help mb-1">20+kg</small></label>
-                        </div>
-                    </div><!-- form-check -->
+                    {{ formdogsize.field({
+                        'id':'large-dog',
+                        'image': '/images/large-dog.png',
+                        'name' : 'dog-size',
+                        'value': 'Large dog',
+                        'size': 'Large',
+                        'weight': '20+kg',
+                        'width': '88px'
+                      }) 
+                    }}
+
+                    {% endblock %}
+
                   </div>
 
                 </div>

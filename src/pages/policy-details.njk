@@ -65,29 +65,35 @@
         <label class="form-control-label mt-2" for="postcode">How would you like your policy documents delivered to you?</label>
 
         <div class="form-group">
-          <div class="form-check pl-0">
-            
-            <label class="form-check-label custom-radio" for="documentsDelivered1">
-              A hard copy by post
-              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered1" value="option1" checked>
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div class="form-check pl-0">
-            
-            <label class="form-check-label custom-radio" for="documentsDelivered2">
-              A digital copy by email
-              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered2" value="option2">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div class="form-check pl-0">
-            <label class="form-check-label custom-radio" for="documentsDelivered3">
-              Both
-              <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered3" value="option3">
-              <span class="checkmark"></span>
-            </label>
-          </div>
+
+          {% block formradio %}
+          {% import './macros/form-radio-long.njk' as formRadioLong %}
+          {{ formRadioLong.field({
+              'id':'documentsDelivered1',
+              'label': 'A hard copy by post',
+              'name' : 'documentsDelivered',
+              'value': 'option1'
+            }) 
+          }}
+
+          {{ formRadioLong.field({
+              'id':'documentsDelivered2',
+              'label': 'A digital copy by email',
+              'name' : 'documentsDelivered',
+              'value': 'option2'
+            }) 
+          }}
+
+          {{ formRadioLong.field({
+              'id':'documentsDelivered3',
+              'label': 'Both',
+              'name' : 'documentsDelivered',
+              'value': 'option3'
+            }) 
+          }}
+
+          {% endblock %}
+
         </div><!-- form-group -->
 
         <label class="form-control-label mt-2" for="">Please carefully read and agree to the following statements:</label>
@@ -104,13 +110,15 @@
             <li>Vaccinable illness or conditions if vaccinations are not kept up to date.</li>
           </ul>
 
-          <div class="form-check " style="padding-left:0;">
-            
-            <label class="form-check-label custom-checkbox" for="policyAgreement">I have read and agreed to the above statements
-              <input type="checkbox" class="form-check-input" id="policyAgreement">
-              <span class="checkmark"></span>
-            </label>
-          </div>
+          {% block formcheckbox %}
+          {% import './macros/form-checkbox-long.njk' as formCheckboxLong %}
+          {{ formCheckboxLong.field({
+              'id':'policyAgreement',
+              'label': 'I have read and agreed to the above statements'
+            }) 
+          }}
+          {% endblock %}
+
         </div>
 
 
@@ -118,33 +126,33 @@
           
         <div class="form-group">
           
-          <div class="form-check pl-0 mb-2">
-            <label class="form-check-label custom-checkbox" for="contactMail">Mail
-              <input type="checkbox" class="form-check-input" id="contactMail">
-              <span class="checkmark"></span>
-            </label>
-          </div>
+          {% block formcheckboxContact %}
+          {% import './macros/form-checkbox-long.njk' as formcheckboxContact %}
+          {{ formcheckboxContact.field({
+              'id':'contactMail',
+              'label': 'Mail'
+            }) 
+          }}
 
-          <div class="form-check pl-0 mb-2">            
-            <label class="form-check-label custom-checkbox" for="contactPhone">Phone
-              <input type="checkbox" class="form-check-input" id="contactPhone">
-              <span class="checkmark"></span>
-            </label>
-          </div>
+          {{ formcheckboxContact.field({
+              'id':'contactPhone',
+              'label': 'Phone'
+            }) 
+          }}
 
-          <div class="form-check pl-0 mb-2">            
-            <label class="form-check-label custom-checkbox" for="contactText">Text
-              <input type="checkbox" class="form-check-input" id="contactText">
-              <span class="checkmark"></span>
-            </label>
-          </div>
+          {{ formcheckboxContact.field({
+              'id':'contactText',
+              'label': 'Text'
+            }) 
+          }}
 
-          <div class="form-check pl-0 mb-2">
-            <label class="form-check-label custom-checkbox" for="contactEmail">Email
-              <input type="checkbox" class="form-check-input" id="contactEmail">
-              <span class="checkmark"></span>
-            </label>
-          </div>
+          {{ formcheckboxContact.field({
+              'id':'contactEmail',
+              'label': 'Email'
+            }) 
+          }}                    
+
+          {% endblock %}
 
         </div><!-- form-group -->
 
