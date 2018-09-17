@@ -1,15 +1,17 @@
-# This is a sample build configuration for JavaScript.
-# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# This is a sample build configuration for PHP.
+# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: node:6.9.4
+# image: php:7.1.1
+          
+image: samueldebruyn/debian-git
 
 pipelines:
   default:
     - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          # - npm test
+        script:
+          - apt-get update
+          - apt-get -qq install git-ftp
+          - git ftp push --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://ftp.siteofdreams.co.uk/
+          
