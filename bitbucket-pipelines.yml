@@ -13,3 +13,10 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - npm install
           # - npm test
+    - step:
+        name: Deploy to staging
+        deployment: staging   # can be test, staging or production
+        # trigger: manual  # uncomment to make manual deployment
+        script:
+          - echo "Deploying to staging environment"
+          - npm install git-ftp-
