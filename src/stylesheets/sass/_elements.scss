@@ -15,7 +15,7 @@
 body {
     background-color: #fff;
     font-size: 16px;
-    font-family: 'Open Sans' !important;
+    font-family: $base-font !important;
 }
 
 // @group section header
@@ -23,7 +23,7 @@ body {
 section h2 {
   font-weight: 300;
   color: rgba(0,59,92,1);
-  font-family: 'Open Sans';
+  font-family: $base-font;
   font-size: 22px;
   line-height: calc(57px - 50%);
 }

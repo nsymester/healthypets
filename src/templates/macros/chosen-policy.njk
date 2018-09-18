@@ -8,7 +8,7 @@
 {% endif %}
     <section class="policy-summary {{ info.marginBottom }} ">
       <div class="card pet-summary mb-0 rounded-0 bg-white {{ info.brdColour }}">
-        <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
+        <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
         <h5 class="pet-summary__header">{{info.name}}, {{info.breed}}, {{info.age}}</h5>
         {% if info.state == 'form' %}
         <div class="pet-summary__items">
@@ -17,10 +17,10 @@
         </div>
         {% endif %}
       </div>
-      <div class="card mt-0 rounded-0" style="">
-        <div class="card-pricing">
+      <div class="card mt-0 rounded-0">
+        <div class="policy-summary__offer">
           <h5>{{cover}} {{info.cost}}</h5>
-          <p class="summary__price">£29.11<small>/month</small></p>
+          <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         {% if info.state == 'form' %}
         <a href="">Edit cover</a>

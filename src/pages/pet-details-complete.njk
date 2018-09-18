@@ -42,12 +42,13 @@
 
     <form action="">
 
-      {% block nextButton %}
-      {% import './macros/next-button.njk' as nextButton %}
-      {{ nextButton.nextStep('Next', 'your-details') }}
-      {% endblock %}
-
-      <button class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" type="submit">+ Add another pet</button>
+      <div class="mt-4">
+        {% block nextButton %}
+        {% import './macros/next-button.njk' as nextButton %}
+        {{ nextButton.nextStep('Next', 'your-details') }}
+        {% endblock %}
+      </div>
+      <button class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0" type="submit">+ Add another pet</button>
 
     </form>
   </section>

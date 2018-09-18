@@ -12,7 +12,7 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% import './macros/menu.njk' as menu %} 
+{% import './macros/menu.njk' as menu %}
 {{ menu.data('pet details') }}
 {% endblock %}
 
@@ -52,18 +52,19 @@
 
       </fieldset><!-- fieldset -->
 
-      <a class="btn btn-outline-primary btn-outline-primary--alt btn-block rounded-0" href="/pet-details-other.html" style="text-decoration:none;">+ Add another pet</a>
+      <a class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0" href="/pet-details-other.html" style="text-decoration:none;">+ Add another pet</a>
 
-      {% block nextButton %}
-      {% import './macros/next-button.njk' as nextButton %}
-      {{ nextButton.nextStep('Next', 'pet-details-other') }}
-      {% endblock %}
-
+      <div class="mt-4">
+        {% block nextButton %}
+        {% import './macros/next-button.njk' as nextButton %}
+        {{ nextButton.nextStep('Next', 'pet-details-other') }}
+        {% endblock %}
+      </div>
     </form>
   </section>
 
   {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %} 
+  {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': true,
     'feefo': true

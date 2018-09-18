@@ -12,7 +12,7 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% import './macros/menu.njk' as menu %} 
+{% import './macros/menu.njk' as menu %}
 {{ menu.data('your details') }}
 {% endblock %}
 
@@ -57,7 +57,7 @@
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form-control--short" type="date" id="ownerdob" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="ownerdob" placeholder="dd/mm/yyyy" size="25">
           </div>
         </div><!-- form-group -->
 
@@ -65,7 +65,7 @@
           <label class="form-control-label mt-2" for="postcode">Your postcode</label>
           <div class="input-group mb-2 flex-nowrap justify-content-between">
             <input class="form-control form-control--alt rounded-0" type="number" id="postcode">
-            <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Find address</button>
+            <button class="btn btn-primary btn-primary--alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Find address</button>
           </div>
 
           <div class="collapse mt-4 mb-4" id="postcode-result">
@@ -73,7 +73,7 @@
 
             <hr style="border: 1px solid rgba(61,112,178,1)">
 
-            <div class="postcodes">
+            <div class="address__postcodes">
               <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
               <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
               <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
@@ -111,7 +111,7 @@
 
         <div class="collapse show mt-4 mb-4" id="manualaddress">
           <div class="form-group">
-            <a href="" class="enter-address" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
+            <a href="" class="address__link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
           </div><!-- form-group -->
         </div><!-- collapse -->
 
@@ -127,16 +127,17 @@
 
       </fieldset><!-- fieldset -->
 
-      {% block nextButton %}
-      {% import './macros/next-button.njk' as nextButton %}
-      {{ nextButton.nextStep('Calculate quote', 'your-quote') }}
-      {% endblock %}
-
+      <div class="mt-4">
+        {% block nextButton %}
+        {% import './macros/next-button.njk' as nextButton %}
+        {{ nextButton.nextStep('Calculate quote', 'your-quote') }}
+        {% endblock %}
+      </div>
     </form>
   </section>
 
   {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %} 
+  {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': true,
     'feefo': true

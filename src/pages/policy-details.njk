@@ -12,7 +12,7 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% import './macros/menu.njk' as menu %} 
+{% import './macros/menu.njk' as menu %}
 {{ menu.data('policy details') }}
 {% endblock %}
 
@@ -51,7 +51,7 @@
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form-control--short w-70" type="date" id="startdate" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short w-70" type="date" id="startdate" placeholder="dd/mm/yyyy" size="25">
           </div>
 
           <div class="form-group form-check mt-3 w-70">
@@ -73,7 +73,7 @@
               'label': 'A hard copy by post',
               'name' : 'documentsDelivered',
               'value': 'option1'
-            }) 
+            })
           }}
 
           {{ formRadioLong.field({
@@ -81,7 +81,7 @@
               'label': 'A digital copy by email',
               'name' : 'documentsDelivered',
               'value': 'option2'
-            }) 
+            })
           }}
 
           {{ formRadioLong.field({
@@ -89,7 +89,7 @@
               'label': 'Both',
               'name' : 'documentsDelivered',
               'value': 'option3'
-            }) 
+            })
           }}
 
           {% endblock %}
@@ -115,7 +115,7 @@
           {{ formCheckboxLong.field({
               'id':'policyAgreement',
               'label': 'I have read and agreed to the above statements'
-            }) 
+            })
           }}
           {% endblock %}
 
@@ -123,34 +123,34 @@
 
 
         <label class="form-control-label mt-2" for="">Healthy Pets is part of the Ardonagh Group. If you would like to receive the latest offers on selected financial and related products and services from Healthy Pets and the Ardonagh Group, please choose how you would like us to contact you:</label>
-          
+
         <div class="form-group">
-          
+
           {% block formcheckboxContact %}
           {% import './macros/form-checkbox-long.njk' as formcheckboxContact %}
           {{ formcheckboxContact.field({
               'id':'contactMail',
               'label': 'Mail'
-            }) 
+            })
           }}
 
           {{ formcheckboxContact.field({
               'id':'contactPhone',
               'label': 'Phone'
-            }) 
+            })
           }}
 
           {{ formcheckboxContact.field({
               'id':'contactText',
               'label': 'Text'
-            }) 
+            })
           }}
 
           {{ formcheckboxContact.field({
               'id':'contactEmail',
               'label': 'Email'
-            }) 
-          }}                    
+            })
+          }}
 
           {% endblock %}
 
@@ -160,10 +160,12 @@
     </form>
   </section>
 
-  {% block nextButton %}
-  {% import './macros/next-button.njk' as nextButton %}
-  {{ nextButton.nextStep('Next', 'payment-default') }}
-  {% endblock %}
+  <div class="mt-4">
+    {% block nextButton %}
+    {% import './macros/next-button.njk' as nextButton %}
+    {{ nextButton.nextStep('Next', 'payment-default') }}
+    {% endblock %}
+  </div>
 
 </div><!-- container -->
 

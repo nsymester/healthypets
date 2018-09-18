@@ -32,13 +32,13 @@ $('#conditionSelect').change(function () {
   let select = $('#conditionSelect option:selected').val();
   // create a pill
   // append pill to condition list
-  $('.conditions').append(`<div class="pill--condition">${select} <span class="close">x</span></div>`);
+  $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);
 
   checkForConditions();
 });
 
 function checkForConditions () {
-  $('.pill--condition .close').on('click', function (evt) {
+  $('.pill__condition .close').on('click', function (evt) {
     evt.preventDefault();
     evt.currentTarget.parentNode.remove();
   });
@@ -53,14 +53,14 @@ $('#postcode-search').click(function (evt) {
   $('#address').collapse('hide');
 });
 
-$('.postcodes a').on('click', function (evt) {
+$('.address__postcodes a').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
   $('#manualaddress').collapse('hide');
 })
 
-$('.enter-address').on('click', function (evt) {
+$('.address__link').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
@@ -231,7 +231,7 @@ function syncOptionSelected (e) {
   }
   h.click();
   if (originalSelect.getAttribute('id') === 'conditionSelect') {
-    $('.conditions').append(`<div class='pill--condition'>${h.innerHTML} <span class='close'>x</span></div>`);
+    $('.conditions').append(`<div class='pill__condition'>${h.innerHTML} <span class='close'>x</span></div>`);
     checkForConditions();
   }
 }

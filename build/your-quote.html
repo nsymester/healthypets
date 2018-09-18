@@ -34,7 +34,7 @@
 <body role="document"> 
 
 
- 
+
 
 <nav class="navbar bg-header navbar-bright navbar-expand">
   <div class="container-fluid" style="height:67px;">
@@ -95,165 +95,175 @@
       <fieldset class="form-group mt-0 mb-0">
         <legend></legend>
 
-          <div class="d-flex justify-content-between mb-3">
-            <div class="card card--cover card--cover-lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-              <a id="lifecover-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between" data-toggle="collapse" aria-expand="false" aria-controls="lifecover">
-                <h6 class="card__cover-header">Lifetime Cover</h6>
-                <p class="cover__price">from £29.11 / month</p>
-              </a>
-            </div><!-- card-->
+        <div class="d-flex justify-content-between mb-3">
+          <div class="card cover-item cover-item--lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+            <a id="lifecover-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between" data-toggle="collapse" aria-expand="false" aria-controls="lifecover">
+              <h6 class="cover-item__header">Lifetime Cover</h6>
+              <p class="cover-item__price">from £29.11 / month</p>
+            </a>
+          </div><!-- card-->
 
-            <div class="card card--cover card--cover-maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-              <a id="maximum-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="maximumcover"">
-                <h6 class="card__cover-header">Maximun Benefit Cover</h6>
-                <p class="cover__price">from £29.11 / month</p>
-              </a>
-            </div><!-- card-->
+          <div class="card cover-item cover-item--maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+            <a id="maximum-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="maximumcover"">
+              <h6 class="cover-item__header">Maximun Benefit Cover</h6>
+              <p class="cover-item__price">from £29.11 / month</p>
+            </a>
+          </div><!-- card-->
 
-            <div class="card card--cover card--cover-accident rounded-0 shadow mb-3 pt-2 bg-white">
-              <a id="accident-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="accidentcover"">
-                <h6 class="card__cover-header">Accident Only Cover</h6>
-                <p class="cover__price">from £29.11 / month</p>
-              </a>
-            </div><!-- card-->
-          </div><!-- d-flex -->
+          <div class="card cover-item cover-item--accident rounded-0 shadow mb-3 pt-2 bg-white">
+            <a id="accident-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="accidentcover"">
+              <h6 class="cover-item__header">Accident Only Cover</h6>
+              <p class="cover-item__price">from £29.11 / month</p>
+            </a>
+          </div><!-- card-->
+        </div><!-- d-flex -->
 
-          <div class="collapse mt-4 mb-4" id="lifecover">
-            <div class="cover--lifetime cover-level__pane pt-2">
-              <small class="cover__help">Our most comprehensive cover</small>
-              <h2 class="h1 cover__header mt-1">Lifetime Cover</h2>
-              <small class="cover__help--alt">from <span>£29.11/month</span></small>
+        <div class="collapse mt-4 mb-4" id="lifecover">
+          <div class="cover-info cover-info--lifetime pt-2">
+            <small class="cover-info__prologue">Our most comprehensive cover</small>
+            <h2 class="h1 cover-info__header mt-1">Lifetime Cover</h2>
+            <small class="cover-info__price">from <span>£29.11/month</span></small>
 
-              <p class="mt-3">All new  conditions will be covered upto a limit. When the limit is reached, the policy no longer covers you until it is renewed. </p>
-              <p>When the policy is renewed, the limit is reinstated and you can claim for the same condition plus any additional new conditions. </p>
-              <p class="font-weight-bold">Best for pets likely to develop ongoing conditions like diabetes or arthiritus.</p>
+            <p class="mt-3">All new  conditions will be covered upto a limit. When the limit is reached, the policy no longer covers you until it is renewed. </p>
+            <p>When the policy is renewed, the limit is reinstated and you can claim for the same condition plus any additional new conditions. </p>
+            <p class="font-weight-bold">Best for pets likely to develop ongoing conditions like diabetes or arthiritus.</p>
 
-              <div class="d-flex justify-content-between" style="">
-                <ul class="benefits__included">
-                  <li>Accidents</li>
-                  <li>Illness</li>
-                  <li>Cover for ongoing conditions for the pet’s lifetime</li>
-                </ul>
+            <div class="d-flex justify-content-between">
+              <ul class="cover-info__benefits--included">
+                <li>Accidents</li>
+                <li>Illness</li>
+                <li>Cover for ongoing conditions for the pet’s lifetime</li>
+              </ul>
 
-                <ul class="benefits__excluded">
-                  <li>Pre-existing conditions</li>
-                </ul>
+              <ul class="cover-info__benefits--excluded">
+                <li>Pre-existing conditions</li>
+              </ul>
+            </div>
+
+            <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+              <div class="input-group mb-2 flex-nowrap justify-content-between">
+                <p>Available with vet fee cover from <span class="font-weight-bold">£2000</span> or <span class="font-weight-bold">£4250</span></p>
+                <button class="btn btn-primary btn-primary--alt ml-5 form-control-alt rounded-0 btn--cover-level" style="width: 45%;" data-toggle="collapse" data-target="#choose-lifetime-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
               </div>
+            </div>
 
-              <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
-                <div class="input-group mb-2 flex-nowrap justify-content-between">
-                  <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£2000</span> or <span class="cover__price-range">£4250</span></p>
-                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0 btn--cover-level" style="width: 45%;" data-toggle="collapse" data-target="#choose-lifetime-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
-                </div>
-              </div>
+            <div class="collapse" id="choose-lifetime-level">
 
-              <div class="collapse" id="choose-lifetime-level">
-
-                
-                
-                
-
+              
+              
+              
         <section>
           <h6 class="cover-level__h6">Select your level of cover</h6>
 
           <ul class="nav nav-underlines justify-content-around mb-3" id="pills-tab" role="tablist">
+          
             <li class="nav-item">
               <a class="nav-link active" id="pills-cover1-tab" data-toggle="pill" href="#pills-cover1" role="tab" aria-controls="pills-cover1" aria-selected="true">£2000 Cover</a>
             </li>
+          
+
+          
             <li class="nav-item">
               <a class="nav-link" id="pills-cover2-tab" data-toggle="pill" href="#pills-cover2" role="tab" aria-controls="pills-cover2" aria-selected="false">£4250 Cover</a>
             </li>
+          
+
+          
+
+          
           </ul>
           <div class="tab-content" id="pills-tabContent">
+
+            
+            
 
             <div class="tab-pane fade show active" id="pills-cover1" role="tabpanel" aria-labelledby="pills-cover1-tab">
 
               
               
-              
-              <div class="cover-level border">
+  <div class="cover-level border">
 
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£2000</span></p>
-                    <p><span class="font-weight-bold">£2000</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
-                  </div>
-                  <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
-                </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£2000</span></p>
+        <p><span class="font-weight-bold">£2000</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
 
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-              </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+  </div>
 
-              
-              
-              
+  
+  
+  
 
 
   
 
 
 
-<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/policy-summary.html" style="text-decoration:none;">Select £2000 Lifetime Cover</a>
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £2000 Lifetime Cover</a>
 
 
-              
+  
 
-              
-              
-              
+  
+  
+  
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -280,99 +290,99 @@
           </div>
         </div>
 
-              
+  
 
 
-              
+               
             </div><!-- tab-pane -->
 
             <div class="tab-pane fade" id="pills-cover2" role="tabpanel" aria-labelledby="pills-cover2-tab">
-              
-              
-              
-              <div class="cover-level border">
-
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£4250</span></p>
-                    <p><span class="font-weight-bold">£4250</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
-                  </div>
-                  <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
-                </div>
-
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-                <div class="cover-level__item rounded-0 text-center">
-                  <div class="cover-level__body">
-                    <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
-                  </div>
-                  <div class="cover-level__info">i</div>
-                </div>
-              </div>
 
               
               
-              
+  <div class="cover-level border">
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£4250</span></p>
+        <p><span class="font-weight-bold">£4250</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+  </div>
+
+  
+  
+  
 
 
   
 
 
 
-<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/policy-summary.html" style="text-decoration:none;">Select £4250 Lifetime Cover</a>
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £4250 Lifetime Cover</a>
 
 
-              
+  
 
-              
-              
-              
+  
+  
+  
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -399,11 +409,24 @@
           </div>
         </div>
 
-              
+  
 
+
+               
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade" id="pills-cover3" role="tabpanel" aria-labelledby="pills-cover3-tab">
 
               
             </div><!-- tab-pane -->
+
+            <div class="tab-pane fade show" id="pills-cover4" role="tabpanel" aria-labelledby="pills-cover4-tab">
+
+              
+            </div><!-- tab-pane -->
+
+            
+
           </div><!-- tab-content -->
         </section>
 
@@ -439,86 +462,723 @@
         
 
 
-                
+              
 
-              </div>
+            </div>
 
-            </div><!-- cover--lifetime -->
-          </div><!-- collapse -->
+          </div><!-- cover--lifetime -->
+        </div><!-- collapse -->
 
-          <div class="collapse mt-4 mb-4" id="maximumcover">
-            <div class="cover--maximum cover-level__pane pt-3">
-              <small class="cover__help">Our most comprehensive cover</small>
-              <h2 class="h1 cover__header mt-1">Maximum Benefit</h2>
-              <small class="cover__help--alt">from <span>£29.11/month</span></small>
+        <div class="collapse mt-4 mb-4" id="maximumcover">
+          <div class="cover-info cover-info--maximum pt-3">
+            <small class="cover-info__prologue">Our most comprehensive cover</small>
+            <h2 class="h1 cover-info__header mt-1">Maximum Benefit</h2>
+            <small class="cover-info__price">from <span>£29.11/month</span></small>
 
-              <p class="mt-3">Every new condition will be covered upto a limit. When the limit is reached, it will be considered a ‘pre-existing’ condition and you will no longer be covered for it. </p>
-              <p>When the policy renews, you won’t be covered for any pre-existing conditions.</p>
-              <p class="font-weight-bold">Best for covering accidents and illnesses that require one-off or short term treatment.</p>
+            <p class="mt-3">Every new condition will be covered upto a limit. When the limit is reached, it will be considered a ‘pre-existing’ condition and you will no longer be covered for it. </p>
+            <p>When the policy renews, you won’t be covered for any pre-existing conditions.</p>
+            <p class="font-weight-bold">Best for covering accidents and illnesses that require one-off or short term treatment.</p>
 
-              <div class="d-flex justify-content-between" style="">
-                <ul class="benefits__included">
-                  <li>Accidents</li>
-                  <li>Illness</li>
-                  <li>Cover for ongoing conditions up to a financial limit</li>
-                </ul>
+            <div class="d-flex justify-content-between">
+              <ul class="cover-info__benefits--included">
+                <li>Accidents</li>
+                <li>Illness</li>
+                <li>Cover for ongoing conditions up to a financial limit</li>
+              </ul>
 
-                <ul class="benefits__excluded">
-                  <li>Pre-existing conditions</li>
-                </ul>
-              </div>
+              <ul class="cover-info__benefits--excluded">
+                <li>Pre-existing conditions</li>
+              </ul>
+            </div>
 
-              <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
-                <div class="input-group mb-2 flex-nowrap justify-content-between">
-                  <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£2000</span>, <span class="cover__price-range">£4250</span> or  <span class="cover__price-range">£7500</span></p>
-                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Choose level</button>
-                </div>
+            <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+              <div class="input-group mb-2 flex-nowrap justify-content-between">
+                <p>Available with vet fee cover from <span class="font-weight-bold">£2000</span>, <span class="font-weight-bold">£4250</span> or  <span class="font-weight-bold">£7500</span></p>
+                <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0 btn--cover-level" type="submit" style="width: 45%;" data-toggle="collapse" data-target="#choose-maximum-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
               </div>
             </div>
-          </div><!-- collapse -->
 
-          <div class="collapse mt-4 mb-4" id="accidentcover">
-            <div class="cover--accident cover-level__pane pt-3">
-              <small class="cover__help">Our most comprehensive cover</small>
-              <h2 class="h1 cover__header mt-1">Accident Only</h2>
-              <small class="cover__help--alt">from <span>£29.11/month</span></small>
+            <div class="collapse" id="choose-maximum-level">
 
-              <p class="mt-3">Cover for vet fees, only as a result of a sudden or unexpected injury. </p>
-              <p>Claim for upto 12 months from the start of the first treamtment</p>
-              <p>Claim for an unlimited number of injuries and be covered up to the maximum amount for every injury.</p>
-              <p class="font-weight-bold">Best for older pets that are not eligable for more comprehensive cover.</p>
+              
+              
+              
+        <section>
+          <h6 class="cover-level__h6">Select your level of cover</h6>
 
-              <div class="d-flex justify-content-between" style="">
-                <ul class="benefits__included">
-                  <li>Accidents</li>
-                  <li>Cover for ongoing conditions for 12 months</li>
-                </ul>
+          <ul class="nav nav-underlines justify-content-around mb-3" id="pills-tab" role="tablist">
+          
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-cover1-tab" data-toggle="pill" href="#pills-cover1" role="tab" aria-controls="pills-cover1" aria-selected="true">£2000 Cover</a>
+            </li>
+          
 
-                <ul class="benefits__excluded">
-                  <li>Illness</li>
-                  <li>Pre-existing conditions</li>
-                </ul>
+          
+            <li class="nav-item">
+              <a class="nav-link" id="pills-cover2-tab" data-toggle="pill" href="#pills-cover2" role="tab" aria-controls="pills-cover2" aria-selected="false">£4250 Cover</a>
+            </li>
+          
+
+          
+            <li class="nav-item">
+              <a class="nav-link" id="pills-cover3-tab" data-toggle="pill" href="#pills-cover3" role="tab" aria-controls="pills-cover3" aria-selected="false">£7500 Cover</a>
+            </li>
+          
+
+          
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+
+            
+            
+
+            <div class="tab-pane fade show active" id="pills-cover1" role="tabpanel" aria-labelledby="pills-cover1-tab">
+
+              
+              
+  <div class="cover-level border">
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£2000</span></p>
+        <p><span class="font-weight-bold">£2000</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+  </div>
+
+  
+  
+  
+
+
+  
+
+
+
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £2000 Maximum Cover</a>
+
+
+  
+
+  
+  
+  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Maximum £2000</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
               </div>
-
-              <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
-                <div class="input-group mb-2 flex-nowrap justify-content-between">
-                  <p class="cover__cost-range">Available with vet fee cover from <span class="cover__price-range">£1000</span></p>
-                  <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Choose level</button>
-                </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
               </div>
             </div>
-          </div><!-- collapse -->
+          </div>
+        </div>
+
+  
+
+
+               
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade" id="pills-cover2" role="tabpanel" aria-labelledby="pills-cover2-tab">
+
+              
+              
+  <div class="cover-level border">
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£4250</span></p>
+        <p><span class="font-weight-bold">£4250</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+  </div>
+
+  
+  
+  
+
+
+  
+
+
+
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £4250 Maximum Cover</a>
+
+
+  
+
+  
+  
+  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Maximum £4250</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
+              </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  
+
+
+               
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade" id="pills-cover3" role="tabpanel" aria-labelledby="pills-cover3-tab">
+
+              
+              
+  <div class="cover-level border">
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p class="">Vetinary fees <br>up to <span class="font-weight-bold">£7500</span></p>
+        <p><span class="font-weight-bold">£7500</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+  </div>
+
+  
+  
+  
+
+
+  
+
+
+
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £7500 Maximum Cover</a>
+
+
+  
+
+  
+  
+  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Maximum £7500</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
+              </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  
+
+
+               
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade show" id="pills-cover4" role="tabpanel" aria-labelledby="pills-cover4-tab">
+
+              
+            </div><!-- tab-pane -->
+
+            
+
+          </div><!-- tab-content -->
+        </section>
+
+        
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Maximum £2000</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
+              </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+
+              
+
+            </div>
+          </div>
+        </div><!-- collapse -->
+
+        <div class="collapse mt-4 mb-4" id="accidentcover">
+          <div class="cover-info cover-info--accident pt-3">
+            <small class="cover-info__prologue">Our most comprehensive cover</small>
+            <h2 class="h1 cover-info__header mt-1">Accident Only</h2>
+            <small class="cover-info__price">from <span>£29.11/month</span></small>
+
+            <p class="mt-3">Cover for vet fees, only as a result of a sudden or unexpected injury. </p>
+            <p>Claim for upto 12 months from the start of the first treamtment</p>
+            <p>Claim for an unlimited number of injuries and be covered up to the maximum amount for every injury.</p>
+            <p class="font-weight-bold">Best for older pets that are not eligable for more comprehensive cover.</p>
+
+            <div class="d-flex justify-content-between" style="">
+              <ul class="cover-info__benefits--included">
+                <li>Accidents</li>
+                <li>Cover for ongoing conditions for 12 months</li>
+              </ul>
+
+              <ul class="cover-info__benefits--excluded">
+                <li>Illness</li>
+                <li>Pre-existing conditions</li>
+              </ul>
+            </div>
+
+            <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+              <div class="input-group mb-2 flex-nowrap justify-content-between">
+                <p>Available with vet fee cover from <span class="font-weight-bold">£1000</span></p>
+                <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0 btn--cover-level" type="submit" style="width: 45%;" data-toggle="collapse" data-target="#choose-accident-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
+              </div>
+            </div>
+
+            <div class="collapse" id="choose-accident-level">
+
+              
+              
+              
+        <section>
+          <h6 class="cover-level__h6">Select your level of cover</h6>
+
+          <ul class="nav nav-underlines justify-content-around mb-3" id="pills-tab" role="tablist">
+          
+
+          
+
+          
+
+          
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-cover4-tab" data-toggle="pill" href="#pills-cover4" role="tab" aria-controls="pills-cover4" aria-selected="false">£1000 Cover</a>
+            </li>
+          
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+
+            
+            
+
+            <div class="tab-pane fade show active" id="pills-cover1" role="tabpanel" aria-labelledby="pills-cover1-tab">
+
+              
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade" id="pills-cover2" role="tabpanel" aria-labelledby="pills-cover2-tab">
+
+              
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade" id="pills-cover3" role="tabpanel" aria-labelledby="pills-cover3-tab">
+
+              
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade show" id="pills-cover4" role="tabpanel" aria-labelledby="pills-cover4-tab">
+
+              
+              
+  <div class="cover-level border">
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p class="">Vetinary fees <br>up to <span class="font-weight-bold">1000</span></p>
+        <p><span class="font-weight-bold">1000</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
+      </div>
+      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#exampleModalCenter">i</button>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+    <div class="cover-level__item rounded-0 text-center">
+      <div class="cover-level__body">
+        <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
+      </div>
+      <div class="cover-level__info">i</div>
+    </div>
+  </div>
+
+  
+  
+  
+
+
+  
+
+
+
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select 1000 Accident Cover</a>
+
+
+  
+
+  
+  
+  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Accident 1000</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
+              </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  
+
+
+               
+            </div><!-- tab-pane -->
+
+            
+
+          </div><!-- tab-content -->
+        </section>
+
+        
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body mb-0 pb-0">
+                <span>Accident £2000</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>close</small>
+                  <span aria-hidden="true"> &times;</span>
+                </button>
+
+              </div>
+              <div class="modal-header modal-header--alt">
+                <h5 class="modal-title modal-title--alt" id="exampleModalCenterTitle">Death from Accident</h5>
+              </div>
+              <div class="modal-body">
+                <p>The purchase price of your pet up to a maximum of £1,000 if it dies or in the event of humane destruction by a vet to alleviate incurable and inhumane suffering following an illness or disease.</p>
+                <p>Exclusions:</p>
+                <p>If no purchase receipt is available, replacement cost will be that of a similar pet.</p>
+                <p>Any claims for a pet under age of six weeks.</p>
+                <p>Any claim if the death results from an injury that happened before your pet’s cover started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+
+              
+
+            </div>
+          </div>
+        </div><!-- collapse -->
 
       </fieldset><!-- fieldset -->
 
     </form>
   </section>
 
-</div><!-- container -->
 
-
- 
-
+  
+  
+  
   <section class="mt-5">
     <h3 class="d-none">Customer Service</h3>
 
@@ -551,7 +1211,9 @@
 
   </section>
 
+  
 
+</div><!-- container -->
 
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -588,13 +1250,13 @@ $('#conditionSelect').change(function () {
   let select = $('#conditionSelect option:selected').val();
   // create a pill
   // append pill to condition list
-  $('.conditions').append(`<div class="pill--condition">${select} <span class="close">x</span></div>`);
+  $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);
 
   checkForConditions();
 });
 
 function checkForConditions () {
-  $('.pill--condition .close').on('click', function (evt) {
+  $('.pill__condition .close').on('click', function (evt) {
     evt.preventDefault();
     evt.currentTarget.parentNode.remove();
   });
@@ -609,14 +1271,14 @@ $('#postcode-search').click(function (evt) {
   $('#address').collapse('hide');
 });
 
-$('.postcodes a').on('click', function (evt) {
+$('.address__postcodes a').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
   $('#manualaddress').collapse('hide');
 })
 
-$('.enter-address').on('click', function (evt) {
+$('.address__link').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
@@ -787,7 +1449,7 @@ function syncOptionSelected (e) {
   }
   h.click();
   if (originalSelect.getAttribute('id') === 'conditionSelect') {
-    $('.conditions').append(`<div class='pill--condition'>${h.innerHTML} <span class='close'>x</span></div>`);
+    $('.conditions').append(`<div class='pill__condition'>${h.innerHTML} <span class='close'>x</span></div>`);
     checkForConditions();
   }
 }

@@ -12,7 +12,7 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% import './macros/menu.njk' as menu %} 
+{% import './macros/menu.njk' as menu %}
 {{ menu.data('policy summary') }}
 {% endblock %}
 
@@ -68,39 +68,41 @@
 
   <section>
     <div class="cost-group">
-      <p class="period__header">Total monthly cost</p>
-      <p class="cost">£58.22</p>
+      <p class="cost-group__header">Total monthly cost</p>
+      <p class="cost-group__cost">£58.22</p>
     </div>
     <div class="cost-group">
-      <p class="period__header">20% new customer discount</p>
-      <p class="cost">-£11.64</p>
+      <p class="cost-group__header">20% new customer discount</p>
+      <p class="cost-group__cost">-£11.64</p>
     </div>
 
     <hr class="mb-4">
 
     <div class="cost-group">
-      <h5 class="total__header">Total including <br>20% discount</h5>
-      <div class="totals">
-        <p class="total-item">£37.78</p>
-        <small class="period">per month</small>
+      <h5 class="cost-group__header--total">Total including <br>20% discount</h5>
+      <div class="">
+        <p class="cost-group__total-item">£37.78</p>
+        <small class="cost-group__period">per month</small>
         <p class="mb-2 font-weight-bold">OR</p>
-        <p class="total-item">£466.12</p>
-        <small class="period">per year</small>
+        <p class="cost-group__total-item">£466.12</p>
+        <small class="cost-group__period">per year</small>
       </div>
     </div>
 
   </section>
 
-  {% block nextButton %}
-  {% import './macros/next-button.njk' as nextButton %}
-  {{ nextButton.nextStep('Go to secure checkout', 'policy-details') }}
-  {% endblock %}
+  <div class="mt-4">
+    {% block nextButton %}
+    {% import './macros/next-button.njk' as nextButton %}
+    {{ nextButton.nextStep('Go to secure checkout', 'policy-details') }}
+    {% endblock %}
+  </div>
 
   {% block customersecurity %}
-  {% include './partials/thwate.njk' %} {% endblock %}  
+  {% include './partials/thwate.njk' %} {% endblock %}
 
   {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %} 
+  {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': false,
     'feefo': true

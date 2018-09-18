@@ -114,14 +114,14 @@
 
     <section class="policy-summary mb-2 ">
       <div class="card pet-summary mb-0 rounded-0 bg-white lifetime-brd-color">
-        <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
+        <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
         <h5 class="pet-summary__header">Booby, German Shpherd, 3 yrs</h5>
         
       </div>
-      <div class="card mt-0 rounded-0" style="">
-        <div class="card-pricing">
+      <div class="card mt-0 rounded-0">
+        <div class="policy-summary__offer">
           <h5>Lifetime £2000</h5>
-          <p class="summary__price">£29.11<small>/month</small></p>
+          <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
       </div>
@@ -138,14 +138,14 @@
 
     <section class="policy-summary mb-2 ">
       <div class="card pet-summary mb-0 rounded-0 bg-white maximum-brd-color">
-        <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
+        <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
         <h5 class="pet-summary__header">Poppy, Rusian Blue, 6 yrs</h5>
         
       </div>
-      <div class="card mt-0 rounded-0" style="">
-        <div class="card-pricing">
+      <div class="card mt-0 rounded-0">
+        <div class="policy-summary__offer">
           <h5>Max Ben £4250</h5>
-          <p class="summary__price">£29.11<small>/month</small></p>
+          <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
       </div>
@@ -202,13 +202,13 @@ $('#conditionSelect').change(function () {
   let select = $('#conditionSelect option:selected').val();
   // create a pill
   // append pill to condition list
-  $('.conditions').append(`<div class="pill--condition">${select} <span class="close">x</span></div>`);
+  $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);
 
   checkForConditions();
 });
 
 function checkForConditions () {
-  $('.pill--condition .close').on('click', function (evt) {
+  $('.pill__condition .close').on('click', function (evt) {
     evt.preventDefault();
     evt.currentTarget.parentNode.remove();
   });
@@ -223,14 +223,14 @@ $('#postcode-search').click(function (evt) {
   $('#address').collapse('hide');
 });
 
-$('.postcodes a').on('click', function (evt) {
+$('.address__postcodes a').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
   $('#manualaddress').collapse('hide');
 })
 
-$('.enter-address').on('click', function (evt) {
+$('.address__link').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
@@ -401,7 +401,7 @@ function syncOptionSelected (e) {
   }
   h.click();
   if (originalSelect.getAttribute('id') === 'conditionSelect') {
-    $('.conditions').append(`<div class='pill--condition'>${h.innerHTML} <span class='close'>x</span></div>`);
+    $('.conditions').append(`<div class='pill__condition'>${h.innerHTML} <span class='close'>x</span></div>`);
     checkForConditions();
   }
 }

@@ -18,7 +18,7 @@ a {
 }
 
 input.form-control, select.form-control {
-  background-color: rgba(61,112,178,0.1);
+  background-color: $bg-input-colour;
   color: rgba(90,104,114,1);
   font-family: "Open Sans";
   font-size: 20px;
@@ -26,8 +26,8 @@ input.form-control, select.form-control {
   border:0;
 
   &:focus {
-    background-color: rgba(61, 112, 178, 0.1);
-    border-color: rgba(61, 112, 178, 0.1);
+    background-color: $bg-input-colour;
+    border-color: $bg-input-colour;
   }
 }
 
@@ -53,9 +53,11 @@ input[type=radio] + label {
 select.form-control {
   font-size:0.9rem;
   height:50px;
+  top: -10px;
+  position: relative;
 }
 
-.form-control--short {
+.form__input--short {
   flex: 0 1 40% !important;
 }
 
@@ -72,7 +74,7 @@ select.form-control {
   border: 0;
 
   .input-group-text {
-    background-color: rgba(61, 112, 178, 0.1);
+    background-color: $bg-input-colour;
     border: 0;
     height:50px;
   }
@@ -83,7 +85,7 @@ select.form-control {
   border: 0;
 
   .input-group-text {
-    background-color: rgba(61, 112, 178, 0.1);
+    background-color: $bg-input-colour;
     border: 0;
     height:44px;
   }
@@ -109,14 +111,6 @@ label.form-control-label {
 
 .form-check--alt {
   padding-left: 0;
-
-  &:first-child label.custom-radio {
-    padding-left:0;
-
-    .checkmark--size{
-      left:-7px;
-    }
-  }
 }
 
 .form-group--alt {
@@ -159,4 +153,12 @@ label.form-control-label {
 
 .w-70 {
   width: 70% !important;
+}
+
+.btn--outline {
+  background-color: rgba(255,255,255,0);
+  border-color: $primary-colour;
+  color: $primary-colour;
+  font-size: 15px;
+  font-weight: 600;
 }

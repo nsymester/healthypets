@@ -34,7 +34,7 @@
 <body role="document"> 
 
 
- 
+
 
 <nav class="navbar bg-header navbar-bright navbar-expand">
   <div class="container-fluid" style="height:67px;">
@@ -122,7 +122,7 @@
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form-control--short" type="date" id="ownerdob" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="ownerdob" placeholder="dd/mm/yyyy" size="25">
           </div>
         </div><!-- form-group -->
 
@@ -130,7 +130,7 @@
           <label class="form-control-label mt-2" for="postcode">Your postcode</label>
           <div class="input-group mb-2 flex-nowrap justify-content-between">
             <input class="form-control form-control--alt rounded-0" type="number" id="postcode">
-            <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Find address</button>
+            <button class="btn btn-primary btn-primary--alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="postcode-search" id="postcode-search">Find address</button>
           </div>
 
           <div class="collapse mt-4 mb-4" id="postcode-result">
@@ -138,7 +138,7 @@
 
             <hr style="border: 1px solid rgba(61,112,178,1)">
 
-            <div class="postcodes">
+            <div class="address__postcodes">
               <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
               <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
               <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
@@ -176,7 +176,7 @@
 
         <div class="collapse show mt-4 mb-4" id="manualaddress">
           <div class="form-group">
-            <a href="" class="enter-address" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
+            <a href="" class="address__link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
           </div><!-- form-group -->
         </div><!-- collapse -->
 
@@ -192,25 +192,26 @@
 
       </fieldset><!-- fieldset -->
 
-      
-      
-      
+      <div class="mt-4">
+        
+        
+        
 
 
   
 
 
 
-<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/your-quote.html" style="text-decoration:none;">Calculate quote</a>
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/your-quote.html" style="text-decoration:none;">Calculate quote</a>
 
 
-      
-
+        
+      </div>
     </form>
   </section>
 
   
-   
+  
   
   <section class="mt-5">
     <h3 class="d-none">Customer Service</h3>
@@ -283,13 +284,13 @@ $('#conditionSelect').change(function () {
   let select = $('#conditionSelect option:selected').val();
   // create a pill
   // append pill to condition list
-  $('.conditions').append(`<div class="pill--condition">${select} <span class="close">x</span></div>`);
+  $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);
 
   checkForConditions();
 });
 
 function checkForConditions () {
-  $('.pill--condition .close').on('click', function (evt) {
+  $('.pill__condition .close').on('click', function (evt) {
     evt.preventDefault();
     evt.currentTarget.parentNode.remove();
   });
@@ -304,14 +305,14 @@ $('#postcode-search').click(function (evt) {
   $('#address').collapse('hide');
 });
 
-$('.postcodes a').on('click', function (evt) {
+$('.address__postcodes a').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
   $('#manualaddress').collapse('hide');
 })
 
-$('.enter-address').on('click', function (evt) {
+$('.address__link').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
@@ -482,7 +483,7 @@ function syncOptionSelected (e) {
   }
   h.click();
   if (originalSelect.getAttribute('id') === 'conditionSelect') {
-    $('.conditions').append(`<div class='pill--condition'>${h.innerHTML} <span class='close'>x</span></div>`);
+    $('.conditions').append(`<div class='pill__condition'>${h.innerHTML} <span class='close'>x</span></div>`);
     checkForConditions();
   }
 }

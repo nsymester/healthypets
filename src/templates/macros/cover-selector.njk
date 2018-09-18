@@ -1,55 +1,102 @@
 {% macro type(data) %}
-{% set coverLevels = data.coverLevels %}
         <section>
           <h6 class="cover-level__h6">Select your level of cover</h6>
 
           <ul class="nav nav-underlines justify-content-around mb-3" id="pills-tab" role="tablist">
+          {% if data['1'] %}
             <li class="nav-item">
-              <a class="nav-link active" id="pills-cover1-tab" data-toggle="pill" href="#pills-cover1" role="tab" aria-controls="pills-cover1" aria-selected="true">£2000 Cover</a>
+              <a class="nav-link active" id="pills-cover1-tab" data-toggle="pill" href="#pills-cover1" role="tab" aria-controls="pills-cover1" aria-selected="true">{{ data['1'] }} Cover</a>
             </li>
+          {% endif %}
+
+          {% if data['2'] %}
             <li class="nav-item">
-              <a class="nav-link" id="pills-cover2-tab" data-toggle="pill" href="#pills-cover2" role="tab" aria-controls="pills-cover2" aria-selected="false">£4250 Cover</a>
+              <a class="nav-link" id="pills-cover2-tab" data-toggle="pill" href="#pills-cover2" role="tab" aria-controls="pills-cover2" aria-selected="false">{{ data['2'] }} Cover</a>
             </li>
+          {% endif %}
+
+          {% if data['3'] %}
+            <li class="nav-item">
+              <a class="nav-link" id="pills-cover3-tab" data-toggle="pill" href="#pills-cover3" role="tab" aria-controls="pills-cover3" aria-selected="false">{{ data['3'] }} Cover</a>
+            </li>
+          {% endif %}
+
+          {% if data['4'] %}
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-cover4-tab" data-toggle="pill" href="#pills-cover4" role="tab" aria-controls="pills-cover4" aria-selected="false">{{ data['4'] }} Cover</a>
+            </li>
+          {% endif %}
           </ul>
           <div class="tab-content" id="pills-tabContent">
 
+            {% block coverContent %}
+            {% import './cover-level.njk' as cover %}
+
             <div class="tab-pane fade show active" id="pills-cover1" role="tabpanel" aria-labelledby="pills-cover1-tab">
 
-              {% block coverContent1 %}
-              {% import './cover-level.njk' as cover1 %}
-              {{ cover1.level( 
-                  { 
-                    'price':'£2000', 
-                    'cover':'Lifetime' 
-                  } 
-                 ) 
+              {% if data['1'] %}
+              {{ cover.level(
+                  {
+                    'price':'£2000',
+                    'cover': data.cover
+                  }
+                 )
                }}
-              {% endblock %}
+               {% endif %}
             </div><!-- tab-pane -->
 
             <div class="tab-pane fade" id="pills-cover2" role="tabpanel" aria-labelledby="pills-cover2-tab">
-              {% block coverContent2 %}
-              {% import './cover-level.njk' as cover2 %}
-              {{ cover2.level( 
-                  { 
-                    'price':'£4250', 
-                    'cover':'Lifetime' 
-                  } 
-                 ) 
+
+              {% if data['2'] %}
+              {{ cover.level(
+                  {
+                    'price':'£4250',
+                    'cover': data.cover
+                  }
+                 )
                }}
-              {% endblock %}
+               {% endif %}
             </div><!-- tab-pane -->
+
+            <div class="tab-pane fade" id="pills-cover3" role="tabpanel" aria-labelledby="pills-cover3-tab">
+
+              {% if data['3'] %}
+              {{ cover.level(
+                  {
+                    'price':'£7500',
+                    'cover': data.cover
+                  }
+                 )
+               }}
+               {% endif %}
+            </div><!-- tab-pane -->
+
+            <div class="tab-pane fade show" id="pills-cover4" role="tabpanel" aria-labelledby="pills-cover4-tab">
+
+              {% if data['4'] %}
+              {{ cover.level(
+                  {
+                    'price':'1000',
+                    'cover': data.cover
+                  }
+                 )
+               }}
+               {% endif %}
+            </div><!-- tab-pane -->
+
+            {% endblock %}
+
           </div><!-- tab-content -->
         </section>
 
         {% block modalContent %}
         {% import './modal.njk' as modal %}
-        {{ modal.info( 
-          { 
-            'price':'£2000', 
-            'cover':'Lifetime' 
-          } 
-          ) 
+        {{ modal.info(
+          {
+            'price':'£2000',
+            'cover': data.cover
+          }
+          )
         }}
         {% endblock %}
 

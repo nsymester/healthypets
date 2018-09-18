@@ -12,7 +12,7 @@
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% import './macros/menu.njk' as menu %} 
+{% import './macros/menu.njk' as menu %}
 {{ menu.data('payment summary') }}
 {% endblock %}
 
@@ -36,17 +36,17 @@
         <div class="form-group">
           <label class="form-control-label mt-2" for="">How regularly do you want to pay?</label>
           <div class="form-check-flex">
-            <div class="form-check form-check-inline form-check-radio">
-              <input class="form-check-input form-check-input--box" type="radio" name="regular-pay" id="regular-pay-monthly" value="monthly" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="directDebitDetails">
-              <label class="form-check-label radio-box radio-box--alt2" for="regular-pay-monthly"><span>Monthly</span><span>£37.79</span></label>
+            <div class="form-check form-check-inline radio-button-box">
+              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-monthly" value="monthly" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="directDebitDetails">
+              <label class="form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-monthly"><span>Monthly</span><span>£37.79</span></label>
             </div><!-- form-check -->
 
-            <div class="form-check form-check-inline form-check-radio">
-              <input class="form-check-input form-check-input--box" type="radio" name="regular-pay" id="regular-pay-annually" value="annually" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="paymentType">
-              <label class="form-check-label radio-box radio-box--alt2" for="regular-pay-annually"><span>Annually</span><span>£466.12</span></label>
+            <div class="form-check form-check-inline radio-button-box">
+              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-annually" value="annually" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="paymentType">
+              <label class="form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-annually"><span>Annually</span><span>£466.12</span></label>
             </div><!-- form-check -->
           </div>
-        </div><!-- form-group -->    
+        </div><!-- form-group -->
 
         <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
 
@@ -55,20 +55,20 @@
             <label class="form-control-label mt-2" for="">How would you like to pay?</label>
             <div class="form-check-flex">
 
-              <div class="form-check form-check-inline form-check-radio">
-                <input class="form-check-input form-check-input--box" type="radio" name="payment-type" id="payment-type-debit" value="debit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
+              <div class="form-check form-check-inline radio-button-box">
+                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-debit" value="debit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
 
-                <label class="form-check-label radio-box radio-box--alt1" for="payment-type-debit"><span>Direct Debit</span></label>
+                <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-debit"><span>Direct Debit</span></label>
               </div><!-- form-check -->
 
-              <div class="form-check form-check-inline form-check-radio">
-                <input class="form-check-input form-check-input--box" type="radio" name="payment-type" id="payment-type-credit" value="credit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
+              <div class="form-check form-check-inline radio-button-box">
+                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-credit" value="credit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
 
-                <label class="form-check-label radio-box radio-box--alt1" for="payment-type-credit"><span>Credit/Debit Card</span></label>
+                <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-credit"><span>Credit/Debit Card</span></label>
               </div><!-- form-check -->
             </div>
-          </div><!-- form-group -->    
-  
+          </div><!-- form-group -->
+
           <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
 
           <div class="collapse mt-4 mb-4" id="creditCardDetails">
@@ -94,7 +94,7 @@
                 <div class="input-group-prepend input-group-prepend--date mt-2">
                   <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
                 </div>
-                <input class="form-control rounded-0 mt-2 form-control--short" type="date" id="expiryDate" placeholder="dd/mm/yyyy" size="25">
+                <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiryDate" placeholder="dd/mm/yyyy" size="25">
               </div>
             </div><!-- form-group -->
 
@@ -107,7 +107,7 @@
             <p> 1 Street Name, Town, Postcode</p>
             <p><a href="">Edit address</a>
           </div><!-- collapse -->
-          
+
         </div><!-- collapse -->
 
 
@@ -148,10 +148,10 @@
 
 
         <div class="cost-group mt-5">
-          <h5 class="total__header">Total including <br>20% discount</h5>
-          <div class="totals">
-            <p class="total-item">£37.78</p>
-            <small class="period">per month</small>
+          <h5 class="cost-group__header--total">Total including <br>20% discount</h5>
+          <div class="">
+            <p class="cost-group__total-item">£37.78</p>
+            <small class="cost-group__period">per month</small>
           </div>
         </div>
 
@@ -159,16 +159,18 @@
     </form>
   </section>
 
-  {% block nextButton %}
-  {% import './macros/next-button.njk' as nextButton %}
-  {{ nextButton.nextStep('Confirm & Pay', 'payment-complete') }}
-  {% endblock %}
+  <div class="mt-4">
+    {% block nextButton %}
+    {% import './macros/next-button.njk' as nextButton %}
+    {{ nextButton.nextStep('Confirm & Pay', 'payment-complete') }}
+    {% endblock %}
+  </div>
 
   {% block customersecurity %}
-  {% include './partials/thwate.njk' %} {% endblock %}  
+  {% include './partials/thwate.njk' %} {% endblock %}
 
   {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %} 
+  {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': false,
     'feefo': true

@@ -34,7 +34,7 @@
 <body role="document"> 
 
 
- 
+
 
 <nav class="navbar bg-header navbar-bright navbar-expand">
   <div class="container-fluid" style="height:67px;">
@@ -79,7 +79,7 @@
 
     <section class="policy-summary mb-4 ">
       <div class="card pet-summary mb-0 rounded-0 bg-white lifetime-brd-color">
-        <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
+        <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
         <h5 class="pet-summary__header">Booby, German Shpherd, 3 yrs</h5>
         
         <div class="pet-summary__items">
@@ -88,10 +88,10 @@
         </div>
         
       </div>
-      <div class="card mt-0 rounded-0" style="">
-        <div class="card-pricing">
+      <div class="card mt-0 rounded-0">
+        <div class="policy-summary__offer">
           <h5>Lifetime £2000</h5>
-          <p class="summary__price">£29.11<small>/month</small></p>
+          <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
         <a href="">Edit cover</a>
@@ -108,7 +108,7 @@
 
     <section class="policy-summary mb-4 ">
       <div class="card pet-summary mb-0 rounded-0 bg-white maximum-brd-color">
-        <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
+        <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
         <h5 class="pet-summary__header">Poppy, Rusian Blue, 6 yrs</h5>
         
         <div class="pet-summary__items">
@@ -117,10 +117,10 @@
         </div>
         
       </div>
-      <div class="card mt-0 rounded-0" style="">
-        <div class="card-pricing">
+      <div class="card mt-0 rounded-0">
+        <div class="policy-summary__offer">
           <h5>Max Ben £4250</h5>
-          <p class="summary__price">£29.11<small>/month</small></p>
+          <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
         <a href="">Edit cover</a>
@@ -137,7 +137,7 @@
 
     <section class="policy-summary mb-4 ">
       <div class="card pet-summary mb-0 rounded-0 bg-white accident-brd-color">
-        <p class="summary__complete"><span><i class="fas fa-check"></i></span></p>
+        <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
         <h5 class="pet-summary__header">Booby, German Shpherd, 3 yrs</h5>
         
         <div class="pet-summary__items">
@@ -146,10 +146,10 @@
         </div>
         
       </div>
-      <div class="card mt-0 rounded-0" style="">
-        <div class="card-pricing">
+      <div class="card mt-0 rounded-0">
+        <div class="policy-summary__offer">
           <h5>Accident £4250</h5>
-          <p class="summary__price">£29.11<small>/month</small></p>
+          <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
         <a href="">Edit cover</a>
@@ -164,51 +164,53 @@
 
   <section>
     <div class="cost-group">
-      <p class="period__header">Total monthly cost</p>
-      <p class="cost">£58.22</p>
+      <p class="cost-group__header">Total monthly cost</p>
+      <p class="cost-group__cost">£58.22</p>
     </div>
     <div class="cost-group">
-      <p class="period__header">20% new customer discount</p>
-      <p class="cost">-£11.64</p>
+      <p class="cost-group__header">20% new customer discount</p>
+      <p class="cost-group__cost">-£11.64</p>
     </div>
 
     <hr class="mb-4">
 
     <div class="cost-group">
-      <h5 class="total__header">Total including <br>20% discount</h5>
-      <div class="totals">
-        <p class="total-item">£37.78</p>
-        <small class="period">per month</small>
+      <h5 class="cost-group__header--total">Total including <br>20% discount</h5>
+      <div class="">
+        <p class="cost-group__total-item">£37.78</p>
+        <small class="cost-group__period">per month</small>
         <p class="mb-2 font-weight-bold">OR</p>
-        <p class="total-item">£466.12</p>
-        <small class="period">per year</small>
+        <p class="cost-group__total-item">£466.12</p>
+        <small class="cost-group__period">per year</small>
       </div>
     </div>
 
   </section>
 
-  
-  
-  
+  <div class="mt-4">
+    
+    
+    
 
 
   
 
 
 
-<a class="btn btn-primary btn-primary--alt btn-block rounded-0 mt-4" href="/policy-details.html" style="text-decoration:none;">Go to secure checkout</a>
+<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-details.html" style="text-decoration:none;">Go to secure checkout</a>
 
 
-  
+    
+  </div>
 
   
   <section class="mt-3">
     <h3 class="d-none">Customer Security</h3>
     <img class="img-fluid" src="/images/thwate.png" alt="thwate payment security logo">
-</section>   
+</section> 
 
   
-   
+  
   
   <section class="mt-5">
     <h3 class="d-none">Customer Service</h3>
@@ -275,13 +277,13 @@ $('#conditionSelect').change(function () {
   let select = $('#conditionSelect option:selected').val();
   // create a pill
   // append pill to condition list
-  $('.conditions').append(`<div class="pill--condition">${select} <span class="close">x</span></div>`);
+  $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);
 
   checkForConditions();
 });
 
 function checkForConditions () {
-  $('.pill--condition .close').on('click', function (evt) {
+  $('.pill__condition .close').on('click', function (evt) {
     evt.preventDefault();
     evt.currentTarget.parentNode.remove();
   });
@@ -296,14 +298,14 @@ $('#postcode-search').click(function (evt) {
   $('#address').collapse('hide');
 });
 
-$('.postcodes a').on('click', function (evt) {
+$('.address__postcodes a').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
   $('#manualaddress').collapse('hide');
 })
 
-$('.enter-address').on('click', function (evt) {
+$('.address__link').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
@@ -474,7 +476,7 @@ function syncOptionSelected (e) {
   }
   h.click();
   if (originalSelect.getAttribute('id') === 'conditionSelect') {
-    $('.conditions').append(`<div class='pill--condition'>${h.innerHTML} <span class='close'>x</span></div>`);
+    $('.conditions').append(`<div class='pill__condition'>${h.innerHTML} <span class='close'>x</span></div>`);
     checkForConditions();
   }
 }

@@ -33,7 +33,7 @@
 <body role="document"> 
 
 
- 
+
 
 <nav class="navbar bg-header navbar-bright navbar-expand">
   <div class="container-fluid" style="height:67px;">
@@ -70,8 +70,8 @@
 
 <div class="container">
   <section class="mt-4 mb-3">
-    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: 'Open Sans'; font-size: 42px;line-height: 57px;">Flat Mobile Templates</h2>
-    
+    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: $base-font; font-size: 42px;line-height: 57px;">Flat Mobile Templates</h2>
+
     <div class="list-group">
       <a class="list-group-item list-group-item-action" href="/retrieve-a-quote.html">Retrieve a quote</a>
       <a class="list-group-item list-group-item-action" href="/pet-details.html">Pet Details</a>
@@ -87,7 +87,7 @@
   </section>
 
   
-   
+  
   
   <section class="mt-5">
     <h3 class="d-none">Customer Service</h3>
@@ -160,13 +160,13 @@ $('#conditionSelect').change(function () {
   let select = $('#conditionSelect option:selected').val();
   // create a pill
   // append pill to condition list
-  $('.conditions').append(`<div class="pill--condition">${select} <span class="close">x</span></div>`);
+  $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);
 
   checkForConditions();
 });
 
 function checkForConditions () {
-  $('.pill--condition .close').on('click', function (evt) {
+  $('.pill__condition .close').on('click', function (evt) {
     evt.preventDefault();
     evt.currentTarget.parentNode.remove();
   });
@@ -181,14 +181,14 @@ $('#postcode-search').click(function (evt) {
   $('#address').collapse('hide');
 });
 
-$('.postcodes a').on('click', function (evt) {
+$('.address__postcodes a').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
   $('#manualaddress').collapse('hide');
 })
 
-$('.enter-address').on('click', function (evt) {
+$('.address__link').on('click', function (evt) {
   evt.preventDefault();
   $('#address').collapse('show');
   $('#postcode-result').collapse('hide');
@@ -359,7 +359,7 @@ function syncOptionSelected (e) {
   }
   h.click();
   if (originalSelect.getAttribute('id') === 'conditionSelect') {
-    $('.conditions').append(`<div class='pill--condition'>${h.innerHTML} <span class='close'>x</span></div>`);
+    $('.conditions').append(`<div class='pill__condition'>${h.innerHTML} <span class='close'>x</span></div>`);
     checkForConditions();
   }
 }

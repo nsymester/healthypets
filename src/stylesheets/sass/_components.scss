@@ -230,31 +230,7 @@
 
 // @group radio buttons
 
-input[type=radio].form-check-input--box {
-  display: none;
-  &:checked {
-    + .radio-box {
-      background-color: rgba(85,150,230,1);
-      border-color: rgba(85,150,230,1);
-
-      span {
-        color:#fff;
-      }
-    }
-  }
-}
-
-.form-check-radio--icon{
-  max-width: 294px;
-  width:100%;
-  height: 55px; //108px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.form-check-radio {
+.radio-button-box {
   max-width: 294px;
   width:100%;
   height: 42px;
@@ -262,173 +238,188 @@ input[type=radio].form-check-input--box {
   &:last-child {
     margin-right: 0;
   }
-}
 
-.radio-box {
-  height:100%;
-  width:100%;
-  border: 2px solid $primary-colour;
-  background-color: rgb(255, 255, 255);
-  transition: all 250ms ease;
-  will-change: transition;
-  display: block;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  font-family: "Open Sans";
-  color: $primary-colour;
-  &:active{
-    transform: translateY(10px);
-  }
-}
+  &__input {
+    display: none;
+    &:checked {
+      + .radio-button-box__label {
+        background-color: rgba(85,150,230,1);
+        border-color: rgba(85,150,230,1);
 
-.radio-box--icon {
-   // style the radio buutton label
-  span {
-    position: absolute;
-    transform: translate(0, 30px);
-    left: 0%;
-    right: 0%;
-    //transition: all 300ms ease;
-    font-size: 0.85em;
-    user-select: none;
-    //color: $primary-colour;
-    display:inline-block;
-    bottom: 32px;
-    line-height: 36px;
-    font-weight: 600;
-
-    &:before {
-      position: absolute;
-      left: 30px;
-      top: 3px;
-      //content: url(/images/dog.png);
-      content:" ";
-      background-repeat:no-repeat;
-      //font-size: 1.2em;
-      //font-family: FontAwesome;
-      display: inline;
-      //transform: translateY(-80px);
-      //transition: all 300ms ease-in-out;
-      //font-weight: normal;
-      color: $primary-colour;
-      background-size: 60% 60%;
-      width: 60px;
-      height: 50px;
+        span {
+          color:#fff;
+        }
+      }
     }
   }
 
-  span {
-    right: -20%;
-    bottom: 38px;
-  }
-}
-
-.radio-box--alt1{
-  span {
+  &__label {
+    height:100%;
+    width:100%;
+    border: 2px solid $primary-colour;
+    background-color: rgb(255, 255, 255);
+    transition: all 250ms ease;
+    will-change: transition;
     display: block;
-    font-size: 0.8rem;
-    font-weight:600;
-    line-height: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-family: "Open Sans";
+    color: $primary-colour;
+    &:active{
+      transform: translateY(10px);
+    }
+
+    // single line of text
+    &--single-line{
+      span {
+        display: block;
+        font-size: 0.8rem;
+        font-weight:600;
+        line-height: 2.5rem;
+      }
+    }
+
+    // double line of text
+    &--double-line {
+      span {
+        display: block;
+        font-size: 0.8rem;
+        font-weight:600;
+        line-height: 1rem;
+        padding-top:0.1rem;
+      }
+    }
+
+    &--icon {
+      // style the radio button label
+      span {
+        position: relative;
+        transform: translate(0, 30px);
+        left: 0%;
+        right: 0%;
+        //transition: all 300ms ease;
+        font-size: 0.85em;
+        user-select: none;
+        //color: $primary-colour;
+        display:inline-block;
+        bottom: 32px;
+        line-height: 36px;
+        font-weight: 600;
+
+        // icon
+        &:before {
+          position: absolute;
+          left: -60px;
+          top: 3px;
+          content:" ";
+          background-repeat:no-repeat;
+          display: inline-block;
+          //transform: translateY(-80px);
+          //transition: all 300ms ease-in-out;
+          //font-weight: normal;
+          color: $primary-colour;
+          background-size: 60% 60%;
+          width: 60px;
+          height: 50px;
+        }
+      }
+
+      span {
+        bottom: 22px;
+        left: 30px;
+      }
+    }
   }
 }
 
+// @group radio button box icons
 
-.radio-box--alt2 {
-  span {
-    display: block;
-    font-size: 0.8rem;
-    font-weight:600;
-    line-height: 1rem;
-    padding-top:0.1rem;
-  }
+.radio-button-box--icon{
+  height: 55px; //108px;
 }
 
-#pet-type-dog + .radio-box span:before {
+#pet-type-dog + .radio-button-box__label--icon span:before {
   background-image:url(/images/dog.png);
 }
 
-#pet-type-dog:checked + .radio-box span:before {
+#pet-type-dog:checked + .radio-button-box__label--icon span:before {
   background-image:url(/images/dog-inverse.png);
 }
 
-#pet-type-cat + .radio-box span:before {
+#pet-type-cat + .radio-button-box__label--icon span:before {
   background-image:url(/images/cat.png);
 }
 
-#pet-type-cat:checked + .radio-box span:before {
+#pet-type-cat:checked + .radio-button-box__label--icon span:before {
   background-image:url(/images/cat-inverse.png);
 }
 
-.dog-weight {
+.pet-weight {
   top:32px;
   left: 21px;
   position: relative;
 }
 
-#small-dog + .radio-dog-size span:before {
-  background-image:url(/images/small-dog.png);
-}
-
 // @group buttons
 
-.btn-cta {
-  color: $white;
-  background-color: $cta-colour;
-  border-color: $cta-colour;
-  right: -16px;
-  position: relative;
-  text-transform: uppercase;
-  font-size: 1rem;
-  height: 62px;
-  line-height: 3rem;
-  text-decoration: none;
-}
+.btn {
 
-.btn-primary--alt {
-  height: calc(80px - 50%);
-  color: $white;
-  font-family: "Open Sans";
-  //font-size: calc(24px - 50%);
-  font-size: inherit;
-  font-weight: 200;
-  line-height: calc(38px - 50%);
-  text-align: center;
-  background-color: $primary-colour;
-  border: 2px solid $primary-colour;
-}
-
-.btn-outline-primary--alt {
-  height: calc(80px - 50%);
-  color: $primary-colour;
-  font-family: "Open Sans";
-  //font-size: calc(24px - 50%);
-  font-size: 15px;
-  font-weight: 600;
-  line-height: calc(32px - 50%);
-  text-align: center;
-  border: 2px solid $primary-colour;
-
-  &:hover {
+  &-cta {
     color: $white;
-    background-color: $primary-colour;
+    background-color: $cta-colour;
+    border-color: $cta-colour;
+    right: -16px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1rem;
+    height: 62px;
+    line-height: 3rem;
+    text-decoration: none;
   }
-}
 
-.btn--outline {
-  background-color: rgba(255,255,255,0);
-  border-color: $primary-colour;
-  color: $primary-colour;
-  font-size: 15px;
-  font-weight: 600;
-}
+  &-primary--alt {
+    height: calc(80px - 50%);
+    color: $white;
+    font-family: "Open Sans";
+    //font-size: calc(24px - 50%);
+    font-size: inherit;
+    font-weight: 200;
+    line-height: calc(38px - 50%);
+    text-align: center;
+    background-color: $primary-colour;
+    border: 2px solid $primary-colour;
+  }
 
-.btn-outline-primary--alt:not(:disabled):not(.disabled).active,
-.btn-outline-primary--alt:not(:disabled):not(.disabled):active,
-.show>.btn-outline-primary--alt.dropdown-toggle {
-  color: $primary-colour;
-  background-color: transparent;
-  border-color: $primary-colour;
+  &-outline-primary--alt {
+    height: calc(80px - 50%);
+    color: $primary-colour;
+    font-family: "Open Sans";
+    //font-size: calc(24px - 50%);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: calc(32px - 50%);
+    text-align: center;
+    border: 2px solid $primary-colour;
+
+    &:hover {
+      color: $white;
+      background-color: $primary-colour;
+    }
+  }
+
+  &-outline-primary--alt:not(:disabled):not(.disabled).active,
+  &-outline-primary--alt:not(:disabled):not(.disabled):active,
+  .show>&-outline-primary--alt.dropdown-toggle {
+    color: $primary-colour;
+    background-color: transparent;
+    border-color: $primary-colour;
+  }
+
+
+  &--block {
+    width:100%;
+  }
 }
 
 .form__help {
@@ -443,11 +434,9 @@ input[type=radio].form-check-input--box {
   justify-content:space-between;
 }
 
-.btn-block {
-  width:100%;
-}
+// @group pet condition icon
 
-.pill--condition{
+.pill__condition{
   background-color: $primary-colour;
   color: $white;
   border-radius: 20px;
@@ -466,192 +455,212 @@ input[type=radio].form-check-input--box {
   }
 }
 
-.postcodes a {
-  display:block;
-  padding-bottom:5px;
-  border-bottom: 1px solid rgba(223,227,230,1);
-  cursor: pointer;
+// @group address
+
+.address {
+
+  &__postcodes a {
+    display:block;
+    padding-bottom:5px;
+    border-bottom: 1px solid rgba(223,227,230,1);
+    cursor: pointer;
+  }
+
+  &__link {
+    color: $primary-colour;
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
 
-.enter-address {
-  color: $primary-colour;
-  font-size: 16px;
-  line-height: 16px;
-}
+// @group cover item
 
-// @group cover types
-
-.card--cover {
+.cover-item {
   width: 100%;
-}
 
-.card__cover-header{
-  font-size: 0.7rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.card--cover-lifetime, .cover--lifetime {
-  border-top: 4px solid rgba(245,166,35,1);
-}
-
-.card--cover-maximum, .cover--maximum {
-  border-top: 4px solid rgba(126,211,33,1);
-}
-
-.card--cover-accident, .cover--accident {
-  border-top: 4px solid rgba(208,2,27,1);
-}
-
-.cover__price {
-  font-size: 0.6rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  position: relative;
-
-  &:after {
-    content: '\276f'; //005E
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    position: absolute;
-    right: 10px;
-    display: inline-block;
-    top: -3px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    color: rgba(140,155,165,1);
+  &__header{
+    font-size: 0.7rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
-}
 
+  &__price {
+    font-size: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
 
-.cover__header {
-  line-height: 1rem;
-  font-size: 1.7rem;
-  font-weight: 300;
-  color: rgba(90,104,114,1);
-}
-
-.cover__help {
-  color: rgba(21,41,53,1);
-  font-size: 0.85rem;
-  font-weight: 300;
-  line-height: 36px;
-
-  span {
-    font-weight: 600;
-  }
-}
-
-.cover__help--alt{
-  @extend .cover__help;
-  color:rgba(90,104,114,1);
-}
-
-.cover__price-range{
-  font-weight:600;
-}
-
-.benefits__included{
-  list-style-type:none;
-  padding-left: 1.25rem;
-  width:49%;
-
-  li {
-    position:relative;
-    font-family: 'FontAwesome';
-
-    &:before {
-      content: '\f00c';
-      color:  $primary-colour;
-      background-color: rgba(255, 255, 255, 1);
-      position:absolute;
-      left: -20px;
-      top: 0;
+    &:after {
+      content: '\276f'; //005E
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      position: absolute;
+      right: 10px;
+      display: inline-block;
+      top: -3px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      color: rgba(140,155,165,1);
     }
   }
+
+  &--lifetime {
+    border-top: 4px solid $lifetime-color;
+  }
+
+  &--maximum {
+    border-top: 4px solid $maximum-color;
+  }
+
+  &--accident {
+    border-top: 4px solid $accident-color;
+  }
+
 }
 
-.benefits__excluded{
-  list-style-type:none;
+// @group cover info
 
-  li {
-    position:relative;
-    font-family: 'FontAwesome';
+.cover-info {
+  background-color: $white;
+	box-shadow: 0 24px 48px 0 rgba(0,0,0,0.1);
+  padding-left: 15px;
+  padding-right: 15px;
 
-    &:before {
-      content: '\f00d';
-      color:  $primary-colour;
-      background-color: rgba(255, 255, 255, 1);
-      position:absolute;
-      left: -20px;
-      top: 0;
+  &__prologue {
+    color: rgba(21,41,53,1);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 36px;
+
+    span {
+      font-weight: 600;
     }
   }
-}
 
-.cover__cost-range {
-  width:49%;
+  &__header {
+    line-height: 1rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: rgba(90,104,114,1);
+  }
+
+  &--lifetime {
+    border-top: 4px solid $lifetime-color;
+  }
+
+  &--maximum {
+    border-top: 4px solid $maximum-color;
+  }
+
+  &--accident {
+    border-top: 4px solid $accident-color;
+  }
+
+  &__price {
+    color: rgba(21,41,53,1);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 36px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__benefits--included, &__benefits--excluded{
+    list-style-type:none;
+
+    li {
+      position:relative;
+      font-family: 'FontAwesome';
+
+      &:before {
+        color:  $primary-colour;
+        background-color: rgba(255, 255, 255, 1);
+        position:absolute;
+        left: -20px;
+        top: 0;
+      }
+    }
+  }
+
+  &__benefits--included {
+    padding-left: 1.25rem;
+    width:49%;
+
+    li {
+      &:before {
+        content: '\f00c';
+      }
+    }
+
+  }
+
+  &__benefits--excluded{
+
+    li {
+      &:before {
+        content: '\f00d';
+      }
+    }
+  }
+
 }
 
 // @group cover-level
-
-.cover-level__h6 {
-  color: rgba(90,104,114,1);
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 42px;
-  text-align: center;
-}
 
 .cover-level {
   box-sizing: border-box;
   background-color: $white;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   border-radius: 0;
-}
 
-.cover-level__pane {
-	background-color: $white;
-	box-shadow: 0 24px 48px 0 rgba(0,0,0,0.1);
-  padding-left: 15px;
-  padding-right: 15px;
-}
+  &__item {
+    //padding: 10px 20px;
+    border-bottom: 2px solid rgba(223,227,230,1);
+    position:relative;
 
-.cover-level__item {
-  //padding: 10px 20px;
-  border-bottom: 2px solid rgba(223,227,230,1);
-  position:relative;
-
-  &:last {
-    border-bottom: 0;
+    &:last {
+      border-bottom: 0;
+    }
   }
+
+  &__info {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    background-color: $primary-colour;
+    border-radius: 50%;
+    font-family: sans;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px 8px;
+    cursor: pointer;
+    color: #fff !important;
+    border:0
+  }
+
+  &__body{
+    padding: 10px 80px;
+  }
+
+  &__h6 {
+    color: rgba(90,104,114,1);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 42px;
+    text-align: center;
+  }
+
 }
 
-.cover-level__info {
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  background-color: $primary-colour;
-  border-radius: 50%;
-  font-family: sans;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 0px 8px;
-  cursor: pointer;
-  color: #fff !important;
-  border:0
-}
-
-.cover-level__body{
-  padding: 10px 80px;
-}
 
 .bg-light-grayish-blue{
   background-color: rgba(240,243,246,1);
 }
 
-// select
+// @group select alternative
 
 .select--alt {
   position: relative;
@@ -661,10 +670,10 @@ input[type=radio].form-check-input--box {
   }
 
   .select-selected {
-    background-color: rgba(61,112,178,0.1);;
+    background-color: $bg-input-colour;
   }
 
-  /*style the arrow inside the select element:*/
+  // style the arrow inside the select element:
   .select-selected:after {
     position: absolute;
     content: "";
@@ -675,12 +684,14 @@ input[type=radio].form-check-input--box {
     border: 6px solid transparent;
     border-color: $primary-colour transparent transparent transparent;
   }
-  /*point the arrow upwards when the select box is open (active):*/
+
+  // point the arrow upwards when the select box is open (active):
   .select-selected.select-arrow-active:after {
     border-color: transparent transparent $primary-colour transparent;
     top: 12px;
   }
-  /*style the items (options), including the selected item:*/
+
+  // style the items (options), including the selected item:
   .select-items div,.select-selected {
     color: rgba(21,41,53,1);
     padding: 8px 16px;
@@ -688,7 +699,8 @@ input[type=radio].form-check-input--box {
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
   }
-  /*style items (options):*/
+
+  //style items (options):
   .select-items {
     position: absolute;
     background-color: #ebf0f7;
@@ -697,7 +709,8 @@ input[type=radio].form-check-input--box {
     right: 0;
     z-index: 99;
   }
-  /*hide the items when the select box is closed:*/
+
+  // hide the items when the select box is closed:
   .select-hide {
     display: none;
   }
@@ -708,26 +721,32 @@ input[type=radio].form-check-input--box {
 }
 
 
-.nav-underlines .nav-link.active,
-.nav-underlines .show>.nav-link {
-    padding-bottom:10px;
-    color: $primary-colour;
-    border-bottom: 2px solid $primary-colour;
-}
+// @group tab style; underline
 
-.nav-underlines .nav-link {
-    text-decoration: none;
-    color: rgba(21,41,53,1);
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 38px;
+.nav-underlines {
+
+  & .nav-link.active,
+  & .show>.nav-link {
+      padding-bottom:10px;
+      color: $primary-colour;
+      border-bottom: 2px solid $primary-colour;
+  }
+
+  & .nav-link {
+      text-decoration: none;
+      color: rgba(21,41,53,1);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 38px;
+  }
+
 }
 
 // @group policy summary
 
 .policy-summary {
 
-  .summary__complete {
+  &__complete-icon {
     text-align:right;
     padding:0;
     margin:0;
@@ -751,16 +770,22 @@ input[type=radio].form-check-input--box {
     }
   }
 
-  .card:first-child {
-    padding-top:0;
-    padding-bottom:15px;
+  &__price {
+    color: rgba(90,104,114,1);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-align: right;
+    margin-bottom: 0;
 
+    small {
+      font-size: 0.8rem;
+    }
   }
 
-  .card:last-child {
-    background-color: rgba(240,243,246,1);
-    padding:10px 10px 20px 2rem;
-    border-bottom:0;
+  &__offer {
+    display:flex;
+    justify-content: space-between;
 
     h5 {
       color: rgba(90,104,114,1);
@@ -770,70 +795,84 @@ input[type=radio].form-check-input--box {
       margin-bottom: 0;
     }
 
-    .summary__price {
-      color: rgba(90,104,114,1);
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.5rem;
-      text-align: right;
-      margin-bottom: 0;
-    }
+  }
+
+  .card:first-child {
+    padding-top:0;
+    padding-bottom:15px;
+  }
+
+  .card:last-child {
+    background-color: rgba(240,243,246,1);
+    padding:10px 10px 20px 2rem;
+    border-bottom:0;
 
     a {
       font-size: 0.7rem;
       color: $primary-colour;
       font-weight: 600;
     }
-
-    small {
-      font-size: 0.8rem;
-    }
   }
 
-
-  .card-pricing {
-    display:flex;
-    justify-content: space-between;
-  }
 }
 
-
 .lifetime-brd-color{
-  border-bottom: 4px solid rgba(245,166,35,1);
+  border-bottom: 4px solid $lifetime-color;
 }
 
 .maximum-brd-color{
-  border-bottom: 4px solid rgba(126,211,33,1);
+  border-bottom: 4px solid $maximum-color;
 }
 
 .accident-brd-color{
-  border-bottom: 4px solid rgba(208,2,27,1);
+  border-bottom: 4px solid $accident-color;
 }
 
-.total__header {
-  font-weight:600;
+
+.policy-summary__header h2{
+  color: rgba(90,104,114,1);
 }
 
-.period__header{
-  font-size: 1.25rem;
+.confirmation-sent {
+  color: rgba(90,104,114,1);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+
 }
+
+.padlock{
+  position: relative;
+  top: -37px;
+  right: -7px;
+  width: 20px;
+}
+
 
 .cost-group{
   display:flex;
   flex-flow:row nowrap;
   justify-content: space-between;
 
-  p, small {
-    text-align:right;
+  &__header{
+    font-size: 1.25rem;
   }
 
-  .cost{
+  &__header--total {
+    font-weight:600;
+  }
+
+  &__cost{
     text-align:right;
     font-weight:600;
     margin-bottom:0;
   }
 
-  .period {
+  p, small {
+    text-align:right;
+  }
+
+  &__period {
     font-weight:300;
     font-size:0.9rem;
     display:block;
@@ -846,7 +885,7 @@ input[type=radio].form-check-input--box {
     }
   }
 
-  .total-item {
+  &__total-item {
     text-align:right;
     font-weight:600;
     margin-bottom:0;
@@ -861,7 +900,7 @@ input[type=radio].form-check-input--box {
   display: block;
   position: relative;
   padding-left: 35px;
-  padding-top: 3px;
+  padding-top: 5px;
   cursor: pointer;
   font-size: 0.9rem;
   user-select: none;
@@ -886,7 +925,7 @@ input[type=radio].form-check-input--box {
     width: 22px;
     border: 2px solid rgba(140,155,165,1);
     background-color: $white;
-    color: blue;
+    color: rgba(61,112,178,1);
   }
 }
 
@@ -951,6 +990,7 @@ input[type=radio].form-check-input--box {
     top: unset;
     bottom: -23px;
     left: 25px;
+    color: rgba(61,112,178,1);
   }
 }
 
@@ -983,6 +1023,7 @@ input[type=radio].form-check-input--box {
     display: block;
     left:2px;
     top:-3px;
+    color: rgba(61,112,178,1);
 }
 
 /* Style the indicator (dot/circle) */
@@ -991,23 +1032,4 @@ input[type=radio].form-check-input--box {
   font-size: 1rem;
   font-family: 'Fontawesome';
   font-weight:100;
-}
-
-.policy-summary__header h2{
-  color: rgba(90,104,114,1);
-}
-
-.confirmation-sent {
-  color: rgba(90,104,114,1);
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.5;
-
-}
-
-.padlock{
-  position: relative;
-  top: -37px;
-  right: -7px;
-  width: 20px;
 }
