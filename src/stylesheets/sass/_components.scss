@@ -4,46 +4,6 @@
           contains business logic
           - buttons
           - site-nav
-  *       - 404
-  *       - about
-  *       - archive
-  *       - avatars
-  *       - blog-post
-  *       - buttons
-  *       - callout
-  *       - clients
-  *       - comments
-  *       - contact
-  *       - cta
-  *       - faq
-  *       - features
-  *       - footer
-  *       - forms
-  *       - header
-  *       - headings
-  *       - hero
-  *       - jobs
-  *       - legal-nav
-  *       - main-cta
-  *       - main-nav
-  *       - newsletter
-  *       - page-title
-  *       - pagination
-  *       - post-teaser
-  *       - process
-  *       - quote-banner
-  *       - offices
-  *       - sec-nav
-  *       - services
-  *       - share-buttons
-  *       - social-media
-  *       - team
-  *       - testimonials
-  *       - topbar
-  *       - reasons
-  *       - wordpress
-  *       - work-list
-  *       - work-detail
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 
@@ -905,18 +865,27 @@
   font-size: 0.9rem;
   user-select: none;
   font-weight: 100;
-}
 
-/* Hide the browser's default checkbox */
-.custom-checkbox input {
+  /* Hide the browser's default checkbox */
+  input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-}
 
-/* Create a custom checkbox */
-.custom-checkbox {
+    /* When the checkbox is checked, add a blue background */
+    &:checked ~ .checkmark {
+      //background-color: #2196F3;
 
+      /* Show the checkmark when checked */
+      &:after {
+          display: block;
+          left: 0px;
+          top:-3px;
+      }      
+    }
+  }
+
+  /* Create a custom checkbox */
   .checkmark {
     position: absolute;
     top: 5px;
@@ -926,42 +895,27 @@
     border: 2px solid rgba(140,155,165,1);
     background-color: $white;
     color: rgba(61,112,178,1);
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    &:after {
+      position: absolute;
+      display: none;
+
+      /* Style the checkmark/indicator */
+      content:'\f00c';
+      font-size: 1rem;
+      font-family: 'Fontawesome';
+      font-weight:100;
+    }
   }
-}
 
-/* On mouse-over, add a grey background color */
-.custom-checkbox:hover input ~ .checkmark {
-    background-color: #ccc;
-}
+  /* On mouse-over, add a grey background color */
+  &:hover input ~ .checkmark {
+      background-color: #ccc;
+  }
 
-/* When the checkbox is checked, add a blue background */
-.custom-checkbox input:checked ~ .checkmark {
-    //background-color: #2196F3;
 }
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.custom-checkbox .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.custom-checkbox input:checked ~ .checkmark:after {
-    display: block;
-    left: 0px;
-    top:-3px;
-}
-
-/* Style the checkmark/indicator */
-.custom-checkbox .checkmark:after {
-  content:'\f00c';
-  font-size: 1rem;
-  font-family: 'Fontawesome';
-  font-weight:100;
-}
-
-// @group custome radio button
+// @group custom radio button
 
 /* The container */
 .custom-radio {
@@ -984,52 +938,55 @@
     border-radius: 50%;
     border: 2px solid rgba(140,155,165,1);
     background-color: $white;
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    &:after {
+      position: absolute;
+      display: none;
+
+      /* Style the indicator (dot/circle) */
+      content: '\f111';
+      font-size: 1rem;
+      font-family: 'Fontawesome';
+      font-weight:100;
+    }
+
+  }
+
+  /* Hide the browser's default radio button */
+  input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+
+    /* When the radio button is checked, add a blue background */
+    &:checked ~ .checkmark {
+      //background-color: #2196F3;
+    
+      /* Show the indicator (dot/circle) when checked */
+      &:after {
+          display: block;
+          left:2px;
+          top:-3px;
+          color: rgba(61,112,178,1);
+      }
+    }
+  }
+
+  /* On mouse-over, add a grey background color */
+  &:hover input ~ .checkmark {
+      background-color: #ccc;
   }
 
   .checkmark--size {
     top: unset;
     bottom: -23px;
-    left: 25px;
+    left: -10px;
     color: rgba(61,112,178,1);
   }
+
 }
 
-/* Hide the browser's default radio button */
-.custom-radio input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* On mouse-over, add a grey background color */
-.custom-radio:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.custom-radio input:checked ~ .checkmark {
-    //background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.custom-radio .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.custom-radio input:checked ~ .checkmark:after {
-    display: block;
-    left:2px;
-    top:-3px;
-    color: rgba(61,112,178,1);
-}
-
-/* Style the indicator (dot/circle) */
-.custom-radio .checkmark:after {
-  content: '\f111';
-  font-size: 1rem;
-  font-family: 'Fontawesome';
-  font-weight:100;
+.pet-size .form-check-flex .form-check-label {
+  padding-left:0;
 }
