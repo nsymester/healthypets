@@ -28,7 +28,7 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 .fas {
-  font-family: 'Fontawesome'; }
+  font-family: "FontAwesome"; }
 
 /* @group elements */
 /**
@@ -451,7 +451,7 @@ a {
     list-style-type: none; }
     .cover-info__benefits--included li, .cover-info__benefits--excluded li {
       position: relative;
-      font-family: 'FontAwesome'; }
+      font-family: "FontAwesome"; }
       .cover-info__benefits--included li:before, .cover-info__benefits--excluded li:before {
         color: #3d70b2;
         background-color: white;
@@ -712,12 +712,11 @@ a {
       /* Style the checkmark/indicator */
       content: '\f00c';
       font-size: 1rem;
-      font-family: 'Fontawesome';
+      font-family: "FontAwesome";
       font-weight: 100; }
   .custom-checkbox:hover input ~ .checkmark {
     background-color: #ccc; }
 
-/* The container */
 .custom-radio {
   display: block;
   position: relative;
@@ -749,7 +748,7 @@ a {
       /* Style the indicator (dot/circle) */
       content: '\f111';
       font-size: 1rem;
-      font-family: 'Fontawesome';
+      font-family: "FontAwesome";
       font-weight: 100; }
   .custom-radio input {
     position: absolute;
@@ -857,9 +856,6 @@ label.form-control-label {
   font-weight: 600;
   line-height: 1.5rem; }
 
-.img__calendar {
-  height: 20px; }
-
 .form-check-input--alt {
   bottom: -10px;
   left: 20px; }
@@ -910,5 +906,8 @@ label.form-control-label {
 
 .list-group--content .list-group-item {
   text-decoration: none; }
+
+.img__calendar {
+  height: 20px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

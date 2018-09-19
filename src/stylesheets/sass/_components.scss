@@ -55,7 +55,7 @@
 
     span {
       color: $primary-colour;
-      font-family: "Open Sans";
+      font-family: $base-font;
       font-size: 15.66px;
       font-weight: 300;
       line-height: calc(30px - 50%);
@@ -67,7 +67,7 @@
     &:before {
       content: '';
       display: flex;
-      font-family: "FontAwesome";
+      font-family: $icon-font;
       align-items: center;
       justify-content: center;
       width: 30px;
@@ -142,7 +142,7 @@
 
   &__body {
     color: rgba(90,104,114,1);
-    font-family: "Open Sans";
+    font-family: $base-font;
     font-size: 13px;
     line-height: 20px;
   }
@@ -224,7 +224,7 @@
     text-align: center;
     cursor: pointer;
     position: relative;
-    font-family: "Open Sans";
+    font-family: $base-font;
     color: $primary-colour;
     &:active{
       transform: translateY(10px);
@@ -341,7 +341,7 @@
   &-primary--alt {
     height: calc(80px - 50%);
     color: $white;
-    font-family: "Open Sans";
+    font-family: $base-font;
     //font-size: calc(24px - 50%);
     font-size: inherit;
     font-weight: 200;
@@ -354,7 +354,7 @@
   &-outline-primary--alt {
     height: calc(80px - 50%);
     color: $primary-colour;
-    font-family: "Open Sans";
+    font-family: $base-font;
     //font-size: calc(24px - 50%);
     font-size: 15px;
     font-weight: 600;
@@ -375,7 +375,6 @@
     background-color: transparent;
     border-color: $primary-colour;
   }
-
 
   &--block {
     width:100%;
@@ -532,7 +531,7 @@
 
     li {
       position:relative;
-      font-family: 'FontAwesome';
+      font-family: $icon-font;
 
       &:before {
         color:  $primary-colour;
@@ -788,7 +787,6 @@
   border-bottom: 4px solid $accident-color;
 }
 
-
 .policy-summary__header h2{
   color: rgba(90,104,114,1);
 }
@@ -808,6 +806,7 @@
   width: 20px;
 }
 
+// @group payment cost
 
 .cost-group{
   display:flex;
@@ -854,8 +853,6 @@
 }
 
 // @group custom checkbox
-
-// the container
 .custom-checkbox {
   display: block;
   position: relative;
@@ -881,7 +878,7 @@
           display: block;
           left: 0px;
           top:-3px;
-      }      
+      }
     }
   }
 
@@ -904,7 +901,7 @@
       /* Style the checkmark/indicator */
       content:'\f00c';
       font-size: 1rem;
-      font-family: 'Fontawesome';
+      font-family: $icon-font;
       font-weight:100;
     }
   }
@@ -915,9 +912,8 @@
   }
 
 }
-// @group custom radio button
 
-/* The container */
+// @group custom radio button
 .custom-radio {
   display: block;
   position: relative;
@@ -947,7 +943,7 @@
       /* Style the indicator (dot/circle) */
       content: '\f111';
       font-size: 1rem;
-      font-family: 'Fontawesome';
+      font-family: $icon-font;
       font-weight:100;
     }
 
@@ -962,7 +958,7 @@
     /* When the radio button is checked, add a blue background */
     &:checked ~ .checkmark {
       //background-color: #2196F3;
-    
+
       /* Show the indicator (dot/circle) when checked */
       &:after {
           display: block;

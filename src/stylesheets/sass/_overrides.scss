@@ -8,15 +8,19 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 
+// @ navigation overrides
+
 .navbar-bright .navbar-nav .nav-link {
   color: rgba(255,255,255,1);
   text-decoration:none;
 }
 
+// @group form field overrides
+
 input.form-control, select.form-control {
   background-color: $bg-input-colour;
   color: rgba(90,104,114,1);
-  font-family: "Open Sans";
+  font-family: $base-font;
   font-size: 20px;
   line-height: 29.5px;
   border:0;
@@ -90,14 +94,10 @@ select.form-control {
 label.form-control-label {
 	height: calc(36px - 50%);
 	color: rgba(21,41,53,1);
-	font-family: "Open Sans";
+	font-family: $base-font;
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 1.5rem;
-}
-
-.img__calendar{
-  height:20px;
 }
 
 .form-check-input--alt {
@@ -123,7 +123,7 @@ label.form-control-label {
   }
 }
 
-
+// @group modal overrides
 .modal-header--alt {
   border-bottom:0;
   padding-top:0;
@@ -161,4 +161,8 @@ label.form-control-label {
 
 .list-group--content .list-group-item {
   text-decoration: none;
+}
+
+.img__calendar{
+  height:20px;
 }
