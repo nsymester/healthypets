@@ -50,7 +50,8 @@ section h2 {
 
 a {
   color: #3d70b2;
-  font-eweight: 600; }
+  font-weight: normal;
+  text-decoration: underline; }
 
 /* @group objects */
 /**
@@ -783,9 +784,6 @@ a {
   *       - ie8
   * @author Neil Symester neil.symester@towergate.co.uk
   */
-a {
-  text-decoration: underline; }
-
 .navbar-bright .navbar-nav .nav-link {
   color: white;
   text-decoration: none; }
@@ -909,5 +907,8 @@ label.form-control-label {
   color: #3d70b2;
   font-size: 15px;
   font-weight: 600; }
+
+.list-group--content .list-group-item {
+  text-decoration: none; }
 
 /*# sourceMappingURL=maps/styles.css.map */

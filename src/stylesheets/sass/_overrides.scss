@@ -8,10 +8,6 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 
-a {
-  text-decoration: underline;
-}
-
 .navbar-bright .navbar-nav .nav-link {
   color: rgba(255,255,255,1);
   text-decoration:none;
@@ -161,4 +157,8 @@ label.form-control-label {
   color: $primary-colour;
   font-size: 15px;
   font-weight: 600;
+}
+
+.list-group--content .list-group-item {
+  text-decoration: none;
 }
