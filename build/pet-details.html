@@ -12,6 +12,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/images/favicon.ico">
   <title> Pet Details |    Healthy Pets</title>
 
   
@@ -96,19 +97,19 @@
 
         
                 <div class="form-group">
-          <label class="form-control-label" for="pets-name">What's your pet's name?</label>
-          <input class="form-control rounded-0" type="text" id="pets-name">
+          <label class="form-control-label" for="pet-name">What's your pet's name?</label>
+          <input class="form-control rounded-0" type="text" id="pet-name">
         </div><!-- form-group --> 
 
         
                 <div class="form-group">
-          <label class="form-control-label mt-2 mb-0" for="dob">What's your pet's birthday?</label>
+          <label class="form-control-label mt-2 mb-0" for="pet-dob">What's your pet's birthday?</label>
           <small class="form__help">If you don't know the exact date of birth, enter the vet's estimate</small>
           <div class="input-group mb-2">
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="dob" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="pet-dob" placeholder="dd/mm/yyyy" size="25">
           </div>
         </div><!-- form-group --> 
 
@@ -158,26 +159,26 @@
             <label class="form-control-label mt-3" for="">What type of dog do you have?</label>
 
               <div class="form-check mb-0 pl-0">
-                <label class="form-check-label custom-radio" for="dog-type1">Crossbreed
-                  <input class="form-check-input" type="radio" name="dog-type" id="dog-type1" value="option1" data-toggle="collapse" href="#collapse-dog" role="button" aria-expanded="false" aria-controls="collapse-dog">
+                <label class="form-check-label custom-radio" for="dog-type-1">Crossbreed
+                  <input class="form-check-input" type="radio" name="dog-type-" id="dog-type-1" value="option1" data-toggle="collapse" href="#collapse-dog" role="button" aria-expanded="false" aria-controls="collapse-dog">
                   <span class="checkmark"></span>
                   <small class="form__help mb-1">Parents are different breeds</small>
                 </label>
               </div><!-- form-check -->
 
               <div class="form-check mb-3 pl-0">
-                <label class="form-check-label custom-radio" for="dog-type2">Mongrel
-                  <input class="form-check-input" type="radio" name="dog-type" id="dog-type2" value="option2">
+                <label class="form-check-label custom-radio" for="dog-type-2">Mongrel
+                  <input class="form-check-input" type="radio" name="dog-type-" id="dog-type-2" value="option2">
                   <span class="checkmark"></span>
                   <small class="form__help mb-1">Parents are three breeds or more</small>
                 </label>
               </div><!-- form-check -->
 
               <div class="form-check mb-2 pl-0">
-                <label class="form-check-label custom-radio" for="dog-type3" style="width: 97%;">
-                  <input class="form-check-input" type="radio" name="dog-type" id="dog-type3" value="option3">
+                <label class="form-check-label custom-radio" for="dog-type-3" style="width: 97%;">
+                  <input class="form-check-input" type="radio" name="dog-type-" id="dog-type-3" value="option3">
                   <span class="checkmark"></span>
-                  <select class="form-control rounded-0" id="exampleFormControlSelect1">
+                  <select class="form-control rounded-0" id="dog-type-breed">
                     <option>Find your dog's breed</option>
                     <option>German</option>
                     <option>German Longhaired Pointer</option>
@@ -260,8 +261,8 @@
 
             <div class="form-check mb-3 pl-0">
 
-              <label class="form-check-label custom-radio" for="cat-type1">Mixed breed
-                <input class="form-check-input" type="radio" name="cat-type" id="cat-type1" value="option1">
+              <label class="form-check-label custom-radio" for="cat-type-1">Mixed breed
+                <input class="form-check-input" type="radio" name="cat-type-" id="cat-type-1" value="option1">
                 <span class="checkmark"></span>
                 <small class="form__help mb-1">Parents are different breeds</small>
               </label>
@@ -269,18 +270,18 @@
 
             <div class="form-check mb-3 pl-0">
 
-              <label class="form-check-label custom-radio" for="cat-type2">Moggie
-                <input class="form-check-input" type="radio" name="cat-type" id="cat-type2" value="option2">
+              <label class="form-check-label custom-radio" for="cat-type-2">Moggie
+                <input class="form-check-input" type="radio" name="cat-type-" id="cat-type-2" value="option2">
                 <span class="checkmark"></span>
                 <small class="form__help mb-1">Parents are three breeds or more</small>
               </label>
             </div><!-- form-check -->
 
             <div class="form-check mb-2 pl-0">
-              <label class="form-check-label custom-radio" for="cat-type3" style="width: 97%;">
-                <input class="form-check-input" type="radio" name="cat-type" id="cat-type3" value="option3">
+              <label class="form-check-label custom-radio" for="cat-type-3" style="width: 97%;">
+                <input class="form-check-input" type="radio" name="cat-type-" id="cat-type-3" value="option3">
                 <span class="checkmark"></span>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="cat-type-breed">
                   <option>Find your cat's breed</option>
                   <option>Type 1</option>
                   <option>Type 2</option>
