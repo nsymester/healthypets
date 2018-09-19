@@ -8,7 +8,7 @@
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
-{% block ie8supporthtml %}
+{% block ie8SupportHtml %}
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
@@ -20,12 +20,12 @@
   <section class="mt-4 mb-3">
     <h2 class="mt-0 mb-4">Your policy summary</h2>
 
-    {% block chosenPolicyContent1 %}
+    {% block chosenPolicyContent %}
     {% import './macros/chosen-policy.njk' as chosenPolicy %}
     {{ chosenPolicy.data( {
           'marginBottom': 'mb-4',
           'state': 'form',
-          'name': 'Booby',
+          'name': 'Bobby',
           'breed': 'German Shpherd',
           'age':'3 yrs',
           'cover': 'lifetime',
@@ -35,7 +35,6 @@
       )
     }}
 
-    {% import './macros/chosen-policy.njk' as chosenPolicy %}
     {{ chosenPolicy.data( {
           'marginBottom': 'mb-4',
           'state': 'form',
@@ -49,15 +48,14 @@
       )
     }}
 
-    {% import './macros/chosen-policy.njk' as chosenPolicy %}
     {{ chosenPolicy.data( {
           'marginBottom': 'mb-4',
           'state': 'form',
-          'name': 'Booby',
+          'name': 'Bobby',
           'breed': 'German Shpherd',
           'age':'3 yrs',
           'cover': 'accident',
-          'cost':'£4250',
+          'cost':'£7500',
           'brdColour':'accident-brd-color'
         }
       )
@@ -98,10 +96,10 @@
     {% endblock %}
   </div>
 
-  {% block customersecurity %}
+  {% block customerSecurity %}
   {% include './partials/thwate.njk' %} {% endblock %}
 
-  {% block customerservice %}
+  {% block customerService %}
   {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': false,
@@ -111,7 +109,7 @@
 
 </div><!-- container -->
 
-{% block corejavascript %}
+{% block coreJavascript %}
 {% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
 
 {% block footer %}

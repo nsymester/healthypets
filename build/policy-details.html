@@ -106,7 +106,7 @@
       <fieldset class="mt-0 mb-0">
         <legend></legend>
 
-        <label class="form-control-label mt-2" for="postcode">Policy start date</label>
+        <label class="form-control-label mt-2">Policy start date</label>
         <small class="form__help">You can pick a date up 30 days in the future.</small>
 
         <div class="d-flex mb-2 flex-nowrap justify-content-between">
@@ -114,18 +114,18 @@
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form__input--short w-70" type="date" id="startdate" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short w-70" type="date" id="policy-start-date" placeholder="dd/mm/yyyy" size="25">
           </div>
 
           <div class="form-group form-check mt-3 w-70">
-            <label class="form-check-label custom-checkbox" for="immediatelyCheck">Immediately
-              <input type="checkbox" class="form-check-input" id="immediatelyCheck">
+            <label class="form-check-label custom-checkbox" for="policy-start-immediately">Immediately
+              <input type="checkbox" class="form-check-input" id="policy-start-immediately">
               <span class="checkmark"></span>
             </label>
           </div>
         </div><!-- d-flex -->
 
-        <label class="form-control-label mt-2" for="postcode">How would you like your policy documents delivered to you?</label>
+        <label class="form-control-label mt-2">How would you like your policy documents delivered to you?</label>
 
         <div class="form-group">
 
@@ -135,9 +135,9 @@
 
   <div class="form-check pl-0">
     
-    <label class="form-check-label custom-radio" for="documentsDelivered1">
+    <label class="form-check-label custom-radio" for="policy-delivered-post">
       A hard copy by post
-      <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered1" value="option1">
+      <input class="form-check-input" type="radio" name="policy-delivered" id="policy-delivered-post" value="option-post">
       <span class="checkmark"></span>
     </label>
   </div>
@@ -148,9 +148,9 @@
 
   <div class="form-check pl-0">
     
-    <label class="form-check-label custom-radio" for="documentsDelivered2">
+    <label class="form-check-label custom-radio" for="policy-delivered-email">
       A digital copy by email
-      <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered2" value="option2">
+      <input class="form-check-input" type="radio" name="policy-delivered" id="policy-delivered-email" value="option-email">
       <span class="checkmark"></span>
     </label>
   </div>
@@ -161,9 +161,9 @@
 
   <div class="form-check pl-0">
     
-    <label class="form-check-label custom-radio" for="documentsDelivered3">
+    <label class="form-check-label custom-radio" for="policy-delivered-both">
       Both
-      <input class="form-check-input" type="radio" name="documentsDelivered" id="documentsDelivered3" value="option3">
+      <input class="form-check-input" type="radio" name="policy-delivered" id="policy-delivered-both" value="option-both">
       <span class="checkmark"></span>
     </label>
   </div>
@@ -194,8 +194,8 @@
 
   <div class="form-check mb-2" style="padding-left:0;">
     
-    <label class="form-check-label custom-checkbox" for="policyAgreement">I have read and agreed to the above statements
-      <input type="checkbox" class="form-check-input" id="policyAgreement">
+    <label class="form-check-label custom-checkbox" for="policy-agreement">I have read and agreed to the above statements
+      <input type="checkbox" class="form-check-input" id="policy-agreement">
       <span class="checkmark"></span>
     </label>
   </div>
@@ -204,7 +204,6 @@
           
 
         </div>
-
 
         <label class="form-control-label mt-2" for="">Healthy Pets is part of the Ardonagh Group. If you would like to receive the latest offers on selected financial and related products and services from Healthy Pets and the Ardonagh Group, please choose how you would like us to contact you:</label>
 
@@ -216,8 +215,8 @@
 
   <div class="form-check mb-2" style="padding-left:0;">
     
-    <label class="form-check-label custom-checkbox" for="contactMail">Mail
-      <input type="checkbox" class="form-check-input" id="contactMail">
+    <label class="form-check-label custom-checkbox" for="contact-mail">Mail
+      <input type="checkbox" class="form-check-input" id="contact-mail">
       <span class="checkmark"></span>
     </label>
   </div>
@@ -228,8 +227,8 @@
 
   <div class="form-check mb-2" style="padding-left:0;">
     
-    <label class="form-check-label custom-checkbox" for="contactPhone">Phone
-      <input type="checkbox" class="form-check-input" id="contactPhone">
+    <label class="form-check-label custom-checkbox" for="contact-phone">Phone
+      <input type="checkbox" class="form-check-input" id="contact-phone">
       <span class="checkmark"></span>
     </label>
   </div>
@@ -240,8 +239,8 @@
 
   <div class="form-check mb-2" style="padding-left:0;">
     
-    <label class="form-check-label custom-checkbox" for="contactText">Text
-      <input type="checkbox" class="form-check-input" id="contactText">
+    <label class="form-check-label custom-checkbox" for="contact-text">Text
+      <input type="checkbox" class="form-check-input" id="contact-text">
       <span class="checkmark"></span>
     </label>
   </div>
@@ -252,8 +251,8 @@
 
   <div class="form-check mb-2" style="padding-left:0;">
     
-    <label class="form-check-label custom-checkbox" for="contactEmail">Email
-      <input type="checkbox" class="form-check-input" id="contactEmail">
+    <label class="form-check-label custom-checkbox" for="contact-email">Email
+      <input type="checkbox" class="form-check-input" id="contact-email">
       <span class="checkmark"></span>
     </label>
   </div>

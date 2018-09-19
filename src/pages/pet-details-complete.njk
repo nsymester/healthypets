@@ -8,7 +8,7 @@
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
-{% block ie8supporthtml %}
+{% block ie8SupportHtml %}
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
@@ -53,7 +53,7 @@
     </form>
   </section>
 
-  {% block customerservice %}
+  {% block customerService %}
   {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': true,
@@ -63,7 +63,7 @@
 
 </div><!-- container -->
 
-{% block corejavascript %}
+{% block coreJavascript %}
 {% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
 
 {% block footer %}

@@ -59,7 +59,7 @@ function CustomSelect () {
       }
     }
     h.click();
-    if (originalSelect.getAttribute('id') === 'conditionSelect') {
+    if (originalSelect.getAttribute('id') === 'condition-select') {
       $('.conditions').append(`<div class='pill__condition'>${h.innerHTML} <span class='close'>x</span></div>`);
       checkForConditions();
     }

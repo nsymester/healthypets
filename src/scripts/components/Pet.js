@@ -5,7 +5,7 @@ function Pet () {
   let $preExistingConditionYes = $('#pre-existing-condition-yes');
   let $preExistingConditionNo = $('#pre-existing-condition-no');
   let $petCondition = $('#pet-condition');
-  let $conditionSelect =  $('#conditionSelect');
+  let $conditionSelect =  $('#condition-select');
 
   let $petTypeDog = $('#pet-type-dog');
   let $petTypeCat = $('#pet-type-cat');
@@ -32,7 +32,7 @@ function Pet () {
   });
 
   $conditionSelect.change(function () {
-    let select = $('#conditionSelect option:selected').val();
+    let select = $('#condition-select option:selected').val();
     // create a pill
     // append pill to condition list
     $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);

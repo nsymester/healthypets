@@ -100,12 +100,12 @@
           <label class="form-control-label mt-2" for="">How regularly do you want to pay?</label>
           <div class="form-check-flex">
             <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-monthly" value="monthly" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="directDebitDetails">
+              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-monthly" value="monthly" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="direct-debit-details">
               <label class="form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-monthly"><span>Monthly</span><span>£37.79</span></label>
             </div><!-- form-check -->
 
             <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-annually" value="annually" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="paymentType">
+              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-annually" value="annually" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="payment-type">
               <label class="form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-annually"><span>Annually</span><span>£466.12</span></label>
             </div><!-- form-check -->
           </div>
@@ -113,19 +113,19 @@
 
         <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
 
-        <div class="collapse" id="paymentType">
+        <div class="collapse" id="payment-type">
           <div class="form-group">
             <label class="form-control-label mt-2" for="">How would you like to pay?</label>
             <div class="form-check-flex">
 
               <div class="form-check form-check-inline radio-button-box">
-                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-debit" value="debit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
+                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-debit" value="debit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="credit-card-details">
 
                 <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-debit"><span>Direct Debit</span></label>
               </div><!-- form-check -->
 
               <div class="form-check form-check-inline radio-button-box">
-                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-credit" value="credit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="creditCardDetails">
+                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-credit" value="credit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="credit-card-details">
 
                 <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-credit"><span>Credit/Debit Card</span></label>
               </div><!-- form-check -->
@@ -134,30 +134,30 @@
 
           <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
 
-          <div class="collapse mt-4 mb-4" id="creditCardDetails">
+          <div class="collapse mt-4 mb-4" id="credit-card-details">
 
             <div class="form-group mb-4">
-              <label class="form-control-label" for="cardName">Name on Card</label>
-              <input class="form-control rounded-0" type="text" id="cardName">
+              <label class="form-control-label" for="card-name">Name on Card</label>
+              <input class="form-control rounded-0" type="text" id="card-name">
             </div><!-- form-group -->
 
             <div class="form-group">
-              <label class="form-control-label" for="cardNumber1">Card Number</label>
+              <label class="form-control-label" for="card-number-1">Card Number</label>
               <div class="form-group--sortcode d-flex">
-                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber1" onkeypress="return isNumberKey(event)" >
-                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber2" onkeypress="return isNumberKey(event)" >
-                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber3" onkeypress="return isNumberKey(event)" >
-                <input class="form-control rounded-0" maxlength="2" type="text" id="cardNumber4" onkeypress="return isNumberKey(event)" >
+                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-1" onkeypress="return isNumberKey(event)" >
+                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-2" onkeypress="return isNumberKey(event)" >
+                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-3" onkeypress="return isNumberKey(event)" >
+                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-4" onkeypress="return isNumberKey(event)" >
               </div>
             </div><!-- form-group -->
 
             <div class="form-group">
-              <label class="form-control-label mt-2 mb-0" for="expiryDate">Expiry date</label>
+              <label class="form-control-label mt-2 mb-0" for="expiry-date">Expiry date</label>
               <div class="input-group mb-2">
                 <div class="input-group-prepend input-group-prepend--date mt-2">
                   <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
                 </div>
-                <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiryDate" placeholder="dd/mm/yyyy" size="25">
+                <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiry-date" placeholder="dd/mm/yyyy" size="25">
               </div>
             </div><!-- form-group -->
 
@@ -174,26 +174,26 @@
         </div><!-- collapse -->
 
 
-        <div class="collapse mt-4 mb-4" id="directDebitDetails">
+        <div class="collapse mt-4 mb-4" id="direct-debit-details">
 
           <p class="h5 mb-4">Your direct debit will come out on the <strong>5th of the month</strong></p>
           <div class="form-group mb-4">
-            <label class="form-control-label" for="accName">Account holder's name</label>
-            <input class="form-control rounded-0" type="text" id="accName">
+            <label class="form-control-label" for="account-name">Account holder's name</label>
+            <input class="form-control rounded-0" type="text" id="account-name">
           </div><!-- form-group -->
 
           <div class="form-group">
-            <label class="form-control-label" for="sortCode1">Sort code</label>
+            <label class="form-control-label" for="sort-code-1">Sort code</label>
             <div class="form-group--sortcode d-flex">
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sortCode1" onkeypress="return isNumberKey(event)" >
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sortCode2" onkeypress="return isNumberKey(event)" >
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sortCode3" onkeypress="return isNumberKey(event)" >
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-1" onkeypress="return isNumberKey(event)" >
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-2" onkeypress="return isNumberKey(event)" >
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-3" onkeypress="return isNumberKey(event)" >
             </div>
           </div><!-- form-group -->
 
           <div class="form-group">
-            <label class="form-control-label" for="accNumber">Account number</label>
-            <input class="form-control rounded-0" type="number" id="accNumber">
+            <label class="form-control-label" for="account-number">Account number</label>
+            <input class="form-control rounded-0" type="number" id="account-number">
           </div><!-- form-group -->
 
           <div class="card p-4">

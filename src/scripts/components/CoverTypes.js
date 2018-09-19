@@ -2,14 +2,14 @@
 
 function CoverTypes () {
   // cache DOM
-  let $lifetimeLink = $('#lifecover-link');
+  let $lifetimeLink = $('#lifetime-link');
   let $maximumLink = $('#maximum-link');
   let $accidentLink = $('#accident-link');
   let $btnCoverLevel = $('.btn--cover-level');
 
-  let $lifetimeCover = $('#lifecover');
-  let $maximumCover = $('#maximumcover');
-  let $accidentCover = $('#accidentcover');
+  let $lifetimeCover = $('#lifetime-cover');
+  let $maximumCover = $('#maximum-cover');
+  let $accidentCover = $('#accident-cover');
 
   $lifetimeLink.click(function () {
     $lifetimeCover.collapse('show');

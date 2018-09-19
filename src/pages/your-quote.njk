@@ -8,7 +8,7 @@
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
-{% block ie8supporthtml %}
+{% block ie8supportHtml %}
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
@@ -32,28 +32,28 @@
 
         <div class="d-flex justify-content-between mb-3">
           <div class="card cover-item cover-item--lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-            <a id="lifecover-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between" data-toggle="collapse" aria-expand="false" aria-controls="lifecover">
+            <a id="lifetime-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between" data-toggle="collapse" aria-expand="false" aria-controls="lifetime-cover">
               <h6 class="cover-item__header">Lifetime Cover</h6>
               <p class="cover-item__price">from £29.11 / month</p>
             </a>
           </div><!-- card-->
 
           <div class="card cover-item cover-item--maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-            <a id="maximum-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="maximumcover"">
+            <a id="maximum-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="maximum-cover"">
               <h6 class="cover-item__header">Maximun Benefit Cover</h6>
               <p class="cover-item__price">from £29.11 / month</p>
             </a>
           </div><!-- card-->
 
           <div class="card cover-item cover-item--accident rounded-0 shadow mb-3 pt-2 bg-white">
-            <a id="accident-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="accidentcover"">
+            <a id="accident-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="accident-cover"">
               <h6 class="cover-item__header">Accident Only Cover</h6>
               <p class="cover-item__price">from £29.11 / month</p>
             </a>
           </div><!-- card-->
         </div><!-- d-flex -->
 
-        <div class="collapse mt-4 mb-4" id="lifecover">
+        <div class="collapse mt-4 mb-4" id="lifetime-cover">
           <div class="cover-info cover-info--lifetime pt-2">
             <small class="cover-info__prologue">Our most comprehensive cover</small>
             <h2 class="h1 cover-info__header mt-1">Lifetime Cover</h2>
@@ -101,7 +101,7 @@
           </div><!-- cover--lifetime -->
         </div><!-- collapse -->
 
-        <div class="collapse mt-4 mb-4" id="maximumcover">
+        <div class="collapse mt-4 mb-4" id="maximum-cover">
           <div class="cover-info cover-info--maximum pt-3">
             <small class="cover-info__prologue">Our most comprehensive cover</small>
             <h2 class="h1 cover-info__header mt-1">Maximum Benefit</h2>
@@ -149,7 +149,7 @@
           </div>
         </div><!-- collapse -->
 
-        <div class="collapse mt-4 mb-4" id="accidentcover">
+        <div class="collapse mt-4 mb-4" id="accident-cover">
           <div class="cover-info cover-info--accident pt-3">
             <small class="cover-info__prologue">Our most comprehensive cover</small>
             <h2 class="h1 cover-info__header mt-1">Accident Only</h2>
@@ -202,7 +202,7 @@
   </section>
 
 
-  {% block customerservice %}
+  {% block customerService %}
   {% import './macros/customer-service.njk' as customerService %}
   {{ customerService.provision({
     'discount': true,
@@ -212,7 +212,7 @@
 
 </div><!-- container -->
 
-{% block corejavascript %}
+{% block coreJavascript %}
 {% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
 
 {% block footer %}

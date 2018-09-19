@@ -4,13 +4,13 @@
 
 function Address () {
   // cache DOM
-  let $postcodeSearch = $('#postcode-search');
+  let $postcodeSearch = $('#customer-postcode-search');
   let $addressPostcodes = $('.address__postcodes a');
   let $addressLink = $('.address__link');
 
-  let $postcodeResult = $('#postcode-result');
-  let $manualAddress = $('#manualaddress');
-  let $address = $('#address');
+  let $postcodeResult = $('#customer-postcode-result');
+  let $manualAddress = $('#customer-manual-address');
+  let $address = $('#customer-address');
 
   // bind events
   $postcodeSearch.click(function (evt) {

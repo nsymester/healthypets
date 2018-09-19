@@ -7,9 +7,9 @@ function Payment () {
   let $paymentTypeDebit = $('#payment-type-debit');
   let $paymentTypeCredit = $('#payment-type-credit');
 
-  let $directDebitDetails = $('#directDebitDetails');
-  let $paymentType = $('#paymentType');
-  let $creditCardDetails = $('#creditCardDetails');
+  let $directDebitDetails = $('#direct-debit-details');
+  let $paymentType = $('#payment-type');
+  let $creditCardDetails = $('#credit-card-details');
 
   // bind events
   $regularPayMonthly.click(function () {
