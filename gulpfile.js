@@ -12,9 +12,9 @@
 // process.argv[1] = gulp.js
 
 // Gulp.js configuration
-var gulp = require('gulp')
-var browserSync = require('browser-sync').create()
-var reload = browserSync.reload
+var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 
 // load all plugins in 'devDependencies' into the variable $
 // pattern: include '*' for non gulp files
@@ -30,46 +30,47 @@ var $ = require('gulp-load-plugins')({
     'event-stream': 'es'
   },
   scope: ['devDependencies']
-})
+});
 
 // is this a development build?
-var devBuild = (process.env.NODE_ENV !== 'production')
+var devBuild = (process.env.NODE_ENV !== 'production');
 
-var isWin = process.platform === 'win32'
+var isWin = process.platform === 'win32';
 
 // folders
 var folder = {
   src: 'src/',
   build: ''
-}
+};
 
 var sass = {
   style: 'nested',
   comments: false
-}
+};
 
 var onError = function (err) {
   // $.gutil.beep();
-  console.log(err)
-}
+  console.log(err);
+};
 
 /* ===================== START ===================== */
 
 /**
  * @desc browserSync, start the server
- */ gulp.task('browserSync', function () {
+ */
+gulp.task('browserSync', function () {
   // check for operating system
   // - for WINDOWS 10 use "Chrome"
   // - for MAC OS X use 'Google Chrome'
-  var browser = isWin ? 'Chrome' : 'Google Chrome'
+  var browser = isWin ? 'Chrome' : 'Google Chrome';
   browserSync.init({
     server: {
       baseDir: './build'
     },
     browser: browser,
     directory: false
-  })
-})
+  });
+});
 
 /**
  * @desc nunjucks task
@@ -86,8 +87,8 @@ gulp.task('nunjucks', function () {
     }))
   // output files in app folder
     .pipe(gulp.dest('./build'))
-    .pipe(browserSync.stream())
-})
+    .pipe(browserSync.stream());
+});
 
 /**
  * @desc css task - compile sass to css, compress and add prefixes
@@ -95,18 +96,18 @@ gulp.task('nunjucks', function () {
 gulp.task('css', function () {
   var postCssOpts = [
     $.autoprefixer({ browsers: ['last 2 versions', '> 2%'] })
-  ]
+  ];
 
   if (!devBuild) {
-    console.log('css build ', devBuild)
-    sass.style = 'compressed'
-    sass.comments = false
+    console.log('css build ', devBuild);
+    sass.style = 'compressed';
+    sass.comments = false;
   }
 
   // .on('error', $.util.log))
 
   return gulp.src([`${folder.src}/stylesheets/sass/*.scss`])
-  .pipe($.plumber({
+    .pipe($.plumber({
       errorHandler: onError
     }))
     .pipe($.if(devBuild, $.sourcemaps.init()))
@@ -116,31 +117,31 @@ gulp.task('css', function () {
       imagePath: 'images/',
       errLogToConsole: true
     })
-    .on('error', function (err) {
-      console.log(err.toString());
+      .on('error', function (err) {
+        console.log(err.toString());
 
-      this.emit('end');
-    }))
+        this.emit('end');
+      }))
     .pipe($.postcss(postCssOpts))
     .pipe($.if(devBuild, $.sourcemaps.write('maps', {
       includeContent: false
     })))
     .pipe(gulp.dest('build/css'))
     .pipe($.size())
-    .pipe(browserSync.stream())
-})
+    .pipe(browserSync.stream());
+});
 
 /**
  * @desc bundles js into multiple files
  */
 gulp.task('browserify', function () {
   var files = [
-    './src/scripts/index.js',
-    './src/scripts/application.js'
+    './src/scripts/index.js'
+    // './src/scripts/application.js'
   ];
 
   // start fresh
-  $.del.sync([`${files}`]);
+  // $.del.sync([`${files}`]);
 
   // map them to our stream function
   var tasks = files.map(function (entry) {
@@ -181,12 +182,12 @@ gulp.task('browserify', function () {
  */
 gulp.task('watchify', function () {
   let files = [
-    './src/scripts/index.js',
-    './src/scripts/application.js'
-  ]
+    './src/scripts/index.js'
+    // './src/scripts/application.js'
+  ];
 
   // start fresh
-  $.del.sync([`${files}`])
+  // $.del.sync([`${files}`]);
 
   var tasks = files.map(function (entry) {
     var bundler = $.browserify({
@@ -194,16 +195,16 @@ gulp.task('watchify', function () {
       debug: true // Output source maps
     }).transform($.babelify, {
       presets: ['env']
-    })
+    });
 
     var bundle = function () {
       return bundler
         .bundle() // Start bundle
         .on('error', function (err) {
           // print the error (can replace with gulp-util)
-          console.log(err.message)
+          console.log(err.message);
           // end this stream
-          this.emit('end')
+          this.emit('end');
         })
         .pipe($.source(entry))
       // rename them to have "bundle as postfix"
@@ -215,53 +216,53 @@ gulp.task('watchify', function () {
         .pipe(reload({
           stream: true,
           once: true
-        }))
-    }
+        }));
+    };
 
-    bundler = $.watchify(bundler)
-    bundler.on('update', bundle)
+    bundler = $.watchify(bundler);
+    bundler.on('update', bundle);
 
-    return bundle()
-  })
+    return bundle();
+  });
 
   // create a merged stream
-  return $.es.merge.apply(null, tasks)
-})
+  return $.es.merge.apply(null, tasks);
+});
 
 /**
  * @desc bootlint task -  A gulp wrapper for Bootlint, the HTML linter for Bootstrap projects
  */
 gulp.task('bootlint', function () {
   return gulp.src('./build/*.html')
-    .pipe($.bootlint())
-})
+    .pipe($.bootlint());
+});
 
 /**
  * @desc build - run all tasks
  */
 gulp.task('build', function (callback) {
   $.runSequence(['nunjucks', 'css', 'browserify'],
-    callback)
-})
+    callback);
+});
 
 /**
  * @desc watch - watch for changes
  */
 gulp.task('watch', ['watchify'], function () {
   // html changes
-  gulp.watch('*.html', browserSync.stream())
+  gulp.watch('*.html', browserSync.stream());
 
   // nunjuck changes
-  gulp.watch(folder.src + '+(pages|templates)/**/*.njk', ['nunjucks'])
+  gulp.watch(folder.src + '+(pages|templates)/**/*.njk', ['nunjucks']);
 
   // css changes
-  gulp.watch(folder.src + 'stylesheets/sass/*', ['css'])
-})
+  gulp.watch(folder.src + 'stylesheets/sass/*', ['css']);
+});
 
 /**
  * @desc default task
  */
 gulp.task('default', function (callback) {
   $.runSequence(['nunjucks', 'css', 'browserSync', 'watch'],
-    callback)
-})
+    callback);
+});
