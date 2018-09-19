@@ -8,11 +8,11 @@
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
-{% block ie8supporthtml %}
+{% block ie8SupportHtml %}
 {% include './partials/ie8-support-html.njk' %} {% endblock %}
 
 {% block menu %}
-{% import './macros/menu.njk' as menu %} 
+{% import './macros/menu.njk' as menu %}
 {{ menu.data('payment complete') }}
 {% endblock %}
 
@@ -25,7 +25,7 @@
     {% endblock %}
 
     <h3 class="mb-4">Your purchase is complete</h3>
-   
+
     <div class="confirmation-sent">
       <p>We’ve sent a confirmation email to  user@user.com</p>
 
@@ -43,7 +43,7 @@
       <p>6654120025489</p>
     </div>
 
-    {% block chosenPolicyContent1 %}
+    {% block chosenPolicyContent %}
     {% import './macros/chosen-policy.njk' as chosenPolicy %}
     {{ chosenPolicy.data( {
           'marginBottom': 'mb-2',
@@ -58,7 +58,6 @@
       )
     }}
 
-    {% import './macros/chosen-policy.njk' as chosenPolicy %}
     {{ chosenPolicy.data( {
           'marginBottom': 'mb-2',
           'state': 'paid',
@@ -81,10 +80,10 @@
   <p>01730 268 592</p>
 
   <p>heretohelp@healthypets.com</p>
-  
+
 </div><!-- container -->
 
-{% block corejavascript %}
+{% block coreJavascript %}
 {% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
 
 {% block footer %}
