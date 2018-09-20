@@ -876,20 +876,20 @@ label.form-control-label {
     width: 15%;
     margin-right: 10px; }
 
-.modal-header--alt {
+.cover-info-modal__modal-header {
   border-bottom: 0;
   padding-top: 0; }
 
-.modal-title--alt {
+.cover-info-modal__modal-title {
   font-size: 1.7rem; }
 
-.modal-body p {
+.cover-info-modal .modal-body p {
   color: #152935;
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.5rem; }
 
-.modal-body small {
+.cover-info-modal .modal-body small {
   font-size: 1rem;
   position: relative;
   top: -4px; }

@@ -136,8 +136,8 @@ gulp.task('css', function () {
  */
 gulp.task('browserify', function () {
   var files = [
-    './src/scripts/index.js'
-    // './src/scripts/application.js'
+    './src/scripts/index.js',
+    './src/scripts/coverLevel.js'
   ];
 
   // start fresh
@@ -182,8 +182,8 @@ gulp.task('browserify', function () {
  */
 gulp.task('watchify', function () {
   let files = [
-    './src/scripts/index.js'
-    // './src/scripts/application.js'
+    './src/scripts/index.js',
+    './src/scripts/coverLevel.js'
   ];
 
   // start fresh

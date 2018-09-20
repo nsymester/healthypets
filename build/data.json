@@ -1,0 +1,134 @@
+{
+  "lifetime":
+  {
+    "info":{
+      "cover": "Lifetime"
+    },
+    "helpText" :{
+      "vetinary-fees":{
+        "title": "Vetinary fees",
+        "body": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>"
+      },
+      "excess":{
+        "title": "Excess",
+        "body": "<p>Placeat maxime quis a neque odio eos, soluta obcaecati aut suscipit cumque.</p>"
+      },
+      "death-from-illness":{
+        "title": "Death from Illness",
+        "body": "<p>Explicabo tempora praesentium cum perspiciatis nostrum.</p>"
+      },
+      "death-from-accident":{
+        "title": "Death from Accident",
+        "body": "<p>Quaerat dolores tenetur laudantium.</p>"
+      },
+      "advertising":{
+        "title": "Advertising and reward",
+        "body": "<p>Accusamus odit autem mollitia esse, placeat provident.</p>"
+      },
+      "theft":{
+        "title": "Theft or straying",
+        "body": "<p>Fuga quo aliquid nulla doloribus. Laudantium ratione natus aliquam totam inventore consequatur quae accusantium nisi praesentium, quisquam cum veritatis molestiae maiores animi officia aut qui quaerat, modi assumenda facilis iure?</p>"
+      },
+      "kennel-fees":{
+        "title": "Boarding kennel fees",
+        "body": "<p>Explicabo quod eius, non maxime ratione, numquam, ipsam rem deleniti veritatis omnis velit repudiandae saepe impedit voluptatum eos dolore aspernatur ullam nihil tenetur laborum perspiciatis. Cum itaque dicta optio suscipit?</p>"
+      },
+      "holiday-cancellation":{
+        "title": "Holiday cancellation",
+        "body": "<p>Dolorem ipsam quas excepturi cupiditate porro reiciendis nisi quis modi repellendus exercitationem velit aut non nam expedita distinctio minima, ducimus recusandae consequatur laboriosam sequi obcaecati maiores! Molestias aspernatur totam vel.</p>"
+      },
+      "overseas-travel":{
+        "title": "Overseas travel",
+        "body": "<p>Ad sapiente quam odio quaerat, vitae ab nihil autem tenetur possimus, accusamus optio quos deleniti est soluta dicta magni natus assumenda facilis! Nobis ratione repudiandae vel impedit iste quis amet!</p>"
+      }
+    }
+  },
+  "maximum":
+  {
+    "info":{
+      "cover": "Maximum"
+    },
+    "helpText" :{
+      "vetinary-fees":{
+        "title": "Vetinary fees",
+        "body": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>"
+      },
+      "excess":{
+        "title": "Excess",
+        "body": "<p>Placeat maxime quis a neque odio eos, soluta obcaecati aut suscipit cumque.</p>"
+      },
+      "death-from-illness":{
+        "title": "Death from Illness",
+        "body": "<p>Explicabo tempora praesentium cum perspiciatis nostrum.</p>"
+      },
+      "death-from-accident":{
+        "title": "Death from Accident",
+        "body": "<p>Quaerat dolores tenetur laudantium.</p>"
+      },
+      "advertising":{
+        "title": "Advertising and reward",
+        "body": "<p>Accusamus odit autem mollitia esse, placeat provident.</p>"
+      },
+      "theft":{
+        "title": "Theft or straying",
+        "body": "<p>Fuga quo aliquid nulla doloribus. Laudantium ratione natus aliquam totam inventore consequatur quae accusantium nisi praesentium, quisquam cum veritatis molestiae maiores animi officia aut qui quaerat, modi assumenda facilis iure?</p>"
+      },
+      "kennel-fees":{
+        "title": "Boarding kennel fees",
+        "body": "<p>Explicabo quod eius, non maxime ratione, numquam, ipsam rem deleniti veritatis omnis velit repudiandae saepe impedit voluptatum eos dolore aspernatur ullam nihil tenetur laborum perspiciatis. Cum itaque dicta optio suscipit?</p>"
+      },
+      "holiday-cancellation":{
+        "title": "Holiday cancellation",
+        "body": "<p>Dolorem ipsam quas excepturi cupiditate porro reiciendis nisi quis modi repellendus exercitationem velit aut non nam expedita distinctio minima, ducimus recusandae consequatur laboriosam sequi obcaecati maiores! Molestias aspernatur totam vel.</p>"
+      },
+      "overseas-travel":{
+        "title": "Overseas travel",
+        "body": "<p>Ad sapiente quam odio quaerat, vitae ab nihil autem tenetur possimus, accusamus optio quos deleniti est soluta dicta magni natus assumenda facilis! Nobis ratione repudiandae vel impedit iste quis amet!</p>"
+      }
+    }
+  },
+  "accident":
+  {
+    "info":{
+      "cover": "Accident"
+    },
+    "helpText" :{
+      "vetinary-fees":{
+        "title": "Vetinary fees",
+        "body": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>"
+      },
+      "excess":{
+        "title": "Excess",
+        "body": "<p>Placeat maxime quis a neque odio eos, soluta obcaecati aut suscipit cumque.</p>"
+      },
+      "death-from-illness":{
+        "title": "Death from Illness",
+        "body": "<p>Explicabo tempora praesentium cum perspiciatis nostrum.</p>"
+      },
+      "death-from-accident":{
+        "title": "Death from Accident",
+        "body": "<p>Quaerat dolores tenetur laudantium.</p>"
+      },
+      "advertising":{
+        "title": "Advertising and reward",
+        "body": "<p>Accusamus odit autem mollitia esse, placeat provident.</p>"
+      },
+      "theft":{
+        "title": "Theft or straying",
+        "body": "<p>Fuga quo aliquid nulla doloribus. Laudantium ratione natus aliquam totam inventore consequatur quae accusantium nisi praesentium, quisquam cum veritatis molestiae maiores animi officia aut qui quaerat, modi assumenda facilis iure?</p>"
+      },
+      "kennel-fees":{
+        "title": "Boarding kennel fees",
+        "body": "<p>Explicabo quod eius, non maxime ratione, numquam, ipsam rem deleniti veritatis omnis velit repudiandae saepe impedit voluptatum eos dolore aspernatur ullam nihil tenetur laborum perspiciatis. Cum itaque dicta optio suscipit?</p>"
+      },
+      "holiday-cancellation":{
+        "title": "Holiday cancellation",
+        "body": "<p>Dolorem ipsam quas excepturi cupiditate porro reiciendis nisi quis modi repellendus exercitationem velit aut non nam expedita distinctio minima, ducimus recusandae consequatur laboriosam sequi obcaecati maiores! Molestias aspernatur totam vel.</p>"
+      },
+      "overseas-travel":{
+        "title": "Overseas travel",
+        "body": "<p>Ad sapiente quam odio quaerat, vitae ab nihil autem tenetur possimus, accusamus optio quos deleniti est soluta dicta magni natus assumenda facilis! Nobis ratione repudiandae vel impedit iste quis amet!</p>"
+      }
+    }
+  }
+}

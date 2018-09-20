@@ -88,9 +88,10 @@
               {% import './macros/cover-selector.njk' as coverSelector %}
               {{ coverSelector.type(
                   {
-                    '1':'£2000',
-                    '2':'£4250',
-                    'cover': 'Lifetime'
+                    'id': '01',
+                    '1': '£2000',
+                    '2': '£4250',
+                    'cover': 'lifetime'
                   }
                 )
               }}
@@ -136,10 +137,11 @@
               {% import './macros/cover-selector.njk' as coverSelector %}
               {{ coverSelector.type(
                   {
+                    'id': '02',
                     '1':'£2000',
                     '2':'£4250',
                     '3':'£7500',
-                    'cover': 'Maximum'
+                    'cover': 'maximum'
                   }
                 )
               }}
@@ -185,8 +187,9 @@
               {% import './macros/cover-selector.njk' as coverSelector %}
               {{ coverSelector.type(
                   {
+                    'id': '03',
                     '4':'£1000',
-                    'cover': 'Accident'
+                    'cover': 'accident'
                   }
                 )
               }}
@@ -212,8 +215,21 @@
 
 </div><!-- container -->
 
+{% block modalContent %}
+{% import './macros/modal.njk' as modal %}
+{{ modal.info(
+    {
+      'price': '$100',
+      'cover': 'NAS'
+    }
+  )
+}}
+{% endblock %}
+
 {% block coreJavascript %}
 {% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+
+<script src="/js/coverLevel.bundle.js"></script>
 
 {% block footer %}
 {% include './partials/footer.njk' %} {% endblock %}

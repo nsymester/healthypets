@@ -36,9 +36,9 @@ function CoverTypes () {
     e.preventDefault();
     // target id
     let targetId = $(this).data('target');
-    let targetHeight =  $(targetId).height();
-    let documentHeight = $(document).height();
-    $('html, body').animate({ scrollTop: documentHeight }, targetHeight);
+    let targetHeight =  $(targetId).height() - 100;
+    // let documentHeight = $(document).height();
+    $('html, body').animate({ scrollTop: targetHeight });
 
     if (this.innerHTML === 'Choose level') {
       this.innerHTML = 'Hide levels';

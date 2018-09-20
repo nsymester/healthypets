@@ -6,79 +6,75 @@
         <p class="">Vetinary fees <br>up to <span class="font-weight-bold">{{ data.price }}</span></p>
         <p><span class="font-weight-bold">{{ data.price }}</span> per policy year, subject to a maximum of <span class="font-weight-bold">£1,000</span> per condition per year</p>
       </div>
-      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#cover-info-modal">i</button>
+      <button type="button" class="cover-level__info js-cover-level__info" data-info="vetinary-fees" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
     </div>
 
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Excess <br>of <span class="font-weight-bold">£99</span></p>
       </div>
-      <button type="button" class="cover-level__info" data-toggle="modal" data-target="#cover-info-modal">i</button>
+      <button type="button" class="cover-level__info js-cover-level__info" data-info="excess" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Death from Illness <br>up to <span class="font-weight-bold">£500</span></p>
       </div>
-      <div class="cover-level__info">i</div>
+      <button type="button" class="cover-level__info js-cover-level__info" data-info="death-from-illness" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Death from Accident <br>up to <span class="font-weight-bold">£500</span></p>
       </div>
-      <div class="cover-level__info">i</div>
+            <button type="button" class="cover-level__info js-cover-level__info" data-info="death-from-accident" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
+
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Advertising and reward <br>up to <span class="font-weight-bold">£500</span></p>
       </div>
-      <div class="cover-level__info">i</div>
+            <button type="button" class="cover-level__info js-cover-level__info" data-info="advertising" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
+
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Theft or straying <br>up to <span class="font-weight-bold">£500</span></p>
       </div>
-      <div class="cover-level__info">i</div>
+            <button type="button" class="cover-level__info js-cover-level__info" data-info="theft" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
+
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Boarding kennel fees <br>up to <span class="font-weight-bold">£500</span></p>
       </div>
-      <div class="cover-level__info">i</div>
+            <button type="button" class="cover-level__info js-cover-level__info" data-info="kennel-fees" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
+
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Holiday cancellation <br>up to <span class="font-weight-bold">£500</span></p>
       </div>
-      <div class="cover-level__info">i</div>
+            <button type="button" class="cover-level__info js-cover-level__info" data-info="holiday-cancellation" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
+
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p>Overseas travel <br>up to <span class="font-weight-bold">30 days</span></p>
       </div>
-      <div class="cover-level__info">i</div>
+            <button type="button" class="cover-level__info js-cover-level__info" data-info="overseas-travel" data-cover="{{ data.cover }}" data-price="{{ data.price }}">i</button>
+
     </div>
     <div class="cover-level__item rounded-0 text-center">
       <div class="cover-level__body">
         <p><span class="font-weight-bold">£29.11</span>/month <br><span class="font-weight-bold">£349.36</span>/year</p>
       </div>
-      <div class="cover-level__info">i</div>
+      <div type="button" class="cover-level__info ">i</div>
+
     </div>
   </div>
 
   {% block nextButton %}
   {% import './next-button.njk' as nextButton %}
   {{ nextButton.nextStep('Select ' + data.price + ' ' + data.cover + ' ' + 'Cover', 'policy-summary') }}
-  {% endblock %}
-
-  {% block modalContent %}
-  {% import './modal.njk' as modal %}
-  {{ modal.info(
-    {
-      'price': data.price,
-      'cover': data.cover
-    }
-    )
-  }}
   {% endblock %}
 
 {% endmacro %}
