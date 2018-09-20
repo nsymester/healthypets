@@ -1,0 +1,37 @@
+{% macro nextStep(linkName='Next', link='') %}
+
+{% if link == 'pet-details' %}
+  {% set link = 'pet-details.html' %}
+
+{% elif link == 'pet-details-other' %}
+  {% set link = 'pet-details-other.html' %}
+
+{% elif link == 'pet-details-complete' %}
+  {% set link = 'pet-details-complete.html' %}
+
+{% elif link == 'your-details' %}
+  {% set link = 'your-details.html' %}
+
+{% elif link == 'your-quote' %}
+  {% set link = 'your-quote.html' %}
+
+{% elif link == 'policy-summary' %}
+  {% set link = 'policy-summary.html' %}
+
+{% elif link == 'policy-details' %}
+  {% set link = 'policy-details.html' %}
+
+{% elif link == 'payment-default' %}
+  {% set link = 'payment-default.html' %}
+
+{% elif link == 'payment-complete' %}
+  {% set link = 'payment-complete.html' %}
+
+{% else %}
+  {% set link = 'index.html' %}
+
+{% endif %}
+
+<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="{{ link }}" style="text-decoration:none;">{{ linkName }}</button>
+
+{% endmacro %}

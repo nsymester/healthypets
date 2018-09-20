@@ -99,14 +99,17 @@
     </section>
 
     <h2 class="mt-0 mb-0">Enter your pet's details</h2>
-    <form action="">
+    <form class="needs-validation" novalidate>
       <fieldset class="form-group mt-0 mb-0">
         <legend></legend>
 
         
                 <div class="form-group">
           <label class="form-control-label" for="pet-name">What's your pet's name?</label>
-          <input class="form-control rounded-0" type="text" id="pet-name">
+          <input class="form-control rounded-0" type="text" id="pet-name" required>
+          <div class="invalid-feedback">
+            Please enter your pet's name.
+          </div>
         </div><!-- form-group --> 
 
         
@@ -117,7 +120,10 @@
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="pet-dob" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="pet-dob" placeholder="dd/mm/yyyy" required>
+            <div class="invalid-feedback">
+              Please enter your pet's date of birth.
+            </div>
           </div>
         </div><!-- form-group --> 
 
@@ -125,15 +131,20 @@
                 <div class="form-group">
           <label class="form-control-label mt-1" for="">Is your pet a dog or a cat?</label>
           <div class="form-check-flex">
-            <div class="form-check form-check-inline radio-button-box radio-button-box--icon">
-              <input class="form-check-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-dog" value="Dog" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dog-info">
+            <div class="custom-control custom-radio form-check-inline radio-button-box radio-button-box--icon">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-dog" value="Dog" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dog-info" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-dog"><span>Dog</span></label>
+              <div class="invalid-feedback">
+                Please select the type of pet you have.
+              </div>
             </div><!-- form-check -->
 
-            <div class="form-check form-check-inline radio-button-box radio-button-box--icon">
-              <input class="form-check-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-cat" value="Cat" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="cat-info">
+            <div class="custom-control custom-radio form-check-inline radio-button-box radio-button-box--icon">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-cat" value="Cat" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="cat-info" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-cat"><span>Cat</span></label>
+
             </div><!-- form-check -->
+
           </div>
 
           <div class="collapse mt-4 mb-4" id="dog-info">
@@ -290,12 +301,15 @@
                 <input class="form-check-input" type="radio" name="cat-type-" id="cat-type-3" value="option3">
                 <span class="checkmark"></span>
                 <select class="form-control" id="cat-type-breed">
-                  <option>Find your cat's breed</option>
+                  <option value="">Find your cat's breed</option>
                   <option>Type 1</option>
                   <option>Type 2</option>
                   <option>Type 3</option>
                   <option>Type 4</option>
                 </select>
+                <div class="invalid-feedback">
+                  Please enter your cat's breed.
+                </div>
               </label>
             </div><!-- form-check -->
           </div><!-- collapse -->
@@ -306,13 +320,16 @@
                 <div class="form-group">
           <label class="form-control-label mt-2" for="">What's your pets sex?</label>
           <div class="form-check-flex">
-            <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="gender" id="gender-male" value="Male">
+            <div class="custom-control custom-radio form-check-inline radio-button-box">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="gender" id="gender-male" value="Male" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="gender-male"><span>Male</span></label>
+              <div class="invalid-feedback">
+                Please select your pet's sex.
+              </div>
             </div><!-- form-check -->
 
-            <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="gender" id="gender-female" value="Female">
+            <div class="custom-control custom-radio form-check-inline radio-button-box">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="gender" id="gender-female" value="Female" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="gender-female"><span>Female</span></label>
             </div><!-- form-check -->
           </div>
@@ -323,13 +340,16 @@
           <label class="form-control-label mt-2" for="">Is your pet neutered?</label>
           <small class="form__help mb-1">Once insured, if this changes just let us know.</small>
           <div class="form-check-flex">
-            <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="neutered" id="neutered-no" value="neutered">
+            <div class="custom-control custom-radio form-check-inline radio-button-box">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="neutered" id="neutered-no" value="neutered" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="neutered-no"><span>Neutered</span></label>
+              <div class="invalid-feedback">
+                Please select whether your pet has been neutered.
+              </div>
             </div><!-- form-check -->
 
-            <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="neutered" id="neutered-yes" value="not-neutered">
+            <div class="custom-control custom-radio form-check-inline radio-button-box">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="neutered" id="neutered-yes" value="not-neutered" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="neutered-yes"><span>Not neutered</span></label>
             </div><!-- form-check -->
           </div>
@@ -342,22 +362,28 @@
             <div class="input-group-prepend input-group-prepend--currency">
               <span class="input-group-text">£</span>
             </div>
-            <input class="form-control rounded-0 form__input--short" type="number" id="donation">
+            <input class="form-control rounded-0 form__input--short" type="number" id="donation" required>
+            <div class="invalid-feedback">
+              Please enter how much you paid or donated.
+            </div>
           </div><!-- input-group -->
         </div><!-- form-group --> 
 
         
-                <div class="form-group">
+                <div class="form-group mb-5">
           <label class="form-control-label mt-2" for="">Does your pet have pre-existing conditions?</label>
           <small class="form__help mb-1">In the event of a claim, any sign or symptom that started before the policy start date would be excluded.</small>
           <div class="form-check-flex">
-            <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="pre-existing-condition" id="pre-existing-condition-yes" value="neutered" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pet-condition">
+            <div class="custom-control custom-radio form-check-inline radio-button-box">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="pre-existing-condition" id="pre-existing-condition-yes" value="neutered" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pet-condition" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="pre-existing-condition-yes"><span>Yes</span></label>
+              <div class="invalid-feedback">
+                Please select whether your pet has a pre-existing contion.
+              </div>
             </div><!-- form-check -->
 
-            <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="pre-existing-condition" id="pre-existing-condition-no" value="not-neutered">
+            <div class="custom-control custom-radio form-check-inline radio-button-box">
+              <input class="custom-control-input radio-button-box__input" type="radio" name="pre-existing-condition" id="pre-existing-condition-no" value="not-neutered" required>
               <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="pre-existing-condition-no"><span>No</span></label>
             </div><!-- form-check -->
           </div><!-- form-check-flex -->
@@ -367,7 +393,7 @@
             <label class="form-control-label" for="">What conditions does your pet have?</label>
 
             <div class="select--alt">
-              <select class="form-control rounded-0" id="condition-select">
+              <select class="form-control rounded-0" id="condition-select" required>
                 <option value="0">Add a condition</option>
                 <option value="1">Diabetes</option>
                 <option value="2">Eczema</option>
@@ -395,7 +421,7 @@
 
 
 
-<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/pet-details-complete.html" style="text-decoration:none;">Next</a>
+<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="pet-details-complete.html" style="text-decoration:none;">Next</button>
 
 
         
@@ -488,6 +514,45 @@ function isNumberKey(event) {
   }
   else return true;
 }
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    let forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    let validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+
+          // if pet type selected do validity check on it's children which affect its outcome
+          // if pet-type selected
+          //  do validity check on the elements in the associated collapse div
+
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          // let submit = $(this).closest('form').find('button[type=submit]');
+          let submit = $('button[type=submit]');
+
+
+          if ($(submit).data('href') == null) {
+            let nextPage = $(submit[1]).data('href');
+          } else {
+            let nextPage = $(submit[0]).data('href');
+          }
+
+          console.log('submit: ', submit[0]);
+          console.log('nextPage: ', nextPage);
+
+          
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
 
 </script> 
 

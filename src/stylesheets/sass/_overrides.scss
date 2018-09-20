@@ -23,7 +23,7 @@ input.form-control, select.form-control {
   font-family: $base-font;
   font-size: 20px;
   line-height: 29.5px;
-  border:0;
+  border-color: rgba(61, 112, 178, 0.1);
 
   &:focus {
     background-color: $bg-input-colour;
@@ -121,6 +121,10 @@ label.form-control-label {
     width: 15%;
     margin-right:10px;
   }
+}
+
+.custom-control {
+  padding-left: 0;
 }
 
 // @group modal overrides

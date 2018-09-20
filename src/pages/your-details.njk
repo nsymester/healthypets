@@ -25,13 +25,13 @@
     {% endblock %}
 
     <h2 class="mt-0 mb-0">Enter your details</h2>
-    <form action="">
+    <form class="needs-validation" novalidate>
       <fieldset class="form-group mt-0 mb-0">
         <legend></legend>
 
         <div class="form-group">
           <label class="form-control-label" for="customer-title">Title</label>
-          <select class="form-control rounded-0" id="customer-title">
+          <select class="form-control rounded-0" id="customer-title" value="wrwrwrew" required>
             <option>Select</option>
             <option>Mr</option>
             <option>Mrs</option>
@@ -39,16 +39,25 @@
             <option>Ms</option>
             <option>Dr</option>
           </select>
+          <div class="invalid-feedback">
+            Please enter your title.
+          </div>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="customer-firstname">First name</label>
-          <input class="form-control rounded-0" type="text" id="customer-firstname">
+          <input class="form-control rounded-0" type="text" id="customer-firstname" value="wrwrwrew" required>
+          <div class="invalid-feedback">
+            Please enter your first name.
+          </div>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="customer-lastname">Last name</label>
-          <input class="form-control rounded-0" type="text" id="customer-lastname">
+          <input class="form-control rounded-0" type="text" id="customer-lastname" value="wrwrwrew" required>
+          <div class="invalid-feedback">
+            Please enter your last name.
+          </div>
         </div><!-- form-group -->
 
         <div class="form-group">
@@ -57,14 +66,17 @@
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="customer-dob" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="customer-dob" placeholder="dd/mm/yyyy" value="23/04/2018" required>
+            <div class="invalid-feedback">
+              Please enter your date of birth.
+            </div>
           </div>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label mt-2" for="customer-postcode">Your postcode</label>
           <div class="input-group mb-2 flex-nowrap justify-content-between">
-            <input class="form-control form-control--alt rounded-0" type="number" id="customer-postcode">
+            <input class="form-control form-control--alt rounded-0" type="text" id="customer-postcode">
             <button class="btn btn-primary btn-primary--alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="customer-postcode-search" id="customer-postcode-search">Find address</button>
           </div>
 
@@ -87,17 +99,26 @@
           <div class="collapse mt-4 mb-4" id="customer-address">
             <div class="form-group">
               <label class="form-control-label" for="customer-house-number">House name/number</label>
-              <input class="form-control rounded-0" type="number" id="customer-house-number">
+              <input class="form-control rounded-0" type="number" id="customer-house-number" value="233" required>
+              <div class="invalid-feedback">
+                Please enter your House name/number.
+              </div>
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="form-control-label" for="customer-street">Street</label>
-              <input class="form-control rounded-0" type="number" id="customer-street">
+              <input class="form-control rounded-0" type="text" id="customer-street" value="wrwrwrew" required>
+              <div class="invalid-feedback">
+                Please enter your Street.
+              </div>
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="form-control-label" for="customer-town-city">Town or City</label>
-              <input class="form-control rounded-0" type="number" id="customer-town-city">
+              <input class="form-control rounded-0" type="text" id="customer-town-city" value="wrwrwrew" required>
+              <div class="invalid-feedback">
+                Please enter your Town or City.
+              </div>
             </div><!-- form-group -->
 
             <div class="form-group">
@@ -117,20 +138,28 @@
 
         <div class="form-group">
           <label class="form-control-label" for="customer-phone-number">Phone number</label>
-          <input class="form-control rounded-0" type="number" id="customer-phone-number">
+          <input class="form-control rounded-0" type="number" id="customer-phone-number" value="235424234234" required>
+          <div class="invalid-feedback">
+            Please enter your Phone number.
+          </div>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="customer-email">Email address</label>
-          <input class="form-control rounded-0" type="email" id="customer-email">
+          <input class="form-control rounded-0" type="email" id="customer-email" value="wrwrwrew@dsfdsf.com" required>
+          <div class="invalid-feedback">
+            Please enter your Email address.
+          </div>
         </div><!-- form-group -->
 
       </fieldset><!-- fieldset -->
 
+      <a></a>
+
       <div class="mt-4">
-        {% block nextButton %}
-        {% import './macros/next-button.njk' as nextButton %}
-        {{ nextButton.nextStep('Calculate quote', 'your-quote') }}
+        {% block submitButton %}
+        {% import './macros/submit-button.njk' as submitButton %}
+        {{ submitButton.nextStep('Calculate quote', 'your-quote') }}
         {% endblock %}
       </div>
     </form>

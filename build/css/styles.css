@@ -793,7 +793,7 @@ input.form-control, select.form-control {
   font-family: "Open Sans";
   font-size: 20px;
   line-height: 29.5px;
-  border: 0; }
+  border-color: rgba(61, 112, 178, 0.1); }
   input.form-control:focus, select.form-control:focus {
     background-color: rgba(61, 112, 178, 0.1);
     border-color: rgba(61, 112, 178, 0.1); }
@@ -875,6 +875,9 @@ label.form-control-label {
   .form-group--sortcode input {
     width: 15%;
     margin-right: 10px; }
+
+.custom-control {
+  padding-left: 0; }
 
 .cover-info-modal__modal-header {
   border-bottom: 0;

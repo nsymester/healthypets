@@ -33,7 +33,7 @@
     </section>
 
     <h2 class="mt-0 mb-0">Enter your pet's details</h2>
-    <form action="">
+    <form class="needs-validation" novalidate>
       <fieldset class="form-group mt-0 mb-0">
         <legend></legend>
 
@@ -65,9 +65,9 @@
       <a class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0 mt-4" href="/pet-details.html">Cancel pet</a>
 
       <div class="mt-4">
-        {% block nextButton %}
-        {% import './macros/next-button.njk' as nextButton %}
-        {{ nextButton.nextStep('Next', 'pet-details-complete') }}
+        {% block submitButton %}
+        {% import './macros/submit-button.njk' as submitButton %}
+        {{ submitButton.nextStep('Next', 'pet-details-complete') }}
         {% endblock %}
       </div>
     </form>

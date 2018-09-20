@@ -71,23 +71,32 @@
 <div class="container">
   <section class="mt-4 mb-3">
     <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: $base-font; font-size: 42px;line-height: 57px;">Retrieve a quote</h2>
-    <form action="">
+    <form class="needs-validation" novalidate>
       <fieldset class="form-group mt-3">
         <legend></legend>
 
-        <div class="form-group">
+        <div class="form-group has-danger">
           <label class="form-control-label" for="pet-name">Your pet's name</label>
-          <input class="form-control rounded-0" type="text" id="pet-name">
+          <input class="form-control rounded-0" type="text" id="pet-name" required>
+          <div class="invalid-feedback">
+            Please enter your pet's name.
+          </div>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="surname">Your surname</label>
-          <input class="form-control rounded-0" type="text" id="surname">
+          <input class="form-control rounded-0" type="text" id="surname" required>
+          <div class="invalid-feedback">
+            Please enter your surname.
+          </div>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="postcode">Your postcode</label>
-          <input class="form-control rounded-0" type="text" id="postcode">
+          <input class="form-control rounded-0" type="text" id="postcode" required>
+          <div class="invalid-feedback">
+            Please enter your postcode.
+          </div>
         </div><!-- form-group -->
       </fieldset><!-- fieldset -->
 
@@ -101,7 +110,7 @@
 
 
 
-<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/pet-details.html" style="text-decoration:none;">Next</a>
+<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="pet-details.html" style="text-decoration:none;">Next</button>
 
 
         
@@ -194,6 +203,45 @@ function isNumberKey(event) {
   }
   else return true;
 }
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    let forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    let validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+
+          // if pet type selected do validity check on it's children which affect its outcome
+          // if pet-type selected
+          //  do validity check on the elements in the associated collapse div
+
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          // let submit = $(this).closest('form').find('button[type=submit]');
+          let submit = $('button[type=submit]');
+
+
+          if ($(submit).data('href') == null) {
+            let nextPage = $(submit[1]).data('href');
+          } else {
+            let nextPage = $(submit[0]).data('href');
+          }
+
+          console.log('submit: ', submit[0]);
+          console.log('nextPage: ', nextPage);
+
+          
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
 
 </script> 
 
