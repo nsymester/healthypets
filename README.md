@@ -1,25 +1,35 @@
 # Healthy Pets
 
-## Tests
+## Getting Started
 
-For the stylelint use either:
+### To install
 
-- stylelint-config-recommended or
-- stylelint-config-standard
+```bash
+$ npm install
+```
+
+### To run on a local server
+
+```bash
+$ npm run start
+```
+
+Then enter **http://localhost:3000** in a web browser
+
+### To build production version
+
+```bash
+$ npm run build
+```
 
 ## Build
 
-## Linting
+Built using: 
 
-"extends": "eslint:recommended",
+* Nunjucks templating language for JavaScript
+* Bootstrap 4 with custom styles added using SASS
 
-## Bitbucket pipelines
-
-Got help creating the pipeline from [Stack Overflow](https://stackoverflow.com/questions/40030786/bitbucket-pipeline-for-simple-html-site-no-database)
-
-## SASS stylesheet structure
-
-### CSS Architecture
+## SASS Stylesheet Architecture
 
 These files are organised according to the ITCSS (Inverted Triangle CSS) Architecture.
 
@@ -45,4 +55,4 @@ These files are organised according to the ITCSS (Inverted Triangle CSS) Archite
                   ---
 ```
 
-The top layer of the triangle contains the most generic styles and as you progress downwards the styles become more and more specific ending with overrides.
+The top layer of the triangle, **Settings**, contains the most generic styles and as you progress downwards the styles become more and more specific ending with **Overrides**.
