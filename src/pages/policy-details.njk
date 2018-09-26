@@ -29,7 +29,7 @@
     {{ progressBar.activeStep('summary') }}
     {% endblock %}
 
-    <p class="font-weight-bold mt-5">Your details <a href="">edit details</a></p>
+    <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
 
     <div class="customer-details">
       <p style="line-height:1.5rem;">Name: Mrs User User
@@ -47,11 +47,17 @@
         <small class="form__help">You can pick a date up 30 days in the future.</small>
 
         <div class="d-flex mb-2 flex-nowrap justify-content-between">
+
+          <!-- TODO: need to join theese as a radio button -->
+
           <div class="input-group mb-2">
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form__input--short w-70" type="date" id="policy-start-date" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short w-70" type="date" id="policy-start-date" placeholder="dd/mm/yyyy" required>
+            <div class="invalid-feedback">
+              Please enter the policy start date.
+            </div>
           </div>
 
           <div class="form-group form-check mt-3 w-70">
@@ -69,26 +75,27 @@
           {% block formRadio %}
           {% import './macros/form-radio-long.njk' as formRadioLong %}
           {{ formRadioLong.field({
-              'id':'policy-delivered-post',
-              'label': 'A hard copy by post',
-              'name' : 'policy-delivered',
-              'value': 'option-post'
-            })
-          }}
-
-          {{ formRadioLong.field({
-              'id':'policy-delivered-email',
-              'label': 'A digital copy by email',
-              'name' : 'policy-delivered',
-              'value': 'option-email'
-            })
-          }}
-
-          {{ formRadioLong.field({
-              'id':'policy-delivered-both',
-              'label': 'Both',
-              'name' : 'policy-delivered',
-              'value': 'option-both'
+            "items": [
+              {
+                'id':'policy-delivered-post',
+                'label': 'A hard copy by post',
+                'name' : 'policy-delivered',
+                'value': 'option-post'
+              },
+              {
+                'id':'policy-delivered-email',
+                'label': 'A digital copy by email',
+                'name' : 'policy-delivered',
+                'value': 'option-email'
+              },
+              {
+                'id':'policy-delivered-both',
+                'label': 'Both',
+                'name' : 'policy-delivered',
+                'value': 'option-both'
+              }
+            ],
+            "invalid-feedback" : " Please select how you would like your policy documents delivered to you."
             })
           }}
 
@@ -114,7 +121,8 @@
           {% import './macros/form-checkbox-long.njk' as formCheckboxLong %}
           {{ formCheckboxLong.field({
               'id':'policy-agreement',
-              'label': 'I have read and agreed to the above statements'
+              'label': 'I have read and agreed to the above statements',
+              'required': true
             })
           }}
           {% endblock %}
@@ -129,25 +137,29 @@
           {% import './macros/form-checkbox-long.njk' as formCheckboxContact %}
           {{ formCheckboxContact.field({
               'id':'contact-mail',
-              'label': 'Mail'
+              'label': 'Mail',
+              'required': false
             })
           }}
 
           {{ formCheckboxContact.field({
               'id':'contact-phone',
-              'label': 'Phone'
+              'label': 'Phone',
+              'required': false
             })
           }}
 
           {{ formCheckboxContact.field({
               'id':'contact-text',
-              'label': 'Text'
+              'label': 'Text',
+              'required': false
             })
           }}
 
           {{ formCheckboxContact.field({
               'id':'contact-email',
-              'label': 'Email'
+              'label': 'Email',
+              'required': false
             })
           }}
 
@@ -156,15 +168,16 @@
         </div><!-- form-group -->
 
       </fieldset>
+
+      <div class="mt-4">
+        {% block submitButton %}
+        {% import './macros/submit-button.njk' as submitButton %}
+        {{ submitButton.nextStep('Next', 'payment-default') }}
+        {% endblock %}
+      </div>
+
     </form>
   </section>
-
-  <div class="mt-4">
-    {% block nextButton %}
-    {% import './macros/next-button.njk' as nextButton %}
-    {{ nextButton.nextStep('Next', 'payment-default') }}
-    {% endblock %}
-  </div>
 
 </div><!-- container -->
 

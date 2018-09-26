@@ -33,58 +33,69 @@
       <fieldset class="mt-0 mb-0">
         <legend></legend>
 
-        <div class="form-group">
+        <div class="form-group" style="/*min-height: 120px;*/">
           <label class="form-control-label mt-2" for="">How regularly do you want to pay?</label>
           <div class="form-check-flex">
-            <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-monthly" value="monthly" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="direct-debit-details">
-              <label class="form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-monthly"><span>Monthly</span><span>£37.79</span></label>
+            <div class="custom-control form-check form-check-inline radio-button-box">
+              <input class="custom-control-input form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-monthly" value="monthly" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="direct-debit-details" required>
+              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-monthly"><span>Monthly</span><span>£37.79</span></label>
+              <small class="form__help mt-2" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
+              <div class="invalid-feedback">
+                Please select how regularly you want to pay.
+              </div>
             </div><!-- form-check -->
 
             <div class="form-check form-check-inline radio-button-box">
-              <input class="form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-annually" value="annually" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="payment-type">
-              <label class="form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-annually"><span>Annually</span><span>£466.12</span></label>
+              <input class="custom-control-input form-check-input radio-button-box__input" type="radio" name="regular-pay" id="regular-pay-annually" value="annually" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="payment-type" required>
+              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--double-line" for="regular-pay-annually"><span>Annually</span><span>£466.12</span></label>
             </div><!-- form-check -->
           </div>
         </div><!-- form-group -->
 
-        <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
-
-        <div class="collapse" id="payment-type">
-          <div class="form-group">
+        <div class="collapse mt-5" id="payment-type">
+          <div class=" form-group">
             <label class="form-control-label mt-2" for="">How would you like to pay?</label>
             <div class="form-check-flex">
 
-              <div class="form-check form-check-inline radio-button-box">
-                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-debit" value="debit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="credit-card-details">
+              <div class="custom-control form-check form-check-inline radio-button-box">
+                <input class="custom-control-input form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-debit" value="debit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="credit-card-details">
 
-                <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-debit"><span>Direct Debit</span></label>
+                <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-debit"><span>Direct Debit</span></label>
+                <small class="form__help mt-2" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
+                <div class="invalid-feedback">
+                  Please select how you would like to pay.
+                </div>
               </div><!-- form-check -->
 
               <div class="form-check form-check-inline radio-button-box">
-                <input class="form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-credit" value="credit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="credit-card-details">
+                <input class="custom-control-input form-check-input radio-button-box__input" type="radio" name="payment-type" id="payment-type-credit" value="credit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="credit-card-details">
 
-                <label class="form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-credit"><span>Credit/Debit Card</span></label>
+                <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--single-line" for="payment-type-credit"><span>Credit/Debit Card</span></label>
               </div><!-- form-check -->
             </div>
           </div><!-- form-group -->
 
-          <small class="form__help w-50" style="text-align:center;"><a href="" style="text-decoration:none;">Free direct debiting</a></small>
 
           <div class="collapse mt-4 mb-4" id="credit-card-details">
 
             <div class="form-group mb-4">
               <label class="form-control-label" for="card-name">Name on Card</label>
               <input class="form-control rounded-0" type="text" id="card-name">
+              <div class="invalid-feedback">
+                Please enter the name on the card.
+              </div>
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="form-control-label" for="card-number-pt1">Card Number</label>
-              <div class="form-group--sortcode d-flex">
-                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-pt1" onkeypress="return isNumberKey(event)" >
-                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-pt2" onkeypress="return isNumberKey(event)" >
-                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-pt3" onkeypress="return isNumberKey(event)" >
-                <input class="form-control rounded-0" maxlength="2" type="text" id="card-number-pt4" onkeypress="return isNumberKey(event)" >
+              <div class="form-group--account-number d-flex">
+                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt1">
+                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt2">
+                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt3">
+                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt4">
+                <div class="invalid-feedback">
+                  Please enter the card number.
+                </div>
               </div>
             </div><!-- form-group -->
 
@@ -95,12 +106,18 @@
                   <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
                 </div>
                 <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiry-date" placeholder="dd/mm/yyyy" size="25">
+                <div class="invalid-feedback">
+                  Please enter the card expiry date.
+                </div>
               </div>
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="form-control-label" for="ccv">CCV</label>
               <input class="form-control rounded-0 form-control--ccv" type="text" maxlength="3" id="ccv" onkeypress="return isNumberKey(event)">
+              <div class="invalid-feedback">
+                Please enter the card CCV number.
+              </div>
             </div><!-- form-group -->
 
             <p class="h6 mt-4 font-weight-bold">Billing address</p>
@@ -111,26 +128,35 @@
         </div><!-- collapse -->
 
 
-        <div class="collapse mt-4 mb-4" id="direct-debit-details">
+        <div class="collapse mt-5 mb-4" id="direct-debit-details">
 
           <p class="h5 mb-4">Your direct debit will come out on the <strong>5th of the month</strong></p>
           <div class="form-group mb-4">
             <label class="form-control-label" for="account-name">Account holder's name</label>
             <input class="form-control rounded-0" type="text" id="account-name">
+            <div class="invalid-feedback">
+              Please enter the account holder's name.
+            </div>
           </div><!-- form-group -->
 
           <div class="form-group">
             <label class="form-control-label" for="sort-code-pt1">Sort code</label>
             <div class="form-group--sortcode d-flex">
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt1" onkeypress="return isNumberKey(event)" >
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt2" onkeypress="return isNumberKey(event)" >
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt3" onkeypress="return isNumberKey(event)" >
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt1">
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt2">
+              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt3">
+              <div class="invalid-feedback">
+                Please enter the sort code.
+              </div>
             </div>
           </div><!-- form-group -->
 
           <div class="form-group">
             <label class="form-control-label" for="account-number">Account number</label>
             <input class="form-control rounded-0" type="number" id="account-number">
+            <div class="invalid-feedback">
+              Please enter the account number.
+            </div>
           </div><!-- form-group -->
 
           <div class="card p-4">
@@ -156,15 +182,16 @@
         </div>
 
       </fieldset>
+
+      <div class="mt-4">
+        {% block submitButton %}
+        {% import './macros/submit-button.njk' as submitButton %}
+        {{ submitButton.nextStep('Confirm & Pay', 'payment-complete') }}
+        {% endblock %}
+      </div>
+
     </form>
   </section>
-
-  <div class="mt-4">
-    {% block nextButton %}
-    {% import './macros/next-button.njk' as nextButton %}
-    {{ nextButton.nextStep('Confirm & Pay', 'payment-complete') }}
-    {% endblock %}
-  </div>
 
   {% block customerSecurity %}
   {% include './partials/thwate.njk' %} {% endblock %}

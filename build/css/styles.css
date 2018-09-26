@@ -816,7 +816,6 @@ input[type=radio] + label {
 select.form-control {
   font-size: 0.9rem;
   height: 50px;
-  top: -10px;
   position: relative; }
 
 .form__input--short {
@@ -868,16 +867,26 @@ label.form-control-label {
   margin-left: -15px;
   padding-bottom: 0 !important; }
 
-.form-group--sortcode {
+.form-group--sortcode, .form-group--account-number {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: flex-start; }
-  .form-group--sortcode input {
-    width: 15%;
+          justify-content: flex-start;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap; }
+  .form-group--sortcode input, .form-group--account-number input {
+    width: 50px;
     margin-right: 10px; }
+
+.form-group--account-number input {
+  width: 75px; }
 
 .custom-control {
   padding-left: 0; }
+  .custom-control-label:before {
+    display: none; }
+
+.was-validated .custom-control-input:invalid ~ .custom-control-label {
+  border: 2px solid #dc3545; }
 
 .cover-info-modal__modal-header {
   border-bottom: 0;

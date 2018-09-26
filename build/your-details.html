@@ -97,22 +97,22 @@
 
         <div class="form-group">
           <label class="form-control-label" for="customer-title">Title</label>
-          <select class="form-control rounded-0" id="customer-title" value="wrwrwrew" required>
-            <option>Select</option>
-            <option>Mr</option>
-            <option>Mrs</option>
-            <option>Miss</option>
-            <option>Ms</option>
-            <option>Dr</option>
+          <select class="form-control rounded-0" id="customer-title" value="" required>
+            <option value="">Select</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option value="Ms">Ms</option>
+            <option value="Dr">Dr</option>
           </select>
           <div class="invalid-feedback">
-            Please enter your title.
+            Please select your title.
           </div>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="customer-firstname">First name</label>
-          <input class="form-control rounded-0" type="text" id="customer-firstname" value="wrwrwrew" required>
+          <input class="form-control rounded-0" type="text" id="customer-firstname" value="" required>
           <div class="invalid-feedback">
             Please enter your first name.
           </div>
@@ -120,7 +120,7 @@
 
         <div class="form-group">
           <label class="form-control-label" for="customer-lastname">Last name</label>
-          <input class="form-control rounded-0" type="text" id="customer-lastname" value="wrwrwrew" required>
+          <input class="form-control rounded-0" type="text" id="customer-lastname" value="" required>
           <div class="invalid-feedback">
             Please enter your last name.
           </div>
@@ -132,7 +132,7 @@
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="customer-dob" placeholder="dd/mm/yyyy" value="23/04/2018" required>
+            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="customer-dob" placeholder="dd/mm/yyyy" value="" required>
             <div class="invalid-feedback">
               Please enter your date of birth.
             </div>
@@ -165,23 +165,20 @@
           <div class="collapse mt-4 mb-4" id="customer-address">
             <div class="form-group">
               <label class="form-control-label" for="customer-house-number">House name/number</label>
-              <input class="form-control rounded-0" type="number" id="customer-house-number" value="233" required>
-              <div class="invalid-feedback">
-                Please enter your House name/number.
-              </div>
+              <input class="form-control rounded-0" type="number" id="customer-house-number" value="" required>
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="form-control-label" for="customer-street">Street</label>
-              <input class="form-control rounded-0" type="text" id="customer-street" value="wrwrwrew" required>
+              <input class="form-control rounded-0" type="text" id="customer-street" value="" required>
               <div class="invalid-feedback">
-                Please enter your Street.
+                Please enter your Street name.
               </div>
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="form-control-label" for="customer-town-city">Town or City</label>
-              <input class="form-control rounded-0" type="text" id="customer-town-city" value="wrwrwrew" required>
+              <input class="form-control rounded-0" type="text" id="customer-town-city" value="" required>
               <div class="invalid-feedback">
                 Please enter your Town or City.
               </div>
@@ -194,6 +191,10 @@
 
           </div><!-- collapse -->
 
+          <div class="invalid-feedback js-invalid-postal-address">
+            Please enter your Postal Address.
+          </div>
+
         </div><!-- form-group -->
 
         <div class="collapse show mt-4 mb-4" id="customer-manual-address">
@@ -201,10 +202,14 @@
             <a href="" class="address__link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
           </div><!-- form-group -->
         </div><!-- collapse -->
+        <div class="invalid-feedback">
+          Please enter your date of birth.
+        </div>
+
 
         <div class="form-group">
           <label class="form-control-label" for="customer-phone-number">Phone number</label>
-          <input class="form-control rounded-0" type="number" id="customer-phone-number" value="235424234234" required>
+          <input class="form-control rounded-0" type="number" id="customer-phone-number" value="" required>
           <div class="invalid-feedback">
             Please enter your Phone number.
           </div>
@@ -212,15 +217,13 @@
 
         <div class="form-group">
           <label class="form-control-label" for="customer-email">Email address</label>
-          <input class="form-control rounded-0" type="email" id="customer-email" value="wrwrwrew@dsfdsf.com" required>
+          <input class="form-control rounded-0" type="email" id="customer-email" value="" required>
           <div class="invalid-feedback">
             Please enter your Email address.
           </div>
         </div><!-- form-group -->
 
       </fieldset><!-- fieldset -->
-
-      <a></a>
 
       <div class="mt-4">
         
@@ -325,45 +328,6 @@ function isNumberKey(event) {
   }
   else return true;
 }
-
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    let validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-
-          // if pet type selected do validity check on it's children which affect its outcome
-          // if pet-type selected
-          //  do validity check on the elements in the associated collapse div
-
-          event.preventDefault();
-          event.stopPropagation();
-        } else {
-          // let submit = $(this).closest('form').find('button[type=submit]');
-          let submit = $('button[type=submit]');
-
-
-          if ($(submit).data('href') == null) {
-            let nextPage = $(submit[1]).data('href');
-          } else {
-            let nextPage = $(submit[0]).data('href');
-          }
-
-          console.log('submit: ', submit[0]);
-          console.log('nextPage: ', nextPage);
-
-          
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
 
 </script> 
 

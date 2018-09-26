@@ -3,7 +3,7 @@
           <div class="form-check-flex">
             <div class="custom-control custom-radio form-check-inline radio-button-box radio-button-box--icon">
               <input class="custom-control-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-dog" value="Dog" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dog-info" required>
-              <label class="form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-dog"><span>Dog</span></label>
+              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-dog"><span>Dog</span></label>
               <div class="invalid-feedback">
                 Please select the type of pet you have.
               </div>
@@ -11,7 +11,7 @@
 
             <div class="custom-control custom-radio form-check-inline radio-button-box radio-button-box--icon">
               <input class="custom-control-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-cat" value="Cat" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="cat-info" required>
-              <label class="form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-cat"><span>Cat</span></label>
+              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-cat"><span>Cat</span></label>
 
             </div><!-- form-check -->
 
@@ -34,7 +34,8 @@
             {% import '../macros/form-checkbox-long.njk' as formCheckboxLong %}
             {{ formCheckboxLong.field({
                 'id':'termsAgreement',
-                'label': 'I understand and agree to these terms'
+                'label': 'I understand and agree to these terms',
+                'required': true
               })
             }}
             {% endblock %}

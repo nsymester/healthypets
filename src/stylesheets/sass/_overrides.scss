@@ -53,7 +53,7 @@ input[type=radio] + label {
 select.form-control {
   font-size:0.9rem;
   height:50px;
-  top: -10px;
+  // top: -10px;
   position: relative;
 }
 
@@ -115,16 +115,34 @@ label.form-control-label {
   padding-bottom:0!important;
 }
 
-.form-group--sortcode {
+.form-group--sortcode, .form-group--account-number {
   justify-content: flex-start;
+  flex-flow: wrap;
+
   input {
-    width: 15%;
+    width: 50px;
     margin-right:10px;
   }
 }
 
+.form-group--account-number input {
+  width: 75px;
+}
+
+// don't show the input element for custom controls
 .custom-control {
   padding-left: 0;
+
+  &-label {
+
+    &:before {
+      display:none;
+    }
+  }
+}
+
+.was-validated .custom-control-input:invalid~.custom-control-label {
+  border: 2px solid #dc3545
 }
 
 // @group modal overrides

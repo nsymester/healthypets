@@ -1,10 +1,13 @@
 {% macro field(data) %}
 
-  <div class="form-check mb-2" style="padding-left:0;">
-    
-    <label class="form-check-label custom-checkbox" for="{{ data.id }}">{{ data.label }}
-      <input type="checkbox" class="form-check-input" id="{{ data.id }}">
+  <div class="custom-control form-check mb-2" style="padding-left:0;">
+
+    <label class="custom-control-label form-check-label custom-checkbox" for="{{ data.id }}">{{ data.label }}
+      <input type="checkbox" class="custom-control-input form-check-input" id="{{ data.id }}" {% if data.required %} required {% endif %}>
       <span class="checkmark"></span>
+      <div class="invalid-feedback">
+        Please select an option.
+      </div>
     </label>
   </div>
 

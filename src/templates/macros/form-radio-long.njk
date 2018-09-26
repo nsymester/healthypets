@@ -1,12 +1,21 @@
 {% macro field (data) %}
 
-  <div class="form-check pl-0">
-    
-    <label class="form-check-label custom-radio" for="{{ data.id }}">
-      {{ data.label }}
-      <input class="form-check-input" type="radio" name="{{ data.name }}" id="{{ data.id }}" value="{{ data.value }}">
-      <span class="checkmark"></span>
-    </label>
-  </div>
+  {% for item in data.items %}
+
+    <div class="custom-control custom-radio form-check pl-0">
+
+      <label class="custom-control-label form-check-label custom-radio" for="{{ item.id }}">
+        {{ item.label }}
+        <input class="custom-control-input form-check-input" type="radio" name="{{ item.name }}" id="{{ item.id }}" value="{{ item.value }}" required>
+        <span class="checkmark"></span>
+        {% if loop.last %}
+        <div class="invalid-feedback">
+          {{ data["invalid-feedback"] }}
+        </div>
+        {% endif %}
+      </label>
+    </div>
+
+  {% endfor %}
 
 {% endmacro %}

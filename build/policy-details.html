@@ -93,7 +93,7 @@
 
     
 
-    <p class="font-weight-bold mt-5">Your details <a href="">edit details</a></p>
+    <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
 
     <div class="customer-details">
       <p style="line-height:1.5rem;">Name: Mrs User User
@@ -111,11 +111,17 @@
         <small class="form__help">You can pick a date up 30 days in the future.</small>
 
         <div class="d-flex mb-2 flex-nowrap justify-content-between">
+
+          <!-- TODO: need to join theese as a radio button -->
+
           <div class="input-group mb-2">
             <div class="input-group-prepend input-group-prepend--date mt-2">
               <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
             </div>
-            <input class="form-control rounded-0 mt-2 form__input--short w-70" type="date" id="policy-start-date" placeholder="dd/mm/yyyy" size="25">
+            <input class="form-control rounded-0 mt-2 form__input--short w-70" type="date" id="policy-start-date" placeholder="dd/mm/yyyy" required>
+            <div class="invalid-feedback">
+              Please enter the policy start date.
+            </div>
           </div>
 
           <div class="form-group form-check mt-3 w-70">
@@ -134,40 +140,47 @@
           
           
 
-  <div class="form-check pl-0">
-    
-    <label class="form-check-label custom-radio" for="policy-delivered-post">
-      A hard copy by post
-      <input class="form-check-input" type="radio" name="policy-delivered" id="policy-delivered-post" value="option-post">
-      <span class="checkmark"></span>
-    </label>
-  </div>
+  
 
+    <div class="custom-control custom-radio form-check pl-0">
 
+      <label class="custom-control-label form-check-label custom-radio" for="policy-delivered-post">
+        A hard copy by post
+        <input class="custom-control-input form-check-input" type="radio" name="policy-delivered" id="policy-delivered-post" value="option-post" required>
+        <span class="checkmark"></span>
+        
+      </label>
+    </div>
 
-          
+  
 
-  <div class="form-check pl-0">
-    
-    <label class="form-check-label custom-radio" for="policy-delivered-email">
-      A digital copy by email
-      <input class="form-check-input" type="radio" name="policy-delivered" id="policy-delivered-email" value="option-email">
-      <span class="checkmark"></span>
-    </label>
-  </div>
+    <div class="custom-control custom-radio form-check pl-0">
 
+      <label class="custom-control-label form-check-label custom-radio" for="policy-delivered-email">
+        A digital copy by email
+        <input class="custom-control-input form-check-input" type="radio" name="policy-delivered" id="policy-delivered-email" value="option-email" required>
+        <span class="checkmark"></span>
+        
+      </label>
+    </div>
 
+  
 
-          
+    <div class="custom-control custom-radio form-check pl-0">
 
-  <div class="form-check pl-0">
-    
-    <label class="form-check-label custom-radio" for="policy-delivered-both">
-      Both
-      <input class="form-check-input" type="radio" name="policy-delivered" id="policy-delivered-both" value="option-both">
-      <span class="checkmark"></span>
-    </label>
-  </div>
+      <label class="custom-control-label form-check-label custom-radio" for="policy-delivered-both">
+        Both
+        <input class="custom-control-input form-check-input" type="radio" name="policy-delivered" id="policy-delivered-both" value="option-both" required>
+        <span class="checkmark"></span>
+        
+        <div class="invalid-feedback">
+           Please select how you would like your policy documents delivered to you.
+        </div>
+        
+      </label>
+    </div>
+
+  
 
 
 
@@ -193,11 +206,14 @@
           
           
 
-  <div class="form-check mb-2" style="padding-left:0;">
-    
-    <label class="form-check-label custom-checkbox" for="policy-agreement">I have read and agreed to the above statements
-      <input type="checkbox" class="form-check-input" id="policy-agreement">
+  <div class="custom-control form-check mb-2" style="padding-left:0;">
+
+    <label class="custom-control-label form-check-label custom-checkbox" for="policy-agreement">I have read and agreed to the above statements
+      <input type="checkbox" class="custom-control-input form-check-input" id="policy-agreement"  required >
       <span class="checkmark"></span>
+      <div class="invalid-feedback">
+        Please select an option.
+      </div>
     </label>
   </div>
 
@@ -214,11 +230,14 @@
           
           
 
-  <div class="form-check mb-2" style="padding-left:0;">
-    
-    <label class="form-check-label custom-checkbox" for="contact-mail">Mail
-      <input type="checkbox" class="form-check-input" id="contact-mail">
+  <div class="custom-control form-check mb-2" style="padding-left:0;">
+
+    <label class="custom-control-label form-check-label custom-checkbox" for="contact-mail">Mail
+      <input type="checkbox" class="custom-control-input form-check-input" id="contact-mail" >
       <span class="checkmark"></span>
+      <div class="invalid-feedback">
+        Please select an option.
+      </div>
     </label>
   </div>
 
@@ -226,11 +245,14 @@
 
           
 
-  <div class="form-check mb-2" style="padding-left:0;">
-    
-    <label class="form-check-label custom-checkbox" for="contact-phone">Phone
-      <input type="checkbox" class="form-check-input" id="contact-phone">
+  <div class="custom-control form-check mb-2" style="padding-left:0;">
+
+    <label class="custom-control-label form-check-label custom-checkbox" for="contact-phone">Phone
+      <input type="checkbox" class="custom-control-input form-check-input" id="contact-phone" >
       <span class="checkmark"></span>
+      <div class="invalid-feedback">
+        Please select an option.
+      </div>
     </label>
   </div>
 
@@ -238,11 +260,14 @@
 
           
 
-  <div class="form-check mb-2" style="padding-left:0;">
-    
-    <label class="form-check-label custom-checkbox" for="contact-text">Text
-      <input type="checkbox" class="form-check-input" id="contact-text">
+  <div class="custom-control form-check mb-2" style="padding-left:0;">
+
+    <label class="custom-control-label form-check-label custom-checkbox" for="contact-text">Text
+      <input type="checkbox" class="custom-control-input form-check-input" id="contact-text" >
       <span class="checkmark"></span>
+      <div class="invalid-feedback">
+        Please select an option.
+      </div>
     </label>
   </div>
 
@@ -250,11 +275,14 @@
 
           
 
-  <div class="form-check mb-2" style="padding-left:0;">
-    
-    <label class="form-check-label custom-checkbox" for="contact-email">Email
-      <input type="checkbox" class="form-check-input" id="contact-email">
+  <div class="custom-control form-check mb-2" style="padding-left:0;">
+
+    <label class="custom-control-label form-check-label custom-checkbox" for="contact-email">Email
+      <input type="checkbox" class="custom-control-input form-check-input" id="contact-email" >
       <span class="checkmark"></span>
+      <div class="invalid-feedback">
+        Please select an option.
+      </div>
     </label>
   </div>
 
@@ -265,24 +293,25 @@
         </div><!-- form-group -->
 
       </fieldset>
-    </form>
-  </section>
 
-  <div class="mt-4">
-    
-    
-    
+      <div class="mt-4">
+        
+        
+        
 
 
   
 
 
 
-<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/payment-default.html" style="text-decoration:none;">Next</a>
+<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="payment-default.html" style="text-decoration:none;">Next</button>
 
 
-    
-  </div>
+        
+      </div>
+
+    </form>
+  </section>
 
 </div><!-- container -->
 
@@ -332,45 +361,6 @@ function isNumberKey(event) {
   }
   else return true;
 }
-
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    let validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-
-          // if pet type selected do validity check on it's children which affect its outcome
-          // if pet-type selected
-          //  do validity check on the elements in the associated collapse div
-
-          event.preventDefault();
-          event.stopPropagation();
-        } else {
-          // let submit = $(this).closest('form').find('button[type=submit]');
-          let submit = $('button[type=submit]');
-
-
-          if ($(submit).data('href') == null) {
-            let nextPage = $(submit[1]).data('href');
-          } else {
-            let nextPage = $(submit[0]).data('href');
-          }
-
-          console.log('submit: ', submit[0]);
-          console.log('nextPage: ', nextPage);
-
-          
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
 
 </script> 
 

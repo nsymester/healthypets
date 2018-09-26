@@ -1,37 +1,37 @@
 {% macro nextStep(linkName='Next', link='') %}
 
 {% if link == 'pet-details' %}
-  {% set link = 'pet-details.html' %}
+  {% set newUrl = 'pet-details.html' %}
 
 {% elif link == 'pet-details-other' %}
-  {% set link = 'pet-details-other.html' %}
+  {% set newUrl = 'pet-details-other.html' %}
 
 {% elif link == 'pet-details-complete' %}
-  {% set link = 'pet-details-complete.html' %}
+  {% set newUrl = 'pet-details-complete.html' %}
 
 {% elif link == 'your-details' %}
-  {% set link = 'your-details.html' %}
+  {% set newUrl = 'your-details.html' %}
 
 {% elif link == 'your-quote' %}
-  {% set link = 'your-quote.html' %}
+  {% set newUrl = 'your-quote.html' %}
 
 {% elif link == 'policy-summary' %}
-  {% set link = 'policy-summary.html' %}
+  {% set newUrl = 'policy-summary.html' %}
 
 {% elif link == 'policy-details' %}
-  {% set link = 'policy-details.html' %}
+  {% set newUrl = 'policy-details.html' %}
 
 {% elif link == 'payment-default' %}
-  {% set link = 'payment-default.html' %}
+  {% set newUrl = 'payment-default.html' %}
 
 {% elif link == 'payment-complete' %}
-  {% set link = 'payment-complete.html' %}
+  {% set newUrl = 'payment-complete.html' %}
 
 {% else %}
-  {% set link = 'index.html' %}
+  {% set newUrl = 'index.html' %}
 
 {% endif %}
 
-<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="{{ link }}" style="text-decoration:none;">{{ linkName }}</button>
+<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="{{ newUrl }}" style="text-decoration:none;">{{ linkName }}</button>
 
 {% endmacro %}
