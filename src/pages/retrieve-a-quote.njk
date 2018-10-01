@@ -1,74 +1,60 @@
-{% block headerContent %}
-{% import './macros/header.njk' as header %}
-{{ header.title('Retrieve A Quote Summary') }}
-{% endblock %}
+{% extends "master.njk" %}
 
-  <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+{% block title %}Retrieve A Quote{% endblock %}
 
-{% block ie8SupportHtml %}
-{% include './partials/ie8-support-html.njk' %} {% endblock %}
+{% block customStyles %}{% endblock %}
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data('retrieve a quote') }}
-{% endblock %}
+{% block pageId %}retrieve-a-quote{% endblock %}
 
-<div class="container">
-  <section class="mt-4 mb-3">
-    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: $base-font; font-size: 42px;line-height: 57px;">Retrieve a quote</h2>
-    <form class="needs-validation" novalidate>
-      <fieldset class="form-group mt-3">
-        <legend></legend>
+{% block containerSize%}container--md{% endblock %}
 
-        <div class="form-group has-danger">
-          <label class="form-control-label" for="pet-name">Your pet's name</label>
-          <input class="form-control rounded-0" type="text" id="pet-name" required>
-          <div class="invalid-feedback">
-            Please enter your pet's name.
-          </div>
-        </div><!-- form-group -->
+{% block main %}
 
-        <div class="form-group">
-          <label class="form-control-label" for="surname">Your surname</label>
-          <input class="form-control rounded-0" type="text" id="surname" required>
-          <div class="invalid-feedback">
-            Please enter your surname.
-          </div>
-        </div><!-- form-group -->
+<div class="content-frame">
+  <h2 class="h2">Retrieve a quote</h2>
+  <fieldset class="form-group mt-3">
+    <legend></legend>
 
-        <div class="form-group">
-          <label class="form-control-label" for="postcode">Your postcode</label>
-          <input class="form-control rounded-0" type="text" id="postcode" required>
-          <div class="invalid-feedback">
-            Please enter your postcode.
-          </div>
-        </div><!-- form-group -->
-      </fieldset><!-- fieldset -->
-
-      <div class="mt-4">
-        {% block submitButton %}
-        {% import './macros/submit-button.njk' as submitButton %}
-        {{ submitButton.nextStep('Next', 'pet-details') }}
-        {% endblock %}
+    <div class="form-group has-danger">
+      <label class="form-control-label" for="pet-name">Your pet's name</label>
+      <input class="form-control rounded-0" type="text" id="pet-name" required>
+      <div class="invalid-feedback">
+        Please enter your pet's name.
       </div>
-    </form>
-  </section>
+    </div><!-- form-group -->
 
-  {% block customerservice %}
-  {% import './macros/customer-service.njk' as customerService %}
-  {{ customerService.provision({
-    'discount': true,
-    'feefo': true
-  })}}
+    <div class="form-group">
+      <label class="form-control-label" for="surname">Your surname</label>
+      <input class="form-control rounded-0" type="text" id="surname" required>
+      <div class="invalid-feedback">
+        Please enter your surname.
+      </div>
+    </div><!-- form-group -->
+
+    <div class="form-group">
+      <label class="form-control-label" for="postcode">Your postcode</label>
+      <input class="form-control rounded-0" type="text" id="postcode" required>
+      <div class="invalid-feedback">
+        Please enter your postcode.
+      </div>
+    </div><!-- form-group -->
+  </fieldset><!-- fieldset -->
+</div><!-- content-frame -->
+
+<div class="row justify-content-end mt-md-5">
+  <div class="col-md-3 col-lg-3 mt-3 mt-md-0">
+    {% block submitButton %}
+    {% import './macros/submit-button.njk' as submitButton %}
+    {{ submitButton.nextStep('Find quote', 'pet-details') }}
   {% endblock %}
-
-</div><!-- container -->
-
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+  </div>
+</div><!-- row -->
+{% endblock %}
 
 {% block footer %}
-{% include './partials/footer.njk' %} {% endblock %}
+{% import './macros/customer-service.njk' as customerService %}
+{{ customerService.provision({
+  'discount': true,
+  'feefo': true
+})}}
+{% endblock %}

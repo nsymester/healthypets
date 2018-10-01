@@ -1,116 +1,39 @@
-{% block headerContent %}
-{% import './macros/header.njk' as header %}
-{{ header.title('Policy Summary') }}
-{% endblock %}
+{% extends "master.njk" %}
 
-  <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+{% block title %}Policy Summary{% endblock %}
 
-{% block ie8SupportHtml %}
-{% include './partials/ie8-support-html.njk' %} {% endblock %}
+{% block customStyles %}{% endblock %}
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data('policy summary') }}
-{% endblock %}
+{% block pageId %}policy-summary{% endblock %}
 
-<div class="container">
-  <section class="mt-4 mb-3">
-    <h2 class="mt-0 mb-4">Your policy summary</h2>
+{% block containerSize%}container--md{% endblock %}
 
-    {% block chosenPolicyContent %}
-    {% import './macros/chosen-policy.njk' as chosenPolicy %}
-    {{ chosenPolicy.data( {
-          'marginBottom': 'mb-4',
-          'state': 'form',
-          'name': 'Bobby',
-          'breed': 'German Shpherd',
-          'age':'3 yrs',
-          'cover': 'lifetime',
-          'cost':'£2000',
-          'brdColour':'lifetime-brd-color'
-        }
-      )
-    }}
+{% block main %}
 
-    {{ chosenPolicy.data( {
-          'marginBottom': 'mb-4',
-          'state': 'form',
-          'name': 'Poppy',
-          'breed': 'Rusian Blue',
-          'age':'6 yrs',
-          'cover': 'maximum',
-          'cost':'£4250',
-          'brdColour':'maximum-brd-color'
-        }
-      )
-    }}
+<div class="content-frame">
+  <h2 class="mt-0 mb-4">Your policy summary</h2>
 
-    {{ chosenPolicy.data( {
-          'marginBottom': 'mb-4',
-          'state': 'form',
-          'name': 'Bobby',
-          'breed': 'German Shpherd',
-          'age':'3 yrs',
-          'cover': 'accident',
-          'cost':'£7500',
-          'brdColour':'accident-brd-color'
-        }
-      )
-    }}
-    {% endblock %}
+  {% block policySummaryContent %}
+  {% include './partials/policy-summary-content.njk' %} {% endblock %}
 
-  </section>
+</div><!-- content-frame -->
 
-  <section>
-    <div class="cost-group">
-      <p class="cost-group__header">Total monthly cost</p>
-      <p class="cost-group__cost">£58.22</p>
-    </div>
-    <div class="cost-group">
-      <p class="cost-group__header">20% new customer discount</p>
-      <p class="cost-group__cost">-£11.64</p>
-    </div>
-
-    <hr class="mb-4">
-
-    <div class="cost-group">
-      <h5 class="cost-group__header--total">Total including <br>20% discount</h5>
-      <div class="">
-        <p class="cost-group__total-item">£37.78</p>
-        <small class="cost-group__period">per month</small>
-        <p class="mb-2 font-weight-bold">OR</p>
-        <p class="cost-group__total-item">£466.12</p>
-        <small class="cost-group__period">per year</small>
-      </div>
-    </div>
-
-  </section>
-
-  <div class="mt-4">
+<div class="row justify-content-end mt-md-5">
+  <div class="col-md-4 col-lg-4 mt-3 mt-md-0">
     {% block nextButton %}
     {% import './macros/next-button.njk' as nextButton %}
     {{ nextButton.nextStep('Go to secure checkout', 'policy-details') }}
     {% endblock %}
   </div>
-
-  {% block customerSecurity %}
-  {% include './partials/thwate.njk' %} {% endblock %}
-
-  {% block customerService %}
-  {% import './macros/customer-service.njk' as customerService %}
-  {{ customerService.provision({
-    'discount': false,
-    'feefo': true
-  })}}
-  {% endblock %}
-
-</div><!-- container -->
-
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+</div><!-- row -->
+{% endblock %}
 
 {% block footer %}
-{% include './partials/footer.njk' %} {% endblock %}
+{# {% include './partials/thwate.njk' %} #}
+
+{% import './macros/customer-service.njk' as customerService %}
+{{ customerService.provision({
+  'discount': false,
+  'feefo': false
+})}}
+{% endblock %}

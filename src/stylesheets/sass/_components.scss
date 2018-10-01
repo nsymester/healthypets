@@ -7,6 +7,14 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 
+.logo {
+  width:150px;
+
+  @include media-breakpoint-up(md) {
+   width: 100%;
+  }
+}
+
 // @group Feefo rating
 
 .feefo-rating {
@@ -75,10 +83,14 @@
       margin-left: auto;
       margin-right: auto;
       margin-bottom: .4rem;
-      background: #fff; // set to white to hide the line
+      background: $bg-body-colour; // set to white to hide the line
       color: $primary-colour;
       border: 2px solid rgba(90,104,114,1);
       border-radius: 50%;
+
+      @include media-breakpoint-up(md) {
+        background-color: $bg-body-colour--alt;
+      }
     }
 
     // line between bullet points
@@ -121,8 +133,12 @@
 
       &:before {
         content: '\f00c';
-        background-color: rgba(255, 255, 255, 1);
-        color: solid $primary-colour;;
+        background-color: $bg-body-colour;
+        color: $primary-colour;
+
+        @include media-breakpoint-up(md) {
+          background-color: $bg-body-colour--alt;
+        }
       }
     }
   }
@@ -157,6 +173,11 @@
 
 .pet-summary {
   padding: 2rem;
+  margin-bottom:1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom:3rem;
+  }
 
   &__header {
     color: rgba(90,104,114,1);
@@ -181,11 +202,17 @@
 // @group header colours
 
 .bg-header{
-  background-color: rgba(28,129,182,1) !important;
+  background-color: $bg-menu-color !important;
 }
 
 .bg-sub-header{
-  background-color: rgba(55,148,193,1) !important;
+  background-color: $bg-sub-menu-color !important;
+  opacity: 0.8;
+
+  @include media-breakpoint-up(md) {
+    background-color: $bg-menu-color !important;
+    opacity: 1;
+  }
 }
 
 // @group radio buttons
@@ -338,21 +365,33 @@
     text-decoration: none;
   }
 
-  &-primary--alt {
-    height: calc(80px - 50%);
+  &-primary--alt, &-primary--short {
+    height: 46px;
     color: $white;
     font-family: $base-font;
     //font-size: calc(24px - 50%);
     font-size: inherit;
-    font-weight: 200;
+    font-weight: bold;
     line-height: calc(38px - 50%);
     text-align: center;
     background-color: $primary-colour;
     border: 2px solid $primary-colour;
+    letter-spacing: 1px;
+
+    &:hover, &:focus {
+      color: #3d70b2;
+      background-color: #fff;
+      box-shadow: 0 0 0 0.1rem $primary-colour;
+    }
+  }
+
+  &-primary--short {
+    width:191px;
+    // width: 50%;
   }
 
   &-outline-primary--alt {
-    height: calc(80px - 50%);
+    height: 46px;
     color: $primary-colour;
     font-family: $base-font;
     //font-size: calc(24px - 50%);
@@ -362,9 +401,10 @@
     text-align: center;
     border: 2px solid $primary-colour;
 
-    &:hover {
+    &:hover, &:focus {
       color: $white;
       background-color: $primary-colour;
+      border-color:$primary-colour;
     }
   }
 
@@ -384,8 +424,9 @@
 .form__help {
   display:block;
   color: $primary-colour;
-  font-weight:100;
+  font-weight: bold;
   font-size: 0.85rem;
+  opacity: 0.7;
 }
 
 .form-check-flex {
@@ -418,11 +459,19 @@
 
 .address {
 
-  &__postcodes a {
-    display:block;
-    padding-bottom:5px;
-    border-bottom: 1px solid rgba(223,227,230,1);
-    cursor: pointer;
+  &__postcodes {
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: 400px;
+    }
+
+    a {
+      display:block;
+      padding-bottom:5px;
+      border-bottom: 1px solid rgba(223,227,230,1);
+      cursor: pointer;
+    }
   }
 
   &__link {
@@ -433,6 +482,25 @@
 }
 
 // @group cover item
+
+.cover {
+  display: inherit;
+
+
+  @include media-breakpoint-up(xl) {
+    display: block !important;
+    //height: 673px;
+
+  }
+}
+
+.aditional-cover{
+  font-size: inherit;
+
+  @include media-breakpoint-up(md) {
+    font-size: 0.8rem;
+  }
+}
 
 .cover-item {
   width: 100%;
@@ -484,6 +552,20 @@
 	box-shadow: 0 24px 48px 0 rgba(0,0,0,0.1);
   padding-left: 15px;
   padding-right: 15px;
+
+  @include media-breakpoint-up(xl) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &:not(.show){
+    @include media-breakpoint-up(xl) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
 
   &__prologue {
     color: rgba(21,41,53,1);
@@ -787,8 +869,23 @@
   border-bottom: 4px solid $accident-color;
 }
 
-.policy-summary__header h2{
-  color: rgba(90,104,114,1);
+.policy-summary__header {
+  border-bottom: 2.2px solid rgba(240,243,246,1);
+  padding: 0 30px;
+  margin: 0 -15px 20px;
+
+  h2, p {
+    color: rgba(90,104,114,1);
+    font-family: $base-font;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 39px;
+    margin-bottom: 5px;
+  }
+
+  small {
+    font-size: 0.8rem;
+  }
 }
 
 .confirmation-sent {
@@ -985,4 +1082,37 @@
 
 .pet-size .form-check-flex .form-check-label {
   padding-left:0;
+}
+
+.content-frame {
+  background-color: rgba(255,255,255,1);
+  border:0;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    padding: 1rem 4rem 3rem;
+  }
+}
+
+.customer-service {
+  margin-top: 3rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 5rem;
+  }
+}
+
+.customer-postcode-result {
+
+  hr {
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: 400px;
+      margin-left: 0;
+    }
+  }
 }

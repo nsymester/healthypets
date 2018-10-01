@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,26 +10,30 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="/images/favicon.ico">
-  <title> Retrieve A Quote Summary |    Healthy Pets</title>
 
-  
-
+  <title>Retrieve A Quote | Healthy Pets</title>
 
   <!-- Bootstrap -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
+  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
 
-<body role="document"> 
+<body role="document" id="retrieve-a-quote" >
+
+
+
+
 
 
 
@@ -42,20 +43,38 @@
 
     <!-- Brand -->
     <a href="#" class="navbar-brand">
-      <img src="/images/logo.png" style="width:150px;" alt="Healthy Pets logo">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/images/logo-large.png">
+        <source media="(min-width: 576px)" srcset="/images/logo.png">
+        <img src="/images/logo.png" class="mt-3 img-fluid logo" alt="Healthy Pets logo">
+      </picture>
     <span class="d-none">Healthy Pets</span></a>
 
-    <!-- Telephone number -->
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" style="font-size: 1.5rem; padding-right:0;" href="tel:01730268592">01730 268592</a>
+    <div class="login d-flex flex-column">
+      <form class="form-inline justify-content-end d-none d-md-flex">
+        <label class="form-control-label">Retrieve a quote</label>
+        <input class="form-control-input bg-light" type="text" placeholder="Email address" aria-label="Email address">
+        <input class="form-control-input bg-light" type="password" placeholder="Password" aria-label="Password">
+        <button class="btn btn-outline" type="submit">Go</button>
+      </form>
+      <!-- Telephone number -->
+      <div class="navbar-nav">
+        <span class="d-none d-md-block call-text">Call us:</span><a class="nav-item nav-link phone-number" href="tel:01730268592">01730 268592</a>
+      </div>
     </div>
+
   </div><!-- container -->
 </nav>
 
-<nav class="navbar bg-sub-header navbar-bright navbar-expand" style="opacity: 0.8;">
-  <div class="container-fluid" style="height: 47px;">
+<nav class="navbar bg-sub-header navbar-bright navbar-expand">
+  <div class="container-fluid justify-content-md-end" style="height: 47px;">
     <div class="navbar-nav">
-      <a href="#" class="nav-item nav-link">Claims</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Home</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Insure Your Pet</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Existing Clients</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">About Us</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Exotice Pets</a>
+      <a href="#" class="d-block d-md-none nav-item nav-link">Claims</a>
       <a href="#" class="nav-item nav-link">Contact Us</a>
     </div><!-- navbar-nav -->
 
@@ -68,92 +87,124 @@
 
 
 
-<div class="container">
+<div class="container container--md">
   <section class="mt-4 mb-3">
-    <h2 style="font-weight:normal;color: rgba(0,59,92,1);font-family: $base-font; font-size: 42px;line-height: 57px;">Retrieve a quote</h2>
-    <form class="needs-validation" novalidate>
-      <fieldset class="form-group mt-3">
-        <legend></legend>
-
-        <div class="form-group has-danger">
-          <label class="form-control-label" for="pet-name">Your pet's name</label>
-          <input class="form-control rounded-0" type="text" id="pet-name" required>
-          <div class="invalid-feedback">
-            Please enter your pet's name.
-          </div>
-        </div><!-- form-group -->
-
-        <div class="form-group">
-          <label class="form-control-label" for="surname">Your surname</label>
-          <input class="form-control rounded-0" type="text" id="surname" required>
-          <div class="invalid-feedback">
-            Please enter your surname.
-          </div>
-        </div><!-- form-group -->
-
-        <div class="form-group">
-          <label class="form-control-label" for="postcode">Your postcode</label>
-          <input class="form-control rounded-0" type="text" id="postcode" required>
-          <div class="invalid-feedback">
-            Please enter your postcode.
-          </div>
-        </div><!-- form-group -->
-      </fieldset><!-- fieldset -->
-
-      <div class="mt-4">
-        
-        
-        
+    
+    
+    
 
 
   
 
 
 
-<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="pet-details.html" style="text-decoration:none;">Next</button>
 
 
-        
+    
+  </section>
+</div><!-- container -->
+
+<div class="container container--md">
+  <section class="mt-4 mb-3">
+
+    
+
+    <form class="needs-validation" novalidate>
+      
+
+<div class="content-frame">
+  <h2 class="h2">Retrieve a quote</h2>
+  <fieldset class="form-group mt-3">
+    <legend></legend>
+
+    <div class="form-group has-danger">
+      <label class="form-control-label" for="pet-name">Your pet's name</label>
+      <input class="form-control rounded-0" type="text" id="pet-name" required>
+      <div class="invalid-feedback">
+        Please enter your pet's name.
       </div>
+    </div><!-- form-group -->
+
+    <div class="form-group">
+      <label class="form-control-label" for="surname">Your surname</label>
+      <input class="form-control rounded-0" type="text" id="surname" required>
+      <div class="invalid-feedback">
+        Please enter your surname.
+      </div>
+    </div><!-- form-group -->
+
+    <div class="form-group">
+      <label class="form-control-label" for="postcode">Your postcode</label>
+      <input class="form-control rounded-0" type="text" id="postcode" required>
+      <div class="invalid-feedback">
+        Please enter your postcode.
+      </div>
+    </div><!-- form-group -->
+  </fieldset><!-- fieldset -->
+</div><!-- content-frame -->
+
+<div class="row justify-content-end mt-md-5">
+  <div class="col-md-3 col-lg-3 mt-3 mt-md-0">
+    
+    
+    
+
+
+  
+
+
+
+<button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="pet-details.html" style="text-decoration:none;">Find quote</button>
+
+
+  
+  </div>
+</div><!-- row -->
+
     </form>
   </section>
 
   
-  
-  
-  <section class="mt-5">
+
+
+  <section class="customer-service">
     <h3 class="d-none">Customer Service</h3>
 
-    
-    <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
-        <h5 class="mb-0">20% off for all new customers</h5>
-        <p>Get the best deal online</p>
-        <p>This will automatcally get added</p>
-    </section>
-    
+    <div class="row justify-content-between align-items-end">
+      
+      <div class="col-md-6 col-lg-5">
+        <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
+            <h5 class="mb-0 font-weight-bold">20% off for all new customers</h5>
+            <p>Get the best deal online</p>
+            <p>This will automatcally get added</p>
+        </section>
+      </div><!-- col -->
+      
 
-    
-    <section class="card mb-5 border-0">
-      <div class="feefo-rating">
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <p class="feefo-rating__value">4.7/5</p>
+      
+      <div class="col-md-6 col-lg-5">
+        <section class="card mb-5 border-0 bg-transparent">
+          <div class="feefo-rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <p class="feefo-rating__value">4.7/5</p>
+          </div>
+          <p>Independent service rating based on 1311 verified reviews</p>
+          <hr class="mt-0 bg-dark">
+          <div class="clearfix">
+            <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
+            <a href="" class="feefo-rating__link float-right">Read all reviews</a>
+          </div>
+        </section>
       </div>
-      <p>Independent service rating based on 1311 verified reviews</p>
-      <hr class="mt-0 bg-dark">
-      <div class="clearfix">
-        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
-        <a href="" class="feefo-rating__link float-right">Read all reviews</a>
-      </div>
-    </section>
-    
+      
+    </div><!-- row -->
 
   </section>
 
-  
 
 </div><!-- container -->
 
@@ -207,5 +258,6 @@ function isNumberKey(event) {
 </script> 
 
 
+
 </body>
-</html> 
+</html>

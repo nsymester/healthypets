@@ -1,45 +1,35 @@
-{% block headerContent %}
-{% import './macros/header.njk' as header %}
-{{ header.title('Policy Summary') }}
+{% extends "master-summary.njk" %}
+
+{% block title %}Policy Summary{% endblock %}
+
+{% block customStyles %}{% endblock %}
+
+{% block pageId %}summary{% endblock %}
+
+{% block containerSize%}container--md{% endblock %}
+
+{% block customHeader %}
+<div class="policy-summary__header d-flex justify-content-between d-block d-lg-none">
+  <h2 class="mt-0">Policy summary</h2>
+  <p>£37.78<small>/month</small></p>
+</div>
 {% endblock %}
 
-  <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+{% block main %}
+<div class="row">
+  <div class="col">
+    <div class="content-frame">
 
-{% block ie8SupportHtml %}
-{% include './partials/ie8-support-html.njk' %} {% endblock %}
+      <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data('policy details') }}
-{% endblock %}
+      <div class="customer-details">
+        <p style="line-height:1.5rem;">Name: Mrs User User
+        <br>Birthday: 02/06/1985
+        <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
+        <br>Phone number: 07912345678
+        <br>Email: user@user.com</p>
+      </div>
 
-<div class="container">
-  <section class="mt- mb-3">
-    <div class="policy-summary__header d-flex justify-content-between mb-0">
-      <h2 class="mt-0">Policy summary</h2>
-      <h2>£37.78<small>/month</small></h2>
-    </div>
-    <hr class="mt-0 mb-4">
-
-    {% block progressBar %}
-    {% import './macros/progress-bar-summary.njk' as progressBar %}
-    {{ progressBar.activeStep('summary') }}
-    {% endblock %}
-
-    <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
-
-    <div class="customer-details">
-      <p style="line-height:1.5rem;">Name: Mrs User User
-      <br>Birthday: 02/06/1985
-      <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
-      <br>Phone number: 07912345678
-      <br>Email: user@user.com</p>
-    </div>
-
-    <form class="needs-validation" novalidate>
       <fieldset class="mt-0 mb-0">
         <legend></legend>
 
@@ -122,7 +112,8 @@
           {{ formCheckboxLong.field({
               'id':'policy-agreement',
               'label': 'I have read and agreed to the above statements',
-              'required': true
+              'required': true,
+              'invalid-feedback': 'Please agree to the above statements'
             })
           }}
           {% endblock %}
@@ -168,21 +159,45 @@
         </div><!-- form-group -->
 
       </fieldset>
+    </div><!-- content-frame -->
 
-      <div class="mt-4">
+    <div class="row justify-content-end mt-md-4">
+      <div class="col-md-4 col-lg-4 mt-3 mt-md-0">
         {% block submitButton %}
         {% import './macros/submit-button.njk' as submitButton %}
         {{ submitButton.nextStep('Next', 'payment-default') }}
         {% endblock %}
       </div>
+      </div><!-- row -->
 
-    </form>
-  </section>
+  </div><!-- col -->
 
-</div><!-- container -->
+  <div class="col-lg-5 d-none d-lg-block">
+    <h2 class="mt-0 mb-4">Policy summary</h2>
 
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+    {% block policySummaryContent %}
+    {% include './partials/policy-summary-content.njk' %} {% endblock %}
 
-{% block footer %}
-{% include './partials/footer.njk' %} {% endblock %}
+    <section class="card mt-5 border-0 bg-transparent">
+      <div class="feefo-rating">
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <p class="feefo-rating__value">4.7/5</p>
+      </div>
+      <p>Independent service rating based on 1311 verified reviews</p>
+      <hr class="mt-0 bg-dark">
+      <div class="clearfix">
+        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
+        <a href="" class="feefo-rating__link float-right">Read all reviews</a>
+      </div>
+    </section>
+
+  </div><!-- col -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

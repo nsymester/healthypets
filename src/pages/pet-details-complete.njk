@@ -1,70 +1,53 @@
-{% block headerContent %}
-{% import './macros/header.njk' as header %}
-{{ header.title('Pet Details') }}
+{% extends "master.njk" %}
+
+{% block title %}Pet Details{% endblock %}
+
+{% block customStyles %}{% endblock %}
+
+{% block pageId %}pet-details{% endblock %}
+
+{% block containerSize%}container--md{% endblock %}
+
+{% block newPet %}
+<section class="card pet-summary mb-3 rounded-0 shadow bg-white">
+  <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
+  <div class="pet-summary__items">
+    <a class="pet-summary__link" href="">Edit Bobby's Info</a>
+    <a class="pet-summary__link" href="">Delete</a>
+  </div>
+</section>
+
+<section class="card pet-summary rounded-0 shadow bg-white">
+  <h5 class="pet-summary__header">Poppy, Russian Blue, 6 yrs</h5>
+  <div class="pet-summary__items">
+    <a class="pet-summary__link" href="">Edit Poppy's Info</a>
+    <a class="pet-summary__link" href="">Delete</a>
+  </div>
+</section>
 {% endblock %}
 
-  <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+{% block main %}
 
-{% block ie8SupportHtml %}
-{% include './partials/ie8-support-html.njk' %} {% endblock %}
+<div class="row justify-content-end mt-md-5">
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data('pet details') }}
-{% endblock %}
+  <div class="col-md-3 col-lg-3 mt-4 mt-md-0">
+    <button class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0" type="submit">+ Add another pet</button>
+  </div>
 
-<div class="container">
-  <section class="mt-4 mb-3">
-
-    {% block progressBar %}
-    {% import './macros/progress-bar.njk' as progressBar %}
-    {{ progressBar.activeStep('pet-details') }}
+  <div class="col-md-3 col-lg-2 mt-3 mt-md-0">
+    {% block nextButton %}
+    {% import './macros/next-button.njk' as nextButton %}
+    {{ nextButton.nextStep('Next', 'your-details') }}
     {% endblock %}
+  </div>
+</div><!-- row -->
 
-    <section class="card pet-summary mb-3 rounded-0 shadow bg-white">
-      <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
-      <div class="pet-summary__items">
-        <a class="pet-summary__link" href="">Edit Bobby's Info</a>
-        <a class="pet-summary__link" href="">Delete</a>
-      </div>
-    </section>
-
-    <section class="card pet-summary mb-3 rounded-0 shadow bg-white">
-      <h5 class="pet-summary__header">Poppy, Russian Blue, 6 yrs</h5>
-      <div class="pet-summary__items">
-        <a class="pet-summary__link" href="">Edit Poppy's Info</a>
-        <a class="pet-summary__link" href="">Delete</a>
-      </div>
-    </section>
-
-    <form class="needs-validation" novalidate>
-
-      <div class="mt-4">
-        {% block nextButton %}
-        {% import './macros/next-button.njk' as nextButton %}
-        {{ nextButton.nextStep('Next', 'your-details') }}
-        {% endblock %}
-      </div>
-      <button class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0 mt-4" type="submit">+ Add another pet</button>
-
-    </form>
-  </section>
-
-  {% block customerService %}
-  {% import './macros/customer-service.njk' as customerService %}
-  {{ customerService.provision({
-    'discount': true,
-    'feefo': true
-  })}}
-  {% endblock %}
-
-</div><!-- container -->
-
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+{% endblock %}
 
 {% block footer %}
-{% include './partials/footer.njk' %} {% endblock %}
+{% import './macros/customer-service.njk' as customerService %}
+{{ customerService.provision({
+  'discount': true,
+  'feefo': true
+})}}
+{% endblock %}

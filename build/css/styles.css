@@ -37,16 +37,28 @@
   * @author Neil Symester neil.symester@towergate.co.uk
   */
 body {
-  background-color: #fff;
+  background-color: white;
   font-size: 16px;
   font-family: "Open Sans" !important; }
+  @media (min-width: 768px) {
+    body {
+      background-color: #f6f6f6; } }
 
-section h2 {
-  font-weight: 300;
+.h2 {
   color: #003b5c;
   font-family: "Open Sans";
-  font-size: 22px;
-  line-height: calc(57px - 50%); }
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 57px;
+  margin-bottom: 5px; }
+
+section h2 {
+  font-weight: 400;
+  color: #003b5c;
+  font-family: "Open Sans";
+  font-size: 25px;
+  line-height: calc(57px - 50%);
+  margin-bottom: 10px; }
 
 a {
   color: #3d70b2;
@@ -71,6 +83,12 @@ a {
           - site-nav
   * @author Neil Symester neil.symester@towergate.co.uk
   */
+.logo {
+  width: 150px; }
+  @media (min-width: 768px) {
+    .logo {
+      width: 100%; } }
+
 .feefo-rating > span {
   display: inline-block;
   position: relative;
@@ -134,10 +152,13 @@ a {
       margin-left: auto;
       margin-right: auto;
       margin-bottom: .4rem;
-      background: #fff;
+      background: white;
       color: #3d70b2;
       border: 2px solid #5a6872;
       border-radius: 50%; }
+      @media (min-width: 768px) {
+        .progressbar__step:before {
+          background-color: #f6f6f6; } }
     .progressbar__step:after {
       width: 100%;
       height: 3.38px;
@@ -164,7 +185,10 @@ a {
     .progressbar__step--done:before {
       content: '\f00c';
       background-color: white;
-      color: solid #3d70b2; }
+      color: #3d70b2; }
+      @media (min-width: 768px) {
+        .progressbar__step--done:before {
+          background-color: #f6f6f6; } }
 
 .business-offer {
   border-left: 5.15px solid #5aa700 !important; }
@@ -182,7 +206,11 @@ a {
     font-weight: 100; }
 
 .pet-summary {
-  padding: 2rem; }
+  padding: 2rem;
+  margin-bottom: 1rem; }
+  @media (min-width: 768px) {
+    .pet-summary {
+      margin-bottom: 3rem; } }
   .pet-summary__header {
     color: #5a6872;
     font-weight: 100;
@@ -208,7 +236,12 @@ a {
   background-color: #1c81b6 !important; }
 
 .bg-sub-header {
-  background-color: #3794c1 !important; }
+  background-color: #3794c1 !important;
+  opacity: 0.8; }
+  @media (min-width: 768px) {
+    .bg-sub-header {
+      background-color: #1c81b6 !important;
+      opacity: 1; } }
 
 .radio-button-box {
   max-width: 294px;
@@ -313,19 +346,28 @@ a {
   line-height: 3rem;
   text-decoration: none; }
 
-.btn-primary--alt {
-  height: calc(80px - 50%);
+.btn-primary--alt, .btn-primary--short {
+  height: 46px;
   color: white;
   font-family: "Open Sans";
   font-size: inherit;
-  font-weight: 200;
+  font-weight: bold;
   line-height: calc(38px - 50%);
   text-align: center;
   background-color: #3d70b2;
-  border: 2px solid #3d70b2; }
+  border: 2px solid #3d70b2;
+  letter-spacing: 1px; }
+  .btn-primary--alt:hover, .btn-primary--alt:focus, .btn-primary--short:hover, .btn-primary--short:focus {
+    color: #3d70b2;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 0.1rem #3d70b2;
+            box-shadow: 0 0 0 0.1rem #3d70b2; }
+
+.btn-primary--short {
+  width: 191px; }
 
 .btn-outline-primary--alt {
-  height: calc(80px - 50%);
+  height: 46px;
   color: #3d70b2;
   font-family: "Open Sans";
   font-size: 15px;
@@ -333,9 +375,10 @@ a {
   line-height: calc(32px - 50%);
   text-align: center;
   border: 2px solid #3d70b2; }
-  .btn-outline-primary--alt:hover {
+  .btn-outline-primary--alt:hover, .btn-outline-primary--alt:focus {
     color: white;
-    background-color: #3d70b2; }
+    background-color: #3d70b2;
+    border-color: #3d70b2; }
 
 .btn-outline-primary--alt:not(:disabled):not(.disabled).active, .btn-outline-primary--alt:not(:disabled):not(.disabled):active,
 .show > .btn-outline-primary--alt.dropdown-toggle {
@@ -349,8 +392,9 @@ a {
 .form__help {
   display: block;
   color: #3d70b2;
-  font-weight: 100;
-  font-size: 0.85rem; }
+  font-weight: bold;
+  font-size: 0.85rem;
+  opacity: 0.7; }
 
 .form-check-flex {
   display: -webkit-box;
@@ -376,16 +420,33 @@ a {
     font-size: 1rem;
     padding-top: 3px; }
 
-.address__postcodes a {
-  display: block;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #dfe3e6;
-  cursor: pointer; }
+.address__postcodes {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .address__postcodes {
+      width: 400px; } }
+  .address__postcodes a {
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dfe3e6;
+    cursor: pointer; }
 
 .address__link {
   color: #3d70b2;
   font-size: 16px;
   line-height: 16px; }
+
+.cover {
+  display: inherit; }
+  @media (min-width: 1200px) {
+    .cover {
+      display: block !important; } }
+
+.aditional-cover {
+  font-size: inherit; }
+  @media (min-width: 768px) {
+    .aditional-cover {
+      font-size: 0.8rem; } }
 
 .cover-item {
   width: 100%; }
@@ -422,6 +483,30 @@ a {
           box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.1);
   padding-left: 15px;
   padding-right: 15px; }
+  @media (min-width: 1200px) {
+    .cover-info {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
+  @media (min-width: 1200px) {
+    .cover-info:not(.show) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
   .cover-info__prologue {
     color: #152935;
     font-size: 0.85rem;
@@ -619,8 +704,19 @@ a {
 .accident-brd-color {
   border-bottom: 4px solid #d0021b; }
 
-.policy-summary__header h2 {
-  color: #5a6872; }
+.policy-summary__header {
+  border-bottom: 2.2px solid #f0f3f6;
+  padding: 0 30px;
+  margin: 0 -15px 20px; }
+  .policy-summary__header h2, .policy-summary__header p {
+    color: #5a6872;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 39px;
+    margin-bottom: 5px; }
+  .policy-summary__header small {
+    font-size: 0.8rem; }
 
 .confirmation-sent {
   color: #5a6872;
@@ -773,6 +869,32 @@ a {
 .pet-size .form-check-flex .form-check-label {
   padding-left: 0; }
 
+.content-frame {
+  background-color: white;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 0;
+  margin-bottom: 1rem; }
+  @media (min-width: 768px) {
+    .content-frame {
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      padding: 1rem 4rem 3rem; } }
+
+.customer-service {
+  margin-top: 3rem; }
+  @media (min-width: 768px) {
+    .customer-service {
+      margin-top: 5rem; } }
+
+.customer-postcode-result hr {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .customer-postcode-result hr {
+      width: 400px;
+      margin-left: 0; } }
+
 /* @group overrides */
 /**
   * @desc override existing selectors, though try and generalise so as to extract
@@ -799,15 +921,16 @@ input.form-control, select.form-control {
     border-color: rgba(61, 112, 178, 0.1); }
 
 input[type=text].form-control {
-  height: calc(80px - 50%); }
+  height: 46px; }
 
 input[type=date].form-control {
-  height: 45px;
-  font-size: 13px;
-  font-weight: 300; }
+  height: 46px;
+  font-size: 14px;
+  font-weight: normal;
+  padding-right: 0; }
 
 input[type=number].form-control {
-  height: 44px; }
+  height: 46px; }
 
 input[type=radio] + label {
   font-weight: 300;
@@ -815,13 +938,18 @@ input[type=radio] + label {
 
 select.form-control {
   font-size: 0.9rem;
-  height: 50px;
+  height: 46px;
   position: relative; }
 
 .form__input--short {
   -webkit-box-flex: 0 !important;
       -ms-flex: 0 1 40% !important;
           flex: 0 1 40% !important; }
+  @media (min-width: 576px) {
+    .form__input--short {
+      -webkit-box-flex: 0 !important;
+          -ms-flex: 0 1 150px !important;
+              flex: 0 1 150px !important; } }
 
 .form-control--ccv {
   width: 20%; }
@@ -829,7 +957,13 @@ select.form-control {
 .form-control--alt {
   -webkit-box-flex: 0 !important;
       -ms-flex: 0 1 45% !important;
-          flex: 0 1 45% !important; }
+          flex: 0 1 45% !important;
+  margin-right: 1rem; }
+  @media (min-width: 576px) {
+    .form-control--alt {
+      -webkit-box-flex: 0 !important;
+          -ms-flex: 0 1 191px !important;
+              flex: 0 1 191px !important; } }
 
 .input-group-prepend--date {
   margin-right: 0;
@@ -865,7 +999,12 @@ label.form-control-label {
 .form-group--alt {
   margin-right: -15px;
   margin-left: -15px;
-  padding-bottom: 0 !important; }
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 0; }
+  @media (min-width: 1200px) {
+    .form-group--alt {
+      padding-bottom: 0 !important;
+      margin-bottom: 0; } }
 
 .form-group--sortcode, .form-group--account-number {
   -webkit-box-pack: start;
@@ -921,5 +1060,75 @@ label.form-control-label {
 
 .img__calendar {
   height: 20px; }
+
+.custom-control-label::after {
+  opacity: 0; }
+
+.container--md {
+  max-width: 925px; }
+
+.container--lg {
+  width: 1124; }
+
+.navbar-brand {
+  z-index: 1; }
+
+.call-text {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  color: white; }
+  @media (min-width: 768px) {
+    .call-text {
+      font-size: 2rem; } }
+
+.bg-sub-header .navbar-nav .nav-item {
+  text-transform: lowercase; }
+  @media (min-width: 768px) {
+    .bg-sub-header .navbar-nav .nav-item {
+      text-transform: uppercase;
+      padding: 0 1rem; } }
+
+.phone-number {
+  font-size: 1.5rem;
+  padding-right: 0;
+  padding-left: 0; }
+  @media (min-width: 768px) {
+    .phone-number {
+      font-size: 2rem; } }
+
+.login {
+  margin-top: 0.2rem;
+  margin-right: -15px; }
+  .login label.form-control-label {
+    margin-right: 0px;
+    background-color: #f4791d;
+    padding: 0 5px;
+    height: 25px;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.8rem; }
+  .login input.form-control-input {
+    height: 25px;
+    font-size: 0.8rem;
+    border-radius: 0;
+    width: 140px;
+    border: 0;
+    padding: 0 5px;
+    color: black; }
+  .login form input:nth-child(2) {
+    margin-right: 2px; }
+  .login .btn {
+    height: 25px;
+    padding: 0 0.3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 5px;
+    border: 0;
+    border-radius: 0;
+    background-color: #f4791d;
+    color: white;
+    text-transform: uppercase; }
 
 /*# sourceMappingURL=maps/styles.css.map */

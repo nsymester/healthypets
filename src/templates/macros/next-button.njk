@@ -1,4 +1,4 @@
-{% macro nextStep(linkName='Next', link='') %}
+{% macro nextStep(linkName='Next', link='', type='solid') %}
 
 {% if link == 'pet-details' %}
   {% set link = 'pet-details.html' %}
@@ -32,6 +32,15 @@
 
 {% endif %}
 
-<a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/{{ link }}" style="text-decoration:none;">{{ linkName }}</a>
+
+{% if type == 'solid' %}
+  {% set type = '' %}
+{% elif type == 'outline' %}
+  {% set type = '-outline' %}
+{% else %}
+  {% set type = '' %}
+{% endif %}
+
+<a class="btn btn{{ type }}-primary btn{{ type }}-primary--alt btn--block rounded-0" href="/{{ link }}" style="text-decoration:none;">{{ linkName }}</a>
 
 {% endmacro %}

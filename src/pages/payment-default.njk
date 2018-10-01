@@ -1,35 +1,26 @@
-{% block headerContent %}
-{% import './macros/header.njk' as header %}
-{{ header.title('Policy Summary') }}
+{% extends "master-summary.njk" %}
+
+{% block title %}Policy Summary{% endblock %}
+
+{% block customStyles %}{% endblock %}
+
+{% block pageId %}payment{% endblock %}
+
+{% block containerSize%}container--md{% endblock %}
+
+{% block customHeader %}
+<div class="policy-summary__header d-flex justify-content-between d-block d-lg-none">
+  <h2 class="mt-0">Policy summary</h2>
+  <p>£37.78<small>/month</small></p>
+</div>
 {% endblock %}
 
-  <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+{% block main %}
 
-{% block ie8SupportHtml %}
-{% include './partials/ie8-support-html.njk' %} {% endblock %}
+<div class="row">
+  <div class="col">
+    <div class="content-frame">
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data('payment summary') }}
-{% endblock %}
-
-<div class="container">
-  <section class="mt- mb-1">
-    <div class="policy-summary__header d-flex justify-content-between mb-0">
-      <h2 class="mt-0">Policy summary</h2>
-      <h2>£37.78<small>/month</small></h2>
-    </div>
-    <hr class="mt-0 mb-4">
-
-    {% block progressBar %}
-    {% import './macros/progress-bar-summary.njk' as progressBar %}
-    {{ progressBar.activeStep('payment', true) }}
-    {% endblock %}
-
-    <form class="needs-validation" novalidate>
       <fieldset class="mt-0 mb-0">
         <legend></legend>
 
@@ -167,7 +158,7 @@
             <ul class="ml-0" style="padding-left: 1.5rem; font-size:0.9rem; font-weight:100;">
               <li>This Guarantee is offered by all Banks and Building Societies that accept instructions to pay Direct Debits. </li>
               <li>If there are any changes to the amount, date or frequency of your Direct Debit, Healthy Pets will notify you 10 working days in advance of your  </li>
-             </ul>
+              </ul>
           </div>
 
         </div><!-- collapse -->
@@ -182,32 +173,64 @@
         </div>
 
       </fieldset>
+    </div><!-- content-frame -->
 
-      <div class="mt-4">
+    <div class="row justify-content-between mt-md-5">
+      <div class="col-lg-4 d-none d-lg-block">
+        {% block backButton %}
+        {% import './macros/next-button.njk' as backButton %}
+        {{ backButton.nextStep('Back', 'payment-complete', 'outline') }}
+        {% endblock %}
+      </div>
+      <div class="col-lg-4 mt-3 mt-md-0">
         {% block submitButton %}
         {% import './macros/submit-button.njk' as submitButton %}
         {{ submitButton.nextStep('Confirm & Pay', 'payment-complete') }}
         {% endblock %}
       </div>
+    </div><!-- row -->
 
-    </form>
-  </section>
+  </div><!-- col -->
 
-  {% block customerSecurity %}
-  {% include './partials/thwate.njk' %} {% endblock %}
+  <div class="col-lg-5 d-none d-lg-block">
+    <h2 class="mt-0 mb-4">Policy summary</h2>
 
-  {% block customerService %}
-  {% import './macros/customer-service.njk' as customerService %}
-  {{ customerService.provision({
-    'discount': false,
-    'feefo': true
-  })}}
-  {% endblock %}
+    {% block policySummaryContent %}
+    {% include './partials/policy-summary-content.njk' %} {% endblock %}
 
-</div><!-- container -->
+    <section class="card mt-5 border-0 bg-transparent">
+      <div class="feefo-rating">
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <span>&#9733;</span>
+        <p class="feefo-rating__value">4.7/5</p>
+      </div>
+      <p>Independent service rating based on 1311 verified reviews</p>
+      <hr class="mt-0 bg-dark">
+      <div class="clearfix">
+        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
+        <a href="" class="feefo-rating__link float-right">Read all reviews</a>
+      </div>
+    </section>
 
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+  </div><!-- col -->
+
+</div><!-- row -->
+{% endblock %}
 
 {% block footer %}
-{% include './partials/footer.njk' %} {% endblock %}
+  <div class="d-block d-lg-none">
+    {% block customerSecurity %}
+    {% include './partials/thwate.njk' %} {% endblock %}
+
+    {% block customerService %}
+    {% import './macros/customer-service.njk' as customerService %}
+    {{ customerService.provision({
+      'discount': false,
+      'feefo': true
+    })}}
+    {% endblock %}
+  </div>
+{% endblock %}

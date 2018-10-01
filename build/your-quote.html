@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,26 +10,30 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="/images/favicon.ico">
-  <title> Your Quote |    Healthy Pets</title>
 
-  
-
+  <title>Your Quote | Healthy Pets</title>
 
   <!-- Bootstrap -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
+  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
 
-<body role="document"> 
+<body role="document" id="your-quote" >
+
+
+
+
 
 
 
@@ -42,20 +43,38 @@
 
     <!-- Brand -->
     <a href="#" class="navbar-brand">
-      <img src="/images/logo.png" style="width:150px;" alt="Healthy Pets logo">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/images/logo-large.png">
+        <source media="(min-width: 576px)" srcset="/images/logo.png">
+        <img src="/images/logo.png" class="mt-3 img-fluid logo" alt="Healthy Pets logo">
+      </picture>
     <span class="d-none">Healthy Pets</span></a>
 
-    <!-- Telephone number -->
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" style="font-size: 1.5rem; padding-right:0;" href="tel:01730268592">01730 268592</a>
+    <div class="login d-flex flex-column">
+      <form class="form-inline justify-content-end d-none d-md-flex">
+        <label class="form-control-label">Retrieve a quote</label>
+        <input class="form-control-input bg-light" type="text" placeholder="Email address" aria-label="Email address">
+        <input class="form-control-input bg-light" type="password" placeholder="Password" aria-label="Password">
+        <button class="btn btn-outline" type="submit">Go</button>
+      </form>
+      <!-- Telephone number -->
+      <div class="navbar-nav">
+        <span class="d-none d-md-block call-text">Call us:</span><a class="nav-item nav-link phone-number" href="tel:01730268592">01730 268592</a>
+      </div>
     </div>
+
   </div><!-- container -->
 </nav>
 
-<nav class="navbar bg-sub-header navbar-bright navbar-expand" style="opacity: 0.8;">
-  <div class="container-fluid" style="height: 47px;">
+<nav class="navbar bg-sub-header navbar-bright navbar-expand">
+  <div class="container-fluid justify-content-md-end" style="height: 47px;">
     <div class="navbar-nav">
-      <a href="#" class="nav-item nav-link">Claims</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Home</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Insure Your Pet</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Existing Clients</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">About Us</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Exotice Pets</a>
+      <a href="#" class="d-block d-md-none nav-item nav-link">Claims</a>
       <a href="#" class="nav-item nav-link">Contact Us</a>
     </div><!-- navbar-nav -->
 
@@ -68,9 +87,8 @@
 
 
 
-<div class="container">
+<div class="container container--lg">
   <section class="mt-4 mb-3">
-
     
     
     
@@ -79,6 +97,8 @@
   
   
   
+  
+
 
 
 <ul class="progressbar clearfix">
@@ -88,71 +108,87 @@
 </ul>
 
 
+
+    
+  </section>
+</div><!-- container -->
+
+<div class="container container--lg">
+  <section class="mt-4 mb-3">
+
     
 
-    <h2 class="mt-0 mb-0">Your quote for Bobby</h2>
-    <small class="form__help mb-1">Select from Lifetime, Maximum Benefit and Accident only cover</small>
     <form class="needs-validation" novalidate>
-      <fieldset class="form-group mt-0 mb-0">
-        <legend></legend>
+      
 
-        <div class="d-flex justify-content-between mb-3">
-          <div class="card cover-item cover-item--lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-            <a id="lifetime-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between" data-toggle="collapse" aria-expand="false" aria-controls="lifetime-cover">
-              <h6 class="cover-item__header">Lifetime Cover</h6>
-              <p class="cover-item__price">from £29.11 / month</p>
-            </a>
-          </div><!-- card-->
+<h2 class="h2 mt-0 mb-0">Your quote for Bobby</h2>
 
-          <div class="card cover-item cover-item--maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
-            <a id="maximum-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="maximum-cover"">
-              <h6 class="cover-item__header">Maximun Benefit Cover</h6>
-              <p class="cover-item__price">from £29.11 / month</p>
-            </a>
-          </div><!-- card-->
+<div class="">
+  <small class="form__help mb-1 d-block d-md-none">Select from Lifetime, Maximum Benefit and Accident only cover</small>
 
-          <div class="card cover-item cover-item--accident rounded-0 shadow mb-3 pt-2 bg-white">
-            <a id="accident-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="accident-cover"">
-              <h6 class="cover-item__header">Accident Only Cover</h6>
-              <p class="cover-item__price">from £29.11 / month</p>
-            </a>
-          </div><!-- card-->
-        </div><!-- d-flex -->
+  <fieldset class="form-group mt-0 mb-0">
+    <legend></legend>
 
-        <div class="collapse mt-4 mb-4" id="lifetime-cover">
-          <div class="cover-info cover-info--lifetime pt-2">
-            <small class="cover-info__prologue">Our most comprehensive cover</small>
-            <h2 class="h1 cover-info__header mt-1">Lifetime Cover</h2>
-            <small class="cover-info__price">from <span>£29.11/month</span></small>
+    <!-- mobile selection -->
+    <div class="d-flex justify-content-between mb-3 d-block d-xl-none">
+      <div class="card cover-item cover-item--lifetime rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+        <a id="lifetime-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between" data-toggle="collapse" aria-expand="false" aria-controls="lifetime-cover">
+          <h6 class="cover-item__header">Lifetime Cover</h6>
+          <p class="cover-item__price">from £29.11 / month</p>
+        </a>
+      </div><!-- card-->
 
-            <p class="mt-3">All new  conditions will be covered upto a limit. When the limit is reached, the policy no longer covers you until it is renewed. </p>
-            <p>When the policy is renewed, the limit is reinstated and you can claim for the same condition plus any additional new conditions. </p>
-            <p class="font-weight-bold">Best for pets likely to develop ongoing conditions like diabetes or arthiritus.</p>
+      <div class="card cover-item cover-item--maximum rounded-0 shadow mr-1 mb-3 pt-2 bg-white">
+        <a id="maximum-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="maximum-cover"">
+          <h6 class="cover-item__header">Maximun Benefit Cover</h6>
+          <p class="cover-item__price">from £29.11 / month</p>
+        </a>
+      </div><!-- card-->
 
-            <div class="d-flex justify-content-between">
-              <ul class="cover-info__benefits--included">
-                <li>Accidents</li>
-                <li>Illness</li>
-                <li>Cover for ongoing conditions for the pet’s lifetime</li>
-              </ul>
+      <div class="card cover-item cover-item--accident rounded-0 shadow mb-3 pt-2 bg-white">
+        <a id="accident-link" href="#" style="text-decoration: none;color: inherit;" class="flex-grow-1 d-flex flex-column justify-content-between data-toggle="collapse" aria-expand="false" aria-controls="accident-cover"">
+          <h6 class="cover-item__header">Accident Only Cover</h6>
+          <p class="cover-item__price">from £29.11 / month</p>
+        </a>
+      </div><!-- card-->
+    </div><!-- d-flex -->
 
-              <ul class="cover-info__benefits--excluded">
-                <li>Pre-existing conditions</li>
-              </ul>
+    <div class="row">
+
+      <div class="col-xl cover collapse mt-2 mb-4" id="lifetime-cover">
+        <div class="cover-info cover-info--lifetime pt-2">
+          <small class="cover-info__prologue">Our most comprehensive cover</small>
+          <h2 class="h1 cover-info__header mt-1">Lifetime Cover</h2>
+          <small class="cover-info__price">from <span>£29.11/month</span></small>
+
+          <p class="mt-3">All new  conditions will be covered upto a limit. When the limit is reached, the policy no longer covers you until it is renewed. </p>
+          <p>When the policy is renewed, the limit is reinstated and you can claim for the same condition plus any additional new conditions. </p>
+          <p class="font-weight-bold">Best for pets likely to develop ongoing conditions like diabetes or arthiritus.</p>
+
+          <div class="d-flex justify-content-between">
+            <ul class="cover-info__benefits--included">
+              <li>Accidents</li>
+              <li>Illness</li>
+              <li>Cover for ongoing conditions for the pet’s lifetime</li>
+            </ul>
+
+            <ul class="cover-info__benefits--excluded">
+              <li>Pre-existing conditions</li>
+            </ul>
+          </div>
+
+          <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+            <div class="input-group mb-2 flex-nowrap justify-content-between">
+              <p class="aditional-cover">Available with vet fee cover from <span class="font-weight-bold">£2000</span> or <span class="font-weight-bold">£4250</span></p>
+              <button class="btn btn-primary btn-primary--alt ml-2 form-control-alt rounded-0 btn--cover-level" style="width: 45%;" data-toggle="collapse" data-target="#choose-lifetime-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
             </div>
+          </div>
 
-            <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
-              <div class="input-group mb-2 flex-nowrap justify-content-between">
-                <p>Available with vet fee cover from <span class="font-weight-bold">£2000</span> or <span class="font-weight-bold">£4250</span></p>
-                <button class="btn btn-primary btn-primary--alt ml-5 form-control-alt rounded-0 btn--cover-level" style="width: 45%;" data-toggle="collapse" data-target="#choose-lifetime-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
-              </div>
-            </div>
+          <div class="collapse" id="choose-lifetime-level">
 
-            <div class="collapse" id="choose-lifetime-level">
-
-              
-              
-              
+            
+            
+            
   <section>
     <h6 class="cover-level__h6">Select your level of cover</h6>
 
@@ -263,6 +299,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £2000 lifetime Cover</a>
 
 
@@ -354,6 +395,11 @@
 
   
 
+
+
+
+
+  
 
 
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £4250 lifetime Cover</a>
@@ -449,6 +495,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £7500 lifetime Cover</a>
 
 
@@ -542,6 +593,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select 1000 lifetime Cover</a>
 
 
@@ -556,47 +612,47 @@
   </section>
 
 
-              
+            
 
+          </div>
+
+        </div><!-- cover-lifetime -->
+      </div><!-- collapse -->
+
+      <div class="col-xl cover collapse mt-2 mb-4" id="maximum-cover">
+        <div class="cover-info cover-info--maximum pt-3">
+          <small class="cover-info__prologue">Our most comprehensive cover</small>
+          <h2 class="h1 cover-info__header mt-1">Maximum Benefit</h2>
+          <small class="cover-info__price">from <span>£29.11/month</span></small>
+
+          <p class="mt-3">Every new condition will be covered upto a limit. When the limit is reached, it will be considered a ‘pre-existing’ condition and you will no longer be covered for it. </p>
+          <p>When the policy renews, you won’t be covered for any pre-existing conditions.</p>
+          <p class="font-weight-bold">Best for covering accidents and illnesses that require one-off or short term treatment.</p>
+
+          <div class="d-flex justify-content-between">
+            <ul class="cover-info__benefits--included">
+              <li>Accidents</li>
+              <li>Illness</li>
+              <li>Cover for ongoing conditions up to a financial limit</li>
+            </ul>
+
+            <ul class="cover-info__benefits--excluded">
+              <li>Pre-existing conditions</li>
+            </ul>
+          </div>
+
+          <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+            <div class="input-group mb-2 flex-nowrap justify-content-between">
+              <p class="aditional-cover">Available with vet fee cover from <span class="font-weight-bold">£2000</span>, <span class="font-weight-bold">£4250</span> or  <span class="font-weight-bold">£7500</span></p>
+              <button class="btn btn-primary btn-primary--alt ml-2 form-control-alt rounded-0 btn--cover-level" type="submit" style="width: 45%;" data-toggle="collapse" data-target="#choose-maximum-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
             </div>
+          </div>
 
-          </div><!-- cover--lifetime -->
-        </div><!-- collapse -->
+          <div class="collapse" id="choose-maximum-level">
 
-        <div class="collapse mt-4 mb-4" id="maximum-cover">
-          <div class="cover-info cover-info--maximum pt-3">
-            <small class="cover-info__prologue">Our most comprehensive cover</small>
-            <h2 class="h1 cover-info__header mt-1">Maximum Benefit</h2>
-            <small class="cover-info__price">from <span>£29.11/month</span></small>
-
-            <p class="mt-3">Every new condition will be covered upto a limit. When the limit is reached, it will be considered a ‘pre-existing’ condition and you will no longer be covered for it. </p>
-            <p>When the policy renews, you won’t be covered for any pre-existing conditions.</p>
-            <p class="font-weight-bold">Best for covering accidents and illnesses that require one-off or short term treatment.</p>
-
-            <div class="d-flex justify-content-between">
-              <ul class="cover-info__benefits--included">
-                <li>Accidents</li>
-                <li>Illness</li>
-                <li>Cover for ongoing conditions up to a financial limit</li>
-              </ul>
-
-              <ul class="cover-info__benefits--excluded">
-                <li>Pre-existing conditions</li>
-              </ul>
-            </div>
-
-            <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
-              <div class="input-group mb-2 flex-nowrap justify-content-between">
-                <p>Available with vet fee cover from <span class="font-weight-bold">£2000</span>, <span class="font-weight-bold">£4250</span> or  <span class="font-weight-bold">£7500</span></p>
-                <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0 btn--cover-level" type="submit" style="width: 45%;" data-toggle="collapse" data-target="#choose-maximum-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
-              </div>
-            </div>
-
-            <div class="collapse" id="choose-maximum-level">
-
-              
-              
-              
+            
+            
+            
   <section>
     <h6 class="cover-level__h6">Select your level of cover</h6>
 
@@ -711,6 +767,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £2000 maximum Cover</a>
 
 
@@ -802,6 +863,11 @@
 
   
 
+
+
+
+
+  
 
 
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £4250 maximum Cover</a>
@@ -897,6 +963,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £7500 maximum Cover</a>
 
 
@@ -990,6 +1061,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select 1000 maximum Cover</a>
 
 
@@ -1004,47 +1080,47 @@
   </section>
 
 
-              
+            
 
+          </div>
+        </div><!-- cover-maximum -->
+      </div><!-- collapse -->
+
+      <div class="col-xl cover collapse mt-2 mb-4" id="accident-cover">
+        <div class="cover-info cover-info--accident pt-3">
+          <small class="cover-info__prologue">Our most comprehensive cover</small>
+          <h2 class="h1 cover-info__header mt-1">Accident Only</h2>
+          <small class="cover-info__price">from <span>£29.11/month</span></small>
+
+          <p class="mt-3">Cover for vet fees, only as a result of a sudden or unexpected injury. </p>
+          <p>Claim for upto 12 months from the start of the first treamtment</p>
+          <p>Claim for an unlimited number of injuries and be covered up to the maximum amount for every injury.</p>
+          <p class="font-weight-bold">Best for older pets that are not eligable for more comprehensive cover.</p>
+
+          <div class="d-flex justify-content-between">
+            <ul class="cover-info__benefits--included">
+              <li>Accidents</li>
+              <li>Cover for ongoing conditions for 12 months</li>
+            </ul>
+
+            <ul class="cover-info__benefits--excluded">
+              <li>Illness</li>
+              <li>Pre-existing conditions</li>
+            </ul>
+          </div>
+
+          <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
+            <div class="input-group mb-2 flex-nowrap justify-content-between">
+              <p class="aditional-cover">Available with vet fee cover from <span class="font-weight-bold">£1000</span></p>
+              <button class="btn btn-primary btn-primary--alt ml-2 form-control-alt rounded-0 btn--cover-level" type="submit" style="width: 45%;" data-toggle="collapse" data-target="#choose-accident-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
             </div>
           </div>
-        </div><!-- collapse -->
 
-        <div class="collapse mt-4 mb-4" id="accident-cover">
-          <div class="cover-info cover-info--accident pt-3">
-            <small class="cover-info__prologue">Our most comprehensive cover</small>
-            <h2 class="h1 cover-info__header mt-1">Accident Only</h2>
-            <small class="cover-info__price">from <span>£29.11/month</span></small>
+          <div class="collapse" id="choose-accident-level">
 
-            <p class="mt-3">Cover for vet fees, only as a result of a sudden or unexpected injury. </p>
-            <p>Claim for upto 12 months from the start of the first treamtment</p>
-            <p>Claim for an unlimited number of injuries and be covered up to the maximum amount for every injury.</p>
-            <p class="font-weight-bold">Best for older pets that are not eligable for more comprehensive cover.</p>
-
-            <div class="d-flex justify-content-between" style="">
-              <ul class="cover-info__benefits--included">
-                <li>Accidents</li>
-                <li>Cover for ongoing conditions for 12 months</li>
-              </ul>
-
-              <ul class="cover-info__benefits--excluded">
-                <li>Illness</li>
-                <li>Pre-existing conditions</li>
-              </ul>
-            </div>
-
-            <div class="form-group form-group--alt p-4 bg-light-grayish-blue">
-              <div class="input-group mb-2 flex-nowrap justify-content-between">
-                <p>Available with vet fee cover from <span class="font-weight-bold">£1000</span></p>
-                <button class="btn btn-primary btn-primary--alt form-control-alt rounded-0 btn--cover-level" type="submit" style="width: 45%;" data-toggle="collapse" data-target="#choose-accident-level" role="button" aria-expanded="false" aria-controls="choose-level">Choose level</button>
-              </div>
-            </div>
-
-            <div class="collapse" id="choose-accident-level">
-
-              
-              
-              
+            
+            
+            
   <section>
     <h6 class="cover-level__h6">Select your level of cover</h6>
 
@@ -1151,6 +1227,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £2000 accident Cover</a>
 
 
@@ -1242,6 +1323,11 @@
 
   
 
+
+
+
+
+  
 
 
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £4250 accident Cover</a>
@@ -1337,6 +1423,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select £7500 accident Cover</a>
 
 
@@ -1430,6 +1521,11 @@
 
 
 
+
+
+  
+
+
 <a class="btn btn-primary btn-primary--alt btn--block rounded-0" href="/policy-summary.html" style="text-decoration:none;">Select 1000 accident Cover</a>
 
 
@@ -1444,56 +1540,16 @@
   </section>
 
 
-              
+            
 
-            </div>
           </div>
-        </div><!-- collapse -->
+        </div><!-- cover-accident -->
+      </div><!-- collapse -->
 
-      </fieldset><!-- fieldset -->
+    </div><!-- row -->
 
-    </form>
-  </section>
-
-
-  
-  
-  
-  <section class="mt-5">
-    <h3 class="d-none">Customer Service</h3>
-
-    
-    <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
-        <h5 class="mb-0">20% off for all new customers</h5>
-        <p>Get the best deal online</p>
-        <p>This will automatcally get added</p>
-    </section>
-    
-
-    
-    <section class="card mb-5 border-0">
-      <div class="feefo-rating">
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <p class="feefo-rating__value">4.7/5</p>
-      </div>
-      <p>Independent service rating based on 1311 verified reviews</p>
-      <hr class="mt-0 bg-dark">
-      <div class="clearfix">
-        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
-        <a href="" class="feefo-rating__link float-right">Read all reviews</a>
-      </div>
-    </section>
-    
-
-  </section>
-
-  
-
-</div><!-- container -->
+  </fieldset><!-- fieldset -->
+</div><!-- content-frame -->
 
 
 
@@ -1525,6 +1581,54 @@
   </div>
 
 
+
+
+    </form>
+  </section>
+
+  
+
+
+  <section class="customer-service">
+    <h3 class="d-none">Customer Service</h3>
+
+    <div class="row justify-content-between align-items-end">
+      
+      <div class="col-md-6 col-lg-5">
+        <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
+            <h5 class="mb-0 font-weight-bold">20% off for all new customers</h5>
+            <p>Get the best deal online</p>
+            <p>This will automatcally get added</p>
+        </section>
+      </div><!-- col -->
+      
+
+      
+      <div class="col-md-6 col-lg-5">
+        <section class="card mb-5 border-0 bg-transparent">
+          <div class="feefo-rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <p class="feefo-rating__value">4.7/5</p>
+          </div>
+          <p>Independent service rating based on 1311 verified reviews</p>
+          <hr class="mt-0 bg-dark">
+          <div class="clearfix">
+            <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
+            <a href="" class="feefo-rating__link float-right">Read all reviews</a>
+          </div>
+        </section>
+      </div>
+      
+    </div><!-- row -->
+
+  </section>
+
+
+</div><!-- container -->
 
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -1575,8 +1679,9 @@ function isNumberKey(event) {
 
 </script> 
 
+
 <script src="/js/coverLevel.bundle.js"></script>
 
 
 </body>
-</html> 
+</html>

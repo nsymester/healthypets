@@ -5,9 +5,11 @@
     <label class="custom-control-label form-check-label custom-checkbox" for="{{ data.id }}">{{ data.label }}
       <input type="checkbox" class="custom-control-input form-check-input" id="{{ data.id }}" {% if data.required %} required {% endif %}>
       <span class="checkmark"></span>
+      {% if data["invalid-feedback"] %}
       <div class="invalid-feedback">
-        Please select an option.
+        {{ data["invalid-feedback"] }}
       </div>
+      {% endif %}
     </label>
   </div>
 

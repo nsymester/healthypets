@@ -35,7 +35,8 @@
             {{ formCheckboxLong.field({
                 'id':'termsAgreement',
                 'label': 'I understand and agree to these terms',
-                'required': true
+                'required': true,
+                'invalid-feedback': 'Please agree to these terms'
               })
             }}
             {% endblock %}

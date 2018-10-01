@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,26 +10,30 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="/images/favicon.ico">
-  <title> Pet Details |    Healthy Pets</title>
 
-  
-
+  <title>Pet Details | Healthy Pets</title>
 
   <!-- Bootstrap -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom -->
   <link href="/css/styles.css" rel="stylesheet">
 
+  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
 
-<body role="document"> 
+<body role="document" id="pet-details" >
+
+
+
+
 
 
 
@@ -42,20 +43,38 @@
 
     <!-- Brand -->
     <a href="#" class="navbar-brand">
-      <img src="/images/logo.png" style="width:150px;" alt="Healthy Pets logo">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/images/logo-large.png">
+        <source media="(min-width: 576px)" srcset="/images/logo.png">
+        <img src="/images/logo.png" class="mt-3 img-fluid logo" alt="Healthy Pets logo">
+      </picture>
     <span class="d-none">Healthy Pets</span></a>
 
-    <!-- Telephone number -->
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" style="font-size: 1.5rem; padding-right:0;" href="tel:01730268592">01730 268592</a>
+    <div class="login d-flex flex-column">
+      <form class="form-inline justify-content-end d-none d-md-flex">
+        <label class="form-control-label">Retrieve a quote</label>
+        <input class="form-control-input bg-light" type="text" placeholder="Email address" aria-label="Email address">
+        <input class="form-control-input bg-light" type="password" placeholder="Password" aria-label="Password">
+        <button class="btn btn-outline" type="submit">Go</button>
+      </form>
+      <!-- Telephone number -->
+      <div class="navbar-nav">
+        <span class="d-none d-md-block call-text">Call us:</span><a class="nav-item nav-link phone-number" href="tel:01730268592">01730 268592</a>
+      </div>
     </div>
+
   </div><!-- container -->
 </nav>
 
-<nav class="navbar bg-sub-header navbar-bright navbar-expand" style="opacity: 0.8;">
-  <div class="container-fluid" style="height: 47px;">
+<nav class="navbar bg-sub-header navbar-bright navbar-expand">
+  <div class="container-fluid justify-content-md-end" style="height: 47px;">
     <div class="navbar-nav">
-      <a href="#" class="nav-item nav-link">Claims</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Home</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Insure Your Pet</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Existing Clients</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">About Us</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Exotice Pets</a>
+      <a href="#" class="d-block d-md-none nav-item nav-link">Claims</a>
       <a href="#" class="nav-item nav-link">Contact Us</a>
     </div><!-- navbar-nav -->
 
@@ -68,9 +87,8 @@
 
 
 
-<div class="container">
+<div class="container container--md">
   <section class="mt-4 mb-3">
-
     
     
     
@@ -79,6 +97,8 @@
   
   
   
+  
+
 
 
 <ul class="progressbar clearfix">
@@ -88,15 +108,25 @@
 </ul>
 
 
+
+    
+  </section>
+</div><!-- container -->
+
+<div class="container container--md">
+  <section class="mt-4 mb-3">
+
     
 
-    <h2 class="mt-0 mb-0">Enter your pet's details</h2>
     <form class="needs-validation" novalidate>
-      <fieldset class="form-group mt-0 mb-0">
-        <legend></legend>
+      
+<div class="content-frame">
+  <h2 class="h2 mt-0 mb-0">Enter your pet's details</h2>
+  <fieldset class="form-group mt-0 mb-0">
+    <legend></legend>
 
-        
-                <div class="form-group">
+    
+            <div class="form-group">
           <label class="form-control-label" for="pet-name">What's your pet's name?</label>
           <input class="form-control rounded-0" type="text" id="pet-name" required>
           <div class="invalid-feedback">
@@ -104,9 +134,9 @@
           </div>
         </div><!-- form-group --> 
 
-        
-                <div class="form-group">
-          <label class="form-control-label mt-2 mb-0" for="pet-dob">What's your pet's birthday?</label>
+    
+            <div class="form-group">
+          <label class="form-control-label mt-2 mb-1" for="pet-dob">What's your pet's birthday?</label>
           <small class="form__help">If you don't know the exact date of birth, enter the vet's estimate</small>
           <div class="input-group mb-2">
             <div class="input-group-prepend input-group-prepend--date mt-2">
@@ -119,8 +149,8 @@
           </div>
         </div><!-- form-group --> 
 
-        
-                <div class="form-group">
+    
+            <div class="form-group">
           <label class="form-control-label mt-1" for="">Is your pet a dog or a cat?</label>
           <div class="form-check-flex">
             <div class="custom-control custom-radio form-check-inline radio-button-box radio-button-box--icon">
@@ -161,9 +191,11 @@
     <label class="custom-control-label form-check-label custom-checkbox" for="termsAgreement">I understand and agree to these terms
       <input type="checkbox" class="custom-control-input form-check-input" id="termsAgreement"  required >
       <span class="checkmark"></span>
+      
       <div class="invalid-feedback">
-        Please select an option.
+        Please agree to these terms
       </div>
+      
     </label>
   </div>
 
@@ -311,8 +343,8 @@
 
         </div><!-- form-group --> 
 
-        
-                <div class="form-group">
+    
+            <div class="form-group">
           <label class="form-control-label mt-2" for="">What's your pets sex?</label>
           <div class="form-check-flex">
             <div class="custom-control custom-radio form-check-inline radio-button-box">
@@ -330,8 +362,8 @@
           </div>
         </div><!-- form-group --> 
 
-        
-                <div class="form-group">
+    
+            <div class="form-group">
           <label class="form-control-label mt-2" for="">Is your pet neutered?</label>
           <small class="form__help mb-1">Once insured, if this changes just let us know.</small>
           <div class="form-check-flex">
@@ -350,8 +382,8 @@
           </div>
         </div><!-- form-group --> 
 
-        
-                <div class="form-group">
+    
+            <div class="form-group">
           <label class="form-control-label mt-2" for="donation">How much did you pay or donate for your Pet?</label>
           <div class="input-group mb-3">
             <div class="input-group-prepend input-group-prepend--currency">
@@ -364,8 +396,8 @@
           </div><!-- input-group -->
         </div><!-- form-group --> 
 
-        
-                <div class="form-group mb-5">
+    
+            <div class="form-group mb-1">
           <label class="form-control-label mt-2" for="">Does your pet have pre-existing conditions?</label>
           <small class="form__help mb-1">In the event of a claim, any sign or symptom that started before the policy start date would be excluded.</small>
           <div class="form-check-flex">
@@ -383,7 +415,7 @@
             </div><!-- form-check -->
           </div><!-- form-check-flex -->
 
-          <div class="collapse mt-4 mb-4" id="pet-condition">
+          <div class="collapse mt-0 mb-4" id="pet-condition">
 
             <label class="form-control-label" for="">What conditions does your pet have?</label>
 
@@ -400,14 +432,18 @@
           </div><!-- collapse -->
         </div><!-- form-group --> 
 
-      </fieldset><!-- fieldset -->
+  </fieldset><!-- fieldset -->
+</div><!-- content-frame -->
 
-      <a class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0" href="/pet-details-other.html" style="text-decoration:none;">+ Add another pet</a>
+<div class="row justify-content-end mt-md-5">
+  <div class="col-md-3 col-lg-3">
+    <a class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0" href="/pet-details-other.html" style="text-decoration:none;">+ Add another pet</a>
+  </div>
 
-      <div class="mt-4">
-        
-        
-        
+  <div class="col-md-3 col-lg-2 mt-3 mt-md-0"> <!--mt-4 -->
+    
+    
+    
 
 
   
@@ -417,47 +453,55 @@
 <button class="btn btn-primary btn-primary--alt btn--block rounded-0" type="submit" data-href="pet-details-other.html" style="text-decoration:none;">Next</button>
 
 
-        
-      </div>
+    
+  </div>
+</div><!-- row -->
+
+
     </form>
   </section>
 
   
-  
-  
-  <section class="mt-5">
+
+
+  <section class="customer-service">
     <h3 class="d-none">Customer Service</h3>
 
-    
-    <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
-        <h5 class="mb-0">20% off for all new customers</h5>
-        <p>Get the best deal online</p>
-        <p>This will automatcally get added</p>
-    </section>
-    
+    <div class="row justify-content-between align-items-end">
+      
+      <div class="col-md-6 col-lg-5">
+        <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
+            <h5 class="mb-0 font-weight-bold">20% off for all new customers</h5>
+            <p>Get the best deal online</p>
+            <p>This will automatcally get added</p>
+        </section>
+      </div><!-- col -->
+      
 
-    
-    <section class="card mb-5 border-0">
-      <div class="feefo-rating">
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <p class="feefo-rating__value">4.7/5</p>
+      
+      <div class="col-md-6 col-lg-5">
+        <section class="card mb-5 border-0 bg-transparent">
+          <div class="feefo-rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <p class="feefo-rating__value">4.7/5</p>
+          </div>
+          <p>Independent service rating based on 1311 verified reviews</p>
+          <hr class="mt-0 bg-dark">
+          <div class="clearfix">
+            <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
+            <a href="" class="feefo-rating__link float-right">Read all reviews</a>
+          </div>
+        </section>
       </div>
-      <p>Independent service rating based on 1311 verified reviews</p>
-      <hr class="mt-0 bg-dark">
-      <div class="clearfix">
-        <img class="img-fluid" src="/images/feefo.png" alt="Feefo logo" style="width:100px">
-        <a href="" class="feefo-rating__link float-right">Read all reviews</a>
-      </div>
-    </section>
-    
+      
+    </div><!-- row -->
 
   </section>
 
-  
 
 </div><!-- container -->
 
@@ -511,5 +555,6 @@ function isNumberKey(event) {
 </script> 
 
 
+
 </body>
-</html> 
+</html>

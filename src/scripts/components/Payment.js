@@ -192,6 +192,33 @@ function ToggleRequiredPaymentFields () {
   }
 }
 
+function ToggleRequiredFields () {
+
+  if ($('input[name="pre-existing-condition"]').length > 0) {
+    // check for pre-existing condtion information
+    $('input[name="pre-existing-condition"]').click(function (event) {
+      // return the height of the grandprarent box set earlier when pre-existing condtion wasn't selected
+      $('input[name="pre-existing-condition"]:first').parent().parent().css('height', 'auto');
+    });
+  }
+
+  if ($('input[name="neutered"]').length > 0) {
+    // check for neutered information
+    $('input[name="neutered"]').click(function (event) {
+      // return the height of the grandprarent box set earlier when neutered wasn't selected
+      $('input[name="neutered"]:first').parent().parent().css('height', 'auto');
+    });
+  }
+
+  if ($('input[name="pet-type"]').length > 0) {
+    // check for pet-type information
+    $('input[name="pet-type"]').click(function (event) {
+      // return the height of the grandprarent box set earlier when pet-type wasn't selected
+      $('input[name="pet-type"]:first').parent().parent().css('height', 'auto');
+    });
+  }
+}
+
 function ActivateFormValidation () {
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   let forms = document.getElementsByClassName('needs-validation');
@@ -242,8 +269,8 @@ function ActivateFormValidation () {
       // check for payments
       if ($('input[name="regular-pay"]').length > 0) {
         // console.log('Hello Regular Pay check');
-        // if the a regular payment is not selected
-        // then increase the height of the form-check box to allow for the error meesage to b shown
+        // if a regular payment is not selected
+        // then increase the height of the form-check box to allow for the error meesage to be shown
         if ($('input[name="regular-pay"]:checked').length < 1) {
           $('input[name="regular-pay"]:first').parent().parent().css('height', '75px');
         }
@@ -252,8 +279,35 @@ function ActivateFormValidation () {
           $('input[name="payment-type"]:first').parent().parent().css('height', '75px');
         }
       }
+
+      // check for pre-existing conditions
+      if ($('input[name="pre-existing-condition"]').length > 0) {
+        // if pre-existing condition is not selected
+        // then increase the height of the form-check box to allow for the error meesage to be shown
+        if ($('input[name="pre-existing-condition"]:checked').length < 1) {
+          $('input[name="pre-existing-condition"]:first').parent().parent().css('height', '80px');
+        }
+      }
+
+      // check for neutered
+      if ($('input[name="neutered"]').length > 0) {
+        // if neutered is not selected
+        // then increase the height of the form-check box to allow for the error meesage to be shown
+        if ($('input[name="neutered"]:checked').length < 1) {
+          $('input[name="neutered"]:first').parent().parent().css('height', '80px');
+        }
+      }
+
+      // check for pet-type
+      if ($('input[name="pet-type"]').length > 0) {
+        // if pet-type is not selected
+        // then increase the height of the form-check box to allow for the error meesage to be shown
+        if ($('input[name="pet-type"]:checked').length < 1) {
+          $('input[name="pet-type"]:first').parent().parent().css('height', '80px');
+        }
+      }
     }, false);
   });
 }
 
-export { Payment, ActivateFormValidation, CheckBankNumber, ToggleRequiredPaymentFields };
+export { Payment, ActivateFormValidation, CheckBankNumber, ToggleRequiredPaymentFields, ToggleRequiredFields };

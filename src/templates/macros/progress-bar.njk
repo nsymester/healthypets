@@ -4,24 +4,32 @@
   {% set petDetails = 'progressbar__step--active' %}
   {% set yourDetails = '' %}
   {% set yourQuote = '' %}
+  {% set display = true %}
 {% elif activeStep == 'your-details' %}
   {% set petDetails = 'progressbar__step--done' %}
   {% set yourDetails = 'progressbar__step--active' %}
   {% set yourQuote = '' %}
+  {% set display = true %}
 {% elif activeStep == 'your-quote' %}
   {% set petDetails = 'progressbar__step--done' %}
   {% set yourDetails = 'progressbar__step--done' %}
   {% set yourQuote = 'progressbar__step--active' %}
-{% else %}
+  {% set display = true %}
+{% elif activeStep == 'policy-summary' %}
   {% set petDetails = 'progressbar__step--done' %}
   {% set yourDetails = 'progressbar__step--done' %}
   {% set yourQuote = 'progressbar__step--done' %}
+  {% set display = true %}
+{% else %}
+  {% set display = false %}
 {% endif %}
 
+{% if display %}
 <ul class="progressbar clearfix">
   <li class="progressbar__step {{ petDetails }}"><span>Pet details</span></li>
   <li class="progressbar__step {{ yourDetails }}"><span>Your details</span></li>
   <li class="progressbar__step {{ yourQuote }}"><span>Your quote</span></li>
 </ul>
+{% endif %}
 
 {% endmacro %}

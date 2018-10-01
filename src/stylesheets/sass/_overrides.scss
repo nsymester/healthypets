@@ -32,17 +32,18 @@ input.form-control, select.form-control {
 }
 
 input[type=text].form-control {
-  height: calc(80px - 50%);
+  height: 46px;
 }
 
 input[type=date].form-control {
-  height: 45px;
-  font-size: 13px;
-  font-weight: 300;
+  height: 46px;
+  font-size: 14px;
+  font-weight: normal;
+  padding-right: 0;
 }
 
 input[type=number].form-control {
-  height: 44px;
+  height: 46px;
 }
 
 input[type=radio] + label {
@@ -52,13 +53,18 @@ input[type=radio] + label {
 
 select.form-control {
   font-size:0.9rem;
-  height:50px;
+  height:46px;
   // top: -10px;
   position: relative;
 }
 
 .form__input--short {
   flex: 0 1 40% !important;
+
+  @include media-breakpoint-up(sm) {
+    flex: 0 1 150px !important
+  }
+
 }
 
 .form-control--ccv {
@@ -67,6 +73,12 @@ select.form-control {
 
 .form-control--alt {
   flex: 0 1 45% !important;
+  margin-right: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    flex: 0 1 191px !important;
+    // margin-right: 0;
+  }
 }
 
 .input-group-prepend--date{
@@ -112,7 +124,13 @@ label.form-control-label {
 .form-group--alt {
   margin-right:-15px;
   margin-left:-15px;
-  padding-bottom:0!important;
+  padding-bottom:0.5rem!important;
+  margin-bottom:0;
+
+  @include media-breakpoint-up(xl) {
+    padding-bottom: 0 !important;
+    margin-bottom: 0;
+  }
 }
 
 .form-group--sortcode, .form-group--account-number {
@@ -189,4 +207,96 @@ label.form-control-label {
 
 .img__calendar{
   height:20px;
+}
+
+.custom-control-label::after {
+  opacity: 0;
+}
+
+.container--md {
+  max-width: 925px;
+ // width: 925px;
+}
+
+ .container--lg {
+    width: 1124;
+}
+
+.navbar-brand {
+  z-index:1;
+}
+
+.call-text {
+  display:inline-block;
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  color:white;
+
+  @include media-breakpoint-up(md) {
+    // margin-top: 2rem;
+    font-size:2rem;
+  }
+}
+
+.bg-sub-header .navbar-nav .nav-item {
+  text-transform: lowercase;
+
+  @include media-breakpoint-up(md) {
+    text-transform: uppercase;
+    padding: 0 1rem;
+  }
+}
+
+.phone-number{
+  font-size: 1.5rem;
+  padding-right:0;
+  padding-left:0;
+
+  @include media-breakpoint-up(md) {
+    // margin-top: 2rem;
+    font-size:2rem;
+  }
+}
+
+.login {
+  margin-top:0.2rem;
+  margin-right:-15px;
+
+  label.form-control-label {
+    margin-right: 0px;
+    background-color: $cta-colour;
+    padding: 0 5px;
+    height: 25px;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  input.form-control-input {
+    height: 25px;
+    font-size: 0.8rem;
+    border-radius: 0;
+    width: 140px;
+    border: 0;
+    padding:0 5px;
+    color:black;
+  }
+
+  form input:nth-child(2) {
+    margin-right:2px;
+  }
+
+  .btn {
+    height:25px;
+    padding:0 0.3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 5px;
+    border: 0;
+    border-radius: 0;
+    background-color: $cta-colour;
+    color: white;
+    text-transform: uppercase;
+  }
 }

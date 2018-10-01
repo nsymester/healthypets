@@ -4,25 +4,43 @@
 
     <!-- Brand -->
     <a href="#" class="navbar-brand">
-      <img src="/images/logo.png" style="width:150px;" alt="Healthy Pets logo">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/images/logo-large.png">
+        <source media="(min-width: 576px)" srcset="/images/logo.png">
+        <img src="/images/logo.png" class="mt-3 img-fluid logo" alt="Healthy Pets logo">
+      </picture>
     <span class="d-none">Healthy Pets</span></a>
 
-    <!-- Telephone number -->
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" style="font-size: 1.5rem; padding-right:0;" href="tel:01730268592">01730 268592</a>
+    <div class="login d-flex flex-column">
+      <form class="form-inline justify-content-end d-none d-md-flex">
+        <label class="form-control-label">Retrieve a quote</label>
+        <input class="form-control-input bg-light" type="text" placeholder="Email address" aria-label="Email address">
+        <input class="form-control-input bg-light" type="password" placeholder="Password" aria-label="Password">
+        <button class="btn btn-outline" type="submit">Go</button>
+      </form>
+      <!-- Telephone number -->
+      <div class="navbar-nav">
+        <span class="d-none d-md-block call-text">Call us:</span><a class="nav-item nav-link phone-number" href="tel:01730268592">01730 268592</a>
+      </div>
     </div>
+
   </div><!-- container -->
 </nav>
 
-<nav class="navbar bg-sub-header navbar-bright navbar-expand" style="opacity: 0.8;">
-  <div class="container-fluid" style="height: 47px;">
+<nav class="navbar bg-sub-header navbar-bright navbar-expand">
+  <div class="container-fluid justify-content-md-end" style="height: 47px;">
     <div class="navbar-nav">
-      <a href="#" class="nav-item nav-link">Claims</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Home</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Insure Your Pet</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Existing Clients</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">About Us</a>
+      <a href="#" class="d-none d-md-block nav-item nav-link">Exotice Pets</a>
+      <a href="#" class="d-block d-md-none nav-item nav-link">Claims</a>
       <a href="#" class="nav-item nav-link">Contact Us</a>
     </div><!-- navbar-nav -->
 
     <div class="navbar-nav">
-      {% if page == 'home' %}
+      {% if page | trim == 'home' %}
       <a href="/retrieve-a-quote.html" class="btn btn-lg btn-cta rounded-0" role="button">Get a quote</a>
       {% endif %}
     </div><!-- navbar-nav -->

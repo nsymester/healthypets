@@ -49,6 +49,15 @@ function CoverTypes () {
       $(this).removeClass('btn--outline');
       $(this).addClass('btn-primary');
     }
+
+    // get data target
+    // split on "-"
+    let targetArray = $(this).data('target').split('-');
+    console.log('target: ', targetArray[1]);
+    // cover = get 2nd element
+    // find id "{cover}-cover"
+    // remove from classlist "show"
+    // $(`${targetArray[1]}-cover`).removeClass('show');
   });
 }
 

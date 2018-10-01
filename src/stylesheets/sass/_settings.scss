@@ -17,3 +17,25 @@ $bg-input-colour: rgba(61,112,178,0.1);
 $lifetime-color: rgba(245,166,35,1);
 $maximum-color: rgba(126,211,33,1);
 $accident-color: rgba(208,2,27,1);
+
+$bg-body-colour: rgba(255,255,255,1);
+$bg-body-colour--alt: rgba(246, 246, 246, 1);
+
+$bg-menu-color: rgba(28,129,182,1);
+$bg-sub-menu-color: rgba(55,148,193,1);
+
+// @goup bootstrap mixins
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+

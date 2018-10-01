@@ -4,7 +4,7 @@ import { CustomSelect } from './components/CustomSelect';
 import { Address } from './components/Address';
 import { Pet } from './components/Pet';
 import { CoverTypes } from './components/CoverTypes';
-import { ActivateFormValidation, Payment, CheckBankNumber, ToggleRequiredPaymentFields } from './components/Payment';
+import { ActivateFormValidation, Payment, CheckBankNumber, ToggleRequiredPaymentFields, ToggleRequiredFields } from './components/Payment';
 // import { Modal } from './components/Modal';
 
 // Utils();
@@ -28,6 +28,7 @@ import { ActivateFormValidation, Payment, CheckBankNumber, ToggleRequiredPayment
   }
 
   ToggleRequiredPaymentFields();
+  ToggleRequiredFields();
 
   // Modal();
 })();

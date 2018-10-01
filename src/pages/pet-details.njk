@@ -1,80 +1,62 @@
-{% block headerContent %}
-{% import './macros/header.njk' as header %}
-{{ header.title('Pet Details') }}
-{% endblock %}
+{% extends "master.njk" %}
 
-  <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+{% block title %}Pet Details{% endblock %}
 
-{% block ie8SupportHtml %}
-{% include './partials/ie8-support-html.njk' %} {% endblock %}
+{% block customStyles %}{% endblock %}
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data('pet details') }}
-{% endblock %}
+{% block pageId %}pet-details{% endblock %}
 
-<div class="container">
-  <section class="mt-4 mb-3">
+{% block containerSize%}container--md{% endblock %}
 
-    {% block progressBar %}
-    {% import './macros/progress-bar.njk' as progressBar %}
-    {{ progressBar.activeStep('pet-details') }}
+{% block main %}
+<div class="content-frame">
+  <h2 class="h2 mt-0 mb-0">Enter your pet's details</h2>
+  <fieldset class="form-group mt-0 mb-0">
+    <legend></legend>
+
+    {% block name %}
+    {% include './partials/name.njk' %} {% endblock %}
+
+    {% block dob %}
+    {% include './partials/pet-dob.njk' %} {% endblock %}
+
+    {% block petType %}
+    {% include './partials/pet-type.njk' %} {% endblock %}
+
+    {% block sex %}
+    {% include './partials/sex.njk' %} {% endblock %}
+
+    {% block neutered %}
+    {% include './partials/neutered.njk' %} {% endblock %}
+
+    {% block donation %}
+    {% include './partials/donation.njk' %} {% endblock %}
+
+    {% block preExisitngCondition %}
+    {% include './partials/pre-existing-condition.njk' %} {% endblock %}
+
+  </fieldset><!-- fieldset -->
+</div><!-- content-frame -->
+
+<div class="row justify-content-end mt-md-5">
+  <div class="col-md-3 col-lg-3">
+    <a class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0" href="/pet-details-other.html" style="text-decoration:none;">+ Add another pet</a>
+  </div>
+
+  <div class="col-md-3 col-lg-2 mt-3 mt-md-0"> <!--mt-4 -->
+    {% block submitButton %}
+    {% import './macros/submit-button.njk' as submitButton %}
+    {{ submitButton.nextStep('Next', 'pet-details-other') }}
     {% endblock %}
+  </div>
+</div><!-- row -->
 
-    <h2 class="mt-0 mb-0">Enter your pet's details</h2>
-    <form class="needs-validation" novalidate>
-      <fieldset class="form-group mt-0 mb-0">
-        <legend></legend>
-
-        {% block name %}
-        {% include './partials/name.njk' %} {% endblock %}
-
-        {% block dob %}
-        {% include './partials/pet-dob.njk' %} {% endblock %}
-
-        {% block petType %}
-        {% include './partials/pet-type.njk' %} {% endblock %}
-
-        {% block sex %}
-        {% include './partials/sex.njk' %} {% endblock %}
-
-        {% block neutered %}
-        {% include './partials/neutered.njk' %} {% endblock %}
-
-        {% block donation %}
-        {% include './partials/donation.njk' %} {% endblock %}
-
-        {% block preExisitngCondition %}
-        {% include './partials/pre-existing-condition.njk' %} {% endblock %}
-
-      </fieldset><!-- fieldset -->
-
-      <a class="btn btn-outline-primary btn-outline-primary--alt btn--block rounded-0" href="/pet-details-other.html" style="text-decoration:none;">+ Add another pet</a>
-
-      <div class="mt-4">
-        {% block submitButton %}
-        {% import './macros/submit-button.njk' as submitButton %}
-        {{ submitButton.nextStep('Next', 'pet-details-other') }}
-        {% endblock %}
-      </div>
-    </form>
-  </section>
-
-  {% block customerService %}
-  {% import './macros/customer-service.njk' as customerService %}
-  {{ customerService.provision({
-    'discount': true,
-    'feefo': true
-  })}}
-  {% endblock %}
-
-</div><!-- container -->
-
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+{% endblock %}
 
 {% block footer %}
-{% include './partials/footer.njk' %} {% endblock %}
+{% import './macros/customer-service.njk' as customerService %}
+{{ customerService.provision({
+  'discount': true,
+  'feefo': true
+})}}
+{% endblock %}

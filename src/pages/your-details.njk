@@ -1,185 +1,163 @@
-{% block headerContent %}
-{% import './macros/header.njk' as header %}
-{{ header.title('Your Details') }}
-{% endblock %}
+{% extends "master.njk" %}
 
-  <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+{% block title %}Your Details{% endblock %}
 
-{% block ie8SupportHtml %}
-{% include './partials/ie8-support-html.njk' %} {% endblock %}
+{% block customStyles %}{% endblock %}
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data('your details') }}
-{% endblock %}
+{% block pageId %}your-details{% endblock %}
 
-<div class="container">
-  <section class="mt-4 mb-3">
+{% block containerSize%}container--md{% endblock %}
 
-    {% block progressBar %}
-    {% import './macros/progress-bar.njk' as progressBar %}
-    {{ progressBar.activeStep('your-details') }}
-    {% endblock %}
+{% block main %}
+<div class="content-frame">
+  <h2 class="h2 mt-0 mb-0">Enter your details</h2>
+  <fieldset class="form-group mt-0 mb-0">
+    <legend></legend>
 
-    <h2 class="mt-0 mb-0">Enter your details</h2>
-    <form class="needs-validation" novalidate>
-      <fieldset class="form-group mt-0 mb-0">
-        <legend></legend>
+    <div class="form-group">
+      <label class="form-control-label" for="customer-title">Title</label>
+      <select class="form-control rounded-0" id="customer-title" value="" required>
+        <option value="">Select</option>
+        <option value="Mr">Mr</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Miss">Miss</option>
+        <option value="Ms">Ms</option>
+        <option value="Dr">Dr</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select your title.
+      </div>
+    </div><!-- form-group -->
 
-        <div class="form-group">
-          <label class="form-control-label" for="customer-title">Title</label>
-          <select class="form-control rounded-0" id="customer-title" value="" required>
-            <option value="">Select</option>
-            <option value="Mr">Mr</option>
-            <option value="Mrs">Mrs</option>
-            <option value="Miss">Miss</option>
-            <option value="Ms">Ms</option>
-            <option value="Dr">Dr</option>
-          </select>
-          <div class="invalid-feedback">
-            Please select your title.
-          </div>
-        </div><!-- form-group -->
+    <div class="form-group">
+      <label class="form-control-label" for="customer-firstname">First name</label>
+      <input class="form-control rounded-0" type="text" id="customer-firstname" value="" required>
+      <div class="invalid-feedback">
+        Please enter your first name.
+      </div>
+    </div><!-- form-group -->
 
-        <div class="form-group">
-          <label class="form-control-label" for="customer-firstname">First name</label>
-          <input class="form-control rounded-0" type="text" id="customer-firstname" value="" required>
-          <div class="invalid-feedback">
-            Please enter your first name.
-          </div>
-        </div><!-- form-group -->
+    <div class="form-group">
+      <label class="form-control-label" for="customer-lastname">Last name</label>
+      <input class="form-control rounded-0" type="text" id="customer-lastname" value="" required>
+      <div class="invalid-feedback">
+        Please enter your last name.
+      </div>
+    </div><!-- form-group -->
 
-        <div class="form-group">
-          <label class="form-control-label" for="customer-lastname">Last name</label>
-          <input class="form-control rounded-0" type="text" id="customer-lastname" value="" required>
-          <div class="invalid-feedback">
-            Please enter your last name.
-          </div>
-        </div><!-- form-group -->
-
-        <div class="form-group">
-          <label class="form-control-label mt-2 mb-0" for="customer-dob">Your birthday</label>
-          <div class="input-group mb-2">
-            <div class="input-group-prepend input-group-prepend--date mt-2">
-              <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
-            </div>
-            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="customer-dob" placeholder="dd/mm/yyyy" value="" required>
-            <div class="invalid-feedback">
-              Please enter your date of birth.
-            </div>
-          </div>
-        </div><!-- form-group -->
-
-        <div class="form-group">
-          <label class="form-control-label mt-2" for="customer-postcode">Your postcode</label>
-          <div class="input-group mb-2 flex-nowrap justify-content-between">
-            <input class="form-control form-control--alt rounded-0" type="text" id="customer-postcode">
-            <button class="btn btn-primary btn-primary--alt rounded-0" type="submit" style="width: 45%;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="customer-postcode-search" id="customer-postcode-search">Find address</button>
-          </div>
-
-          <div class="collapse mt-4 mb-4" id="customer-postcode-result">
-            <label class="form-control-label" for="">Select your address</label>
-
-            <hr style="border: 1px solid rgba(61,112,178,1)">
-
-            <div class="address__postcodes">
-              <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-              <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-              <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-              <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-              <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-              <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-            </div>
-
-          </div><!-- collapse -->
-
-          <div class="collapse mt-4 mb-4" id="customer-address">
-            <div class="form-group">
-              <label class="form-control-label" for="customer-house-number">House name/number</label>
-              <input class="form-control rounded-0" type="number" id="customer-house-number" value="" required>
-            </div><!-- form-group -->
-
-            <div class="form-group">
-              <label class="form-control-label" for="customer-street">Street</label>
-              <input class="form-control rounded-0" type="text" id="customer-street" value="" required>
-              <div class="invalid-feedback">
-                Please enter your Street name.
-              </div>
-            </div><!-- form-group -->
-
-            <div class="form-group">
-              <label class="form-control-label" for="customer-town-city">Town or City</label>
-              <input class="form-control rounded-0" type="text" id="customer-town-city" value="" required>
-              <div class="invalid-feedback">
-                Please enter your Town or City.
-              </div>
-            </div><!-- form-group -->
-
-            <div class="form-group">
-              <label class="form-control-label" for="customer-county">County</label>
-              <input class="form-control rounded-0" type="number" id="customer-county">
-            </div><!-- form-group -->
-
-          </div><!-- collapse -->
-
-          <div class="invalid-feedback js-invalid-postal-address">
-            Please enter your Postal Address.
-          </div>
-
-        </div><!-- form-group -->
-
-        <div class="collapse show mt-4 mb-4" id="customer-manual-address">
-          <div class="form-group">
-            <a href="" class="address__link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
-          </div><!-- form-group -->
-        </div><!-- collapse -->
+    <div class="form-group">
+      <label class="form-control-label mt-2 mb-0" for="customer-dob">Your birthday</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend input-group-prepend--date mt-2">
+          <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
+        </div>
+        <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="customer-dob" placeholder="dd/mm/yyyy" value="" required>
         <div class="invalid-feedback">
           Please enter your date of birth.
         </div>
-
-
-        <div class="form-group">
-          <label class="form-control-label" for="customer-phone-number">Phone number</label>
-          <input class="form-control rounded-0" type="number" id="customer-phone-number" value="" required>
-          <div class="invalid-feedback">
-            Please enter your Phone number.
-          </div>
-        </div><!-- form-group -->
-
-        <div class="form-group">
-          <label class="form-control-label" for="customer-email">Email address</label>
-          <input class="form-control rounded-0" type="email" id="customer-email" value="" required>
-          <div class="invalid-feedback">
-            Please enter your Email address.
-          </div>
-        </div><!-- form-group -->
-
-      </fieldset><!-- fieldset -->
-
-      <div class="mt-4">
-        {% block submitButton %}
-        {% import './macros/submit-button.njk' as submitButton %}
-        {{ submitButton.nextStep('Calculate quote', 'your-quote') }}
-        {% endblock %}
       </div>
-    </form>
-  </section>
+    </div><!-- form-group -->
 
-  {% block customerService %}
-  {% import './macros/customer-service.njk' as customerService %}
-  {{ customerService.provision({
-    'discount': true,
-    'feefo': true
-  })}}
-  {% endblock %}
+    <div class="form-group">
+      <label class="form-control-label mt-2" for="customer-postcode">Your postcode</label>
+      <div class="input-group mb-2 flex-nowrap justify-content-sm-start justify-content-between flex-md-row">
+        <input class="form-control form-control--alt rounded-0" type="text" id="customer-postcode">
+        <button class="btn btn-primary rounded-0 btn-primary--short" type="submit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="customer-postcode-search" id="customer-postcode-search">Find address</button>
+      </div>
 
-</div><!-- container -->
+      <div class="collapse mt-4 mb-4 customer-postcode-result" id="customer-postcode-result">
+        <label class="form-control-label" for="">Select your address</label>
 
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+        <hr style="border: 1px solid rgba(61,112,178,1)">
+
+        <div class="address__postcodes">
+          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
+        </div>
+
+      </div><!-- collapse -->
+
+      <div class="collapse mt-4 mb-4" id="customer-address">
+        <div class="form-group">
+          <label class="form-control-label" for="customer-house-number">House name/number</label>
+          <input class="form-control rounded-0" type="number" id="customer-house-number" value="" required>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label" for="customer-street">Street</label>
+          <input class="form-control rounded-0" type="text" id="customer-street" value="" required>
+          <div class="invalid-feedback">
+            Please enter your Street name.
+          </div>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label" for="customer-town-city">Town or City</label>
+          <input class="form-control rounded-0" type="text" id="customer-town-city" value="" required>
+          <div class="invalid-feedback">
+            Please enter your Town or City.
+          </div>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label class="form-control-label" for="customer-county">County</label>
+          <input class="form-control rounded-0" type="number" id="customer-county">
+        </div><!-- form-group -->
+
+      </div><!-- collapse -->
+
+      <div class="invalid-feedback js-invalid-postal-address">
+        Please enter your Postal Address.
+      </div>
+
+    </div><!-- form-group -->
+
+    <div class="collapse show mt-4 mb-4" id="customer-manual-address">
+      <div class="form-group">
+        <a href="" class="address__link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
+      </div><!-- form-group -->
+    </div><!-- collapse -->
+    <div class="invalid-feedback">
+      Please enter your date of birth.
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label" for="customer-phone-number">Phone number</label>
+      <input class="form-control rounded-0" type="number" id="customer-phone-number" value="" required>
+      <div class="invalid-feedback">
+        Please enter your Phone number.
+      </div>
+    </div><!-- form-group -->
+
+    <div class="form-group">
+      <label class="form-control-label" for="customer-email">Email address</label>
+      <input class="form-control rounded-0" type="email" id="customer-email" value="" required>
+      <div class="invalid-feedback">
+        Please enter your Email address.
+      </div>
+    </div><!-- form-group -->
+
+  </fieldset><!-- fieldset -->
+</div><!-- content-frame -->
+
+<div class="row justify-content-end mt-md-5">
+  <div class="col-md-3 col-lg-3 mt-3 mt-md-0">
+    {% block submitButton %}
+    {% import './macros/submit-button.njk' as submitButton %}
+    {{ submitButton.nextStep('Calculate quote', 'your-quote') }}
+    {% endblock %}
+  </div>
+</div><!-- row -->
+{% endblock %}
 
 {% block footer %}
-{% include './partials/footer.njk' %} {% endblock %}
+{% import './macros/customer-service.njk' as customerService %}
+{{ customerService.provision({
+  'discount': true,
+  'feefo': true
+})}}
+{% endblock %}
