@@ -2,9 +2,9 @@
 
   {% for item in data.items %}
 
-    <div class="custom-control custom-radio form-check pl-0">
+    <div class="custom-control icon-radio form-check pl-0">
 
-      <label class="custom-control-label form-check-label custom-radio" for="{{ item.id }}">
+      <label class="custom-control-label form-check-label icon-radio" for="{{ item.id }}">
         {{ item.label }}
         <input class="custom-control-input form-check-input" type="radio" name="{{ item.name }}" id="{{ item.id }}" value="{{ item.value }}" required>
         <span class="checkmark"></span>

@@ -359,9 +359,7 @@ a {
   letter-spacing: 1px; }
   .btn-primary--alt:hover, .btn-primary--alt:focus, .btn-primary--short:hover, .btn-primary--short:focus {
     color: #3d70b2;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 0 0.1rem #3d70b2;
-            box-shadow: 0 0 0 0.1rem #3d70b2; }
+    background-color: #fff; }
 
 .btn-primary--short {
   width: 191px; }
@@ -372,7 +370,7 @@ a {
   font-family: "Open Sans";
   font-size: 15px;
   font-weight: 600;
-  line-height: calc(32px - 50%);
+  line-height: calc(38px - 50%);
   text-align: center;
   border: 2px solid #3d70b2; }
   .btn-outline-primary--alt:hover, .btn-outline-primary--alt:focus {
@@ -813,10 +811,10 @@ a {
   .custom-checkbox:hover input ~ .checkmark {
     background-color: #ccc; }
 
-.custom-radio {
+.icon-radio {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 0;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -828,7 +826,7 @@ a {
   /* Create a custom radio button */
   /* Hide the browser's default radio button */
   /* On mouse-over, add a grey background color */ }
-  .custom-radio .checkmark {
+  .icon-radio .checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -838,7 +836,7 @@ a {
     border: 2px solid #8c9ba5;
     background-color: white;
     /* Create the indicator (the dot/circle - hidden when not checked) */ }
-    .custom-radio .checkmark:after {
+    .icon-radio .checkmark:after {
       position: absolute;
       display: none;
       /* Style the indicator (dot/circle) */
@@ -846,21 +844,21 @@ a {
       font-size: 1rem;
       font-family: "FontAwesome";
       font-weight: 100; }
-  .custom-radio input {
+  .icon-radio input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     /* When the radio button is checked, add a blue background */ }
-    .custom-radio input:checked ~ .checkmark {
+    .icon-radio input:checked ~ .checkmark {
       /* Show the indicator (dot/circle) when checked */ }
-      .custom-radio input:checked ~ .checkmark:after {
+      .icon-radio input:checked ~ .checkmark:after {
         display: block;
         left: 2px;
         top: -3px;
         color: #3d70b2; }
-  .custom-radio:hover input ~ .checkmark {
+  .icon-radio:hover input ~ .checkmark {
     background-color: #ccc; }
-  .custom-radio .checkmark--size {
+  .icon-radio .checkmark--size {
     top: unset;
     bottom: -23px;
     left: -10px;
@@ -894,6 +892,54 @@ a {
     .customer-postcode-result hr {
       width: 400px;
       margin-left: 0; } }
+
+.custom-radio .custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  padding-left: 1.25rem; }
+  .custom-radio .custom-control-label:after {
+    position: absolute;
+    top: -.25rem;
+    left: -2rem;
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    opacity: 1 !important; }
+  .custom-radio .custom-control-label:before {
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    pointer-events: none;
+    content: "";
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background-color: white;
+    border: 2px solid #8c9ba5; }
+
+.was-validated .custom-radio .custom-control-input:invalid ~ .custom-control-label {
+  border: 2px solid white; }
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%233d70b2'/%3E%3C/svg%3E"); }
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: white; }
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #3d70b2;
+  background-color: white; }
+
+.custom-control-input.is-valid ~ .custom-control-label::before, .was-validated .custom-control-input:valid ~ .custom-control-label::before {
+  background-color: white; }
 
 /* @group overrides */
 /**
@@ -979,7 +1025,7 @@ select.form-control {
   .input-group-prepend--currency .input-group-text {
     background-color: rgba(61, 112, 178, 0.1);
     border: 0;
-    height: 44px; }
+    height: 46px; }
 
 label.form-control-label {
   height: calc(36px - 50%);
@@ -989,12 +1035,19 @@ label.form-control-label {
   font-weight: 600;
   line-height: 1.5rem; }
 
-.form-check-input--alt {
-  bottom: -10px;
-  left: 20px; }
-
-.form-check--alt {
+.custom-radio--image {
   padding-left: 0; }
+  .custom-radio--image .custom-radio-input--image {
+    bottom: -10px;
+    left: 20px; }
+  .custom-radio--image .custom-control-label:before {
+    top: unset;
+    left: 0.5rem;
+    bottom: -1rem; }
+  .custom-radio--image .custom-control-label:after {
+    top: unset;
+    left: 0;
+    bottom: -1.5rem; }
 
 .form-group--alt {
   margin-right: -15px;
@@ -1019,10 +1072,8 @@ label.form-control-label {
 .form-group--account-number input {
   width: 75px; }
 
-.custom-control {
-  padding-left: 0; }
-  .custom-control-label:before {
-    display: none; }
+.custom-control-label:before {
+  display: none; }
 
 .was-validated .custom-control-input:invalid ~ .custom-control-label {
   border: 2px solid #dc3545; }

@@ -381,7 +381,7 @@
     &:hover, &:focus {
       color: #3d70b2;
       background-color: #fff;
-      box-shadow: 0 0 0 0.1rem $primary-colour;
+      //box-shadow: 0 0 0 0.1rem $primary-colour;
     }
   }
 
@@ -397,7 +397,7 @@
     //font-size: calc(24px - 50%);
     font-size: 15px;
     font-weight: 600;
-    line-height: calc(32px - 50%);
+    line-height: calc(38px - 50%);
     text-align: center;
     border: 2px solid $primary-colour;
 
@@ -1011,10 +1011,10 @@
 }
 
 // @group custom radio button
-.custom-radio {
+.icon-radio {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 0;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -1115,4 +1115,60 @@
       margin-left: 0;
     }
   }
+}
+
+.custom-radio .custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+
+  &:after {
+    position: absolute;
+    top: -.25rem;
+    left: -2rem;
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    opacity: 1 !important;
+  }
+
+  &:before {
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    pointer-events: none;
+    content: "";
+    user-select: none;
+    background-color: white;
+    border: 2px solid rgba(140,155,165,1);
+  }
+}
+
+.was-validated .custom-radio .custom-control-input:invalid ~ .custom-control-label {
+  border: 2px solid white;
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::after {
+  //background-image: url(/images/circle.svg);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%233d70b2'/%3E%3C/svg%3E")
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+  background-color: white;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  color: #3d70b2;
+  background-color: white
+}
+
+.custom-control-input.is-valid~.custom-control-label::before, .was-validated .custom-control-input:valid~.custom-control-label::before {
+  background-color: white;
 }

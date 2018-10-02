@@ -99,7 +99,7 @@ select.form-control {
   .input-group-text {
     background-color: $bg-input-colour;
     border: 0;
-    height:44px;
+    height:46px;
   }
 }
 
@@ -112,13 +112,27 @@ label.form-control-label {
 	line-height: 1.5rem;
 }
 
-.form-check-input--alt {
-  bottom: -10px;
-  left: 20px;
-}
-
-.form-check--alt {
+.custom-radio--image {
   padding-left: 0;
+
+  .custom-radio-input--image {
+    bottom: -10px;
+    left: 20px;
+  }
+
+  .custom-control-label {
+    &:before {
+      top: unset;
+      left:0.5rem;
+      bottom: -1rem;
+    }
+
+    &:after {
+      top: unset;
+      left:0;
+      bottom: -1.5rem;
+    }
+  }
 }
 
 .form-group--alt {
@@ -149,7 +163,7 @@ label.form-control-label {
 
 // don't show the input element for custom controls
 .custom-control {
-  padding-left: 0;
+  // padding-left: 0;
 
   &-label {
 
