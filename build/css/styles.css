@@ -65,6 +65,9 @@ a {
   font-weight: normal;
   text-decoration: underline; }
 
+legend {
+  display: none; }
+
 /* @group objects */
 /**
   * @desc layout and positioning styles,
@@ -93,7 +96,7 @@ a {
   display: inline-block;
   position: relative;
   color: gold;
-  font-size: calc(3rem - 50%);
+  font-size: calc(2.5rem - 50%);
   width: auto;
   height: auto;
   line-height: calc(2.5rem - 50%); }
@@ -103,7 +106,7 @@ a {
   line-height: calc(2.7rem - 50%);
   color: #152935;
   font-family: Helvetica;
-  font-size: 28px;
+  font-size: 1.3rem;
   font-weight: bold;
   display: inline; }
 
@@ -112,6 +115,10 @@ a {
   font-family: Helvetica;
   font-size: 16px;
   line-height: calc(29px - 50%); }
+
+.feefo-rating + p {
+  font-size: 0.9rem;
+  font-weight: bold; }
 
 .progressbar {
   display: -webkit-box;
@@ -191,7 +198,8 @@ a {
           background-color: #f6f6f6; } }
 
 .business-offer {
-  border-left: 5.15px solid #5aa700 !important; }
+  border-left: 5.15px solid #5aa700 !important;
+  padding: 1rem 1rem 0rem 1rem; }
 
 .pet-information {
   width: 97%;
@@ -246,7 +254,8 @@ a {
 .radio-button-box {
   max-width: 294px;
   width: 100%;
-  height: 42px; }
+  height: 42px;
+  padding-left: 0; }
   .radio-button-box:last-child {
     margin-right: 0; }
   .radio-button-box__input {
@@ -965,6 +974,10 @@ input.form-control, select.form-control {
   input.form-control:focus, select.form-control:focus {
     background-color: rgba(61, 112, 178, 0.1);
     border-color: rgba(61, 112, 178, 0.1); }
+
+.custom-select {
+  background-color: rgba(61, 112, 178, 0.1);
+  color: #5a6872; }
 
 input[type=text].form-control {
   height: 46px; }

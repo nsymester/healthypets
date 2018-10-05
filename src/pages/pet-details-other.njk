@@ -9,12 +9,15 @@
 {% block containerSize%}container--md{% endblock %}
 
 {% block newPet %}
-<section class="card pet-summary rounded-0 shadow bg-white">
-  <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
-  <div class="pet-summary__items">
-    <a class="pet-summary__link" href="">Edit Bobby's Info</a>
-    <a class="pet-summary__link" href="">Delete</a>
-  </div>
+<section>
+  <h3 class="d-none">Summary of pet details</h3>
+  <section class="card pet-summary rounded-0 shadow bg-white">
+    <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
+    <div class="pet-summary__items">
+      <a class="pet-summary__link" href="">Edit Bobby's Info</a>
+      <a class="pet-summary__link" href="">Delete</a>
+    </div>
+  </section>
 </section>
 {% endblock %}
 
@@ -22,13 +25,17 @@
 <div class="content-frame">
   <h2 class="h2 mt-0 mb-0">Enter your pet's details</h2>
   <fieldset class="form-group mt-0 mb-0">
-    <legend></legend>
+    <legend>Pet name and date of birth</legend>
 
     {% block name %}
     {% include './partials/name.njk' %} {% endblock %}
 
     {% block dob %}
     {% include './partials/pet-dob.njk' %} {% endblock %}
+ </fieldset><!-- fieldset -->
+
+  <fieldset class="form-group mt-0 mb-0">
+    <legend>Pet type</legend>
 
     {% block petType %}
     {% include './partials/pet-type.njk' %} {% endblock %}
@@ -41,6 +48,10 @@
 
     {% block donation %}
     {% include './partials/donation.njk' %} {% endblock %}
+  </fieldset><!-- fieldset -->
+
+  <fieldset class="form-group mt-0 mb-0">
+    <legend>Pet pre-existing conditions</legend>
 
     {% block preExisitngCondition %}
     {% include './partials/pre-existing-condition.njk' %} {% endblock %}

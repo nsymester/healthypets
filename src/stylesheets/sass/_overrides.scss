@@ -31,6 +31,11 @@ input.form-control, select.form-control {
   }
 }
 
+.custom-select{
+  background-color: $bg-input-colour;
+  color: rgba(90,104,114,1);
+}
+
 input[type=text].form-control {
   height: 46px;
 }

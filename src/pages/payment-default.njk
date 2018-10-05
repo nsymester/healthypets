@@ -22,7 +22,7 @@
     <div class="content-frame">
 
       <fieldset class="mt-0 mb-0">
-        <legend></legend>
+        <legend>Payment details</legend>
 
         <div class="form-group" style="/*min-height: 120px;*/">
           <label class="form-control-label mt-2" for="">How regularly do you want to pay?</label>
@@ -71,7 +71,7 @@
 
             <div class="form-group mb-4">
               <label class="form-control-label" for="card-name">Name on Card</label>
-              <input class="form-control rounded-0" type="text" id="card-name">
+              <input class="form-control rounded-0" type="text" id="card-name" autocomplete="cc-name">
               <div class="invalid-feedback">
                 Please enter the name on the card.
               </div>
@@ -80,10 +80,10 @@
             <div class="form-group">
               <label class="form-control-label" for="card-number-pt1">Card Number</label>
               <div class="form-group--account-number d-flex">
-                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt1">
-                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt2">
-                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt3">
-                <input class="form-control rounded-0" maxlength="4" type="text" id="card-number-pt4">
+                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt1" min="0">
+                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt2" min="0">
+                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt3" min="0">
+                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt4" min="0">
                 <div class="invalid-feedback">
                   Please enter the card number.
                 </div>
@@ -96,7 +96,7 @@
                 <div class="input-group-prepend input-group-prepend--date mt-2">
                   <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
                 </div>
-                <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiry-date" placeholder="dd/mm/yyyy" size="25">
+                <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiry-date" placeholder="dd/mm/yyyy" size="25"  autocomplete="cc-exp">
                 <div class="invalid-feedback">
                   Please enter the card expiry date.
                 </div>
@@ -105,7 +105,7 @@
 
             <div class="form-group">
               <label class="form-control-label" for="ccv">CCV</label>
-              <input class="form-control rounded-0 form-control--ccv" type="text" maxlength="3" id="ccv" onkeypress="return isNumberKey(event)">
+              <input class="form-control rounded-0 form-control--ccv" type="text" maxlength="3" id="ccv"  autocomplete="cc-csc">
               <div class="invalid-feedback">
                 Please enter the card CCV number.
               </div>
@@ -124,7 +124,7 @@
           <p class="h5 mb-4">Your direct debit will come out on the <strong>5th of the month</strong></p>
           <div class="form-group mb-4">
             <label class="form-control-label" for="account-name">Account holder's name</label>
-            <input class="form-control rounded-0" type="text" id="account-name">
+            <input class="form-control rounded-0" type="text" id="account-name"  autocomplete="cc-name">
             <div class="invalid-feedback">
               Please enter the account holder's name.
             </div>
@@ -133,9 +133,9 @@
           <div class="form-group">
             <label class="form-control-label" for="sort-code-pt1">Sort code</label>
             <div class="form-group--sortcode d-flex">
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt1">
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt2">
-              <input class="form-control rounded-0" maxlength="2" type="text" id="sort-code-pt3">
+              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt1" min="0">
+              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt2" min="0">
+              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt3" min="0">
               <div class="invalid-feedback">
                 Please enter the sort code.
               </div>
@@ -144,7 +144,7 @@
 
           <div class="form-group">
             <label class="form-control-label" for="account-number">Account number</label>
-            <input class="form-control rounded-0" type="number" id="account-number">
+            <input class="form-control rounded-0" type="number" id="account-number" min="0">
             <div class="invalid-feedback">
               Please enter the account number.
             </div>
@@ -175,7 +175,7 @@
       </fieldset>
     </div><!-- content-frame -->
 
-    <div class="row justify-content-between mt-md-5">
+    <div class="row justify-content-between mt-md-3">
       <div class="col-lg-4 d-none d-lg-block">
         {% block backButton %}
         {% import './macros/next-button.njk' as backButton %}

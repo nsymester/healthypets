@@ -35,35 +35,37 @@
         <p>6654120025489</p>
       </div>
 
-      {% block chosenPolicyContent %}
-      {% import './macros/chosen-policy.njk' as chosenPolicy %}
-      {{ chosenPolicy.data( {
-            'marginBottom': 'mb-2',
-            'state': 'paid',
-            'name': 'Booby',
-            'breed': 'German Shpherd',
-            'age':'3 yrs',
-            'cover': 'lifetime',
-            'cost':'£2000',
-            'brdColour':'lifetime-brd-color'
-          }
-        )
-      }}
+      <section>
+        <h3 class="d-none">Pet's covered</h3>
+        {% block chosenPolicyContent %}
+        {% import './macros/chosen-policy.njk' as chosenPolicy %}
+        {{ chosenPolicy.data( {
+              'marginBottom': 'mb-2',
+              'state': 'paid',
+              'name': 'Booby',
+              'breed': 'German Shpherd',
+              'age':'3 yrs',
+              'cover': 'lifetime',
+              'cost':'£2000',
+              'brdColour':'lifetime-brd-color'
+            }
+          )
+        }}
 
-      {{ chosenPolicy.data( {
-            'marginBottom': 'mb-2',
-            'state': 'paid',
-            'name': 'Poppy',
-            'breed': 'Rusian Blue',
-            'age':'6 yrs',
-            'cover': 'maximum',
-            'cost':'£4250',
-            'brdColour':'maximum-brd-color'
-          }
-        )
-      }}
-      {% endblock %}
-
+        {{ chosenPolicy.data( {
+              'marginBottom': 'mb-2',
+              'state': 'paid',
+              'name': 'Poppy',
+              'breed': 'Rusian Blue',
+              'age':'6 yrs',
+              'cover': 'maximum',
+              'cost':'£4250',
+              'brdColour':'maximum-brd-color'
+            }
+          )
+        }}
+        {% endblock %}
+      </section>
     </div><!-- content-frame -->
 
   </div><!-- col -->

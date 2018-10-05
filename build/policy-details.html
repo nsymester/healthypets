@@ -126,18 +126,20 @@
   <div class="col">
     <div class="content-frame">
 
-      <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
+      <section>
+        <h3 class="d-none">Your details</h3>
+        <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
 
-      <div class="customer-details">
-        <p style="line-height:1.5rem;">Name: Mrs User User
-        <br>Birthday: 02/06/1985
-        <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
-        <br>Phone number: 07912345678
-        <br>Email: user@user.com</p>
-      </div>
-
+        <div class="customer-details">
+          <p style="line-height:1.5rem;">Name: Mrs User User
+          <br>Birthday: 02/06/1985
+          <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
+          <br>Phone number: 07912345678
+          <br>Email: user@user.com</p>
+        </div>
+      </section>
       <fieldset class="mt-0 mb-0">
-        <legend></legend>
+        <legend>Policy details</legend>
 
         <label class="form-control-label mt-2">Policy start date</label>
         <small class="form__help">You can pick a date up 30 days in the future.</small>
@@ -174,42 +176,39 @@
 
   
 
-    <div class="custom-control icon-radio form-check pl-0">
-
-      <label class="custom-control-label form-check-label icon-radio" for="policy-delivered-post">
+    <div class="custom-control custom-radio mb-1">
+      <input class="custom-control-input " type="radio" name="policy-delivered" id="policy-delivered-post" value="option-post" required>
+      <label class="custom-control-label" for="policy-delivered-post">
         A hard copy by post
-        <input class="custom-control-input form-check-input" type="radio" name="policy-delivered" id="policy-delivered-post" value="option-post" required>
-        <span class="checkmark"></span>
         
       </label>
+      
     </div>
 
   
 
-    <div class="custom-control icon-radio form-check pl-0">
-
-      <label class="custom-control-label form-check-label icon-radio" for="policy-delivered-email">
+    <div class="custom-control custom-radio mb-1">
+      <input class="custom-control-input " type="radio" name="policy-delivered" id="policy-delivered-email" value="option-email" required>
+      <label class="custom-control-label" for="policy-delivered-email">
         A digital copy by email
-        <input class="custom-control-input form-check-input" type="radio" name="policy-delivered" id="policy-delivered-email" value="option-email" required>
-        <span class="checkmark"></span>
         
       </label>
+      
     </div>
 
   
 
-    <div class="custom-control icon-radio form-check pl-0">
-
-      <label class="custom-control-label form-check-label icon-radio" for="policy-delivered-both">
+    <div class="custom-control custom-radio mb-1">
+      <input class="custom-control-input " type="radio" name="policy-delivered" id="policy-delivered-both" value="option-both" required>
+      <label class="custom-control-label" for="policy-delivered-both">
         Both
-        <input class="custom-control-input form-check-input" type="radio" name="policy-delivered" id="policy-delivered-both" value="option-both" required>
-        <span class="checkmark"></span>
-        
-        <div class="invalid-feedback">
-           Please select how you would like your policy documents delivered to you.
-        </div>
         
       </label>
+      
+      <div class="invalid-feedback">
+         Please select how you would like your policy documents delivered to you.
+      </div>
+      
     </div>
 
   
@@ -341,7 +340,7 @@
 
   </div><!-- col -->
 
-  <div class="col-lg-5 d-none d-lg-block">
+  <div class="col-lg-4 d-none d-lg-block">
     <h2 class="mt-0 mb-4">Policy summary</h2>
 
     

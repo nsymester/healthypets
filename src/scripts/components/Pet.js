@@ -39,10 +39,28 @@ function Pet () {
   });
 
   $conditionSelect.change(function () {
-    let select = $('#condition-select option:selected').val();
+    let $select = $('#condition-select option:selected');
+
+    // ignore the first option in the list
+    if ($('#condition-select option:selected').index() === 0) {
+      return;
+    }
+
+    // disabled selected condition
+    $select.prop('disabled', true);
+
     // create a pill
     // append pill to condition list
-    $('.conditions').append(`<div class="pill__condition">${select} <span class="close">x</span></div>`);
+    $('.conditions').append(`<div class="pill__condition">${$select.text()} <span class="close">x</span></div>`);
+
+    // keep a record in the main store
+    let conditionsArray = [];
+    let $conditions = $('#pet-conditions')
+    if ($conditions !== null && $conditions.val() !== '[]' && $conditions.val() !== '') {
+      conditionsArray = JSON.parse($conditions.val());
+    }
+    conditionsArray.push($select.text());
+    $('#pet-conditions').val(JSON.stringify(conditionsArray));
 
     checkForConditions();
   });
@@ -76,6 +94,19 @@ function checkForConditions () {
   $('.pill__condition .close').on('click', function (evt) {
     evt.preventDefault();
     evt.currentTarget.parentNode.remove();
+
+    // make the remove condition active in the dropdown
+    let btnText = evt.currentTarget.parentNode.textContent;
+    let condition = btnText.substr(0, (btnText.length - 2));
+
+    // find condition in select condition-select
+    $('#condition-select option').filter(function () { return $(this).html() === condition; }).prop('disabled', false);
+
+    // remove from storage
+    let conditions = [];
+    conditions = JSON.parse($('#pet-conditions').val());
+    conditions = conditions.filter(function (e) { return e !== condition; });
+    $('#pet-conditions').val(JSON.stringify(conditions));
   });
 }
 
@@ -124,7 +155,6 @@ function ToggleRequiredPetFields () {
       $('#cat-type-breed').prop('required', false);
     }
   });
-
 }
 
 export { Pet, ToggleRequiredPetFields };

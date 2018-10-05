@@ -20,18 +20,20 @@
   <div class="col">
     <div class="content-frame">
 
-      <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
+      <section>
+        <h3 class="d-none">Your details</h3>
+        <p class="font-weight-bold mt-5">Your details <a href="/your-details.html">edit details</a></p>
 
-      <div class="customer-details">
-        <p style="line-height:1.5rem;">Name: Mrs User User
-        <br>Birthday: 02/06/1985
-        <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
-        <br>Phone number: 07912345678
-        <br>Email: user@user.com</p>
-      </div>
-
+        <div class="customer-details">
+          <p style="line-height:1.5rem;">Name: Mrs User User
+          <br>Birthday: 02/06/1985
+          <br>Home Address: 1 Long Lane, Southwark, SE1 4PD, London, England
+          <br>Phone number: 07912345678
+          <br>Email: user@user.com</p>
+        </div>
+      </section>
       <fieldset class="mt-0 mb-0">
-        <legend></legend>
+        <legend>Policy details</legend>
 
         <label class="form-control-label mt-2">Policy start date</label>
         <small class="form__help">You can pick a date up 30 days in the future.</small>
@@ -172,7 +174,7 @@
 
   </div><!-- col -->
 
-  <div class="col-lg-5 d-none d-lg-block">
+  <div class="col-lg-4 d-none d-lg-block">
     <h2 class="mt-0 mb-4">Policy summary</h2>
 
     {% block policySummaryContent %}

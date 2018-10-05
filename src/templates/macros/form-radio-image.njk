@@ -8,7 +8,8 @@
         <img src="{{ item.image }}" style="width: {{ item.width }};">
         {# <span class="checkmark checkmark--size"></span> #}
         <div class="pet-weight">
-          <div>{{ item.size }}</div><small class="form__help mb-1">{{ item.weight }}</small>
+          <div>{{ item.size }}</div>
+          <small class="form__help mb-1">{{ item.weight }}</small>
         </div><!-- dog-weight -->
 
         {% if loop.last %}
@@ -18,7 +19,7 @@
         {% endif %}
       </label>
 
-    </div><!-- form-check -->
+    </div><!-- custom-radio -->
 
   {% endfor %}
 

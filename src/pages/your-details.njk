@@ -12,7 +12,7 @@
 <div class="content-frame">
   <h2 class="h2 mt-0 mb-0">Enter your details</h2>
   <fieldset class="form-group mt-0 mb-0">
-    <legend></legend>
+    <legend>Your name and date of birth</legend>
 
     <div class="form-group">
       <label class="form-control-label" for="customer-title">Title</label>
@@ -31,7 +31,7 @@
 
     <div class="form-group">
       <label class="form-control-label" for="customer-firstname">First name</label>
-      <input class="form-control rounded-0" type="text" id="customer-firstname" value="" required>
+      <input class="form-control rounded-0" type="text" id="customer-firstname" value="" autocomplete="name" required>
       <div class="invalid-feedback">
         Please enter your first name.
       </div>
@@ -39,7 +39,7 @@
 
     <div class="form-group">
       <label class="form-control-label" for="customer-lastname">Last name</label>
-      <input class="form-control rounded-0" type="text" id="customer-lastname" value="" required>
+      <input class="form-control rounded-0" type="text" id="customer-lastname" value="" autocomplete="lastname surname family-name" required>
       <div class="invalid-feedback">
         Please enter your last name.
       </div>
@@ -57,11 +57,15 @@
         </div>
       </div>
     </div><!-- form-group -->
+  </fieldset><!-- fieldset -->
+
+  <fieldset class="form-group mt-0 mb-0">
+    <legend>Your address</legend>
 
     <div class="form-group">
       <label class="form-control-label mt-2" for="customer-postcode">Your postcode</label>
       <div class="input-group mb-2 flex-nowrap justify-content-sm-start justify-content-between flex-md-row">
-        <input class="form-control form-control--alt rounded-0" type="text" id="customer-postcode">
+        <input class="form-control form-control--alt rounded-0" type="text" id="customer-postcode" autocomplete="postcode">
         <button class="btn btn-primary rounded-0 btn-primary--short" type="submit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="customer-postcode-search" id="customer-postcode-search">Find address</button>
       </div>
 
@@ -84,12 +88,12 @@
       <div class="collapse mt-4 mb-4" id="customer-address">
         <div class="form-group">
           <label class="form-control-label" for="customer-house-number">House name/number</label>
-          <input class="form-control rounded-0" type="number" id="customer-house-number" value="" required>
+          <input class="form-control rounded-0" type="number" id="customer-house-number" value="" autocomplete="house number" required>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="customer-street">Street</label>
-          <input class="form-control rounded-0" type="text" id="customer-street" value="" required>
+          <input class="form-control rounded-0" type="text" id="customer-street" value="" autocomplete="street-address" required>
           <div class="invalid-feedback">
             Please enter your Street name.
           </div>
@@ -97,7 +101,7 @@
 
         <div class="form-group">
           <label class="form-control-label" for="customer-town-city">Town or City</label>
-          <input class="form-control rounded-0" type="text" id="customer-town-city" value="" required>
+          <input class="form-control rounded-0" type="text" id="customer-town-city" value="" autocomplete="town" required>
           <div class="invalid-feedback">
             Please enter your Town or City.
           </div>
@@ -122,12 +126,12 @@
       </div><!-- form-group -->
     </div><!-- collapse -->
     <div class="invalid-feedback">
-      Please enter your date of birth.
+      Please enter your postal address.
     </div>
 
     <div class="form-group">
       <label class="form-control-label" for="customer-phone-number">Phone number</label>
-      <input class="form-control rounded-0" type="number" id="customer-phone-number" value="" required>
+      <input class="form-control rounded-0" type="number" id="customer-phone-number" value="" autocomplete="tel" required>
       <div class="invalid-feedback">
         Please enter your Phone number.
       </div>
@@ -135,7 +139,7 @@
 
     <div class="form-group">
       <label class="form-control-label" for="customer-email">Email address</label>
-      <input class="form-control rounded-0" type="email" id="customer-email" value="" required>
+      <input class="form-control rounded-0" type="email" id="customer-email" value="" autocomplete="email" required>
       <div class="invalid-feedback">
         Please enter your Email address.
       </div>

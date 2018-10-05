@@ -117,12 +117,15 @@
   <section class="mt-4 mb-3">
 
     
-<section class="card pet-summary rounded-0 shadow bg-white">
-  <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
-  <div class="pet-summary__items">
-    <a class="pet-summary__link" href="">Edit Bobby's Info</a>
-    <a class="pet-summary__link" href="">Delete</a>
-  </div>
+<section>
+  <h3 class="d-none">Summary of pet details</h3>
+  <section class="card pet-summary rounded-0 shadow bg-white">
+    <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
+    <div class="pet-summary__items">
+      <a class="pet-summary__link" href="">Edit Bobby's Info</a>
+      <a class="pet-summary__link" href="">Delete</a>
+    </div>
+  </section>
 </section>
 
 
@@ -131,7 +134,7 @@
 <div class="content-frame">
   <h2 class="h2 mt-0 mb-0">Enter your pet's details</h2>
   <fieldset class="form-group mt-0 mb-0">
-    <legend></legend>
+    <legend>Pet name and date of birth</legend>
 
     
             <div class="form-group">
@@ -156,6 +159,10 @@
             </div>
           </div>
         </div><!-- form-group --> 
+ </fieldset><!-- fieldset -->
+
+  <fieldset class="form-group mt-0 mb-0">
+    <legend>Pet type</legend>
 
     
             <div class="form-group">
@@ -266,13 +273,14 @@
         <img src="/images/small-dog.png" style="width: 80px;">
         
         <div class="pet-weight">
-          <div>Small</div><small class="form__help mb-1">0-10kg</small>
+          <div>Small</div>
+          <small class="form__help mb-1">0-10kg</small>
         </div><!-- dog-weight -->
 
         
       </label>
 
-    </div><!-- form-check -->
+    </div><!-- custom-radio -->
 
   
 
@@ -282,13 +290,14 @@
         <img src="/images/medium-dog.png" style="width: 80px;">
         
         <div class="pet-weight">
-          <div>Medium</div><small class="form__help mb-1">10-20kg</small>
+          <div>Medium</div>
+          <small class="form__help mb-1">10-20kg</small>
         </div><!-- dog-weight -->
 
         
       </label>
 
-    </div><!-- form-check -->
+    </div><!-- custom-radio -->
 
   
 
@@ -298,7 +307,8 @@
         <img src="/images/large-dog.png" style="width: 88px;">
         
         <div class="pet-weight">
-          <div>Large</div><small class="form__help mb-1">20+kg</small>
+          <div>Large</div>
+          <small class="form__help mb-1">20+kg</small>
         </div><!-- dog-weight -->
 
         
@@ -308,7 +318,7 @@
         
       </label>
 
-    </div><!-- form-check -->
+    </div><!-- custom-radio -->
 
   
 
@@ -416,6 +426,10 @@
             </div>
           </div><!-- input-group -->
         </div><!-- form-group --> 
+  </fieldset><!-- fieldset -->
+
+  <fieldset class="form-group mt-0 mb-0">
+    <legend>Pet pre-existing conditions</legend>
 
     
             <div class="form-group mb-1">
@@ -440,15 +454,16 @@
 
             <label class="form-control-label" for="">What conditions does your pet have?</label>
 
-            <div class="select--alt">
-              <select class="form-control rounded-0" id="condition-select" required>
-                <option value="0">Add a condition</option>
+            
+              <select class="custom-select rounded-0" id="condition-select" required>
+                <option value="">Add a condition</option>
                 <option value="1">Diabetes</option>
                 <option value="2">Eczema</option>
                 <option value="3">Condition 3</option>
                 <option value="4">Condition 4</option>
               </select>
-            </div>
+            
+              <input type="hidden" id="pet-conditions" />
             <div class="conditions mt-2"></div>
           </div><!-- collapse -->
         </div><!-- form-group --> 
@@ -496,7 +511,7 @@
     <div class="row justify-content-between align-items-end">
       
       <div class="col-md-6 col-lg-5">
-        <section class="card business-offer mb-5 border-0 rounded-0 shadow p-3 mb-5 bg-white">
+        <section class="card business-offer mb-5 border-0 rounded-0 shadow mb-5 bg-white">
             <h5 class="mb-0 font-weight-bold">20% off for all new customers</h5>
             <p>Get the best deal online</p>
             <p>This will automatcally get added</p>

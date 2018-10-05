@@ -20,15 +20,16 @@
 
             <label class="form-control-label" for="">What conditions does your pet have?</label>
 
-            <div class="select--alt">
-              <select class="form-control rounded-0" id="condition-select" required>
-                <option value="0">Add a condition</option>
+            {# <div class="select--alt"> #}
+              <select class="custom-select rounded-0" id="condition-select" required>
+                <option value="">Add a condition</option>
                 <option value="1">Diabetes</option>
                 <option value="2">Eczema</option>
                 <option value="3">Condition 3</option>
                 <option value="4">Condition 4</option>
               </select>
-            </div>
+            {# </div> #}
+              <input type="hidden" id="pet-conditions" />
             <div class="conditions mt-2"></div>
           </div><!-- collapse -->
         </div><!-- form-group -->

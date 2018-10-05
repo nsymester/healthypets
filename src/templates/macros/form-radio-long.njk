@@ -2,18 +2,17 @@
 
   {% for item in data.items %}
 
-    <div class="custom-control icon-radio form-check pl-0">
-
-      <label class="custom-control-label form-check-label icon-radio" for="{{ item.id }}">
+    <div class="custom-control custom-radio mb-1">
+      <input class="custom-control-input " type="radio" name="{{ item.name }}" id="{{ item.id }}" value="{{ item.value }}" required>
+      <label class="custom-control-label" for="{{ item.id }}">
         {{ item.label }}
-        <input class="custom-control-input form-check-input" type="radio" name="{{ item.name }}" id="{{ item.id }}" value="{{ item.value }}" required>
-        <span class="checkmark"></span>
-        {% if loop.last %}
-        <div class="invalid-feedback">
-          {{ data["invalid-feedback"] }}
-        </div>
-        {% endif %}
+        {# <span class="checkmark"></span> #}
       </label>
+      {% if loop.last %}
+      <div class="invalid-feedback">
+        {{ data["invalid-feedback"] }}
+      </div>
+      {% endif %}
     </div>
 
   {% endfor %}

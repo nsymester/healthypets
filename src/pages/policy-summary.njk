@@ -31,9 +31,4 @@
 {% block footer %}
 {# {% include './partials/thwate.njk' %} #}
 
-{% import './macros/customer-service.njk' as customerService %}
-{{ customerService.provision({
-  'discount': false,
-  'feefo': false
-})}}
 {% endblock %}

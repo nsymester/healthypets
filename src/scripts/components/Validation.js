@@ -7,7 +7,6 @@ function ActivateFormValidation () {
   let validation = Array.prototype.filter.call(forms, function (form) {
     form.addEventListener('submit', function (event) {
       if (form.checkValidity() === false) {
-
         // if pet type selected do validity check on it's children which affect its outcome
         // if pet-type selected
         //  do validity check on the elements in the associated collapse div
@@ -85,6 +84,20 @@ function ActivateFormValidation () {
         // then increase the height of the form-check box to allow for the error meesage to be shown
         if ($('input[name="pet-type"]:checked').length < 1) {
           $('input[name="pet-type"]:first').parent().parent().css('height', '80px');
+        }
+      }
+
+      // check for pet conditions in a hidden value
+      if ($('#pet-conditions') !== null) {
+        // console.log($('#pet-conditions').val());
+        if ($('#pet-conditions').val() !== '[]') {
+          $('#condition-select').prop('required', false);
+          $('#condition-select').removeClass('border-danger');
+          $('#condition-select').addClass('border-success');
+        } else {
+          $('#condition-select').prop('required', true);
+          $('#condition-select').removeClass('border-success');
+          $('#condition-select').addClass('border-danger');
         }
       }
     }, false);
