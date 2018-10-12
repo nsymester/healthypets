@@ -1,7 +1,6 @@
-// module "Address.js"
+// module 'Address.js'
 
 // postcodes
-
 function Address () {
   // cache DOM
   let $postcodeSearch = $('#customer-postcode-search');

@@ -11,14 +11,14 @@
 // @ navigation overrides
 
 .navbar-bright .navbar-nav .nav-link {
-  color: rgba(255,255,255,1);
+  color: var(--menu-text-colour);
   text-decoration:none;
 }
 
 // @group form field overrides
 
 input.form-control, select.form-control {
-  background-color: $bg-input-colour;
+  background-color: var(--input-bg-colour);
   color: rgba(90,104,114,1);
   font-family: $base-font;
   font-size: 20px;
@@ -26,13 +26,13 @@ input.form-control, select.form-control {
   border-color: rgba(61, 112, 178, 0.1);
 
   &:focus {
-    background-color: $bg-input-colour;
-    border-color: $bg-input-colour;
+    background-color: var(--input-bg-colour);
+    border-color: var(--input-bg-colour);
   }
 }
 
 .custom-select{
-  background-color: $bg-input-colour;
+  background-color: var(--input-bg-colour);
   color: rgba(90,104,114,1);
 }
 
@@ -91,7 +91,7 @@ select.form-control {
   border: 0;
 
   .input-group-text {
-    background-color: $bg-input-colour;
+    background-color: var(--input-bg-colour);
     border: 0;
     height:50px;
   }
@@ -102,7 +102,7 @@ select.form-control {
   border: 0;
 
   .input-group-text {
-    background-color: $bg-input-colour;
+    background-color: var(--input-bg-colour);
     border: 0;
     height:46px;
   }
@@ -110,7 +110,7 @@ select.form-control {
 
 label.form-control-label {
 	height: calc(36px - 50%);
-	color: rgba(21,41,53,1);
+	color: var(--form-label-colour);
 	font-family: $base-font;
 	font-size: 15px;
 	font-weight: 600;
@@ -214,8 +214,8 @@ label.form-control-label {
 
 .btn--outline {
   background-color: rgba(255,255,255,0);
-  border-color: $primary-colour;
-  color: $primary-colour;
+  border-color: var(--primary-colour);
+  color: var(--primary-colour);
   font-size: 15px;
   font-weight: 600;
 }
@@ -249,7 +249,7 @@ label.form-control-label {
   display:inline-block;
   font-size: 1.5rem;
   padding: .5rem 1rem;
-  color:white;
+  color:var(--menu-text-colour);
 
   @include media-breakpoint-up(md) {
     // margin-top: 2rem;
@@ -283,7 +283,7 @@ label.form-control-label {
 
   label.form-control-label {
     margin-right: 0px;
-    background-color: $cta-colour;
+    background-color: var(--cta-colour);
     padding: 0 5px;
     height: 25px;
     color: white;
@@ -314,7 +314,7 @@ label.form-control-label {
     line-height: 5px;
     border: 0;
     border-radius: 0;
-    background-color: $cta-colour;
+    background-color: var(--cta-colour);
     color: white;
     text-transform: uppercase;
   }

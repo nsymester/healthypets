@@ -6,7 +6,7 @@ import { Pet, ToggleRequiredPetFields } from './components/Pet';
 import { CoverTypes } from './components/CoverTypes';
 import { ActivateFormValidation } from './components/Validation';
 import { Payment, CheckBankNumber, ToggleRequiredPaymentFields, ToggleRequiredFields } from './components/Payment';
-// import { Modal } from './components/Modal';
+import { WhiteLabelling } from './components/WhiteLabelling';
 
 // Utils();
 // window.log = log;
@@ -17,6 +17,7 @@ import { Payment, CheckBankNumber, ToggleRequiredPaymentFields, ToggleRequiredFi
   Pet();
   CoverTypes();
   Payment();
+  WhiteLabelling('Towergate');
 
   // check sort code and account number
   ActivateFormValidation();
@@ -32,6 +33,4 @@ import { Payment, CheckBankNumber, ToggleRequiredPaymentFields, ToggleRequiredFi
   ToggleRequiredPaymentFields();
   ToggleRequiredPetFields();
   ToggleRequiredFields();
-
-  // Modal();
 })();
