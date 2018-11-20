@@ -2,6 +2,7 @@
 
 import { CustomSelect } from './components/CustomSelect';
 import { Address } from './components/Address';
+import { DatePicker } from './components/DatePicker';
 import { Pet, ToggleRequiredPetFields } from './components/Pet';
 import { CoverTypes } from './components/CoverTypes';
 import { ActivateFormValidation } from './components/Validation';
@@ -11,7 +12,7 @@ import { WhiteLabelling } from './components/WhiteLabelling';
 // Utils();
 // window.log = log;
 
-(function () {
+(function() {
   CustomSelect();
   Address();
   Pet();
@@ -29,6 +30,11 @@ import { WhiteLabelling } from './components/WhiteLabelling';
   if ($('.form-group--account-number').length > 0) {
     CheckBankNumber('.form-group--account-number input', '#expiry-date');
   }
+
+  const maxDate = DatePicker();
+  $('input[type=date]').each(function() {
+    $(this).attr('max', maxDate);
+  });
 
   ToggleRequiredPaymentFields();
   ToggleRequiredPetFields();
