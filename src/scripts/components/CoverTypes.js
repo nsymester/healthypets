@@ -1,29 +1,29 @@
 // module "CoverTypes.js"
 
-function CoverTypes () {
+function CoverTypes() {
   // cache DOM
-  let $lifetimeLink = $('#lifetime-link');
-  let $maximumLink = $('#maximum-link');
-  let $accidentLink = $('#accident-link');
-  let $btnCoverLevel = $('.btn--cover-level');
+  const $lifetimeLink = $('#lifetime-link');
+  const $maximumLink = $('#maximum-link');
+  const $accidentLink = $('#accident-link');
+  const $btnCoverLevel = $('.btn--cover-level');
 
-  let $lifetimeCover = $('#lifetime-cover');
-  let $maximumCover = $('#maximum-cover');
-  let $accidentCover = $('#accident-cover');
+  const $lifetimeCover = $('#lifetime-cover');
+  const $maximumCover = $('#maximum-cover');
+  const $accidentCover = $('#accident-cover');
 
-  $lifetimeLink.click(function () {
+  $lifetimeLink.click(function() {
     $lifetimeCover.collapse('show');
     $maximumCover.collapse('hide');
     $accidentCover.collapse('hide');
   });
 
-  $maximumLink.click(function () {
+  $maximumLink.click(function() {
     $lifetimeCover.collapse('hide');
     $maximumCover.collapse('show');
     $accidentCover.collapse('hide');
   });
 
-  $accidentLink.click(function () {
+  $accidentLink.click(function() {
     $lifetimeCover.collapse('hide');
     $maximumCover.collapse('hide');
     $accidentCover.collapse('show');
@@ -32,11 +32,11 @@ function CoverTypes () {
   // bind Events
 
   // stop web page from scrolling to top when link is clicked that triggers JavaScript
-  $btnCoverLevel.click(function (e) {
+  $btnCoverLevel.click(function(e) {
     e.preventDefault();
     // target id
-    let targetId = $(this).data('target');
-    let targetHeight =  $(targetId).height() - 100;
+    const targetId = $(this).data('target');
+    const targetHeight = $(targetId).height() - 100;
     // let documentHeight = $(document).height();
     $('html, body').animate({ scrollTop: targetHeight });
 
@@ -52,7 +52,9 @@ function CoverTypes () {
 
     // get data target
     // split on "-"
-    let targetArray = $(this).data('target').split('-');
+    const targetArray = $(this)
+      .data('target')
+      .split('-');
     console.log('target: ', targetArray[1]);
     // cover = get 2nd element
     // find id "{cover}-cover"

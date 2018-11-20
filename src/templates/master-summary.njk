@@ -3,20 +3,27 @@
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon"
+        href="/images/favicon.ico">
 
   <title>{% block title %}{% endblock %} | Healthy Pets</title>
 
   <!-- Bootstrap -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css"
+        rel="stylesheet">
   <!-- Custom -->
-  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/styles.css"
+        rel="stylesheet">
 
   {% block customStyles %}{% endblock %}
 
@@ -29,49 +36,52 @@
 
 </head>
 
-<body role="document" id="{% block pageId %}{% endblock %}" >
+<body role="document"
+      id="{% block pageId %}{% endblock %}">
 
-{% set pageId %}{% block pageId %}{% endblock %}{% endset %}
+  {% set pageId %}{% block pageId %}{% endblock %}{% endset %}
 
-{% block menu %}
-{% import './macros/menu.njk' as menu %}
-{{ menu.data( pageId ) }}
-{% endblock %}
-
-<div class="container">
-  {% block customHeader %}{% endblock %}
-</div>
-
-<div class="container">
-  <section class="mt-4 mb-3">
-    {% block progressBar %}
-    {% import './macros/progress-bar-summary.njk' as progressBar %}
-    {{ progressBar.activeStep(pageId, true) }}
-    {% endblock %}
-  </section>
-</div>
-
-<div class="container">
-  <section class="mt-4 mb-3">
-
-    {% block newPet %}{% endblock %}
-
-    <form class="needs-validation" novalidate>
-      {% block main %}
-      This is the default content
-      {% endblock %}
-    </form>
-  </section>
-
-  {% block footer %}
-  This is the default content
+  {% block menu %}
+  {% import './macros/menu.njk' as menu %}
+  {{ menu.data( pageId ) }}
   {% endblock %}
-</div><!-- container -->
 
-{% block coreJavascript %}
-{% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+  <div class="container">
+    {% block customHeader %}{% endblock %}
+  </div>
 
-{% block customSscripts %}{% endblock %}
+  <div class="container">
+    <section class="mt-4 mb-3">
+      {% block progressBar %}
+      {% import './macros/progress-bar-summary.njk' as progressBar %}
+      {{ progressBar.activeStep(pageId, true) }}
+      {% endblock %}
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="mt-4 mb-3">
+
+      {% block newPet %}{% endblock %}
+
+      <form class="needs-validation"
+            novalidate>
+        {% block main %}
+        This is the default content
+        {% endblock %}
+      </form>
+    </section>
+
+    {% block footer %}
+    This is the default content
+    {% endblock %}
+  </div><!-- container -->
+
+  {% block coreJavascript %}
+  {% include './partials/bootstrap-core-javascript.njk' %} {% endblock %}
+
+  {% block customSscripts %}{% endblock %}
 
 </body>
+
 </html>

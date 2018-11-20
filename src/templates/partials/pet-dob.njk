@@ -1,13 +1,23 @@
-        <div class="form-group">
-          <label class="form-control-label mt-2 mb-1" for="pet-dob">What's your pet's birthday?</label>
-          <small class="form__help">If you don't know the exact date of birth, enter the vet's estimate</small>
-          <div class="input-group mb-2">
-            <div class="input-group-prepend input-group-prepend--date mt-2">
-              <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
-            </div>
-            <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="pet-dob" placeholder="dd/mm/yyyy" required>
-            <div class="invalid-feedback">
-              Please enter your pet's date of birth.
-            </div>
-          </div>
-        </div><!-- form-group -->
+<div class="form-group">
+  <label class="form-control-label mt-2 mb-1"
+         for="pet-dob">What's your pet's birthday?</label>
+  <small class="form__help">If you don't know the exact date of birth, enter the vet's estimate</small>
+  <div class="input-group mb-2"
+       style="align-items: flex-end;">
+    <div class="input-group-prepend input-group-prepend--date">
+      <div class="input-group-text"><img class="img__calendar"
+             src="/images/calendar.svg"
+             alt=""></div>
+    </div>
+    <input class="form-control rounded-0 mt-2 form__input--short"
+           type="date"
+           id="pet-dob"
+           placeholder="dd/mm/yyyy"
+           required="required"
+           style="-webkit-appearance: caret;">
+    <div class="invalid-feedback">
+      Please enter your pet's date of birth.
+    </div>
+  </div>
+</div>
+<!-- form-group -->

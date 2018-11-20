@@ -15,8 +15,12 @@
     <legend>Your name and date of birth</legend>
 
     <div class="form-group">
-      <label class="form-control-label" for="customer-title">Title</label>
-      <select class="form-control rounded-0" id="customer-title" value="" required>
+      <label class="form-control-label"
+             for="customer-title">Title</label>
+      <select class="form-control rounded-0"
+              id="customer-title"
+              value=""
+              required>
         <option value="">Select</option>
         <option value="Mr">Mr</option>
         <option value="Mrs">Mrs</option>
@@ -30,28 +34,49 @@
     </div><!-- form-group -->
 
     <div class="form-group">
-      <label class="form-control-label" for="customer-firstname">First name</label>
-      <input class="form-control rounded-0" type="text" id="customer-firstname" value="" autocomplete="name" required>
+      <label class="form-control-label"
+             for="customer-firstname">First name</label>
+      <input class="form-control rounded-0"
+             type="text"
+             id="customer-firstname"
+             value=""
+             autocomplete="name"
+             required>
       <div class="invalid-feedback">
         Please enter your first name.
       </div>
     </div><!-- form-group -->
 
     <div class="form-group">
-      <label class="form-control-label" for="customer-lastname">Last name</label>
-      <input class="form-control rounded-0" type="text" id="customer-lastname" value="" autocomplete="lastname surname family-name" required>
+      <label class="form-control-label"
+             for="customer-lastname">Last name</label>
+      <input class="form-control rounded-0"
+             type="text"
+             id="customer-lastname"
+             value=""
+             autocomplete="lastname surname family-name"
+             required>
       <div class="invalid-feedback">
         Please enter your last name.
       </div>
     </div><!-- form-group -->
 
     <div class="form-group">
-      <label class="form-control-label mt-2 mb-0" for="customer-dob">Your birthday</label>
+      <label class="form-control-label mt-2 mb-0"
+             for="customer-dob">Your birthday</label>
       <div class="input-group mb-2">
         <div class="input-group-prepend input-group-prepend--date mt-2">
-          <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
+          <div class="input-group-text"
+               style="height: 45px;"><img class="img__calendar"
+                 src="/images/calendar.svg"
+                 alt=""></div>
         </div>
-        <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="customer-dob" placeholder="dd/mm/yyyy" value="" required>
+        <input class="form-control rounded-0 mt-2 form__input--short"
+               type="date"
+               id="customer-dob"
+               placeholder="dd/mm/yyyy"
+               value=""
+               required>
         <div class="invalid-feedback">
           Please enter your date of birth.
         </div>
@@ -63,53 +88,105 @@
     <legend>Your address</legend>
 
     <div class="form-group">
-      <label class="form-control-label mt-2" for="customer-postcode">Your postcode</label>
+      <label class="form-control-label mt-2"
+             for="customer-postcode">Your postcode</label>
       <div class="input-group mb-2 flex-nowrap justify-content-sm-start justify-content-between flex-md-row">
-        <input class="form-control form-control--alt rounded-0" type="text" id="customer-postcode" autocomplete="postcode">
-        <button class="btn btn-primary rounded-0 btn-primary--short" type="submit" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="customer-postcode-search" id="customer-postcode-search">Find address</button>
+        <input class="form-control form-control--alt rounded-0"
+               type="text"
+               id="customer-postcode"
+               autocomplete="postcode">
+        <button class="btn btn-primary rounded-0 btn-primary--short"
+                type="submit"
+                data-toggle="collapse"
+                role="button"
+                aria-expanded="false"
+                aria-controls="customer-postcode-search"
+                id="customer-postcode-search">Find address</button>
       </div>
 
-      <div class="collapse mt-4 mb-4 customer-postcode-result" id="customer-postcode-result">
-        <label class="form-control-label" for="">Select your address</label>
+      <div class="collapse mt-4 mb-4 customer-postcode-result"
+           id="customer-postcode-result">
+        <label class="form-control-label"
+               for="">Select your address</label>
 
         <hr style="border: 1px solid rgba(61,112,178,1)">
 
         <div class="address__postcodes">
-          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
-          <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="address">1, Street Name, Town, Postcode</a>
+          <a data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="address">1, Street Name, Town, Postcode</a>
         </div>
 
       </div><!-- collapse -->
 
-      <div class="collapse mt-4 mb-4" id="customer-address">
+      <div class="collapse mt-4 mb-4"
+           id="customer-address">
         <div class="form-group">
-          <label class="form-control-label" for="customer-house-number">House name/number</label>
-          <input class="form-control rounded-0" type="number" id="customer-house-number" value="" autocomplete="house number" required>
+          <label class="form-control-label"
+                 for="customer-house-number">House name/number</label>
+          <input class="form-control rounded-0"
+                 type="text"
+                 id="customer-house-number"
+                 value=""
+                 autocomplete="house number"
+                 required>
         </div><!-- form-group -->
 
         <div class="form-group">
-          <label class="form-control-label" for="customer-street">Street</label>
-          <input class="form-control rounded-0" type="text" id="customer-street" value="" autocomplete="street-address" required>
+          <label class="form-control-label"
+                 for="customer-street">Street</label>
+          <input class="form-control rounded-0"
+                 type="text"
+                 id="customer-street"
+                 value=""
+                 autocomplete="street-address"
+                 required>
           <div class="invalid-feedback">
             Please enter your Street name.
           </div>
         </div><!-- form-group -->
 
         <div class="form-group">
-          <label class="form-control-label" for="customer-town-city">Town or City</label>
-          <input class="form-control rounded-0" type="text" id="customer-town-city" value="" autocomplete="town" required>
+          <label class="form-control-label"
+                 for="customer-town-city">Town or City</label>
+          <input class="form-control rounded-0"
+                 type="text"
+                 id="customer-town-city"
+                 value=""
+                 autocomplete="town"
+                 required>
           <div class="invalid-feedback">
             Please enter your Town or City.
           </div>
         </div><!-- form-group -->
 
         <div class="form-group">
-          <label class="form-control-label" for="customer-county">County</label>
-          <input class="form-control rounded-0" type="number" id="customer-county">
+          <label class="form-control-label"
+                 for="customer-county">County</label>
+          <input class="form-control rounded-0"
+                 type="text"
+                 id="customer-county">
         </div><!-- form-group -->
 
       </div><!-- collapse -->
@@ -120,9 +197,15 @@
 
     </div><!-- form-group -->
 
-    <div class="collapse show mt-4 mb-4" id="customer-manual-address">
+    <div class="collapse show mt-4 mb-4"
+         id="customer-manual-address">
       <div class="form-group">
-        <a href="" class="address__link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="address">Enter address manually</a>
+        <a href=""
+           class="address__link"
+           data-toggle="collapse"
+           role="button"
+           aria-expanded="false"
+           aria-controls="address">Enter address manually</a>
       </div><!-- form-group -->
     </div><!-- collapse -->
     <div class="invalid-feedback">
@@ -130,16 +213,28 @@
     </div>
 
     <div class="form-group">
-      <label class="form-control-label" for="customer-phone-number">Phone number</label>
-      <input class="form-control rounded-0" type="number" id="customer-phone-number" value="" autocomplete="tel" required>
+      <label class="form-control-label"
+             for="customer-phone-number">Phone number</label>
+      <input class="form-control rounded-0"
+             type="tel"
+             id="customer-phone-number"
+             value=""
+             autocomplete="tel"
+             required>
       <div class="invalid-feedback">
         Please enter your Phone number.
       </div>
     </div><!-- form-group -->
 
     <div class="form-group">
-      <label class="form-control-label" for="customer-email">Email address</label>
-      <input class="form-control rounded-0" type="email" id="customer-email" value="" autocomplete="email" required>
+      <label class="form-control-label"
+             for="customer-email">Email address</label>
+      <input class="form-control rounded-0"
+             type="email"
+             id="customer-email"
+             value=""
+             autocomplete="email"
+             required>
       <div class="invalid-feedback">
         Please enter your Email address.
       </div>

@@ -1,35 +1,58 @@
-        <div class="form-group mb-1">
-          <label class="form-control-label mt-2" for="">Does your pet have pre-existing conditions?</label>
-          <small class="form__help mb-1">In the event of a claim, any sign or symptom that started before the policy start date would be excluded.</small>
-          <div class="form-check-flex">
-            <div class="custom-control icon-radio form-check-inline radio-button-box">
-              <input class="custom-control-input radio-button-box__input" type="radio" name="pre-existing-condition" id="pre-existing-condition-yes" value="neutered" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pet-condition" required>
-              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--single-line" for="pre-existing-condition-yes"><span>Yes</span></label>
-              <div class="invalid-feedback">
-                Please select whether your pet has a pre-existing contion.
-              </div>
-            </div><!-- form-check -->
+<div class="form-group mb-1">
+  <label class="form-control-label mt-2"
+         for="">Does your pet have pre-existing conditions?</label>
+  <small class="form__help mb-1">In the event of a claim, any sign or symptom that started before the policy start date
+    would be excluded.</small>
+  <div class="form-check-flex">
+    <div class="custom-control icon-radio form-check-inline radio-button-box">
+      <input class="custom-control-input radio-button-box__input"
+             type="radio"
+             name="pre-existing-condition"
+             id="pre-existing-condition-yes"
+             value="neutered"
+             data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="pet-condition"
+             required>
+      <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--single-line"
+             for="pre-existing-condition-yes"><span>Yes</span></label>
+      <div class="invalid-feedback">
+        Please select whether your pet has a pre-existing contion.
+      </div>
+    </div><!-- form-check -->
 
-            <div class="custom-control icon-radio form-check-inline radio-button-box">
-              <input class="custom-control-input radio-button-box__input" type="radio" name="pre-existing-condition" id="pre-existing-condition-no" value="not-neutered" required>
-              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--single-line" for="pre-existing-condition-no"><span>No</span></label>
-            </div><!-- form-check -->
-          </div><!-- form-check-flex -->
+    <div class="custom-control icon-radio form-check-inline radio-button-box">
+      <input class="custom-control-input radio-button-box__input"
+             type="radio"
+             name="pre-existing-condition"
+             id="pre-existing-condition-no"
+             value="not-neutered"
+             required>
+      <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--single-line"
+             for="pre-existing-condition-no"><span>No</span></label>
+    </div><!-- form-check -->
+  </div><!-- form-check-flex -->
 
-          <div class="collapse mt-0 mb-4" id="pet-condition">
+  <div class="collapse mt-0 mb-4"
+       id="pet-condition">
 
-            <label class="form-control-label" for="">What conditions does your pet have?</label>
+    <label class="form-control-label"
+           for="">What conditions does your pet have?</label>
 
-            {# <div class="select--alt"> #}
-              <select class="custom-select rounded-0" id="condition-select" required>
-                <option value="">Add a condition</option>
-                <option value="1">Diabetes</option>
-                <option value="2">Eczema</option>
-                <option value="3">Condition 3</option>
-                <option value="4">Condition 4</option>
-              </select>
-            {# </div> #}
-              <input type="hidden" id="pet-conditions" />
-            <div class="conditions mt-2"></div>
-          </div><!-- collapse -->
-        </div><!-- form-group -->
+    {# <div class="select--alt"> #}
+      <select class="custom-select rounded-0"
+              id="condition-select"
+              required>
+        <option value="">Add a condition</option>
+        <option value="1">Diabetes</option>
+        <option value="2">Eczema</option>
+        <option value="3">Condition 3</option>
+        <option value="4">Condition 4</option>
+      </select>
+      {# </div> #}
+    <input type="hidden"
+           id="pet-conditions" />
+    <div class="conditions mt-2"></div>
+  </div><!-- collapse -->
+</div><!-- form-group -->

@@ -1,93 +1,138 @@
-        <div class="form-group">
-          <label class="form-control-label mt-1" for="">Is your pet a dog or a cat?</label>
-          <div class="form-check-flex">
-            <div class="custom-control icon-radio form-check-inline radio-button-box radio-button-box--icon">
-              <input class="custom-control-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-dog" value="Dog" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dog-info" required>
-              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-dog"><span>Dog</span></label>
-              <div class="invalid-feedback">
-                Please select the type of pet you have.
-              </div>
-            </div><!-- form-check -->
+<div class="form-group">
+  <label class="form-control-label mt-1"
+         for="">Is your pet a dog or a cat?</label>
+  <div class="form-check-flex">
+    <div class="custom-control icon-radio form-check-inline radio-button-box radio-button-box--icon">
+      <input class="custom-control-input radio-button-box__input"
+             type="radio"
+             name="pet-type"
+             id="pet-type-dog"
+             value="Dog"
+             data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="dog-info"
+             required>
+      <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--icon"
+             for="pet-type-dog"><span>Dog</span></label>
+      <div class="invalid-feedback">
+        Please select the type of pet you have.
+      </div>
+    </div><!-- form-check -->
 
-            <div class="custom-control icon-radio form-check-inline radio-button-box radio-button-box--icon">
-              <input class="custom-control-input radio-button-box__input" type="radio" name="pet-type" id="pet-type-cat" value="Cat" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="cat-info" required>
-              <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--icon" for="pet-type-cat"><span>Cat</span></label>
+    <div class="custom-control icon-radio form-check-inline radio-button-box radio-button-box--icon">
+      <input class="custom-control-input radio-button-box__input"
+             type="radio"
+             name="pet-type"
+             id="pet-type-cat"
+             value="Cat"
+             data-toggle="collapse"
+             role="button"
+             aria-expanded="false"
+             aria-controls="cat-info"
+             required>
+      <label class="custom-control-label form-check-label radio-button-box__label radio-button-box__label--icon"
+             for="pet-type-cat"><span>Cat</span></label>
 
-            </div><!-- form-check -->
+    </div><!-- form-check -->
 
-          </div>
+  </div>
 
-          <div class="collapse mt-4 mb-4" id="dog-info">
-            <div class="card card-body pet-information border-0 rounded-0 shadow p-3 mb-3 bg-white">
-              <h6>Important information</h6>
-              <div class="pet-information__body">
-                <p class="mb-0">Healthy Pets does not cover:</p>
-                <ul>
-                  <li class="pet-information__item"><span>dogs that have been used for commercial guard, security or racing</span></li>
-                  <li class="pet-information__item"><span>dogs that have shown aggressive tendencies/behavioural issues</span></li>
-                  <li class="pet-information__item"><span>dogs that have had any pet related 3rd party claims</span></li>
-                </ul>
-              </div>
-            </div><!-- card-->
+  <div class="collapse mt-4 mb-4"
+       id="dog-info">
+    <div class="card card-body pet-information border-0 rounded-0 shadow p-3 mb-3 bg-white">
+      <h6>Important information</h6>
+      <div class="pet-information__body">
+        <p class="mb-0">Healthy Pets does not cover:</p>
+        <ul>
+          <li class="pet-information__item"><span>dogs that have been used for commercial guard, security or racing</span></li>
+          <li class="pet-information__item"><span>dogs that have shown aggressive tendencies/behavioural issues</span></li>
+          <li class="pet-information__item"><span>dogs that have had any pet related 3rd party claims</span></li>
+        </ul>
+      </div>
+      {% block formcheckbox %}
+      {% import '../macros/form-checkbox-long.njk' as formCheckboxLong %}
+      {{ formCheckboxLong.field({
+                  'id':'termsAgreement',
+                  'label': 'I understand and agree to these terms',
+                  'required': false,
+                  'invalid-feedback': 'Please agree to these terms'
+                })
+              }}
+      {% endblock %}
 
-            {% block formcheckbox %}
-            {% import '../macros/form-checkbox-long.njk' as formCheckboxLong %}
-            {{ formCheckboxLong.field({
-                'id':'termsAgreement',
-                'label': 'I understand and agree to these terms',
-                'required': false,
-                'invalid-feedback': 'Please agree to these terms'
-              })
-            }}
-            {% endblock %}
+    </div><!-- card-->
 
-            <label class="form-control-label mt-3" for="">What type of dog do you have?</label>
+    <label class="form-control-label mt-3"
+           for="">What type of dog do you have?</label>
 
-            <div class="custom-control custom-radio mb-0">
-              <div class="input-group">
-                <input class="custom-control-input" type="radio" name="dog-type" id="dog-type-1" value="option1" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-dog">
-                <label class="custom-control-label" for="dog-type-1">Crossbreed
-                  <small class="form__help mb-1">Parents are different breeds</small>
-                </label>
-                {# <span class="checkmark"></span> #}
+    <div class="custom-control custom-radio mb-0">
+      <div class="input-group">
+        <input class="custom-control-input"
+               type="radio"
+               name="dog-type"
+               id="dog-type-1"
+               value="option1"
+               data-toggle="collapse"
+               role="button"
+               aria-expanded="false"
+               aria-controls="collapse-dog">
+        <label class="custom-control-label"
+               for="dog-type-1">Crossbreed
+          <small class="form__help mb-1">Parents are two different breeds</small>
+        </label>
+        {# <span class="checkmark"></span> #}
 
-              </div>
-            </div><!-- form-check -->
+      </div>
+    </div><!-- form-check -->
 
-            <div class="custom-control custom-radio mb-3">
-              <input class="custom-control-input " type="radio" name="dog-type" id="dog-type-2" value="option2">
-              <label class="custom-control-label" for="dog-type-2">Mongrel
-                {# <span class="checkmark"></span> #}
-                <small class="form__help mb-1">Parents are three breeds or more</small>
-              </label>
-            </div><!-- form-check -->
+    <div class="custom-control custom-radio mb-3">
+      <input class="custom-control-input "
+             type="radio"
+             name="dog-type"
+             id="dog-type-2"
+             value="option2">
+      <label class="custom-control-label"
+             for="dog-type-2">Mongrel
+        {# <span class="checkmark"></span> #}
+        <small class="form__help mb-1">Parents are a mix of three breeds or more</small>
+      </label>
+    </div><!-- form-check -->
 
-            <div class="custom-control custom-radio mb-2 ">
-              <input class="custom-control-input form-check-input" type="radio" name="dog-type" id="dog-type-3" value="option3">
-              <label class="custom-control-label form-check-label" for="dog-type-3" style="width: 97%;">
-                {# <span class="checkmark"></span> #}
-                <select class="custom-select rounded-0" id="dog-type-breed">
-                  <option value="">Find your dog's breed</option>
-                  <option value="German">German</option>
-                  <option value="German Longhaired Pointer">German Longhaired Pointer</option>
-                  <option value="German pinscher">German pinscher</option>
-                  <option value="German Pointer">German Pointer</option>
-                </select>
-              </label>
-              <div class="invalid-feedback">
-                Please select the type of dog you have.
-              </div>
-            </div><!-- form-check -->
+    <div class="custom-control custom-radio mb-2 ">
+      <input class="custom-control-input form-check-input"
+             type="radio"
+             name="dog-type"
+             id="dog-type-3"
+             value="option3">
+      <label class="custom-control-label form-check-label"
+             for="dog-type-3"
+             style="width: 97%;">
+        {# <span class="checkmark"></span> #}
+        <select class="custom-select rounded-0"
+                id="dog-type-breed">
+          <option value="">Find your dog's breed</option>
+          <option value="German">German</option>
+          <option value="German Longhaired Pointer">German Longhaired Pointer</option>
+          <option value="German pinscher">German pinscher</option>
+          <option value="German Pointer">German Pointer</option>
+        </select>
+      </label>
+      <div class="invalid-feedback">
+        Please select the type of dog you have.
+      </div>
+    </div><!-- form-check -->
 
-            <div class="collapse mt-4" id="dog-type">
-              <div class="card card-body border-0 pet-size">
-                <h6>Pet size</h6>
+    <div class="collapse mt-4"
+         id="dog-type">
+      <div class="card card-body border-0 pet-size">
+        <h6>Pet size</h6>
 
-                <div class="form-check-flex mt-1">
+        <div class="form-check-flex mt-1">
 
-                  {% block dogSizeContent %}
-                  {% import '../macros/form-radio-image.njk' as dogSize %}
-                  {{ dogSize.field([{
+          {% block dogSizeContent %}
+          {% import '../macros/form-radio-image.njk' as dogSize %}
+          {{ dogSize.field([{
                       'id':'small-dog',
                       'image': '/images/small-dog.png',
                       'name' : 'dog-size',
@@ -116,52 +161,71 @@
                     }])
                   }}
 
-                  {% endblock %}
+          {% endblock %}
 
-                </div>
+        </div>
 
-              </div>
-            </div><!-- collapse -->
-          </div><!-- collapse -->
+      </div>
+    </div><!-- collapse -->
+  </div><!-- collapse -->
 
-          <div class="collapse mt-4 mb-4" id="cat-info">
+  <div class="collapse mt-4 mb-4"
+       id="cat-info">
 
-            <label class="form-control-label" for="">What type of cat do you have?</label>
+    <label class="form-control-label"
+           for="">What type of cat do you have?</label>
 
-            <div class="custom-control custom-radio mb-3">
+    <div class="custom-control custom-radio mb-3">
 
-              <input class="custom-control-input" type="radio" name="cat-type" id="cat-type-1" value="option1">
-              <label class="custom-control-label" for="cat-type-1">Mixed breed
-                <span class="checkmark"></span>
-                <small class="form__help mb-1">Parents are different breeds</small>
-              </label>
-            </div><!-- custom-control -->
+      <input class="custom-control-input"
+             type="radio"
+             name="cat-type"
+             id="cat-type-1"
+             value="option1">
+      <label class="custom-control-label"
+             for="cat-type-1">Mixed breed
+        <span class="checkmark"></span>
+        <small class="form__help mb-1">Parents are two different breeds</small>
+      </label>
+    </div><!-- custom-control -->
 
-            <div class="custom-control custom-radio mb-3">
+    <div class="custom-control custom-radio mb-3">
 
-              <input class="custom-control-input" type="radio" name="cat-type" id="cat-type-2" value="option2">
-              <label class="custom-control-label" for="cat-type-2">Moggie
-                <span class="checkmark"></span>
-                <small class="form__help mb-1">Parents are three breeds or more</small>
-              </label>
-            </div><!-- custom-control -->
+      <input class="custom-control-input"
+             type="radio"
+             name="cat-type"
+             id="cat-type-2"
+             value="option2">
+      <label class="custom-control-label"
+             for="cat-type-2">Moggie
+        <span class="checkmark"></span>
+        <small class="form__help mb-1">Parents are a mix of three breeds or more</small>
+      </label>
+    </div><!-- custom-control -->
 
-            <div class="custom-control custom-radio mb-2">
-              <input class="custom-control-input" type="radio" name="cat-type" id="cat-type-3" value="option3">
-              <label class="custom-control-label" for="cat-type-3" style="width: 97%;">
-                <span class="checkmark"></span>
-                <select class="custom-select" id="cat-type-breed">
-                  <option value="">Find your cat's breed</option>
-                  <option value="Type 1">Type 1</option>
-                  <option value="Type 2">Type 2</option>
-                  <option value="Type 3">Type 3</option>
-                  <option value="Type 4">Type 4</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please enter your cat's breed.
-                </div>
-              </label>
-            </div><!-- custom-control -->
-          </div><!-- collapse -->
+    <div class="custom-control custom-radio mb-2">
+      <input class="custom-control-input"
+             type="radio"
+             name="cat-type"
+             id="cat-type-3"
+             value="option3">
+      <label class="custom-control-label"
+             for="cat-type-3"
+             style="width: 97%;">
+        <span class="checkmark"></span>
+        <select class="custom-select"
+                id="cat-type-breed">
+          <option value="">Find your cat's breed</option>
+          <option value="Type 1">Type 1</option>
+          <option value="Type 2">Type 2</option>
+          <option value="Type 3">Type 3</option>
+          <option value="Type 4">Type 4</option>
+        </select>
+        <div class="invalid-feedback">
+          Please enter your cat's breed.
+        </div>
+      </label>
+    </div><!-- custom-control -->
+  </div><!-- collapse -->
 
-        </div><!-- form-group -->
+</div><!-- form-group -->

@@ -1,6 +1,6 @@
 {% block chosenPolicyContent %}
-  {% import '../macros/chosen-policy.njk' as chosenPolicy %}
-  {{ chosenPolicy.data( {
+{% import '../macros/chosen-policy.njk' as chosenPolicy %}
+{{ chosenPolicy.data( {
         'marginBottom': 'mb-4',
         'state': 'form',
         'name': 'Bobby',
@@ -13,7 +13,7 @@
     )
   }}
 
-  {{ chosenPolicy.data( {
+{{ chosenPolicy.data( {
         'marginBottom': 'mb-4',
         'state': 'form',
         'name': 'Poppy',
@@ -26,7 +26,7 @@
     )
   }}
 
-  {{ chosenPolicy.data( {
+{{ chosenPolicy.data( {
         'marginBottom': 'mb-4',
         'state': 'form',
         'name': 'Bobby',
@@ -38,30 +38,30 @@
       }
     )
   }}
-  {% endblock %}
+{% endblock %}
 
 
-  <section>
-    <div class="cost-group">
-      <p class="cost-group__header">Total monthly cost</p>
-      <p class="cost-group__cost">£58.22</p>
+<section>
+  <div class="cost-group">
+    <p class="cost-group__header">Total monthly cost</p>
+    <p class="cost-group__cost">£58.22</p>
+  </div>
+  <div class="cost-group">
+    <p class="cost-group__header">20% new customer discount</p>
+    <p class="cost-group__cost">-£11.64</p>
+  </div>
+
+  <hr class="mb-4">
+
+  <div class="cost-group">
+    <h5 class="cost-group__header--total">Total including <br>20% discount</h5>
+    <div class="">
+      <p class="cost-group__total-item">£37.78</p>
+      <small class="cost-group__period">per month</small>
+      <p class="mb-2 font-weight-bold">OR</p>
+      <p class="cost-group__total-item">£466.12</p>
+      <small class="cost-group__period">per year</small>
     </div>
-    <div class="cost-group">
-      <p class="cost-group__header">20% new customer discount</p>
-      <p class="cost-group__cost">-£11.64</p>
-    </div>
+  </div>
 
-    <hr class="mb-4">
-
-    <div class="cost-group">
-      <h5 class="cost-group__header--total">Total including <br>20% discount</h5>
-      <div class="">
-        <p class="cost-group__total-item">£37.78</p>
-        <small class="cost-group__period">per month</small>
-        <p class="mb-2 font-weight-bold">OR</p>
-        <p class="cost-group__total-item">£466.12</p>
-        <small class="cost-group__period">per year</small>
-      </div>
-    </div>
-
-  </section>
+</section>

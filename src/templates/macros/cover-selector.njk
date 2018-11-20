@@ -1,84 +1,123 @@
 {% macro type(data) %}
-  <section>
-    <h6 class="cover-level__h6">Select your level of cover</h6>
+<section>
+  <h6 class="cover-level__h6">Select your level of cover</h6>
 
-    <ul class="nav nav-underlines justify-content-around mb-3" id="pills-tab" role="tablist">
+  <ul class="nav nav-tabs justify-content-around mb-3"
+      id="pills-tab"
+      role="tablist">
     {% if data['1'] %}
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-cover-1{{ data.id }}-tab" data-toggle="pill" href="#pills-cover-1{{ data.id }}" role="tab" aria-controls="pills-cover-1{{ data.id }}" aria-selected="true">{{ data['1'] }} Cover</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-link active"
+         id="pills-cover-1{{ data.id }}-tab"
+         data-toggle="pill"
+         href="#pills-cover-1{{ data.id }}"
+         role="tab"
+         aria-controls="pills-cover-1{{ data.id }}"
+         aria-selected="true">{{ data['1'] }} Cover</a>
+    </li>
     {% endif %}
 
     {% if data['2'] %}
-      <li class="nav-item">
-        <a class="nav-link" id="pills-cover-2{{ data.id }}-tab" data-toggle="pill" href="#pills-cover-2{{ data.id }}" role="tab" aria-controls="pills-cover-2{{ data.id }}" aria-selected="false">{{ data['2'] }} Cover</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         id="pills-cover-2{{ data.id }}-tab"
+         data-toggle="pill"
+         href="#pills-cover-2{{ data.id }}"
+         role="tab"
+         aria-controls="pills-cover-2{{ data.id }}"
+         aria-selected="false">{{ data['2'] }} Cover</a>
+    </li>
     {% endif %}
 
     {% if data['3'] %}
-      <li class="nav-item">
-        <a class="nav-link" id="pills-cover-3{{ data.id }}-tab" data-toggle="pill" href="#pills-cover-3{{ data.id }}" role="tab" aria-controls="pills-cover-3{{ data.id }}" aria-selected="false">{{ data['3'] }} Cover</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         id="pills-cover-3{{ data.id }}-tab"
+         data-toggle="pill"
+         href="#pills-cover-3{{ data.id }}"
+         role="tab"
+         aria-controls="pills-cover-3{{ data.id }}"
+         aria-selected="false">{{ data['3'] }} Cover</a>
+    </li>
     {% endif %}
 
     {% if data['4'] %}
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-cover-4{{ data.id }}-tab" data-toggle="pill" href="#pills-cover-4{{ data.id }}" role="tab" aria-controls="pills-cover-4{{ data.id }}" aria-selected="false">{{ data['4'] }} Cover</a>
-      </li>
+    <li class="nav-item">
+      <a class="nav-link active"
+         id="pills-cover-4{{ data.id }}-tab"
+         data-toggle="pill"
+         href="#pills-cover-4{{ data.id }}"
+         role="tab"
+         aria-controls="pills-cover-4{{ data.id }}"
+         aria-selected="false">{{ data['4'] }} Cover</a>
+    </li>
     {% endif %}
-    </ul>
-    <div class="tab-content" id="pills-tab-content">
+  </ul>
+  <div class="tab-content"
+       id="pills-tab-content">
 
-      {% block coverContent %}
-      {% import './cover-level.njk' as cover %}
+    {% block coverContent %}
+    {% import './cover-level.njk' as cover %}
 
-      <div class="tab-pane fade {% if data['1'] %} show active {% endif %}" id="pills-cover-1{{ data.id }}" role="tabpanel" aria-labelledby="pills-cover-1{{ data.id }}-tab">
+    <div class="tab-pane fade {% if data['1'] %} show active {% endif %}"
+         id="pills-cover-1{{ data.id }}"
+         role="tabpanel"
+         aria-labelledby="pills-cover-1{{ data.id }}-tab">
 
-        {{ cover.level(
+      {{ cover.level(
             {
               'price':'£2000',
               'cover': data.cover
             }
           )
         }}
-      </div><!-- tab-pane -->
+    </div><!-- tab-pane -->
 
-      <div class="tab-pane fade" id="pills-cover-2{{ data.id }}" role="tabpanel" aria-labelledby="pills-cover-2{{ data.id }}-tab">
+    <div class="tab-pane fade"
+         id="pills-cover-2{{ data.id }}"
+         role="tabpanel"
+         aria-labelledby="pills-cover-2{{ data.id }}-tab">
 
-        {{ cover.level(
+      {{ cover.level(
             {
               'price':'£4250',
               'cover': data.cover
             }
           )
         }}
-      </div><!-- tab-pane -->
+    </div><!-- tab-pane -->
 
-      <div class="tab-pane fade" id="pills-cover-3{{ data.id }}" role="tabpanel" aria-labelledby="pills-cover-3{{ data.id }}-tab">
+    <div class="tab-pane fade"
+         id="pills-cover-3{{ data.id }}"
+         role="tabpanel"
+         aria-labelledby="pills-cover-3{{ data.id }}-tab">
 
-        {{ cover.level(
+      {{ cover.level(
             {
               'price':'£7500',
               'cover': data.cover
             }
           )
         }}
-      </div><!-- tab-pane -->
+    </div><!-- tab-pane -->
 
-      <div class="tab-pane fade  {% if data['4'] %} show active {% endif %}" id="pills-cover-4{{ data.id }}" role="tabpanel" aria-labelledby="pills-cover-4{{ data.id }}-tab">
+    <div class="tab-pane fade  {% if data['4'] %} show active {% endif %}"
+         id="pills-cover-4{{ data.id }}"
+         role="tabpanel"
+         aria-labelledby="pills-cover-4{{ data.id }}-tab">
 
-        {{ cover.level(
+      {{ cover.level(
             {
               'price':'1000',
               'cover': data.cover
             }
           )
         }}
-      </div><!-- tab-pane -->
+    </div><!-- tab-pane -->
 
-      {% endblock %}
+    {% endblock %}
 
-    </div><!-- tab-content -->
-  </section>
+  </div><!-- tab-content -->
+</section>
 
 {% endmacro %}

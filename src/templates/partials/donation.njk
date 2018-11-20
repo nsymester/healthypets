@@ -1,12 +1,17 @@
-        <div class="form-group">
-          <label class="form-control-label mt-2" for="donation">How much did you pay or donate for your Pet?</label>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend input-group-prepend--currency">
-              <span class="input-group-text">£</span>
-            </div>
-            <input class="form-control rounded-0 form__input--short" type="number" id="donation" required>
-            <div class="invalid-feedback">
-              Please enter how much you paid or donated.
-            </div>
-          </div><!-- input-group -->
-        </div><!-- form-group -->
+<div class="form-group">
+  <label class="form-control-label mt-2"
+         for="donation">How much did you pay or donate for your Pet?</label>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend input-group-prepend--currency">
+      <span class="input-group-text">£</span>
+    </div>
+    <input class="form-control rounded-0 form__input--short"
+           type="number"
+           id="donation"
+           min="0"
+           required>
+    <div class="invalid-feedback">
+      Please enter how much you paid or donated.
+    </div>
+  </div><!-- input-group -->
+</div><!-- form-group -->

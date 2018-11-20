@@ -1,15 +1,15 @@
 // module "Modal.js"
 
-function Modal () {
+function Modal() {
   // cahche DOM
-  let $jsCoverLevelInfo = $('.js-cover-level__info');
-  let $coverInfoModal = $('.cover-info-modal');
-  let $coverInfoModalIntro = $('.cover-info__modal-intro');
-  let $coverInfoModalTitle = $('.cover-info__modal-title');
-  let $coverInfoModalBody = $('.cover-info__modal-body');
+  const $jsCoverLevelInfo = $('.js-cover-level__info');
+  const $coverInfoModal = $('.cover-info-modal');
+  const $coverInfoModalIntro = $('.cover-info__modal-intro');
+  const $coverInfoModalTitle = $('.cover-info__modal-title');
+  const $coverInfoModalBody = $('.cover-info__modal-body');
 
   // bind Events
-  $jsCoverLevelInfo.click(function (evt) {
+  $jsCoverLevelInfo.click(function(evt) {
     evt.preventDefault();
 
     // load data into modal body

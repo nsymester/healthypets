@@ -1,45 +1,71 @@
 // module "Pet.js"
 
-function Pet () {
+function checkForConditions() {
+  $('.pill__condition .close').on('click', function(evt) {
+    evt.preventDefault();
+    evt.currentTarget.parentNode.remove();
+
+    // make the remove condition active in the dropdown
+    const btnText = evt.currentTarget.parentNode.textContent;
+    const condition = btnText.substr(0, btnText.length - 2);
+
+    // find condition in select condition-select
+    $('#condition-select option')
+      .filter(function() {
+        return $(this).html() === condition;
+      })
+      .prop('disabled', false);
+
+    // remove from storage
+    let conditions = [];
+    conditions = JSON.parse($('#pet-conditions').val());
+    conditions = conditions.filter(function(e) {
+      return e !== condition;
+    });
+    $('#pet-conditions').val(JSON.stringify(conditions));
+  });
+}
+
+function Pet() {
   // cache DOM
-  let $preExistingConditionYes = $('#pre-existing-condition-yes');
-  let $preExistingConditionNo = $('#pre-existing-condition-no');
-  let $petCondition = $('#pet-condition');
-  let $conditionSelect =  $('#condition-select');
-  let $dogTypeBreed =  $('#dog-type-breed');
-  let $catTypeBreed =  $('#cat-type-breed');
+  const $preExistingConditionYes = $('#pre-existing-condition-yes');
+  const $preExistingConditionNo = $('#pre-existing-condition-no');
+  const $petCondition = $('#pet-condition');
+  const $conditionSelect = $('#condition-select');
+  const $dogTypeBreed = $('#dog-type-breed');
+  const $catTypeBreed = $('#cat-type-breed');
 
-  let $petTypeDog = $('#pet-type-dog');
-  let $petTypeCat = $('#pet-type-cat');
-  let $catInfo = $('#cat-info');
-  let $dogInfo = $('#dog-info');
+  const $petTypeDog = $('#pet-type-dog');
+  const $petTypeCat = $('#pet-type-cat');
+  const $catInfo = $('#cat-info');
+  const $dogInfo = $('#dog-info');
 
-  let $dogType1 = $('#dog-type-1');
-  let $dogType2 = $('#dog-type-2');
+  const $dogType1 = $('#dog-type-1');
+  const $dogType2 = $('#dog-type-2');
 
-  let $dogType = $('#dog-type');
+  const $dogType = $('#dog-type');
 
   // bind events
-  $petTypeDog.click(function () {
+  $petTypeDog.click(function() {
     $catInfo.collapse('hide');
     $dogInfo.collapse('show');
   });
 
-  $petTypeCat.click(function () {
+  $petTypeCat.click(function() {
     $dogInfo.collapse('hide');
     $catInfo.collapse('show');
   });
 
-  $preExistingConditionYes.click(function () {
+  $preExistingConditionYes.click(function() {
     $petCondition.collapse('show');
   });
 
-  $preExistingConditionNo.click(function () {
+  $preExistingConditionNo.click(function() {
     $petCondition.collapse('hide');
   });
 
-  $conditionSelect.change(function () {
-    let $select = $('#condition-select option:selected');
+  $conditionSelect.change(function() {
+    const $select = $('#condition-select option:selected');
 
     // ignore the first option in the list
     if ($('#condition-select option:selected').index() === 0) {
@@ -55,7 +81,7 @@ function Pet () {
 
     // keep a record in the main store
     let conditionsArray = [];
-    let $conditions = $('#pet-conditions')
+    const $conditions = $('#pet-conditions');
     if ($conditions !== null && $conditions.val() !== '[]' && $conditions.val() !== '') {
       conditionsArray = JSON.parse($conditions.val());
     }
@@ -66,54 +92,34 @@ function Pet () {
   });
 
   // select the radio button when select element clicked
-  $dogTypeBreed.on('click', function () {
+  $dogTypeBreed.on('click', function() {
     $(this.parentNode.parentNode.firstElementChild).trigger('click');
     this.setAttribute('required', true);
   });
 
   // select the radio button when select element clicked
-  $catTypeBreed.on('click', function () {
+  $catTypeBreed.on('click', function() {
     $(this.parentNode.parentNode.firstElementChild).trigger('click');
     this.setAttribute('required', true);
   });
 
-  $dogType1.click(function () {
+  $dogType1.click(function() {
     $dogType.collapse('show');
   });
 
-  $dogType2.click(function () {
+  $dogType2.click(function() {
     $dogType.collapse('hide');
   });
 
-  $dogTypeBreed.click(function () {
+  $dogTypeBreed.click(function() {
     $dogType.collapse('hide');
   });
 }
 
-function checkForConditions () {
-  $('.pill__condition .close').on('click', function (evt) {
-    evt.preventDefault();
-    evt.currentTarget.parentNode.remove();
-
-    // make the remove condition active in the dropdown
-    let btnText = evt.currentTarget.parentNode.textContent;
-    let condition = btnText.substr(0, (btnText.length - 2));
-
-    // find condition in select condition-select
-    $('#condition-select option').filter(function () { return $(this).html() === condition; }).prop('disabled', false);
-
-    // remove from storage
-    let conditions = [];
-    conditions = JSON.parse($('#pet-conditions').val());
-    conditions = conditions.filter(function (e) { return e !== condition; });
-    $('#pet-conditions').val(JSON.stringify(conditions));
-  });
-}
-
-function ToggleRequiredPetFields () {
+function ToggleRequiredPetFields() {
   // if pet type selected
   // then check for
-  $('input[name="pet-type"]').click(function (event) {
+  $('input[name="pet-type"]').click(function() {
     if ($('#pet-type-dog:checked').length > 0) {
       // activate the dog pet type fields asscoiated with this choice
       $('#termsAgreement').prop('required', true);
@@ -133,7 +139,7 @@ function ToggleRequiredPetFields () {
     }
   });
 
-  $('input[name="dog-type"]').click(function () {
+  $('input[name="dog-type"]').click(function() {
     // dog-size
     if ($('#dog-type-2:checked').length > 0 || $('#dog-type-breed:checked').length > 0) {
       // activate the dog pet type fields asscoiated with this choice
@@ -149,7 +155,7 @@ function ToggleRequiredPetFields () {
     }
   });
 
-  $('input[name="cat-type"]').click(function () {
+  $('input[name="cat-type"]').click(function() {
     if ($('#cat-type-1:checked').length > 0 || $('#cat-type-2:checked').length > 0) {
       // activate the cat pet type fields asscoiated with this choice
       $('#cat-type-breed').prop('required', false);
