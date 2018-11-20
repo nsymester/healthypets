@@ -18,7 +18,7 @@ var reload = browserSync.reload;
 
 // load all plugins in 'devDependencies' into the variable $
 // pattern: include '*' for non gulp files
-var $ = require('gulp-load-plugins')({
+const $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'gulp.*', '*'],
   replaceString: /\bgulp[-.]/,
   rename: {
@@ -27,7 +27,9 @@ var $ = require('gulp-load-plugins')({
     'run-sequence': 'runSequence',
     'vinyl-source-stream': 'source',
     'vinyl-buffer': 'buffer',
-    'event-stream': 'es'
+    'event-stream': 'es',
+    'postcss-reporter': 'reporter',
+    'postcss-scss': 'syntax_scss'
   },
   scope: ['devDependencies']
 });
@@ -53,7 +55,51 @@ var onError = function (err) {
   console.log(err);
 };
 
+const files = {
+  sass: [
+    'src/stylesheets/**/*.scss'
+  ]
+};
+
+// fetch command line arguments
+const arg = (argList => {
+  let arg = {},
+    a, opt, thisOpt, curOpt;
+  for (a = 0; a < argList.length; a++) {
+
+    thisOpt = argList[a].trim();
+    opt = thisOpt.replace(/^\-+/, '');
+
+    if (opt === thisOpt) {
+      // argument value
+      if (curOpt) arg[curOpt] = opt;
+      curOpt = null;
+    } else {
+      // argument name
+      curOpt = opt;
+      arg[curOpt] = null;
+    }
+  }
+
+  return arg;
+})(process.argv);
+
+const testFile = (arg.file != null ? arg.file : files.sass);
+
 /* ===================== START ===================== */
+
+gulp.task('analyze-css', function () {
+  return gulp.src(testFile)
+    .pipe($.postcss(
+      [
+        $.stylelint(),
+        $.reporter()
+      ],
+      {
+        syntax: $.syntax_scss
+      }
+    ));
+});
 
 /**
  * @desc browserSync, start the server
