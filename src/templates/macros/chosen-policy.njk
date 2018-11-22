@@ -19,7 +19,10 @@
       </div>
       <div class="card mt-0 rounded-0">
         <div class="policy-summary__offer">
-          <h5>{{cover}} {{info.cost}}</h5>
+          <div>
+            <h5>{{cover}} {{info.cost}}</h5>
+            <p><span class="font-weight-bold">Excess:</span> {{info.excess}}</p>
+          </div>
           <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         {% if info.state == 'form' %}
@@ -27,7 +30,4 @@
         {% endif %}
       </div>
     </section>
-    {% if info.state == 'paid' %}
-      <p><a href="">Download Policy documents</a></p>
-    {% endif %}
 {% endmacro %}

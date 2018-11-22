@@ -9,39 +9,39 @@ $base-font: "Open Sans";
 $icon-font: "FontAwesome";
 
 // white labelling
-:root {
-  // main colours
-  --primary-colour: rgba(61, 112, 178, 1);
 
-  // main body and panel backgrounds
-  --panel-bg-colour: rgba(255, 255, 255, 1);
-  --body-bg-colour: rgba(246, 246, 246, 1);
+// main colours
+$primary-colour: rgba(61, 112, 178, 1);
 
-  // menu background colour
-  --menu-bg-colour: rgba(28, 129, 182, 1);
-  --menu-text-colour: rgba(255, 255, 255, 1);
-  --sub-menu-bg-colour: rgba(55, 148, 193, 1);
+// main body and panel backgrounds
+$panel-bg-colour: rgba(255, 255, 255, 1);
+$body-bg-colour: rgba(246, 246, 246, 1);
 
-  // policy colours
-  --lifetime-colour: rgba(245, 166, 35, 1);
-  --maximum-colour: rgba(126, 211, 33, 1);
-  --accident-colour: rgba(208, 2, 27, 1);
+// menu background colour
+$menu-bg-colour: rgba(28, 129, 182, 1);
+$menu-text-colour: rgba(255, 255, 255, 1);
+$sub-menu-bg-colour: rgba(55, 148, 193, 1);
 
-  // form colours
-  --form-label-colour: rgba(21, 41, 53, 1);
-  --cta-colour: rgba(244, 121, 29, 1);
-  --input-bg-colour: rgba(61, 112, 178, 0.1);
-  --btn-text-colour: rgba(255, 255, 255, 1);
-  --btn-body-colour: rgba(61, 112, 178, 1);
-  --btn-body-outline-colour: rgba(255, 255, 255, 1);
-  --btn-text-outline-colour: rgba(61, 112, 178, 1);
-  --radio-btn-selected-body-colour: rgba(85, 150, 230, 1);
-  --radio-btn-selected-text-colour: rgba(255, 255, 255, 1);
+// policy colours
+$lifetime-colour: rgba(245, 166, 35, 1);
+$maximum-colour: rgba(126, 211, 33, 1);
+$accident-colour: rgba(208, 2, 27, 1);
 
-  // borders
-  --info-border-colour: rgba(90, 170, 250, 1);
-  --sale-border-colour: rgba(90, 167, 0, 1);
-}
+// form colours
+$form-label-colour: rgba(21, 41, 53, 1);
+$cta-colour: rgba(244, 121, 29, 1);
+$input-bg-colour: rgba(61, 112, 178, 0.1);
+$btn-text-colour: rgba(255, 255, 255, 1);
+$btn-body-colour: rgba(61, 112, 178, 1);
+$btn-body-outline-colour: rgba(255, 255, 255, 1);
+$btn-text-outline-colour: rgba(61, 112, 178, 1);
+$radio-btn-selected-body-colour: rgba(85, 150, 230, 1);
+$radio-btn-selected-text-colour: rgba(255, 255, 255, 1);
+
+// borders
+$info-border-colour: rgba(90, 170, 250, 1);
+$sale-border-colour: rgba(90, 167, 0, 1);
+
 
 // $primary-colour: rgba(61,112,178,1);
 
@@ -71,10 +71,8 @@ $icon-font: "FontAwesome";
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
+$grid-breakpoints: (xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px) !default;

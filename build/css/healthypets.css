@@ -1,0 +1,201 @@
+/**
+  * @desc settings include
+  *   - global variables
+  *   - colours
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+/* elements */
+body {
+  background-color: white; }
+  @media (min-width: 768px) {
+    body {
+      background-color: #f6f6f6; } }
+
+/* components */
+.progressbar__step:before {
+  background: white;
+  color: #3d70b2; }
+  @media (min-width: 768px) {
+    .progressbar__step:before {
+      background-color: #f6f6f6; } }
+
+.progressbar__step--active span {
+  color: #3d70b2; }
+
+.progressbar__step--active:before {
+  border: 2px solid #3d70b2;
+  color: #3d70b2; }
+
+.progressbar__step--done span {
+  color: #3d70b2; }
+
+.progressbar__step--done:before {
+  background-color: white;
+  color: #3d70b2; }
+  @media (min-width: 768px) {
+    .progressbar__step--done:before {
+      background-color: #f6f6f6; } }
+
+.business-offer {
+  border-left: 5.15px solid #5aa700 !important; }
+
+.pet-information {
+  border: 1px solid #5aaafa !important; }
+
+.pet-summary__link {
+  color: #3d70b2; }
+
+.bg-header {
+  background-color: #1c81b6 !important; }
+
+.bg-sub-header {
+  background-color: #3794c1 !important; }
+  @media (min-width: 768px) {
+    .bg-sub-header {
+      background-color: #1c81b6 !important; } }
+
+.radio-button-box__input:checked + .radio-button-box__label {
+  background-color: #5596e6;
+  border-color: #5596e6; }
+  .radio-button-box__input:checked + .radio-button-box__label span {
+    color: white; }
+
+.radio-button-box__label {
+  border: 2px solid #3d70b2;
+  color: #3d70b2; }
+  .radio-button-box__label--icon span:before {
+    color: #3d70b2; }
+
+.btn-cta {
+  color: white;
+  background-color: #f4791d;
+  border-color: #f4791d; }
+
+.btn-primary--alt, .btn-primary--short {
+  color: white;
+  background-color: #3d70b2;
+  border: 2px solid #3d70b2; }
+  .btn-primary--alt:hover, .btn-primary--alt:focus, .btn-primary--short:hover, .btn-primary--short:focus {
+    color: #3d70b2;
+    background-color: white; }
+
+.btn-outline-primary--alt {
+  color: #3d70b2;
+  border: 2px solid #3d70b2; }
+  .btn-outline-primary--alt:hover, .btn-outline-primary--alt:focus {
+    color: white;
+    background-color: #3d70b2;
+    border-color: #3d70b2; }
+
+.btn-outline-primary--alt:not(:disabled):not(.disabled).active, .btn-outline-primary--alt:not(:disabled):not(.disabled):active,
+.show > .btn-outline-primary--alt.dropdown-toggle {
+  color: #3d70b2;
+  border-color: #3d70b2; }
+
+.form__help {
+  color: #3d70b2; }
+
+.pill__condition {
+  background-color: #3d70b2; }
+  .pill__condition .close {
+    color: white; }
+
+.address__link {
+  color: #3d70b2; }
+
+.cover-item--lifetime {
+  border-top: 4px solid #f5a623; }
+
+.cover-item--maximum {
+  border-top: 4px solid #7ed321; }
+
+.cover-item--accident {
+  border-top: 4px solid #d0021b; }
+
+.cover-info--lifetime {
+  border-top: 4px solid #f5a623; }
+
+.cover-info--maximum {
+  border-top: 4px solid #7ed321; }
+
+.cover-info--accident {
+  border-top: 4px solid #d0021b; }
+
+.cover-info__benefits--included li:before, .cover-info__benefits--excluded li:before {
+  color: #3d70b2; }
+
+.cover-level__info {
+  background-color: #3d70b2;
+  color: white !important; }
+
+.select--alt .select-selected {
+  background-color: rgba(61, 112, 178, 0.1); }
+
+.select--alt .select-selected:after {
+  border-color: #3d70b2 transparent transparent transparent; }
+
+.select--alt .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #3d70b2 transparent; }
+
+.nav-underlines .nav-link.active,
+.nav-underlines .show > .nav-link {
+  color: white;
+  border: 2px solid #3d70b2;
+  background-color: #3d70b2; }
+
+.nav-tabs .nav-link.active {
+  background-color: #3d70b2;
+  color: white; }
+
+.policy-summary .card:last-child a {
+  color: #3d70b2; }
+
+.lifetime-brd-color {
+  border-bottom: 4px solid #f5a623; }
+
+.maximum-brd-color {
+  border-bottom: 4px solid #7ed321; }
+
+.accident-brd-color {
+  border-bottom: 4px solid #d0021b; }
+
+/* overrides */
+.navbar-bright .navbar-nav .nav-link {
+  color: white; }
+
+input.form-control,
+select.form-control {
+  background-color: rgba(61, 112, 178, 0.1); }
+  input.form-control:focus,
+  select.form-control:focus {
+    background-color: rgba(61, 112, 178, 0.1);
+    border-color: rgba(61, 112, 178, 0.1); }
+
+.custom-select {
+  background-color: rgba(61, 112, 178, 0.1); }
+
+.input-group-append--date .input-group-text,
+.input-group-prepend--date .input-group-text {
+  background-color: rgba(61, 112, 178, 0.1);
+  border-top: 1px solid rgba(61, 112, 178, 0.1); }
+
+.input-group-prepend--currency .input-group-text {
+  background-color: rgba(61, 112, 178, 0.1); }
+
+label.form-control-label {
+  color: #152935; }
+
+.btn--outline {
+  border-color: #3d70b2;
+  color: #3d70b2; }
+
+.call-text {
+  color: white; }
+
+.login label.form-control-label {
+  background-color: #f4791d; }
+
+.login .btn {
+  background-color: #f4791d; }
+
+/*# sourceMappingURL=maps/healthypets.css.map */

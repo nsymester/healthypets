@@ -71,19 +71,56 @@
 
             <div class="form-group mb-4">
               <label class="form-control-label" for="card-name">Name on Card</label>
-              <input class="form-control rounded-0" type="text" id="card-name" autocomplete="cc-name">
+              <input class="form-control rounded-0" type="text" id="card-name" autocomplete="cc-name" tabindex="1">
               <div class="invalid-feedback">
                 Please enter the name on the card.
               </div>
             </div><!-- form-group -->
 
+            <div class="form-group mb-4">
+              <label class="form-control-label" for="card-types">Card Types</label>
+
+              <ul class="form-card-check-flex card_logos">
+                <li class="form-check-inline card_visa ">Visa</li>
+                <li class="form-check-inline card_mastercard">Mastercard</li>
+                <li class="form-check-inline card_amex">American Express</li>
+                {# <li class="card_discover">Discover</li>
+                <li class="card_jcb">JCB</li>
+                <li class="card_diners">Diners Club</li> #}
+              </ul>
+
+              <div class="form-card-check-flex">
+
+                <!--
+                Try any of these numbers:
+                * 371449635398431
+                * 6011111111111117
+                * 6304000000000000
+                * 5555555555554444
+                * 4111111111111111
+                -->
+
+                {# <div class="form-check form-check-inline">
+                  <input class="custom-control-input form-check-input" type="radio" name="card-type" id="card-type-visa" value="visa" required="">
+                  <label class="custom-control-label form-check-label card_visa" for="card-type-visa"><span>Visa</span></label>
+                </div><!-- form-check -->
+
+                <div class="form-check form-check-inline">
+                  <input class="custom-control-input form-check-input" type="radio" name="card-type" id="card-type-master" value="master" required="">
+                  <label class="custom-control-label form-check-label card_mastercard" for="card-type-master"><span>Master Card</span></label>
+                </div><!-- form-check -->
+
+                <div class="form-check form-check-inline">
+                  <input class="custom-control-input form-check-input" type="radio" name="card-type" id="card-type-amex" value="amex" required="">
+                  <label class="custom-control-label form-check-label card_amex" for="card-type-amex"><span>American Express</span></label>
+                </div><!-- form-check --> #}
+              </div>
+            </div><!-- form-group -->
+
             <div class="form-group">
-              <label class="form-control-label" for="card-number-pt1">Card Number</label>
+              <label class="form-control-label" for="card-number">Card Number</label>
               <div class="form-group--account-number d-flex">
-                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt1" min="0">
-                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt2" min="0">
-                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt3" min="0">
-                <input class="form-control rounded-0" maxlength="4" type="number" id="card-number-pt4" min="0">
+                <input class="form-control rounded-0" maxlength="16" type="number" id="card-number" min="0" tabindex="2" autocomplete="off" pattern="[0-9]*" >
                 <div class="invalid-feedback">
                   Please enter the card number.
                 </div>
@@ -96,7 +133,7 @@
                 <div class="input-group-prepend input-group-prepend--date mt-2">
                   <div class="input-group-text" style="height: 45px;"><img class="img__calendar" src="/images/calendar.svg" alt=""></div>
                 </div>
-                <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiry-date" placeholder="dd/mm/yyyy" size="25"  autocomplete="cc-exp">
+                <input class="form-control rounded-0 mt-2 form__input--short" type="date" id="expiry-date" placeholder="dd/mm/yyyy" size="25" autocomplete="cc-exp" tabindex="3">
                 <div class="invalid-feedback">
                   Please enter the card expiry date.
                 </div>
@@ -105,7 +142,7 @@
 
             <div class="form-group">
               <label class="form-control-label" for="ccv">CCV</label>
-              <input class="form-control rounded-0 form-control--ccv" type="text" maxlength="3" id="ccv"  autocomplete="cc-csc">
+              <input class="form-control rounded-0 form-control--ccv" type="number" maxlength="3" id="ccv" autocomplete="cc-csc">
               <div class="invalid-feedback">
                 Please enter the card CCV number.
               </div>
@@ -124,7 +161,7 @@
           <p class="h5 mb-4">Your direct debit will come out on the <strong>5th of the month</strong></p>
           <div class="form-group mb-4">
             <label class="form-control-label" for="account-name">Account holder's name</label>
-            <input class="form-control rounded-0" type="text" id="account-name"  autocomplete="cc-name">
+            <input class="form-control rounded-0" type="text" id="account-name"  autocomplete="cc-name" tabindex="1">
             <div class="invalid-feedback">
               Please enter the account holder's name.
             </div>
@@ -133,9 +170,9 @@
           <div class="form-group">
             <label class="form-control-label" for="sort-code-pt1">Sort code</label>
             <div class="form-group--sortcode d-flex">
-              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt1" min="0">
-              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt2" min="0">
-              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt3" min="0">
+              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt1" min="0" tabindex="2">
+              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt2" min="0" tabindex="3">
+              <input class="form-control rounded-0" maxlength="2" type="number" id="sort-code-pt3" min="0" tabindex="4">
               <div class="invalid-feedback">
                 Please enter the sort code.
               </div>
@@ -144,7 +181,7 @@
 
           <div class="form-group">
             <label class="form-control-label" for="account-number">Account number</label>
-            <input class="form-control rounded-0" type="number" id="account-number" min="0">
+            <input class="form-control rounded-0" type="number" id="account-number" min="0" tabindex="5">
             <div class="invalid-feedback">
               Please enter the account number.
             </div>

@@ -185,7 +185,7 @@
     <section class="policy-summary mb-4 ">
       <div class="card pet-summary mb-0 rounded-0 bg-white lifetime-brd-color">
         <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
-        <h5 class="pet-summary__header">Bobby, German Shpherd, 3 yrs</h5>
+        <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
         
         <div class="pet-summary__items">
           <a class="pet-summary__link" href="">Edit Bobby's Info</a>
@@ -195,7 +195,10 @@
       </div>
       <div class="card mt-0 rounded-0">
         <div class="policy-summary__offer">
-          <h5>Lifetime £2000</h5>
+          <div>
+            <h5>Lifetime £2000</h5>
+            <p><span class="font-weight-bold">Excess:</span> £99</p>
+          </div>
           <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
@@ -203,7 +206,6 @@
         
       </div>
     </section>
-    
 
 
 
@@ -223,7 +225,10 @@
       </div>
       <div class="card mt-0 rounded-0">
         <div class="policy-summary__offer">
-          <h5>Max Ben £4250</h5>
+          <div>
+            <h5>Max Ben £4250</h5>
+            <p><span class="font-weight-bold">Excess:</span> £99</p>
+          </div>
           <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
@@ -231,7 +236,6 @@
         
       </div>
     </section>
-    
 
 
 
@@ -241,7 +245,7 @@
     <section class="policy-summary mb-4 ">
       <div class="card pet-summary mb-0 rounded-0 bg-white accident-brd-color">
         <p class="policy-summary__complete-icon"><span><i class="fas fa-check"></i></span></p>
-        <h5 class="pet-summary__header">Bobby, German Shpherd, 3 yrs</h5>
+        <h5 class="pet-summary__header">Bobby, German Shepherd, 3 yrs</h5>
         
         <div class="pet-summary__items">
           <a class="pet-summary__link" href="">Edit Bobby's Info</a>
@@ -251,7 +255,10 @@
       </div>
       <div class="card mt-0 rounded-0">
         <div class="policy-summary__offer">
-          <h5>Accident £7500</h5>
+          <div>
+            <h5>Accident £7500</h5>
+            <p><span class="font-weight-bold">Excess:</span> £99</p>
+          </div>
           <p class="policy-summary__price">£29.11<small>/month</small></p>
         </div>
         
@@ -259,7 +266,6 @@
         
       </div>
     </section>
-    
 
 
 
@@ -330,47 +336,7 @@
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/index.bundle.js"></script>
-
-<script type="text/javascript">
-
-var count = 1
-
-function isNumberKey(event) {
-  var keyCode = window.event ? event.keyCode : event.which;
-
-  if (event.keyCode === 8 // backspace
-    || event.keyCode === 46 // delete
-    || event.keyCode === 13 // enter key
-    || event.keyCode === 9 // tab
-    || event.keyCode === 116 // F5 (refresh)
-    || event.keyCode === 112 // F1
-    || event.keyCode === 113 //F2
-    || event.keyCode === 114 //F3
-    || event.keyCode === 115 //F4
-    || event.keyCode === 117 //F6
-    || event.keyCode === 118 //F7
-    || event.keyCode === 119 //F8
-    || event.keyCode === 120 //F9
-    || event.keyCode === 121 //F10
-    || event.keyCode === 122 //F11
-    || event.keyCode === 123 //F12
-  ) {
-      return true;
-  }
-  else if ( event.keyCode < 48 || event.keyCode > 57) {
-    if (count < 6) {
-      count++; //adds one to count
-    }
-    else {
-      console.log("Please Only Enter Numerical Values");
-      count = 1;
-    }
-    return false;
-  }
-  else return true;
-}
-
-</script> 
+ 
 
   
 

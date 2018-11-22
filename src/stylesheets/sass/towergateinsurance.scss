@@ -1,0 +1,342 @@
+@import "settings";
+@import "settings.breakpoints";
+@import "towergateinsurance-colours";
+
+/* elements */
+body {
+  background-color: $panel-bg-colour;
+
+  @include media-breakpoint-up(md) {
+    background-color: $body-bg-colour;
+  }
+}
+
+/* components */
+.progressbar {
+
+  &__step {
+
+    // bullet points
+    &:before {
+      background: $panel-bg-colour; // set to white to hide the line
+      color: $primary-colour;
+
+      @include media-breakpoint-up(md) {
+        background-color: $body-bg-colour;
+      }
+    }
+
+    // active step
+    &--active {
+      span {
+        color: $primary-colour;
+      }
+
+      &:before {
+        border: 2px solid $primary-colour;
+        color: $primary-colour;
+      }
+    }
+
+    &--done {
+      span {
+        color: $primary-colour;
+      }
+
+      &:before {
+        background-color: $panel-bg-colour;
+        color: $primary-colour;
+
+        @include media-breakpoint-up(md) {
+          background-color: $body-bg-colour;
+        }
+      }
+    }
+  }
+}
+
+.business-offer {
+  border-left: 5.15px solid $sale-border-colour !important;
+}
+
+.pet-information {
+  border: 1px solid $info-border-colour !important;
+}
+
+.pet-summary {
+  &__link {
+    color: $primary-colour;
+  }
+}
+
+.bg-header {
+  background-color: $menu-bg-colour !important;
+}
+
+.bg-sub-header {
+  background-color: $sub-menu-bg-colour !important;
+
+  @include media-breakpoint-up(md) {
+    background-color: $menu-bg-colour !important;
+  }
+}
+
+.radio-button-box {
+
+  &__input {
+
+    &:checked {
+      +.radio-button-box__label {
+        background-color: $radio-btn-selected-body-colour;
+        border-color: $radio-btn-selected-body-colour;
+
+        span {
+          color: $radio-btn-selected-text-colour;
+        }
+      }
+    }
+  }
+
+  &__label {
+    border: 2px solid $primary-colour;
+    color: $primary-colour;
+
+    &--icon {
+
+      // style the radio button label
+      span {
+        //color: $primary-colour;
+
+        // icon
+        &:before {
+          color: $primary-colour;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  &-cta {
+    color: $btn-text-colour;
+    background-color: $cta-colour;
+    border-color: $cta-colour;
+  }
+
+  &-primary--alt,
+  &-primary--short {
+    color: $btn-text-colour;
+    background-color: $btn-body-colour;
+    border: 2px solid $btn-body-colour;
+
+    &:hover,
+    &:focus {
+      color: $btn-text-outline-colour;
+      background-color: $btn-body-outline-colour;
+      //box-shadow: 0 0 0 0.1rem $primary-colour;
+    }
+  }
+
+  &-outline-primary--alt {
+    color: $primary-colour;
+    border: 2px solid $primary-colour;
+
+    &:hover,
+    &:focus {
+      color: $btn-text-colour;
+      background-color: $btn-body-colour;
+      border-color: $primary-colour;
+    }
+  }
+
+  &-outline-primary--alt:not(:disabled):not(.disabled).active,
+  &-outline-primary--alt:not(:disabled):not(.disabled):active,
+  .show>&-outline-primary--alt.dropdown-toggle {
+    color: $primary-colour;
+    border-color: $primary-colour;
+  }
+}
+
+.form__help {
+  color: $primary-colour;
+}
+
+.pill__condition {
+  background-color: $primary-colour;
+
+  .close {
+    color: $btn-text-colour;
+  }
+}
+
+// @group address
+
+.address {
+  &__link {
+    color: $primary-colour;
+  }
+}
+
+.cover-item {
+  &--lifetime {
+    border-top: 4px solid $lifetime-colour;
+  }
+
+  &--maximum {
+    border-top: 4px solid $maximum-colour;
+  }
+
+  &--accident {
+    border-top: 4px solid $accident-colour;
+  }
+}
+
+// @group cover info
+
+.cover-info {
+  &--lifetime {
+    border-top: 4px solid $lifetime-colour;
+  }
+
+  &--maximum {
+    border-top: 4px solid $maximum-colour;
+  }
+
+  &--accident {
+    border-top: 4px solid $accident-colour;
+  }
+
+  &__benefits--included,
+  &__benefits--excluded {
+
+    li {
+
+      &:before {
+        color: $primary-colour;
+      }
+    }
+  }
+}
+
+// @group cover-level
+.cover-level {
+  &__info {
+    background-color: $primary-colour;
+    color: $btn-text-colour !important;
+  }
+}
+
+// @group select alternative
+
+.select--alt {
+  .select-selected {
+    background-color: $input-bg-colour;
+  }
+
+  // style the arrow inside the select element:
+  .select-selected:after {
+    border-color: $primary-colour transparent transparent transparent;
+  }
+
+  // point the arrow upwards when the select box is open (active):
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent $primary-colour transparent;
+  }
+}
+
+// @group tab style; underline
+.nav-underlines {
+
+  & .nav-link.active,
+  & .show>.nav-link {
+    color: $btn-text-colour;
+    border: 2px solid $primary-colour;
+    background-color: $primary-colour;
+  }
+}
+
+.nav-tabs .nav-link {
+  &.active {
+    background-color: $primary-colour;
+    color: $btn-text-colour;
+  }
+}
+
+// @group policy summary
+.policy-summary {
+  .card:last-child {
+    a {
+      color: $primary-colour;
+    }
+  }
+}
+
+.lifetime-brd-color {
+  border-bottom: 4px solid $lifetime-colour;
+}
+
+.maximum-brd-color {
+  border-bottom: 4px solid $maximum-colour;
+}
+
+.accident-brd-color {
+  border-bottom: 4px solid $accident-colour;
+}
+
+/* overrides */
+.navbar-bright .navbar-nav .nav-link {
+  color: $menu-text-colour;
+}
+
+input.form-control,
+select.form-control {
+  background-color: $input-bg-colour;
+
+  &:focus {
+    background-color: $input-bg-colour;
+    border-color: $input-bg-colour;
+  }
+}
+
+.custom-select {
+  background-color: $input-bg-colour;
+}
+
+.input-group-append--date,
+.input-group-prepend--date {
+
+  .input-group-text {
+    background-color: $input-bg-colour;
+    border-top: 1px solid $input-bg-colour;
+  }
+}
+
+.input-group-prepend--currency {
+
+  .input-group-text {
+    background-color: $input-bg-colour;
+  }
+}
+
+label.form-control-label {
+  color: $form-label-colour;
+}
+
+.btn--outline {
+  border-color: $primary-colour;
+  color: $primary-colour;
+}
+
+.call-text {
+  color: $menu-text-colour;
+}
+
+.login {
+  label.form-control-label {
+    background-color: $cta-colour;
+  }
+
+  .btn {
+    background-color: $cta-colour;
+  }
+}

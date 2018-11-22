@@ -1,0 +1,207 @@
+/**
+  * @desc settings include
+  *   - global variables
+  *   - colours
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+/**
+  * @desc Towergate Insurance settings include
+  *   - global variables
+  *   - colours
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+/* elements */
+body {
+  background-color: #fff; }
+  @media (min-width: 768px) {
+    body {
+      background-color: #f8f8f8; } }
+
+/* components */
+.progressbar__step:before {
+  background: #fff;
+  color: #192a56; }
+  @media (min-width: 768px) {
+    .progressbar__step:before {
+      background-color: #f8f8f8; } }
+
+.progressbar__step--active span {
+  color: #192a56; }
+
+.progressbar__step--active:before {
+  border: 2px solid #192a56;
+  color: #192a56; }
+
+.progressbar__step--done span {
+  color: #192a56; }
+
+.progressbar__step--done:before {
+  background-color: #fff;
+  color: #192a56; }
+  @media (min-width: 768px) {
+    .progressbar__step--done:before {
+      background-color: #f8f8f8; } }
+
+.business-offer {
+  border-left: 5.15px solid #5aa700 !important; }
+
+.pet-information {
+  border: 1px solid #ffdc00 !important; }
+
+.pet-summary__link {
+  color: #192a56; }
+
+.bg-header {
+  background-color: white !important; }
+
+.bg-sub-header {
+  background-color: white !important; }
+  @media (min-width: 768px) {
+    .bg-sub-header {
+      background-color: white !important; } }
+
+.radio-button-box__input:checked + .radio-button-box__label {
+  background-color: #ffdc00;
+  border-color: #ffdc00; }
+  .radio-button-box__input:checked + .radio-button-box__label span {
+    color: #192a56; }
+
+.radio-button-box__label {
+  border: 2px solid #192a56;
+  color: #192a56; }
+  .radio-button-box__label--icon span:before {
+    color: #192a56; }
+
+.btn-cta {
+  color: #1e2d53;
+  background-color: #ff8833;
+  border-color: #ff8833; }
+
+.btn-primary--alt, .btn-primary--short {
+  color: #1e2d53;
+  background-color: #ffdc00;
+  border: 2px solid #ffdc00; }
+  .btn-primary--alt:hover, .btn-primary--alt:focus, .btn-primary--short:hover, .btn-primary--short:focus {
+    color: #192a56;
+    background-color: #ffdc00; }
+
+.btn-outline-primary--alt {
+  color: #192a56;
+  border: 2px solid #192a56; }
+  .btn-outline-primary--alt:hover, .btn-outline-primary--alt:focus {
+    color: #1e2d53;
+    background-color: #ffdc00;
+    border-color: #192a56; }
+
+.btn-outline-primary--alt:not(:disabled):not(.disabled).active, .btn-outline-primary--alt:not(:disabled):not(.disabled):active,
+.show > .btn-outline-primary--alt.dropdown-toggle {
+  color: #192a56;
+  border-color: #192a56; }
+
+.form__help {
+  color: #192a56; }
+
+.pill__condition {
+  background-color: #192a56; }
+  .pill__condition .close {
+    color: #1e2d53; }
+
+.address__link {
+  color: #192a56; }
+
+.cover-item--lifetime {
+  border-top: 4px solid aqua; }
+
+.cover-item--maximum {
+  border-top: 4px solid magenta; }
+
+.cover-item--accident {
+  border-top: 4px solid black; }
+
+.cover-info--lifetime {
+  border-top: 4px solid aqua; }
+
+.cover-info--maximum {
+  border-top: 4px solid magenta; }
+
+.cover-info--accident {
+  border-top: 4px solid black; }
+
+.cover-info__benefits--included li:before, .cover-info__benefits--excluded li:before {
+  color: #192a56; }
+
+.cover-level__info {
+  background-color: #192a56;
+  color: #1e2d53 !important; }
+
+.select--alt .select-selected {
+  background-color: silver; }
+
+.select--alt .select-selected:after {
+  border-color: #192a56 transparent transparent transparent; }
+
+.select--alt .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #192a56 transparent; }
+
+.nav-underlines .nav-link.active,
+.nav-underlines .show > .nav-link {
+  color: #1e2d53;
+  border: 2px solid #192a56;
+  background-color: #192a56; }
+
+.nav-tabs .nav-link.active {
+  background-color: #192a56;
+  color: #1e2d53; }
+
+.policy-summary .card:last-child a {
+  color: #192a56; }
+
+.lifetime-brd-color {
+  border-bottom: 4px solid aqua; }
+
+.maximum-brd-color {
+  border-bottom: 4px solid magenta; }
+
+.accident-brd-color {
+  border-bottom: 4px solid black; }
+
+/* overrides */
+.navbar-bright .navbar-nav .nav-link {
+  color: #192a56; }
+
+input.form-control,
+select.form-control {
+  background-color: silver; }
+  input.form-control:focus,
+  select.form-control:focus {
+    background-color: silver;
+    border-color: silver; }
+
+.custom-select {
+  background-color: silver; }
+
+.input-group-append--date .input-group-text,
+.input-group-prepend--date .input-group-text {
+  background-color: silver;
+  border-top: 1px solid silver; }
+
+.input-group-prepend--currency .input-group-text {
+  background-color: silver; }
+
+label.form-control-label {
+  color: #aaa; }
+
+.btn--outline {
+  border-color: #192a56;
+  color: #192a56; }
+
+.call-text {
+  color: #192a56; }
+
+.login label.form-control-label {
+  background-color: #ff8833; }
+
+.login .btn {
+  background-color: #ff8833; }
+
+/*# sourceMappingURL=maps/towergateinsurance.css.map */

@@ -17,4 +17,36 @@ function Utils() {
   };
 }
 
+jQuery.print = function(message, insertionType) {
+  if (typeof message === 'object') {
+    let string = '{<br />';
+    const values = [];
+    let counter = 0;
+    $.each(message, function(key, value) {
+      if (value && value.nodeName) {
+        let domnode = `&lt;${value.nodeName.toLowerCase()}`;
+        domnode += value.className ? ` class="${value.className}"` : '';
+        domnode += value.id ? ` id="${value.id}"` : '';
+        domnode += '&gt;';
+        value = domnode;
+      }
+      values[counter++] = `${key}: ${value}`;
+    });
+    string += values.join(',<br />');
+    string += '<br />}';
+    message = string;
+  }
+
+  let $output = $('#print-output');
+
+  if ($output.length === 0) {
+    $output = $('<div id="print-output" />').appendTo('body');
+  }
+
+  const $newMessage = $('<div class="print-output-line" />');
+  $newMessage.html(message);
+  insertionType = insertionType || 'append';
+  $output[insertionType]($newMessage);
+};
+
 export { Utils, log };

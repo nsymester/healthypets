@@ -1,7 +1,7 @@
 // module 'DatePicker.js'
 
 // postcodes
-function DatePicker() {
+function SetDate() {
   // cache DOM
 
   const dtToday = new Date();
@@ -17,4 +17,22 @@ function DatePicker() {
   return maxDate;
 }
 
-export { DatePicker };
+function AddTodaysDate() {
+  // cache DOM
+  const $todaysDate = $('label[for="policy-start-immediately"');
+  const $policyStartDate = $('#policy-start-date');
+
+  // bind Events
+  $todaysDate.change(AddTodaysDateHandler);
+
+  // methods
+  function AddTodaysDateHandler() {
+    if (!$policyStartDate.attr('disabled')) {
+      $policyStartDate.val(SetDate());
+      $policyStartDate.attr('disabled', true);
+    } else {
+      $policyStartDate.attr('disabled', false);
+    }
+  }
+}
+export { SetDate, AddTodaysDate };

@@ -86,13 +86,13 @@
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 0.4rem;
-      background: var(--panel-bg-colour); // set to white to hide the line
-      color: var(--primary-colour);
+      background: $panel-bg-colour; // set to white to hide the line
+      color: $primary-colour;
       border: 2px solid rgba(90, 104, 114, 1);
       border-radius: 50%;
 
       @include media-breakpoint-up(md) {
-        background-color: var(--body-bg-colour);
+        background-color: $body-bg-colour;
       }
     }
 
@@ -115,32 +115,32 @@
     // active step
     &--active {
       span {
-        color: var(--primary-colour);
+        color: $primary-colour;
         opacity: 1;
         font-weight: 600;
       }
 
       &:before {
         content: "\f111";
-        border: 2px solid var(--primary-colour);
-        color: var(--primary-colour);
+        border: 2px solid $primary-colour;
+        color: $primary-colour;
       }
     }
 
     &--done {
       span {
-        color: var(--primary-colour);
+        color: $primary-colour;
         opacity: 1;
         font-weight: 600;
       }
 
       &:before {
         content: "\f00c";
-        background-color: var(--panel-bg-colour);
-        color: var(--primary-colour);
+        background-color: $panel-bg-colour;
+        color: $primary-colour;
 
         @include media-breakpoint-up(md) {
-          background-color: var(--body-bg-colour);
+          background-color: $body-bg-colour;
         }
       }
     }
@@ -150,7 +150,7 @@
 // @group business-offer
 
 .business-offer {
-  border-left: 5.15px solid var(--sale-border-colour) !important;
+  border-left: 5.15px solid $sale-border-colour !important;
   padding: 1rem 1rem 0rem 1rem;
 }
 
@@ -158,7 +158,7 @@
 
 .pet-information {
   width: 97%;
-  border: 1px solid var(--info-border-colour) !important;
+  border: 1px solid $info-border-colour !important;
 
   &__body {
     color: rgba(90, 104, 114, 1);
@@ -178,6 +178,7 @@
 .pet-summary {
   padding: 2rem;
   margin-bottom: 1rem;
+  border: 0;
 
   @include media-breakpoint-up(md) {
     margin-bottom: 3rem;
@@ -185,7 +186,7 @@
 
   &__header {
     color: rgba(90, 104, 114, 1);
-    font-weight: 100;
+    font-weight: bold;
     font-size: 1.15rem;
     word-spacing: 3px;
   }
@@ -198,7 +199,7 @@
 
   &__link {
     font-size: 0.7rem;
-    color: var(--primary-colour);
+    color: $primary-colour;
     font-weight: 600;
   }
 }
@@ -206,15 +207,15 @@
 // @group header colours
 
 .bg-header {
-  background-color: var(--menu-bg-colour) !important;
+  background-color: $menu-bg-colour !important;
 }
 
 .bg-sub-header {
-  background-color: var(--sub-menu-bg-colour) !important;
+  background-color: $sub-menu-bg-colour !important;
   opacity: 0.8;
 
   @include media-breakpoint-up(md) {
-    background-color: var(--menu-bg-colour) !important;
+    background-color: $menu-bg-colour !important;
     opacity: 1;
   }
 }
@@ -236,11 +237,11 @@
 
     &:checked {
       +.radio-button-box__label {
-        background-color: var(--radio-btn-selected-body-colour);
-        border-color: var(--radio-btn-selected-body-colour);
+        background-color: $radio-btn-selected-body-colour;
+        border-color: $radio-btn-selected-body-colour;
 
         span {
-          color: var(--radio-btn-selected-text-colour);
+          color: $radio-btn-selected-text-colour;
         }
       }
     }
@@ -249,7 +250,7 @@
   &__label {
     height: 100%;
     width: 100%;
-    border: 2px solid var(--primary-colour);
+    border: 2px solid $primary-colour;
     background-color: rgb(255, 255, 255);
     transition: all 250ms ease;
     will-change: transition;
@@ -258,7 +259,7 @@
     cursor: pointer;
     position: relative;
     font-family: $base-font;
-    color: var(--primary-colour);
+    color: $primary-colour;
 
     &:active {
       transform: translateY(10px);
@@ -296,7 +297,7 @@
         //transition: all 300ms ease;
         font-size: 0.85em;
         user-select: none;
-        //color: var(--primary-colour);
+        //color: $primary-colour;
         display: inline-block;
         bottom: 32px;
         line-height: 36px;
@@ -313,7 +314,7 @@
           //transform: translateY(-80px);
           //transition: all 300ms ease-in-out;
           //font-weight: normal;
-          color: var(--primary-colour);
+          color: $primary-colour;
           background-size: 60% 60%;
           width: 60px;
           height: 50px;
@@ -334,20 +335,38 @@
   height: 55px; //108px;
 }
 
-#pet-type-dog+.radio-button-box__label--icon span:before {
-  background-image: url(/images/dog.png);
+// #pet-type-dog+.radio-button-box__label--icon span:before {
+//   background-image: url(/images/dog.png);
+// }
+
+#pet-type-dog:checked+.radio-button-box__label--icon .dog-icon {
+  // background-image: url(/images/dog-inverse.png);
+  fill: #fff;
 }
 
-#pet-type-dog:checked+.radio-button-box__label--icon span:before {
-  background-image: url(/images/dog-inverse.png);
+// #pet-type-cat+.radio-button-box__label--icon span:before {
+//   mask-image: url(/images/cat.svg);
+//   background-color: #3e70b2;
+//   mask-size: 60%;
+//   mask-repeat: no-repeat;
+// }
+
+#pet-type-cat:checked+.radio-button-box__label--icon .cat-icon {
+  // background-image: url(/images/cat-inverse.png);
+  // background-color: #fff;
+  fill: #fff;
 }
 
-#pet-type-cat+.radio-button-box__label--icon span:before {
-  background-image: url(/images/cat.png);
+label[for="pet-type-cat"],
+label[for="pet-type-dog"] {
+  display: flex;
+  flex-flow: row npowrap;
+  justify-content: center;
 }
 
-#pet-type-cat:checked+.radio-button-box__label--icon span:before {
-  background-image: url(/images/cat-inverse.png);
+.pet-image {
+  width: 14%;
+  height: auto;
 }
 
 .pet-weight {
@@ -360,9 +379,9 @@
 
 .btn {
   &-cta {
-    color: var(--btn-text-colour);
-    background-color: var(--cta-colour);
-    border-color: var(--cta-colour);
+    color: $btn-text-colour;
+    background-color: $cta-colour;
+    border-color: $cta-colour;
     right: -16px;
     position: relative;
     text-transform: uppercase;
@@ -375,22 +394,22 @@
   &-primary--alt,
   &-primary--short {
     height: 46px;
-    color: var(--btn-text-colour);
+    color: $btn-text-colour;
     font-family: $base-font;
     //font-size: calc(24px - 50%);
     font-size: inherit;
     font-weight: bold;
     line-height: calc(38px - 50%);
     text-align: center;
-    background-color: var(--btn-body-colour);
-    border: 2px solid var(--btn-body-colour);
+    background-color: $btn-body-colour;
+    border: 2px solid $btn-body-colour;
     letter-spacing: 1px;
 
     &:hover,
     &:focus {
-      color: var(--btn-text-outline-colour);
-      background-color: var(--btn-body-outline-colour);
-      //box-shadow: 0 0 0 0.1rem var(--primary-colour);
+      color: $btn-text-outline-colour;
+      background-color: $btn-body-outline-colour;
+      //box-shadow: 0 0 0 0.1rem $primary-colour;
     }
   }
 
@@ -401,30 +420,30 @@
 
   &-outline-primary--alt {
     height: 46px;
-    color: var(--primary-colour);
+    color: $primary-colour;
     font-family: $base-font;
     //font-size: calc(24px - 50%);
     font-size: 15px;
     font-weight: 600;
     line-height: calc(38px - 50%);
     text-align: center;
-    border: 2px solid var(--primary-colour);
+    border: 2px solid $primary-colour;
     background-color: rgba(255, 255, 255, 0);
 
     &:hover,
     &:focus {
-      color: var(--btn-text-colour);
-      background-color: var(--btn-body-colour);
-      border-color: var(--primary-colour);
+      color: $btn-text-colour;
+      background-color: $btn-body-colour;
+      border-color: $primary-colour;
     }
   }
 
   &-outline-primary--alt:not(:disabled):not(.disabled).active,
   &-outline-primary--alt:not(:disabled):not(.disabled):active,
   .show>&-outline-primary--alt.dropdown-toggle {
-    color: var(--primary-colour);
+    color: $primary-colour;
     background-color: transparent;
-    border-color: var(--primary-colour);
+    border-color: $primary-colour;
   }
 
   &--block {
@@ -434,7 +453,7 @@
 
 .form__help {
   display: block;
-  color: var(--primary-colour);
+  color: $primary-colour;
   font-weight: bold;
   font-size: 0.85rem;
   opacity: 0.7;
@@ -445,10 +464,16 @@
   justify-content: space-between;
 }
 
+.form-card-check-flex {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
 // @group pet condition icon
 
 .pill__condition {
-  background-color: var(--primary-colour);
+  background-color: $primary-colour;
   color: rgba(255, 255, 255, 1);
   border-radius: 20px;
   padding: 2px 10px;
@@ -457,7 +482,7 @@
 
   .close {
     cursor: pointer;
-    color: var(--btn-text-colour);
+    color: $btn-text-colour;
     text-decoration: none;
     padding-left: 5px;
     opacity: 1;
@@ -485,7 +510,7 @@
   }
 
   &__link {
-    color: var(--primary-colour);
+    color: $primary-colour;
     font-size: 16px;
     line-height: 16px;
   }
@@ -540,15 +565,15 @@
   }
 
   &--lifetime {
-    border-top: 4px solid var(--lifetime-colour);
+    border-top: 4px solid $lifetime-colour;
   }
 
   &--maximum {
-    border-top: 4px solid var(--maximum-colour);
+    border-top: 4px solid $maximum-colour;
   }
 
   &--accident {
-    border-top: 4px solid var(--accident-colour);
+    border-top: 4px solid $accident-colour;
   }
 }
 
@@ -593,15 +618,15 @@
   }
 
   &--lifetime {
-    border-top: 4px solid var(--lifetime-colour);
+    border-top: 4px solid $lifetime-colour;
   }
 
   &--maximum {
-    border-top: 4px solid var(--maximum-colour);
+    border-top: 4px solid $maximum-colour;
   }
 
   &--accident {
-    border-top: 4px solid var(--accident-colour);
+    border-top: 4px solid $accident-colour;
   }
 
   &__price {
@@ -624,7 +649,7 @@
       font-family: $icon-font;
 
       &:before {
-        color: var(--primary-colour);
+        color: $primary-colour;
         background-color: rgba(255, 255, 255, 1);
         position: absolute;
         left: -20px;
@@ -675,14 +700,14 @@
     position: absolute;
     top: 25px;
     right: 20px;
-    background-color: var(--primary-colour);
+    background-color: $primary-colour;
     border-radius: 50%;
     font-family: sans;
     font-size: 14px;
     font-weight: bold;
     padding: 0px 8px;
     cursor: pointer;
-    color: var(--btn-text-colour) !important;
+    color: $btn-text-colour !important;
     border: 0;
   }
 
@@ -721,7 +746,7 @@
   }
 
   .select-selected {
-    background-color: var(--input-bg-colour);
+    background-color: $input-bg-colour;
   }
 
   // style the arrow inside the select element:
@@ -733,12 +758,12 @@
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-color: var(--primary-colour) transparent transparent transparent;
+    border-color: $primary-colour transparent transparent transparent;
   }
 
   // point the arrow upwards when the select box is open (active):
   .select-selected.select-arrow-active:after {
-    border-color: transparent transparent var(--primary-colour) transparent;
+    border-color: transparent transparent $primary-colour transparent;
     top: 12px;
   }
 
@@ -780,9 +805,9 @@
   & .nav-link.active,
   & .show>.nav-link {
     padding-bottom: 10px;
-    color: var(--btn-text-colour);
-    border: 2px solid var(--primary-colour);
-    background-color: var(--primary-colour);
+    color: $btn-text-colour;
+    border: 2px solid $primary-colour;
+    background-color: $primary-colour;
   }
 
   & .nav-link {
@@ -798,8 +823,8 @@
   text-decoration: none;
 
   &.active {
-    background-color: var(--primary-colour);
-    color: var(--btn-text-colour);
+    background-color: $primary-colour;
+    color: $btn-text-colour;
   }
 }
 
@@ -808,6 +833,9 @@
 // @group policy summary
 
 .policy-summary {
+
+  border: 1px solid rgba(0, 0, 0, .725);
+
   &__complete-icon {
     text-align: right;
     padding: 0;
@@ -870,22 +898,22 @@
 
     a {
       font-size: 0.7rem;
-      color: var(--primary-colour);
+      color: $primary-colour;
       font-weight: 600;
     }
   }
 }
 
 .lifetime-brd-color {
-  border-bottom: 4px solid var(--lifetime-colour);
+  border-bottom: 4px solid $lifetime-colour;
 }
 
 .maximum-brd-color {
-  border-bottom: 4px solid var(--maximum-colour);
+  border-bottom: 4px solid $maximum-colour;
 }
 
 .accident-brd-color {
-  border-bottom: 4px solid var(--accident-colour);
+  border-bottom: 4px solid $accident-colour;
 }
 
 .policy-summary__header {

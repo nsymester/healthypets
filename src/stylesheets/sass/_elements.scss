@@ -5,12 +5,12 @@
   */
 
 body {
-  background-color: var(--panel-bg-colour);
+  background-color: $panel-bg-colour;
   font-size: 16px;
   font-family: $base-font !important;
 
   @include media-breakpoint-up(md) {
-    background-color: var(--body-bg-colour);
+    background-color: $body-bg-colour;
   }
 }
 

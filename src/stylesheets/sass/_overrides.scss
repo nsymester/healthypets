@@ -11,7 +11,7 @@
 // @ navigation overrides
 
 .navbar-bright .navbar-nav .nav-link {
-  color: var(--menu-text-colour);
+  color: $menu-text-colour;
   text-decoration: none;
 }
 
@@ -19,7 +19,7 @@
 
 input.form-control,
 select.form-control {
-  background-color: var(--input-bg-colour);
+  background-color: $input-bg-colour;
   color: rgba(90, 104, 114, 1);
   font-family: $base-font;
   font-size: 20px;
@@ -27,13 +27,13 @@ select.form-control {
   border-color: rgba(61, 112, 178, 0.1);
 
   &:focus {
-    background-color: var(--input-bg-colour);
-    border-color: var(--input-bg-colour);
+    background-color: $input-bg-colour;
+    border-color: $input-bg-colour;
   }
 }
 
 .custom-select {
-  background-color: var(--input-bg-colour);
+  background-color: $input-bg-colour;
   color: rgba(90, 104, 114, 1);
 }
 
@@ -93,8 +93,8 @@ select.form-control {
   height: 46px;
 
   .input-group-text {
-    background-color: var(--input-bg-colour);
-    border-top: 1px solid var(--input-bg-colour);
+    background-color: $input-bg-colour;
+    border-top: 1px solid $input-bg-colour;
     border: 0;
     height: auto;
   }
@@ -105,7 +105,7 @@ select.form-control {
   border: 0;
 
   .input-group-text {
-    background-color: var(--input-bg-colour);
+    background-color: $input-bg-colour;
     border: 0;
     height: 46px;
   }
@@ -113,7 +113,7 @@ select.form-control {
 
 label.form-control-label {
   height: calc(36px - 50%);
-  color: var(--form-label-colour);
+  color: $form-label-colour;
   font-family: $base-font;
   font-size: 15px;
   font-weight: 600;
@@ -167,7 +167,7 @@ label.form-control-label {
 }
 
 .form-group--account-number input {
-  width: 75px;
+  width: 100%;
 }
 
 // don't show the input element for custom controls
@@ -218,8 +218,8 @@ label.form-control-label {
 
 .btn--outline {
   background-color: rgba(255, 255, 255, 0);
-  border-color: var(--primary-colour);
-  color: var(--primary-colour);
+  border-color: $primary-colour;
+  color: $primary-colour;
   font-size: 15px;
   font-weight: 600;
 }
@@ -253,7 +253,7 @@ label.form-control-label {
   display: inline-block;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  color: var(--menu-text-colour);
+  color: $menu-text-colour;
 
   @include media-breakpoint-up(md) {
     // margin-top: 2rem;
@@ -287,7 +287,7 @@ label.form-control-label {
 
   label.form-control-label {
     margin-right: 0px;
-    background-color: var(--cta-colour);
+    background-color: $cta-colour;
     padding: 0 5px;
     height: 25px;
     color: white;
@@ -318,7 +318,7 @@ label.form-control-label {
     line-height: 5px;
     border: 0;
     border-radius: 0;
-    background-color: var(--cta-colour);
+    background-color: $cta-colour;
     color: white;
     text-transform: uppercase;
   }
@@ -357,4 +357,65 @@ input[type=date]::-webkit-inner-spin-button,
 input[type=date]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.form-check-inline input[name="card-type"] {
+  position: static;
+  margin-right: 0;
+  width: 0px;
+}
+
+.card_visa,
+.card_mastercard,
+.card_amex,
+.card_discover,
+.card_diners,
+.card_jcb {
+  display: inline-block;
+  width: 49px;
+  height: 30px;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999px;
+  background: url(/images/credit_cards.png) 0 0 no-repeat;
+  background-size: cover;
+}
+
+.card_mastercard {
+  background-position: -46px 0;
+}
+
+.card_amex {
+  background-position: -98px 0;
+}
+
+.card_discover {
+  background-position: -165px 0;
+}
+
+.card_diners {
+  background-position: -220px 0;
+}
+
+.card_jcb {
+  background-position: -660px 0;
+}
+
+.is_visa li,
+.is_mastercard li,
+.is_amex li,
+.is_discover li,
+.is_diners li,
+.is_jcb li,
+.is_nothing li {
+  opacity: .2;
+}
+
+.is_visa li.card_visa,
+.is_mastercard li.card_mastercard,
+.is_amex li.card_amex,
+.is_discover li.card_discover,
+.is_diners li.card_diners,
+.is_jcb li.card_jcb {
+  opacity: 1;
 }

@@ -1,12 +1,14 @@
 {
   "command": "activate",
   "name": "Towergate Insurance",
+  "id": "ti-css",
   "images": {
     "logo-mobile": "/images/towergateinsurance/logo.png",
     "logo-desktop": "/images/towergateinsurance/logo.png"
   },
+  "css": "/css/towergateinsurance.css",
   "colours": {
-    "--primary-colour":"#192a56",
+    "--primary-colour": "#192a56",
     "--panel-bg-colour": "#fff",
     "--body-bg-colour": "#f8f8f8",
 

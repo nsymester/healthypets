@@ -1,12 +1,14 @@
 {
   "command": "activate",
   "name": "Healthy Pets",
+  "id": "hp-css",
   "images": {
     "logo-mobile": "/images/logo.png",
     "logo-desktop": "/images/logo-large.png"
   },
+  "css": "/css/healthypets.css",
   "colours": {
-    "--primary-colour":"rgba(61,112,178,1)",
+    "--primary-colour": "rgba(61,112,178,1)",
 
     "--panel-bg-colour": "rgba(255,255,255,1)",
     "--body-bg-colour": "rgba(246, 246, 246, 1)",

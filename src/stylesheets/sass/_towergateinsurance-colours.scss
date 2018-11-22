@@ -1,0 +1,41 @@
+/**
+  * @desc Towergate Insurance settings include
+  *   - global variables
+  *   - colours
+  * @author Neil Symester neil.symester@towergate.co.uk
+  */
+
+
+// white labelling
+
+// main colours
+$primary-colour: #192a56;
+
+// main body and panel backgrounds
+$panel-bg-colour: #fff;
+$body-bg-colour: #f8f8f8;
+
+// menu background colour
+$menu-bg-colour: white;
+$menu-text-colour: #192a56;
+$sub-menu-bg-colour: white;
+
+// policy colours
+$lifetime-colour: aqua;
+$maximum-colour: magenta;
+$accident-colour: black;
+
+// form colours
+$form-label-colour: #aaa;
+$cta-colour: #ff8833;
+$input-bg-colour: silver;
+$btn-text-colour: #1e2d53;
+$btn-body-colour: #ffdc00;
+$btn-body-outline-colour: #ffdc00;
+$btn-text-outline-colour: #192a56;
+$radio-btn-selected-body-colour: #ffdc00;
+$radio-btn-selected-text-colour: #192a56;
+
+// borders
+$info-border-colour: #ffdc00;
+$sale-border-colour: rgba(90, 167, 0, 1);

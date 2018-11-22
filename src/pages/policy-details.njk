@@ -60,41 +60,6 @@
           </div>
         </div><!-- d-flex -->
 
-        <label class="form-control-label mt-2">How would you like your policy documents delivered to you?</label>
-
-        <div class="form-group">
-
-          {% block formRadio %}
-          {% import './macros/form-radio-long.njk' as formRadioLong %}
-          {{ formRadioLong.field({
-            "items": [
-              {
-                'id':'policy-delivered-post',
-                'label': 'A hard copy by post',
-                'name' : 'policy-delivered',
-                'value': 'option-post'
-              },
-              {
-                'id':'policy-delivered-email',
-                'label': 'A digital copy by email',
-                'name' : 'policy-delivered',
-                'value': 'option-email'
-              },
-              {
-                'id':'policy-delivered-both',
-                'label': 'Both',
-                'name' : 'policy-delivered',
-                'value': 'option-both'
-              }
-            ],
-            "invalid-feedback" : " Please select how you would like your policy documents delivered to you."
-            })
-          }}
-
-          {% endblock %}
-
-        </div><!-- form-group -->
-
         <label class="form-control-label mt-2" for="">Please carefully read and agree to the following statements:</label>
 
         <div class="form-group">
