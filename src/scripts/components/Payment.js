@@ -296,11 +296,11 @@ function keyPressed(elm, maxKeyCount) {
   }
 }
 function keyPressCheck(elm, maxKeyCount) {
-  elm.keydown(function() {
+  elm.on('keydown', function() {
     keyPressed($(this), maxKeyCount);
   });
 
-  elm.keyup(function() {
+  elm.on('keyup', function() {
     keyPressed($(this), maxKeyCount);
   });
 }
@@ -355,31 +355,31 @@ function CreditCardTypeDetector(options) {
 
   // the object that contains the logos
 
-  const logos_obj = $(settings.credit_card_logos_id);
+  const logosObj = $(settings.credit_card_logos_id);
 
   // the regular expressions check for possible matches as you type, hence the OR operators based on the number of chars
   // Visa
-  const visa_regex = new RegExp('^4[0-9]{0,15}$');
+  const visaRegex = new RegExp('^4[0-9]{0,15}$');
 
   // MasterCard
 
-  const mastercard_regex = new RegExp('^5$|^5[1-5][0-9]{0,14}$');
+  const mastercardRegex = new RegExp('^5$|^5[1-5][0-9]{0,14}$');
 
   // American Express
 
-  const amex_regex = new RegExp('^3$|^3[47][0-9]{0,13}$');
+  const amexRegex = new RegExp('^3$|^3[47][0-9]{0,13}$');
 
   // Diners Club
 
-  const diners_regex = new RegExp('^3$|^3[068]$|^3(?:0[0-5]|[68][0-9])[0-9]{0,11}$');
+  const dinersRegex = new RegExp('^3$|^3[068]$|^3(?:0[0-5]|[68][0-9])[0-9]{0,11}$');
 
   // Discover
 
-  const discover_regex = new RegExp('^6$|^6[05]$|^601[1]?$|^65[0-9][0-9]?$|^6(?:011|5[0-9]{2})[0-9]{0,12}$');
+  const discoverRegex = new RegExp('^6$|^6[05]$|^601[1]?$|^65[0-9][0-9]?$|^6(?:011|5[0-9]{2})[0-9]{0,12}$');
 
   // JCB
 
-  const jcb_regex = new RegExp('^2[1]?$|^21[3]?$|^1[8]?$|^18[0]?$|^(?:2131|1800)[0-9]{0,11}$|^3[5]?$|^35[0-9]{0,14}$');
+  const jcbRegex = new RegExp('^2[1]?$|^21[3]?$|^1[8]?$|^18[0]?$|^(?:2131|1800)[0-9]{0,11}$|^3[5]?$|^35[0-9]{0,14}$');
 
   return $(settings.elm).each(function() {
     // as the user types
@@ -390,55 +390,55 @@ function CreditCardTypeDetector(options) {
       currentValue = currentValue.replace(/ /g, '').replace(/-/g, '');
 
       // checks per each, as their could be multiple hits
-      if (currentValue.match(visa_regex)) {
-        $(logos_obj).addClass('is_visa');
+      if (currentValue.match(visaRegex)) {
+        $(logosObj).addClass('is_visa');
       } else {
-        $(logos_obj).removeClass('is_visa');
+        $(logosObj).removeClass('is_visa');
       }
 
-      if (currentValue.match(mastercard_regex)) {
-        $(logos_obj).addClass('is_mastercard');
+      if (currentValue.match(mastercardRegex)) {
+        $(logosObj).addClass('is_mastercard');
       } else {
-        $(logos_obj).removeClass('is_mastercard');
+        $(logosObj).removeClass('is_mastercard');
       }
 
-      if (currentValue.match(amex_regex)) {
-        $(logos_obj).addClass('is_amex');
+      if (currentValue.match(amexRegex)) {
+        $(logosObj).addClass('is_amex');
       } else {
-        $(logos_obj).removeClass('is_amex');
+        $(logosObj).removeClass('is_amex');
       }
 
-      if (currentValue.match(diners_regex)) {
-        $(logos_obj).addClass('is_diners');
+      if (currentValue.match(dinersRegex)) {
+        $(logosObj).addClass('is_diners');
       } else {
-        $(logos_obj).removeClass('is_diners');
+        $(logosObj).removeClass('is_diners');
       }
 
-      if (currentValue.match(discover_regex)) {
-        $(logos_obj).addClass('is_discover');
+      if (currentValue.match(discoverRegex)) {
+        $(logosObj).addClass('is_discover');
       } else {
-        $(logos_obj).removeClass('is_discover');
+        $(logosObj).removeClass('is_discover');
       }
 
-      if (currentValue.match(jcb_regex)) {
-        $(logos_obj).addClass('is_jcb');
+      if (currentValue.match(jcbRegex)) {
+        $(logosObj).addClass('is_jcb');
       } else {
-        $(logos_obj).removeClass('is_jcb');
+        $(logosObj).removeClass('is_jcb');
       }
 
       // if nothing is a hit we add a class to fade them all out
       if (
         currentValue != '' &&
-        !currentValue.match(visa_regex) &&
-        !currentValue.match(mastercard_regex) &&
-        !currentValue.match(amex_regex) &&
-        !currentValue.match(diners_regex) &&
-        !currentValue.match(discover_regex) &&
-        !currentValue.match(jcb_regex)
+        !currentValue.match(visaRegex) &&
+        !currentValue.match(mastercardRegex) &&
+        !currentValue.match(amexRegex) &&
+        !currentValue.match(dinersRegex) &&
+        !currentValue.match(discoverRegex) &&
+        !currentValue.match(jcbRegex)
       ) {
-        $(logos_obj).addClass('is_nothing');
+        $(logosObj).addClass('is_nothing');
       } else {
-        $(logos_obj).removeClass('is_nothing');
+        $(logosObj).removeClass('is_nothing');
       }
     });
   });

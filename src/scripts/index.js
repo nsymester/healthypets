@@ -19,7 +19,7 @@ import { WhiteLabelling } from './components/WhiteLabelling';
 // Utils();
 // window.log = log;
 
-(function() {
+function init() {
   CustomSelect();
   Address();
   Pet();
@@ -55,4 +55,14 @@ import { WhiteLabelling } from './components/WhiteLabelling';
   ToggleRequiredPaymentFields();
   ToggleRequiredPetFields();
   ToggleRequiredFields();
-})();
+}
+
+ready(init);
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}

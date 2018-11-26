@@ -19,14 +19,22 @@ function SetDate() {
 
 function AddTodaysDate() {
   // cache DOM
-  const $todaysDate = $('label[for="policy-start-immediately"');
+  const $todaysDate = $('label[for="policy-start-immediately"]');
   const $policyStartDate = $('#policy-start-date');
 
   // bind Events
-  $todaysDate.change(AddTodaysDateHandler);
+  // $todaysDate.change(AddTodaysDateHandler);
+  // $(document).on('input', $todaysDate, AddTodaysDateHandler);
+  //  $(document).on('touchStart', $todaysDate, AddTodaysDateHandler);
+  if (document.querySelector('#policy-start-immediately-label') != null) {
+    document.querySelector('#policy-start-immediately-label').addEventListener('change', AddTodaysDateHandler, false);
+    document
+      .querySelector('#policy-start-immediately-label')
+      .addEventListener('touchstart', AddTodaysDateHandler, false);
+  }
 
   // methods
-  function AddTodaysDateHandler() {
+  function AddTodaysDateHandler(evt) {
     if (!$policyStartDate.attr('disabled')) {
       $policyStartDate.val(SetDate());
       $policyStartDate.attr('disabled', true);
