@@ -60,7 +60,7 @@
   "dependencies": {
     "eslint-config-defaults": "^9.0.0",
     "hoek": "^5.0.4",
-    "lodash": "^4.17.13"
+    "lodash": "^4.17.19"
   },
   "scripts": {
     "analyse": "gulp analyze-css --file  ",
